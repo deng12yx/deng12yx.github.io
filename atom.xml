@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-18T01:33:26.547Z</updated>
+  <updated>2023-07-18T01:38:35.807Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://example.com/2023/07/18/test/"/>
     <id>http://example.com/2023/07/18/test/</id>
     <published>2023-07-18T01:32:22.000Z</published>
-    <updated>2023-07-18T01:33:26.547Z</updated>
+    <updated>2023-07-18T01:38:35.807Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/.com//2b799be60c1e71f09840480797d6589.jpg" alt="2b799be60c1e71f09840480797d6589"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2023/07/18/test/2b799be60c1e71f09840480797d6589.jpg" alt="2b799be60c1e71f09840480797d6589"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/.com//2b799be60c1e71f09840480797d6589.jpg&quot; alt=&quot;2b799be60c1e71f09840480797d6589&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2023/07/18/test/2b799be60c1e71f09840480797d6589.jpg&quot; alt=&quot;2b799be60c1e71f09840480797d6589&quot;&gt;&lt;/p&gt;
 </summary>
       
     
