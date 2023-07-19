@@ -3,19 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>深度学习week1_3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="神经网络概论引入层的概念，x(i)表示第i个样本 w[1]表示第一层的w，表示是在第一层用到的w 上一节学到的模型如下：  扩展：  和上面的图一样，算出a[1],但是会继续算，继续根据参数计算z[2],最后得到损失函数(交叉熵损失) 神经网络表示隐藏层：在训练集中，这些中间节点的真实数据，但是在训练集中是看不见的，只能看到输入输出 下图是双层神经网络示例：是双层不是三层是因为输入层通常不被看作一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/07/17/hello-world/index.html">
+<meta property="og:title" content="深度学习week1_3">
+<meta property="og:url" content="http://example.com/2023/07/19/week1-3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="神经网络概论引入层的概念，x(i)表示第i个样本 w[1]表示第一层的w，表示是在第一层用到的w 上一节学到的模型如下：  扩展：  和上面的图一样，算出a[1],但是会继续算，继续根据参数计算z[2],最后得到损失函数(交叉熵损失) 神经网络表示隐藏层：在训练集中，这些中间节点的真实数据，但是在训练集中是看不见的，只能看到输入输出 下图是双层神经网络示例：是双层不是三层是因为输入层通常不被看作一">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-07-17T06:27:49.861Z">
-<meta property="article:modified_time" content="2023-07-17T06:27:49.861Z">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230630222739969-16897684888191.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230630222752919-16897684888202.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230630223343705-16897684888203.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704175622967-16897684888214.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704184159224-16897684888215.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704184843687-16897684888216.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704203251929-16897684888227.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704203606547-16897684888228.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704212033011-16897684888229.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704212427680-168976848882210.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704215112255-168976848882211.png">
+<meta property="og:image" content="http://example.com/2023/07/19/week1-3/image-20230704215936385-168976848882212.png">
+<meta property="article:published_time" content="2023-07-19T12:05:37.000Z">
+<meta property="article:modified_time" content="2023-07-19T12:08:54.202Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/07/19/week1-3/image-20230630222739969-16897684888191.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -331,11 +345,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-week1-3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/17/hello-world/" class="article-date">
-      <time datetime="2023-07-17T06:27:49.861Z" itemprop="datePublished">2023-07-17</time>
+      <a href="/2023/07/19/week1-3/" class="article-date">
+      <time datetime="2023-07-19T12:05:37.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
   
@@ -348,7 +362,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      深度学习week1_3
     </h1>
   
 
@@ -356,8 +370,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -365,19 +387,78 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="神经网络概论"><a href="#神经网络概论" class="headerlink" title="神经网络概论"></a>神经网络概论</h2><p>引入层的概念，x(i)表示第i个样本 w[1]表示第一层的w，表示是在第一层用到的w</p>
+<p>上一节学到的模型如下：</p>
+<p><img src="/2023/07/19/week1-3/image-20230630222739969-16897684888191.png" alt="image-20230630222739969"></p>
+<p>扩展：</p>
+<p><img src="/2023/07/19/week1-3/image-20230630222752919-16897684888202.png" alt="image-20230630222752919"></p>
+<p>和上面的图一样，算出a[1],但是会继续算，继续根据参数计算z[2],最后得到损失函数(交叉熵损失)</p>
+<h2 id="神经网络表示"><a href="#神经网络表示" class="headerlink" title="神经网络表示"></a>神经网络表示</h2><p>隐藏层：在训练集中，这些中间节点的真实数据，但是在训练集中是看不见的，只能看到输入输出</p>
+<p>下图是双层神经网络示例：是双层不是三层是因为输入层通常不被看作一个层，第零层</p>
+<p>从左到右依次是输入层，隐藏层，输出层</p>
+<p><img src="/2023/07/19/week1-3/image-20230630223343705-16897684888203.png" alt="image-20230630223343705"></p>
+<p>X:输入特征，或者用a[0]表示，这里的0代表第0层，就是输入层，输入层将X&#x2F;a[0]传给隐藏层，隐藏层产生a[1],在上图中a[1]应该是一个4*1的矩阵，最后的y_hat&#x3D;a[2]，隐藏层可能有两个相关参数w[1],b[1],这里的w应该是3 * 4的矩阵，b是4 * 1矩阵，4代表这里有四个输出，即a[1]是一个4 * 1的矩阵，3代表x的输入特征数，输出层有两个相关参数w[2],b[2],</p>
+<h2 id="计算神经网络的输出"><a href="#计算神经网络的输出" class="headerlink" title="计算神经网络的输出"></a>计算神经网络的输出</h2><p>如图所示，双层神经网络logistic函数</p>
+<p><img src="/2023/07/19/week1-3/image-20230704175622967-16897684888214.png" alt="image-20230704175622967"></p>
+<p><img src="/2023/07/19/week1-3/image-20230704184159224-16897684888215.png" alt="image-20230704184159224"></p>
+<p>如图所示，这里将一层的w列为了一个矩阵，每一层的每个w都是nx * 1矩阵，和x是一样的，上图中第一层有四个结点，就用了四个w，将四个w排成一个矩阵，也就是nx * 4矩阵，然后将这个排列好的矩阵转置，变成上图所示的形状，再乘上x，再加上b，将第一层的b也设为一个矩阵，将上图总结：</p>
+<p><img src="/2023/07/19/week1-3/image-20230704184843687-16897684888216.png" alt="image-20230704184843687"></p>
+<p>伪代码如下(m个样本):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m):</span><br><span class="line">    z[<span class="number">1</span>](i)=W[<span class="number">1</span>] * x(i) + b[<span class="number">1</span>]</span><br><span class="line">    a[<span class="number">1</span>](i)=sigmoid(z[<span class="number">1</span>](i))</span><br><span class="line">    z[<span class="number">2</span>](i)=W[<span class="number">2</span>] * x(i) + b[<span class="number">2</span>]</span><br><span class="line">    a[<span class="number">2</span>](i)=sigmoid(z[<span class="number">2</span>](i))</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>改进方法：将m个样本合并到一个矩阵,X是nx * m矩阵，W[i]是q * nx矩阵，q是第一层结点的数量，W[i] * X是q * m矩阵，一列表示一个样本，到最后也是，一列表示一个样本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Z[<span class="number">1</span>]=W[<span class="number">1</span>] * X + b[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">A[<span class="number">1</span>]=sigmoid(Z[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">Z[<span class="number">2</span>]=W[<span class="number">2</span>] * X + b[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">A[<span class="number">2</span>]=sigmoid(Z[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="向量化实现的解释"><a href="#向量化实现的解释" class="headerlink" title="向量化实现的解释"></a>向量化实现的解释</h2><p>激活函数(sigmoid)可以有更多选择</p>
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>g()用更多的选择，不止sigmoid()函数</p>
+<p>比如用tanh(z)代替sigmoid(),前者的函数：e^z-e^(-z)&#x2F;e^z+e^(-z)	后者的函数：1&#x2F;1+e^(-z),前者是后者的平移，且平均值为0如图所示：</p>
+<p><img src="/2023/07/19/week1-3/image-20230704203251929-16897684888227.png" alt="image-20230704203251929"></p>
+<p>当要二元分类的时候，也就是y是0&#x2F;1时，用sigmoid更方便，但是在前面几层可以tanh函数</p>
+<p>sigmoid和tanh函数的缺点，当z很大的时候，斜率很低</p>
+<p>RelU(修正线性函数)函数：a&#x3D;max(0,z),如图</p>
+<p><img src="/2023/07/19/week1-3/image-20230704203606547-16897684888228.png" alt="image-20230704203606547"></p>
+<p>选择激活函数的方法：</p>
+<ul>
+<li>如果要求二元分类，选择sigmoid,然后其他单元都选择ReLU，ReLU运算的速度会比其他的快很多</li>
+<li>有时候也用tanh</li>
+</ul>
+<p>另一种ReLu函数：泄露的ReLU(leaky RelU),也就是当z小于0时，斜率不再是0，而是一个很小的数字 a&#x3D;max(0.01 * z,z)</p>
+<p>总结：</p>
+<ul>
+<li>sigmoid只用于二元分类，tanh会更优越</li>
+<li>ReLU在不知道用什么激活函数的时候使用</li>
+</ul>
+<h2 id="为什么需要非线性激活函数"><a href="#为什么需要非线性激活函数" class="headerlink" title="为什么需要非线性激活函数"></a>为什么需要非线性激活函数</h2><p>如果让g(z)&#x3D;z(恒等激活函数,一种线性激活函数方式)有什么后果</p>
+<p>A[1]&#x3D;W[1] * X +b[1]</p>
+<p>A[2]&#x3D;W[2] * A[1] + b[2]&#x3D;W[2] * (W[1] * X + b[1]) + b[2]&#x3D;W[1] * W[2].T * x + W[2] * b[1] + b[2]</p>
+<p>还是W[] * X + b[]形式  </p>
+<p>通常只有输出层才能用线性激活方式</p>
+<h2 id="激活函数的导数"><a href="#激活函数的导数" class="headerlink" title="激活函数的导数"></a>激活函数的导数</h2><ul>
+<li><p>sigmoid函数导数：前面计算过一次，a&#x3D;1&#x2F;(1+e^(-z)),da&#x2F;dz&#x3D;a(1-a)</p>
+</li>
+<li><p>tanh函数导数：</p>
+</li>
+</ul>
+<p><img src="/2023/07/19/week1-3/image-20230704212033011-16897684888229.png" alt="image-20230704212033011"></p>
+<ul>
+<li><p>ReLU函数：max(0,z),导数比较好计算，但是z等于0的导数需要自己定义</p>
+</li>
+<li><p>泄露的ReLU函数：max(0.01 * z,z),同样，z&#x3D;0是需要自己定义的：</p>
+<p><img src="/2023/07/19/week1-3/image-20230704212427680-168976848882210.png" alt="image-20230704212427680"></p>
+</li>
+</ul>
+<h2 id="神经网络的梯度下降法"><a href="#神经网络的梯度下降法" class="headerlink" title="神经网络的梯度下降法"></a>神经网络的梯度下降法</h2><h6 id="单层隐藏神经网络的反向传播："><a href="#单层隐藏神经网络的反向传播：" class="headerlink" title="单层隐藏神经网络的反向传播："></a>单层隐藏神经网络的反向传播：</h6><p>参数设置：W[1] b[1] W[2] b[2],n[0]表示多输入特征，n[1]表示隐藏单元，n[2]表示输出单元(前面讲的情形中n[2]是1)</p>
+<p>W[1]是n[1] * n[0],b[1]是n[1] * 1,W[2]是n[2] * n[1],b[2]是n[2] * 1</p>
+<p>成本函数(cost function):J(W[1],b[1],W[2],b[2])&#x3D;Σ(L(y_hat,y))&#x2F;m,在该情形中，y_hat是a[2]</p>
+<p>初始化参数对于梯度下降法很重要：</p>
+<p>repeat:	dw[1]&#x3D;dJ&#x2F;dw[1],dw[2]&#x3D;dJ&#x2F;dw[2],db[1]&#x3D;dJ&#x2F;db[1],db[2]&#x3D;dJ&#x2F;db[2],w[1]&#x3D;w[1]-α * dw[1]……</p>
+<p><img src="/2023/07/19/week1-3/image-20230704215112255-168976848882211.png" alt="image-20230704215112255"></p>
+<p>由前面的计算得,dz[1]的乘法是相同维度的矩阵对应位置元素相乘</p>
+<p><img src="/2023/07/19/week1-3/image-20230704215936385-168976848882212.png" alt="image-20230704215936385"></p>
+<h2 id="随机初始化"><a href="#随机初始化" class="headerlink" title="随机初始化"></a>随机初始化</h2><p>不能直接讲W1&#x2F;W2都定义成zero矩阵，这样对于隐藏节点没有意义，以为相当于是用相同的方法进行计算</p>
+<p>因此选择用随机初始化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">W1=np.random.randn(n_h,n_x)*<span class="number">0.01</span></span><br><span class="line">b1=np.zero((n_h,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
       
@@ -433,13 +514,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2023/07/17/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2023/07/19/week1-3/">深度学习week1_3</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2023年07月17日 - 14时27分</p>
-        <p><span>最后更新:</span>2023年07月17日 - 14时27分</p>
+        <p><span>发布时间:</span>2023年07月19日 - 20时05分</p>
+        <p><span>最后更新:</span>2023年07月19日 - 20时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2023/07/17/hello-world/" title="Hello World">http://example.com/2023/07/17/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://example.com/2023/07/17/hello-world/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2023/07/19/week1-3/" title="深度学习week1_3">http://example.com/2023/07/19/week1-3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2023/07/19/week1-3/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -452,15 +533,20 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/07/18/test/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/07/19/week1-4/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          test
+          深度学习week1_4
         
       </div>
     </a>
   
+  
+    <a href="/2023/07/19/week1-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深度学习week1_2</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -469,7 +555,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A6%82%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">神经网络概论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.</span> <span class="toc-text">神经网络表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-number">3.</span> <span class="toc-text">计算神经网络的输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E5%8C%96%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="toc-number">4.</span> <span class="toc-text">向量化实现的解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">激活函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">为什么需要非线性激活函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">激活函数的导数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">神经网络的梯度下降法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E5%B1%82%E9%9A%90%E8%97%8F%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%EF%BC%9A"><span class="toc-number">8.0.0.0.1.</span> <span class="toc-text">单层隐藏神经网络的反向传播：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">9.</span> <span class="toc-text">随机初始化</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -538,13 +624,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2023/07/18/test/" title="上一篇: test">
+            <a href="/2023/07/19/week1-4/" title="上一篇: 深度学习week1_4">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2023/07/19/week1-2/" title="下一篇: 深度学习week1_2">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/07/19/week2-3/">week2_3</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/19/week2-2/">week2_2</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/19/week2-1/">week2_1</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/19/week1-4/">深度学习week1_4</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/19/week1-3/">深度学习week1_3</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/19/week1-2/">深度学习week1_2</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/19/week1-1/">深度学习week1_1</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/18/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/17/hello-world/">Hello World</a></li></ul>
