@@ -328,10 +328,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-week5-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week5-3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week5-3/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/" class="article-date">
       <time datetime="2023-07-19T12:27:09.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -345,7 +345,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week5-3/">深度学习week5_3</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/">深度学习week5_3</a>
     </h1>
   
 
@@ -360,57 +360,57 @@
 <li>建立一个编码网络，对输入进行编码，也就是进行学习</li>
 <li>建立一个解码网络，当所有的输入完了之后对编码后的变量进行解码得到翻译的结果</li>
 </ul>
-<p><img src="/2023/07/19/week5-3/image-20230716152818762.png" alt="image-20230716152818762"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716152818762.png" alt="image-20230716152818762"></p>
 <p>类似的还有通过一张图片得到输出(img2seq)，比如通过如下图片得到这只猫坐在沙发上的句子：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716152954800.png" alt="image-20230716152954800"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716152954800.png" alt="image-20230716152954800"></p>
 <h2 id="选择最可能的句子"><a href="#选择最可能的句子" class="headerlink" title="选择最可能的句子"></a>选择最可能的句子</h2><p>机器翻译vs语言模型，有很多类似的地方，机器翻译也叫做局限性的语言模型</p>
-<p><img src="/2023/07/19/week5-3/image-20230716153252292.png" alt="image-20230716153252292"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716153252292.png" alt="image-20230716153252292"></p>
 <p>但是生成的y的质量要确保最好，使得最好的那项最大化</p>
 <p>可能的结果：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716153444023.png" alt="image-20230716153444023"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716153444023.png" alt="image-20230716153444023"></p>
 <p>为什么不选择贪心算法，贪心算法是一个一个的选单词出来，先选最有可能的y1，再在这个基础上选最有可能的y2，但是可能就会导致初夏下图第二排的结果，因为going比visiting更常见，但是我们不希望这种：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716191250724.png" alt="image-20230716191250724"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716191250724.png" alt="image-20230716191250724"></p>
 <h2 id="定向搜索"><a href="#定向搜索" class="headerlink" title="定向搜索"></a>定向搜索</h2><p>也叫做集束搜索</p>
 <p>集束搜索会考虑多个选择，贪心算法只会选择最有概率的那个 B：集束宽，表示一次考虑B个选择，比如step1，就从所有词表中选出三个最有可能的选择，然后分别对这三个选择再算其所有词表的概率，从30000个里面选出最优的三个选择	</p>
-<p><img src="/2023/07/19/week5-3/image-20230716191901310.png" alt="image-20230716191901310"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716191901310.png" alt="image-20230716191901310"></p>
 <h2 id="改进定向搜索"><a href="#改进定向搜索" class="headerlink" title="改进定向搜索"></a>改进定向搜索</h2><p>长度归一化（如果不归一化最后得到的概率一定是一个很小的数字，因为有很多个小于1的数字相乘，两种方法，直接log或者再除于这段语句的长度）：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716193157256.png" alt="image-20230716193157256"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716193157256.png" alt="image-20230716193157256"></p>
 <p>怎么选择B(束)：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716193449880.png" alt="image-20230716193449880"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716193449880.png" alt="image-20230716193449880"></p>
 <h2 id="定向搜索的误差分析"><a href="#定向搜索的误差分析" class="headerlink" title="定向搜索的误差分析"></a>定向搜索的误差分析</h2><p>出现错误的翻译（比较输出错误的概率和正确的概率）：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716193812475.png" alt="image-20230716193812475"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716193812475.png" alt="image-20230716193812475"></p>
 <p>如果算法得到的单词比人类的单词概率更高，说明是RNN模型有问题(尝试正则化或者增加样本)，如果更低，就是束搜索有问题，选择了错误的y（尝试更大的B）</p>
-<p><img src="/2023/07/19/week5-3/image-20230716194017928.png" alt="image-20230716194017928"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716194017928.png" alt="image-20230716194017928"></p>
 <h2 id="Bleu得分"><a href="#Bleu得分" class="headerlink" title="Bleu得分"></a>Bleu得分</h2><p>评估模型</p>
 <p>给定一个机器生成的翻译，它能够自动的计算一个分数来衡量机器的好坏</p>
 <p>衡量的一个指标是精确度，就是机器翻译结果的每一个单词在参考中是否出现，第二个是机器翻译的结果在参考中出现最多的是多少个单词</p>
-<p><img src="/2023/07/19/week5-3/image-20230716194626721.png" alt="image-20230716194626721"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716194626721.png" alt="image-20230716194626721"></p>
 <p>比较二元词组（count是出现在输出里的次数，countclip是在参考中的最多的出现次数）：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716194917738.png" alt="image-20230716194917738"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716194917738.png" alt="image-20230716194917738"></p>
 <p>多元词组：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716195107275.png" alt="image-20230716195107275"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716195107275.png" alt="image-20230716195107275"></p>
 <p>Coursera官网提示: 这里的otherwise应该是exp(1-reference_output_length&#x2F;MT_output_length)</p>
 <p>这里是得分，如果MT翻译短了得分需要降低，所以幂需要变小，减掉的项应该变大，所以应该是reference&#x2F;MT</p>
-<p><img src="/2023/07/19/week5-3/image-20230716195226374.png" alt="image-20230716195226374"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716195226374.png" alt="image-20230716195226374"></p>
 <h2 id="注意力模型直观理解"><a href="#注意力模型直观理解" class="headerlink" title="注意力模型直观理解"></a>注意力模型直观理解</h2><p>如果机器每次都要先记忆整个句子输入完了之后在翻译，有可能这个句子非常的长，这将导致记忆很困难，最后的输出就像蓝色的线，对于短句子效果好，对于长句子效果不好</p>
-<p><img src="/2023/07/19/week5-3/image-20230716200013916.png" alt="image-20230716200013916"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716200013916.png" alt="image-20230716200013916"></p>
 <p>注意力模型实现绿色的线</p>
 <p>在正常双向RNN计算出输出之后，再有一层隐藏单元，这里的α&lt;1,1&gt;表示注意力，表示第一个输出的再第一个输入的输出这里的注意值是多少，以此类推</p>
-<p><img src="/2023/07/19/week5-3/image-20230716200725180.png" alt="image-20230716200725180"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716200725180.png" alt="image-20230716200725180"></p>
 <h2 id="注意力模型"><a href="#注意力模型" class="headerlink" title="注意力模型"></a>注意力模型</h2><p>对于一个输出，所有的注意力权重之和为1，如图所示c&lt;1&gt; c&lt;2&gt;是算出来的输入到隐藏层的值</p>
-<p><img src="/2023/07/19/week5-3/image-20230716201246436.png" alt="image-20230716201246436"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716201246436.png" alt="image-20230716201246436"></p>
 <p>如图所示a&lt;t,t_hat&gt;是和S<t-1>和a<t_hat>有关的，代表t_hat输入对t输出的注意力值，因为如图右边，s<t>的得出需要a和y<t-1>，同时y<t-1>是由s<t-1>得出来的，所以有这个结果</t-1></t-1></t-1></t></t_hat></t-1></p>
-<p><img src="/2023/07/19/week5-3/image-20230716201654655.png" alt="image-20230716201654655"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716201654655.png" alt="image-20230716201654655"></p>
 <h2 id="语音辨识"><a href="#语音辨识" class="headerlink" title="语音辨识"></a>语音辨识</h2><p>将音频自动生成文字</p>
 <p>音频数据的常见预处理步骤：就是运行这个原始的音频片段，然后生成一个声谱图，横轴是时间，纵轴是频率，图中的颜色代表了声音的能量，还有伪空白输出，也就是在音频被输入到学习算法之前，而人耳所做的计算</p>
 <p>过去科学家们认为用一些基本的音位单元来表示音频是做语音识别最好的方式，现在已经不需要了</p>
 <p>注意力模型的语音辨识：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716202416099.png" alt="image-20230716202416099"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716202416099.png" alt="image-20230716202416099"></p>
 <p>还有种方法：CTC损失函数，语音识别通常输入维度大于输出维度，因为语音识别的话输入是赫兹，可能包含很多个样本，那对于一个输入对应一个输出的结构怎么办呢：用特殊字符代表空白字符，这里用下划线表示空白字符：</p>
-<p><img src="/2023/07/19/week5-3/image-20230716202644473.png" alt="image-20230716202644473"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716202644473.png" alt="image-20230716202644473"></p>
 <h2 id="触发字检测"><a href="#触发字检测" class="headerlink" title="触发字检测"></a>触发字检测</h2><p>所谓触发字检测就是，语音说敏感词汇：比如 嘿siri</p>
 <p>在接收到敏感词汇时输出1</p>
-<p><img src="/2023/07/19/week5-3/image-20230716202909321.png" alt="image-20230716202909321"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-3/image-20230716202909321.png" alt="image-20230716202909321"></p>
 
       
       
@@ -446,10 +446,10 @@
 
 
   
-    <article id="post-week5-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week5-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week5-2/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/" class="article-date">
       <time datetime="2023-07-19T12:27:06.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -463,7 +463,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week5-2/">深度学习week5_2</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/">深度学习week5_2</a>
     </h1>
   
 
@@ -476,64 +476,64 @@
         <h2 id="词汇表征"><a href="#词汇表征" class="headerlink" title="词汇表征"></a>词汇表征</h2><p>将RNN GRU LSTM用于自然语言处理（NLP）</p>
 <p>词嵌入：让算法自动的理解一些类似的词</p>
 <p>我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：</p>
-<p><img src="/2023/07/19/week5-2/image-20230716085326082.png" alt="image-20230716085326082"></p>
-<p>现在变成特征化表达：<img src="/2023/07/19/week5-2/image-20230716090208200.png" alt="image-20230716090208200"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716085326082.png" alt="image-20230716085326082"></p>
+<p>现在变成特征化表达：<img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716090208200.png" alt="image-20230716090208200"></p>
 <p>可以将多维的特征降维（t-SNE），有点像k聚类</p>
-<p><img src="/2023/07/19/week5-2/image-20230716090359957.png" alt="image-20230716090359957"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716090359957.png" alt="image-20230716090359957"></p>
 <h2 id="使用词嵌入"><a href="#使用词嵌入" class="headerlink" title="使用词嵌入"></a>使用词嵌入</h2><p>如果遇到一些不常见的词，而自己的训练样本又比较小，可以考虑迁移学习，用网上已经学习好的词嵌入模型</p>
-<p><img src="/2023/07/19/week5-2/image-20230716090910001.png" alt="image-20230716090910001"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716090910001.png" alt="image-20230716090910001"></p>
 <p>当训练集越小时，词嵌入效果越好，词嵌入基本流程：</p>
-<p><img src="/2023/07/19/week5-2/image-20230716091323600.png" alt="image-20230716091323600"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716091323600.png" alt="image-20230716091323600"></p>
 <p>和卷积网络所学到的比较两张人脸有一定相似性</p>
-<p><img src="/2023/07/19/week5-2/image-20230716091741875.png" alt="image-20230716091741875"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716091741875.png" alt="image-20230716091741875"></p>
 <h2 id="词嵌入的特性"><a href="#词嵌入的特性" class="headerlink" title="词嵌入的特性"></a>词嵌入的特性</h2><p>词嵌入可以帮助实现类比推理</p>
 <p>比如我们知道男人对应女人，怎么让机器推导出国王对应王后呢：比较它们的差</p>
-<p><img src="/2023/07/19/week5-2/image-20230716092632787.png" alt="image-20230716092632787"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716092632787.png" alt="image-20230716092632787"></p>
 <p>将要求的单词设为e_w,求相似度:</p>
-<p><img src="/2023/07/19/week5-2/image-20230716131131937.png" alt="image-20230716131131937"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716131131937.png" alt="image-20230716131131937"></p>
 <p>余弦相似度，感觉相当于一个向量是一个点：</p>
-<p><img src="/2023/07/19/week5-2/image-20230716131332253.png" alt="image-20230716131332253"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716131332253.png" alt="image-20230716131332253"></p>
 <h2 id="嵌入矩阵"><a href="#嵌入矩阵" class="headerlink" title="嵌入矩阵"></a>嵌入矩阵</h2><p>当利用算法学习一个词嵌入的时候相当于是在学习一个嵌入矩阵</p>
 <p>相当于总共有300个特征，每个单词都是一个特征，300维，把这个矩阵叫做嵌入矩阵E,每次我们要取某个单词的特征的时候，我们用特征 * one_hot的值，就可以得到一个300维该单词的特征</p>
-<p><img src="/2023/07/19/week5-2/image-20230716132747851.png" alt="image-20230716132747851"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716132747851.png" alt="image-20230716132747851"></p>
 <h2 id="学习词嵌入"><a href="#学习词嵌入" class="headerlink" title="学习词嵌入"></a>学习词嵌入</h2><p>神经网络结构：</p>
 <p>E是嵌入矩阵，o是one_hot,算出e是该单词的300维的特征向量，然后输出，参数可以通过梯度函数调整，很好的学习两个特征值相近的词，可以规定只从前面几个词学习</p>
-<p><img src="/2023/07/19/week5-2/image-20230716133405684.png" alt="image-20230716133405684"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716133405684.png" alt="image-20230716133405684"></p>
 <p>如果我们想训练出一个语言模型，只选择相邻几个单词学习是一种不错的选择，如果我们想学习其他嵌入算法，可以选择另外的单词学习</p>
-<p><img src="/2023/07/19/week5-2/image-20230716133806764.png" alt="image-20230716133806764"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716133806764.png" alt="image-20230716133806764"></p>
 <h2 id="Word2Vec"><a href="#Word2Vec" class="headerlink" title="Word2Vec"></a>Word2Vec</h2><p>skip-grams（感觉像是训练两个邻近的单词的对应关系，上下文某个单词-&gt;目标单词）：</p>
-<p><img src="/2023/07/19/week5-2/image-20230716134123485.png" alt="image-20230716134123485"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716134123485.png" alt="image-20230716134123485"></p>
 <p>简单模型，输出是一个10000维的向量，和one_hot一样：</p>
-<p><img src="/2023/07/19/week5-2/image-20230716134416765.png" alt="image-20230716134416765"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716134416765.png" alt="image-20230716134416765"></p>
 <p>强迫算法去做预测，算法只能根据词嵌入矩阵来预测，然后告诉算法你算错了，算法就自己去修改词嵌入矩阵了</p>
 <p>但是直接这样计算softmax，由于维度已经10000了可能更高，算法效率低，可以考虑采用分级softmax分类器（二叉树），使用的树，常用词在顶部，不常用词在深度，方便查找，通常不是平衡的二叉树</p>
-<p><img src="/2023/07/19/week5-2/image-20230716134911235.png" alt="image-20230716134911235"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716134911235.png" alt="image-20230716134911235"></p>
 <h2 id="负采样"><a href="#负采样" class="headerlink" title="负采样"></a>负采样</h2><p>构造新的监督模型</p>
 <p>先随机选择一个单词作为context，然后在近10个单词中选择word，设为正样本，然后再从词表中随机找k个单词，将这一组设为负样本，监督学习，最后的输入就行x，预测y，预测他是正样本还是负样本</p>
-<p><img src="/2023/07/19/week5-2/image-20230716135912729.png" alt="image-20230716135912729"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716135912729.png" alt="image-20230716135912729"></p>
 <p>之前就需要算10000维的softmax，这里就不需要，将输入应用到10000个神经元，每次只更新k+1个，这里k是4，用得出来的正样本和负样本去进行迭代</p>
-<p><img src="/2023/07/19/week5-2/image-20230716140423569.png" alt="image-20230716140423569"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716140423569.png" alt="image-20230716140423569"></p>
 <p>怎么进行负采样（怎么随机选择负采样的word,图下是比较常用的方法):</p>
-<p><img src="/2023/07/19/week5-2/image-20230716141711423.png" alt="image-20230716141711423"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716141711423.png" alt="image-20230716141711423"></p>
 <h2 id="GloVe词向量"><a href="#GloVe词向量" class="headerlink" title="GloVe词向量"></a>GloVe词向量</h2><p>Xij是一个能够获取单词i和单词j出现位置相近时或者彼此接近的频率的计数器</p>
-<p><img src="/2023/07/19/week5-2/image-20230716143026674.png" alt="image-20230716143026674"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716143026674.png" alt="image-20230716143026674"></p>
 <p>本质是用词嵌入矩阵去构造一个网络去预测两个词同时出现的频率，但是我们并不需要这个网络，而仅仅通过网络来训练词嵌入矩阵</p>
 <p>每一个可能的目标词有一个参数向量$\theta_{t}$和另一个参数向量$e_{c}$</p>
-<p><img src="/2023/07/19/week5-2/image-20230716150111482.png" alt="image-20230716150111482"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716150111482.png" alt="image-20230716150111482"></p>
 <p>实际上最后通过网络的到这些向量特征不是简单的Gender这些特征</p>
 <p>各轴之间可能有关联</p>
-<p><img src="/2023/07/19/week5-2/image-20230716150405613.png" alt="image-20230716150405613"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716150405613.png" alt="image-20230716150405613"></p>
 <h2 id="情绪分类"><a href="#情绪分类" class="headerlink" title="情绪分类"></a>情绪分类</h2><p>最大的挑战是标记的数据集不够多</p>
 <p>用所有特征相加求平均值的方法（缺点：没考虑词序）：</p>
-<p><img src="/2023/07/19/week5-2/image-20230716150737836.png" alt="image-20230716150737836"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716150737836.png" alt="image-20230716150737836"></p>
 <p>解决方式（用RNN做）：</p>
-<p><img src="/2023/07/19/week5-2/image-20230716150930621.png" alt="image-20230716150930621"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716150930621.png" alt="image-20230716150930621"></p>
 <h2 id="词嵌入除偏"><a href="#词嵌入除偏" class="headerlink" title="词嵌入除偏"></a>词嵌入除偏</h2><p>存在偏见，如下图，下图是一个训练好的语言模型得到的结果</p>
-<p><img src="/2023/07/19/week5-2/image-20230716151157772.png" alt="image-20230716151157772"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716151157772.png" alt="image-20230716151157772"></p>
 <p>第一步：判断出我们要减少什么偏见</p>
 <p>第二步：对本来不应该有偏见的词，即中立的词出现偏见之后将他们往中和值靠近</p>
 <p>第三步：把本身对立的，比如祖母和祖父移到靠近中和值差不多位置的地方</p>
-<p><img src="/2023/07/19/week5-2/image-20230716151649161.png" alt="image-20230716151649161"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-2/image-20230716151649161.png" alt="image-20230716151649161"></p>
 
       
       
@@ -569,10 +569,10 @@
 
 
   
-    <article id="post-week5-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week5-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week5-1/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/" class="article-date">
       <time datetime="2023-07-19T12:27:02.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -586,7 +586,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week5-1/">深度学习week5_1</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/">深度学习week5_1</a>
     </h1>
   
 
@@ -597,75 +597,75 @@
       
           
         <h2 id="为什么选择序列模型"><a href="#为什么选择序列模型" class="headerlink" title="为什么选择序列模型"></a>为什么选择序列模型</h2><p>序列模型的适用范围</p>
-<p><img src="/2023/07/19/week5-1/image-20230715162320554.png" alt="image-20230715162320554"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715162320554.png" alt="image-20230715162320554"></p>
 <h2 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h2><p>X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数</p>
 <p>y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0</p>
-<p><img src="/2023/07/19/week5-1/image-20230715164647496.png" alt="image-20230715164647496"></p>
-<p><img src="/2023/07/19/week5-1/image-20230715165031120.png" alt="image-20230715165031120"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715164647496.png" alt="image-20230715164647496"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715165031120.png" alt="image-20230715165031120"></p>
 <p>有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用<UNK>表示</UNK></p>
 <h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p>两个难点：</p>
 <ul>
 <li>一个句子的长度不是固定的</li>
 <li>希望得出来的结果是根据文本内容进行判断的，而不是单词位置，同时x可能是词表的映射，可能是一个维度很大的向量</li>
 </ul>
-<p><img src="/2023/07/19/week5-1/image-20230715165420478.png" alt="image-20230715165420478"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715165420478.png" alt="image-20230715165420478"></p>
 <p>循环神经网络（这是表示一个单词一个单词做判断，但是单词之间不是独立的，第一个单词训练时，会用到初始变量a&lt;0&gt;，第二个单词判断时会用到第一个单词训练时产生的参数a&lt;1&gt;,也就是说，第i个单词判断时，会和前i-1个单词都有关，包括初始变量，输入时用到的参数时Wax,激活变量用到的参数是Waa,输出变量用到的参数是Wya,ax表示要乘以x计算出a,aa表示要乘以a计算出a,ya表示要乘以a计算出y）：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715165930365.png" alt="image-20230715165930365"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715165930365.png" alt="image-20230715165930365"></p>
 <p>向前传播的过程，向前传播一般用tanh，有时候也用RELU</p>
 <p>输出就看是二分类还是多分类</p>
-<p><img src="/2023/07/19/week5-1/image-20230715170510059.png" alt="image-20230715170510059"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715170510059.png" alt="image-20230715170510059"></p>
 <p>a<t-1>和x<t>是同列数的，将Waa和Wax结合起来，将a<t-1>和x<t>结合起来</t></t-1></t></t-1></p>
-<p><img src="/2023/07/19/week5-1/image-20230715170939331.png" alt="image-20230715170939331"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715170939331.png" alt="image-20230715170939331"></p>
 <h2 id="通过时间的反向传播"><a href="#通过时间的反向传播" class="headerlink" title="通过时间的反向传播"></a>通过时间的反向传播</h2><p>反向传播，用的参数都是一样的，然后算导数，算梯度：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715171559045.png" alt="image-20230715171559045"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715171559045.png" alt="image-20230715171559045"></p>
 <h2 id="不同类型的循环神经网络"><a href="#不同类型的循环神经网络" class="headerlink" title="不同类型的循环神经网络"></a>不同类型的循环神经网络</h2><p>上面所讲的循环神经网络是输入维度等于输出维度（T_x&#x3D;T_y）</p>
 <p>下面介绍不等的情况</p>
 <p>比如情感分类：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715172301464.png" alt="image-20230715172301464"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715172301464.png" alt="image-20230715172301464"></p>
 <p>比如翻译：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715172318331.png" alt="image-20230715172318331"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715172318331.png" alt="image-20230715172318331"></p>
 <p>多对一和长度相等的多对多：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715172558615.png" alt="image-20230715172558615"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715172558615.png" alt="image-20230715172558615"></p>
 <p>一对多（第一个输入对应一个输出，再自动生成输出）和长度不等的多对多（先获取所有输入，再进行输出）</p>
-<p><img src="/2023/07/19/week5-1/image-20230715172748471.png" alt="image-20230715172748471"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715172748471.png" alt="image-20230715172748471"></p>
 <p>总结：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715172933246.png" alt="image-20230715172933246"></p>
-<h2 id="语言模型和序列生成"><a href="#语言模型和序列生成" class="headerlink" title="语言模型和序列生成"></a>语言模型和序列生成</h2><p>识别概率：<img src="/2023/07/19/week5-1/image-20230715181025055.png" alt="image-20230715181025055"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715172933246.png" alt="image-20230715172933246"></p>
+<h2 id="语言模型和序列生成"><a href="#语言模型和序列生成" class="headerlink" title="语言模型和序列生成"></a>语言模型和序列生成</h2><p>识别概率：<img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715181025055.png" alt="image-20230715181025055"></p>
 <p>可以选择用<EOS>表示一句话结尾，同时如果Mau不在字典里面，就用<UNK>表示，表示不在字典里面</UNK></EOS></p>
-<p><img src="/2023/07/19/week5-1/image-20230715181237526.png" alt="image-20230715181237526"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715181237526.png" alt="image-20230715181237526"></p>
 <p>输出是softmax输出，告诉我是每个单词的概率是多少，感觉这里是自动生成</p>
-<p><img src="/2023/07/19/week5-1/image-20230715181759315.png" alt="image-20230715181759315"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715181759315.png" alt="image-20230715181759315"></p>
 <h2 id="新序列采样"><a href="#新序列采样" class="headerlink" title="新序列采样"></a>新序列采样</h2><p>在训练了一个模型之后，要知道该模型完成了什么功能，就要进行新序列采样</p>
 <p>输出是softmax，包含了输出是某个单词的概率分别是多少，</p>
-<p><img src="/2023/07/19/week5-1/image-20230715182145155.png" alt="image-20230715182145155"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715182145155.png" alt="image-20230715182145155"></p>
 <p>建立一个语言模型并去使用它，对训练出来的语言模型进行采样，比如给机器一串新闻，让他以某种人的语气输出来</p>
 <h2 id="带有神经网络的梯度消失"><a href="#带有神经网络的梯度消失" class="headerlink" title="带有神经网络的梯度消失"></a>带有神经网络的梯度消失</h2><p>对于一个很深的神经网络，很难靠影响前面的层来影响后面的层，所以对于一个句子，过于前面的内容很难影响到后面的句子，但是后面的句子可能就是依靠与前面的内容，所以基本的RNN有很多局部影响，但是还是很难做到影响，这是RNN的一个难点，梯度爆炸可以用梯度修剪处理，但是梯度消失很难</p>
 <h2 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h2><p>处理梯度消失：GRU（门控循环单元）</p>
 <p>改变了RNN的隐藏层，可以更好的捕捉深层连接，</p>
 <p>RNN隐藏层：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715185759017.png" alt="image-20230715185759017"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715185759017.png" alt="image-20230715185759017"></p>
 <p>GRU会产生一个c：记忆细胞，提供了记忆的能力</p>
 <p>因为当前time step输出的激活值会随着时间推移，由于后层各种输入和计算逐渐对后层失去影响，所以想用一个记忆单元保存当前时刻的激活值，在后层计算时施加影响。也就是说at会被替换成ct</p>
 <p>有一个门，他会记录一个记忆细胞，并决定什么时候更新这个记忆细胞</p>
 <p>如图所示，ct和at的值实际上是一样的，ct就是记忆细胞，门是用来决定是不是要更新ct，就如下方ct的函数，门的值也是通过ct-1和x的值决定的，用的sigmoid方法，输出只有0-1，用来觉得ct和ct-1的关系，以及该层ct_hat的值，然后算出yt</p>
-<p><img src="/2023/07/19/week5-1/image-20230715190801359.png" alt="如图所示"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715190801359.png" alt="如图所示"></p>
 <p>另一种GRU:门r表示ct-1和ct的相关性，也是为了应对梯度消失的问题:</p>
-<p><img src="/2023/07/19/week5-1/image-20230715191209300.png" alt="image-20230715191209300"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715191209300.png" alt="image-20230715191209300"></p>
 <h2 id="LSTM（长短期记忆）"><a href="#LSTM（长短期记忆）" class="headerlink" title="LSTM（长短期记忆）"></a>LSTM（长短期记忆）</h2><p>增加了门f：遗忘门</p>
 <p>有三个门，更新门，遗忘门，输出门，门值都在0-1之间</p>
-<p><img src="/2023/07/19/week5-1/image-20230715191739066.png" alt="image-20230715191739066"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715191739066.png" alt="image-20230715191739066"></p>
 <p>如果门不止和a x有关，可以自己添加	如下面那一排所示，c0很容易传递下去</p>
-<p><img src="/2023/07/19/week5-1/image-20230715192057173.png" alt="image-20230715192057173"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715192057173.png" alt="image-20230715192057173"></p>
 <p>推荐LSTM</p>
 <h2 id="双向神经网络"><a href="#双向神经网络" class="headerlink" title="双向神经网络"></a>双向神经网络</h2><p>单项示例：可能是RNN块，GRU块，LSTM块：</p>
-<p><img src="/2023/07/19/week5-1/image-20230715192351213.png" alt="image-20230715192351213"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715192351213.png" alt="image-20230715192351213"></p>
 <p>输出就和正向传播和逆向传播参数都有关</p>
-<p><img src="/2023/07/19/week5-1/image-20230715192703914.png" alt="image-20230715192703914"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715192703914.png" alt="image-20230715192703914"></p>
 <p>需要完整的句子才能进行预测</p>
 <h2 id="深层循环神经网络"><a href="#深层循环神经网络" class="headerlink" title="深层循环神经网络"></a>深层循环神经网络</h2><p>通常我们会把RNN的多个层堆叠起来，构建更深的模型</p>
 <p>[]里面是第几层的参数</p>
 <p>&lt;&gt;里面是第几个单词或者字符</p>
-<p><img src="/2023/07/19/week5-1/image-20230715193833334.png" alt="image-20230715193833334"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week5-1/image-20230715193833334.png" alt="image-20230715193833334"></p>
 
       
       
@@ -701,10 +701,10 @@
 
 
   
-    <article id="post-week4-4" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week4-4" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week4-4/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/" class="article-date">
       <time datetime="2023-07-19T12:23:24.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -718,7 +718,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week4-4/">深度学习week4_4</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/">深度学习week4_4</a>
     </h1>
   
 
@@ -732,29 +732,29 @@
 <h2 id="One-Shot学习"><a href="#One-Shot学习" class="headerlink" title="One-Shot学习"></a>One-Shot学习</h2><p>一次学习问题：需要通过单单一张照片去识别一个人</p>
 <p>因为通常一个人只会录入它的一张照片，这对于神经网络来说样本数太少，除此之外，如果添加了新的人，就得重新训练模型</p>
 <p>一种计算方法——计算相似度（这里的阈值时超参数，并且如果样本新增了一张图片也不会有问题，不需要重新训练，一张一张的比较）：</p>
-<p><img src="/2023/07/19/week4-4/image-20230715135532682.png" alt="image-20230715135532682"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715135532682.png" alt="image-20230715135532682"></p>
 <h2 id="Siamese网络"><a href="#Siamese网络" class="headerlink" title="Siamese网络"></a>Siamese网络</h2><p>用两张人脸为输出，相似度为输出</p>
 <p>用相同参数的神经网络，得到全连接的输出，正常我们的话是将全连接的输出连上一个softmax得到分类输出，在这里就不进行分类输出，将两张图片的全连接输出进行对比，得到相似度</p>
-<p><img src="/2023/07/19/week4-4/image-20230715140328267.png" alt="image-20230715140328267"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715140328267.png" alt="image-20230715140328267"></p>
 <h2 id="Triplet损失"><a href="#Triplet损失" class="headerlink" title="Triplet损失"></a>Triplet损失</h2><p>三元组定义损失函数：</p>
 <p>A是数据库中的样本，P是和样本人一样的另一张图片，N和A不是同一个人，损失函数f(A)-f(P)应该是一个比较小的值，f(A)-f(N)应该是一个比较大的值，取(f(A)-f(p))^2-(f(A)-f(N))^2+α，0之间的较大值，加α的原因是希望这两个平方之间有一定差值而不是完全相等</p>
-<p><img src="/2023/07/19/week4-4/image-20230715144310124.png" alt="image-20230715144310124"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715144310124.png" alt="image-20230715144310124"></p>
 <p>为了希望训练出的参数对任意的两张图片都可以得以准确判断，因此在训练的时候尽量选相近的两张图片</p>
 <h2 id="面部验证与二分类"><a href="#面部验证与二分类" class="headerlink" title="面部验证与二分类"></a>面部验证与二分类</h2><p>将面部验证演算成一个二分类问题：</p>
-<p><img src="/2023/07/19/week4-4/image-20230715145550115.png" alt="image-20230715145550115"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715145550115.png" alt="image-20230715145550115"></p>
 <p>数据库在引进一个新的图片的时候会预先计算出全连接后的编码，这样再进行人脸检测的时候就不需要再等数据库中的样本进行训练，只需要训练进行检测的人脸</p>
 <h2 id="什么是神经风格转换"><a href="#什么是神经风格转换" class="headerlink" title="什么是神经风格转换"></a>什么是神经风格转换</h2><p>比如：结合两张风格不同的图片生成一张结合的图片</p>
 <h2 id="什么是深度卷积网络"><a href="#什么是深度卷积网络" class="headerlink" title="什么是深度卷积网络"></a>什么是深度卷积网络</h2><p>浅层可能只能识别出边界，深层可以看出识别目的是什么</p>
 <h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>神经风格转换代价函数（分别计算得出来的图像和内容之间的成本函数，和风格之间的成本函数，然后用超参数结合起来）：</p>
-<p><img src="/2023/07/19/week4-4/image-20230715152501656.png" alt="image-20230715152501656"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715152501656.png" alt="image-20230715152501656"></p>
 <p>最开始直接初始化G的像素值，然后不断学习，使G越来越符合条件</p>
-<p><img src="/2023/07/19/week4-4/image-20230715154052085.png" alt="image-20230715154052085"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715154052085.png" alt="image-20230715154052085"></p>
 <h2 id="内容代价函数"><a href="#内容代价函数" class="headerlink" title="内容代价函数"></a>内容代价函数</h2><p>选取l层，计算c和g之间的差值，然后梯度更新</p>
-<p><img src="/2023/07/19/week4-4/image-20230715154441108.png" alt="image-20230715154441108"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715154441108.png" alt="image-20230715154441108"></p>
 <h2 id="风格代价函数"><a href="#风格代价函数" class="headerlink" title="风格代价函数"></a>风格代价函数</h2><p>若两个通道相关系数大，则它们呈线性关系的程度强，因此出现的概率也相似。</p>
 <p>所有通道两两组合，两个通道记为k，k^，组合的对应元素相乘再相加，得到G（k,k^）（风格矩阵）</p>
-<p><img src="/2023/07/19/week4-4/image-20230715160251790.png" alt="image-20230715160251790"></p>
-<p><img src="/2023/07/19/week4-4/image-20230715160742670.png" alt="image-20230715160742670"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715160251790.png" alt="image-20230715160251790"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-4/image-20230715160742670.png" alt="image-20230715160742670"></p>
 <h2 id="一维到三维推广"><a href="#一维到三维推广" class="headerlink" title="一维到三维推广"></a>一维到三维推广</h2>
       
       
@@ -790,10 +790,10 @@
 
 
   
-    <article id="post-week4-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week4-3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week4-3/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/" class="article-date">
       <time datetime="2023-07-19T12:23:08.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -807,7 +807,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week4-3/">深度学习week4_3</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/">深度学习week4_3</a>
     </h1>
   
 
@@ -820,37 +820,37 @@
         <h2 id="目标定位"><a href="#目标定位" class="headerlink" title="目标定位"></a>目标定位</h2><p>对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置</p>
 <p>对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置</p>
 <p>在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)</p>
-<p><img src="/2023/07/19/week4-3/image-20230714112547108.png" alt="image-20230714112547108"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714112547108.png" alt="image-20230714112547108"></p>
 <h2 id="特征点检测"><a href="#特征点检测" class="headerlink" title="特征点检测"></a>特征点检测</h2><p>用pc表示该图中是否有对象，pc&#x3D;0表示没有对象，那坐标，对象分类就没有意义了，loss函数只算pc和真实的y的值的误差；如果pc&#x3D;1表示有对象，就需要算每个参数的误差</p>
-<p><img src="/2023/07/19/week4-3/image-20230714113505256.png" alt="image-20230714113505256"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714113505256.png" alt="image-20230714113505256"></p>
 <p>such as(如果要识别人脸的话，要确认眼角或者嘴角的具体坐标，先输出这张图是否包含人脸，如果包含再输出眼角或者嘴角的具体坐标，可能有很多，在下图中标记了64个嘴巴的坐标，更好学习，但是训练集需要手工标注，最后就需要了解用二维坐标确认人脸，同时确保所有标签在所有图片中处于同一位置，比如一个坐标是左眼角，那在所有的图片中该坐标都要表示左眼角):</p>
-<p><img src="/2023/07/19/week4-3/image-20230714113858158.png" alt="image-20230714113858158"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714113858158.png" alt="image-20230714113858158"></p>
 <h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><p>基于滑动窗口的目标检测</p>
 <p>如图所示，采取不同大小的窗口，在一张图上做遍历，如果这个窗口所在位置检测到了对象，就输出1，窗口越大可能影响性能，窗口越小，成本函数代价大</p>
-<p><img src="/2023/07/19/week4-3/image-20230714140236101.png" alt="image-20230714140236101"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714140236101.png" alt="image-20230714140236101"></p>
 <h2 id="卷积的滑动窗口实现"><a href="#卷积的滑动窗口实现" class="headerlink" title="卷积的滑动窗口实现"></a>卷积的滑动窗口实现</h2><p>全连接层变成卷积层（如图所示，下面那一排全连接层的计算是用一个和输入维度一样的过滤器，过滤器的数量就是所有元素的数量，这里是400个，这样也能得到和全连接层一样维度的结果，但是神经网络更深）：</p>
-<p><img src="/2023/07/19/week4-3/image-20230714140830432.png" alt="image-20230714140830432"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714140830432.png" alt="image-20230714140830432"></p>
 <p>事先训练好了14 *14的训练集，然后新的样本是16 * 16的，我们应该用滑动窗口的方式，以14为一个，然后移动，但是这样重复的点会太多，我们发现直接在16上进行训练，最后得到的2 * 2矩阵就是我们用滑动窗口分别得到的结果，移动步长是2是因为，在最大池化那里的步长是2，在最下面那一排是一样的</p>
-<p><img src="/2023/07/19/week4-3/image-20230714144410366.png" alt="image-20230714144410366"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714144410366.png" alt="image-20230714144410366"></p>
 <p>我们不用将图片划分成多个样本，直接在一张图片上做预测，最后的结果是一点，当然不止一点，一点以及它后面的所有信道</p>
 <h2 id="Bounding-Box预测"><a href="#Bounding-Box预测" class="headerlink" title="Bounding Box预测"></a>Bounding Box预测</h2><p>上节不能输出精确的边界框，能识别在某一个框中有对象，但是不一定正好包括</p>
 <p>Yolo算法（比如下图，将输入分成3 * 3的格子，最后的输出也是3 * 3的，然后每个格子的输出包括了其是否有对象，有对象的话对象的中点坐标，长和宽）：</p>
-<p><img src="/2023/07/19/week4-3/image-20230714145323910.png" alt="image-20230714145323910"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714145323910.png" alt="image-20230714145323910"></p>
 <p>中点在该格子中才代表该格子有对象，但是长和宽不一定在格子里面，这里是前面所说的一个格子的坐标在(0,0)-(1,1)之间，所有说中点坐标在0-1之间</p>
-<p><img src="/2023/07/19/week4-3/image-20230714145730075.png" alt="image-20230714145730075"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714145730075.png" alt="image-20230714145730075"></p>
 <h2 id="交并比"><a href="#交并比" class="headerlink" title="交并比"></a>交并比</h2><p>用于判断对象检测是否准确（loU代表检测出来的边框和实际的交集和并集的比值，通常这个比值大于等于0.5就认为准确）：</p>
-<p><img src="/2023/07/19/week4-3/image-20230714151352052.png" alt="image-20230714151352052"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714151352052.png" alt="image-20230714151352052"></p>
 <h2 id="非极大值抑制"><a href="#非极大值抑制" class="headerlink" title="非极大值抑制"></a>非极大值抑制</h2><p>当多个格子都认为自己包含了同一辆车子的中点，那就取pc值最大的那个中点</p>
-<p><img src="/2023/07/19/week4-3/image-20230714152049129.png" alt="image-20230714152049129"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714152049129.png" alt="image-20230714152049129"></p>
 <p>对象检测，识别出边框之后首先去掉pc值比较低的边框，针对同一个对象，选择最佳边框</p>
 <p>对每个类别分别运行非最大值预测</p>
 <h2 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h2><p>目前对象检测的局限有每个格子只能检测出一个对象</p>
 <p>如图所示，y里面包含了两个pc，分别表示有车还是有人，或者是又有车又有人，如果想要有更多的对象，y的维度更高</p>
-<p><img src="/2023/07/19/week4-3/image-20230714154407218.png" alt="image-20230714154407218"></p>
-<h2 id="Yolo算法"><a href="#Yolo算法" class="headerlink" title="Yolo算法"></a>Yolo算法</h2><p><img src="/2023/07/19/week4-3/image-20230714155148045.png" alt="image-20230714155148045"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714154407218.png" alt="image-20230714154407218"></p>
+<h2 id="Yolo算法"><a href="#Yolo算法" class="headerlink" title="Yolo算法"></a>Yolo算法</h2><p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714155148045.png" alt="image-20230714155148045"></p>
 <h2 id="候选区域"><a href="#候选区域" class="headerlink" title="候选区域"></a>候选区域</h2><p>R-CNN：带区域的卷积网络</p>
 <p>将图像分成色块，因为如果整个图像都进行检测，很多窗口没有对象就会浪费性能，通过颜色分块，预测哪些块可能有对象</p>
-<p><img src="/2023/07/19/week4-3/image-20230714163521661.png" alt="image-20230714163521661"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-3/image-20230714163521661.png" alt="image-20230714163521661"></p>
 <p>​    第二步：找到最大值的锚框的索引以及对应的最大值的锚框的分数    </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">参数：</span><br><span class="line">        box_confidence  - tensor类型，维度为（<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">1</span>）,包含19x19单元格中每个单元格预测的<span class="number">5</span>个锚框中的所有的锚框的pc （一些对象的置信概率）。</span><br><span class="line">        boxes - tensor类型，维度为(<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">4</span>)，包含了所有的锚框的（px,py,ph,pw ）。</span><br><span class="line">        box_class_probs - tensor类型，维度为(<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">80</span>)，包含了所有单元格中所有锚框的所有对象( c1,c2,c3，···，c80 )检测的概率。</span><br><span class="line">        threshold - 实数，阈值，如果分类预测的概率高于它，那么这个分类预测的概率就会被保留。</span><br><span class="line">    </span><br><span class="line">    返回：</span><br><span class="line">        scores - tensor 类型，维度为(<span class="literal">None</span>,)，包含了保留了的锚框的分类概率。</span><br><span class="line">        boxes - tensor 类型，维度为(<span class="literal">None</span>,<span class="number">4</span>)，包含了保留了的锚框的(b_x, b_y, b_h, b_w)</span><br><span class="line">        classess - tensor 类型，维度为(<span class="literal">None</span>,)，包含了保留了的锚框的索引</span><br><span class="line">box_classes = K.argmax(box_scores, axis=-<span class="number">1</span>)    </span><br><span class="line">box_class_scores = K.<span class="built_in">max</span>(box_scores, axis=-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
@@ -891,10 +891,10 @@
 
 
   
-    <article id="post-week4-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week4-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week4-2/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/" class="article-date">
       <time datetime="2023-07-19T12:23:04.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -908,7 +908,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week4-2/">深度学习week4_2</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/">深度学习week4_2</a>
     </h1>
   
 
@@ -918,35 +918,35 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="经典网络"><a href="#经典网络" class="headerlink" title="经典网络"></a>经典网络</h2><p><img src="/2023/07/19/week4-2/image-20230713105139679.png" alt="image-20230713105139679"></p>
-<p><img src="/2023/07/19/week4-2/image-20230713105457037.png" alt="image-20230713105457037"></p>
-<p><img src="/2023/07/19/week4-2/image-20230713110033606.png" alt="image-20230713110033606"></p>
+        <h2 id="经典网络"><a href="#经典网络" class="headerlink" title="经典网络"></a>经典网络</h2><p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713105139679.png" alt="image-20230713105139679"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713105457037.png" alt="image-20230713105457037"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713110033606.png" alt="image-20230713110033606"></p>
 <h2 id="残差网络"><a href="#残差网络" class="headerlink" title="残差网络"></a>残差网络</h2><p>Resnet</p>
 <p>非常深的网络是非常难以训练的，因为存在梯度消失和梯度爆炸</p>
 <p>远跳连接：可从某一层网络层获取激活，然后迅速地反馈给另一层</p>
 <p>a[i]插在另一层线性激活之后，relu之前的位置：</p>
-<p><img src="/2023/07/19/week4-2/image-20230713114012656.png" alt="image-20230713114012656"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713114012656.png" alt="image-20230713114012656"></p>
 <p>普通神经网络理想状态：左边的绿线	实际状态：左边的蓝线	</p>
 <p>添加了残差网络的神经网络：右边</p>
-<p><img src="/2023/07/19/week4-2/image-20230713114332900.png" alt="image-20230713114332900"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713114332900.png" alt="image-20230713114332900"></p>
 <h2 id="残差网络为什么有用"><a href="#残差网络为什么有用" class="headerlink" title="残差网络为什么有用"></a>残差网络为什么有用</h2><p>残差学习恒等函数很有用，性能好	</p>
-<p><img src="/2023/07/19/week4-2/image-20230713115200541.png" alt="image-20230713115200541"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713115200541.png" alt="image-20230713115200541"></p>
 <h2 id="网络中的网络以及1-1卷积"><a href="#网络中的网络以及1-1卷积" class="headerlink" title="网络中的网络以及1 * 1卷积"></a>网络中的网络以及1 * 1卷积</h2><p>上面的相当于二维的每个元素乘以2</p>
 <p>下面的相当于是将高确定，宽确定，一整个信道通过乘以适当权重组成一个新的值，最终形成一个二维平面，和1全连接概念有类似部分</p>
-<p><img src="/2023/07/19/week4-2/image-20230713115622891.png" alt="image-20230713115622891"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713115622891.png" alt="image-20230713115622891"></p>
 <p>在想要减少信道数量的时候很有用：</p>
-<p><img src="/2023/07/19/week4-2/image-20230713115854519.png" alt="image-20230713115854519"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713115854519.png" alt="image-20230713115854519"></p>
 <h2 id="谷歌inception网络简介"><a href="#谷歌inception网络简介" class="headerlink" title="谷歌inception网络简介"></a>谷歌inception网络简介</h2><p>基本思想是inception网络不需要认为决定使用哪个过滤器，或是否需要池化，而是由网络自行确定这些参数</p>
 <p>可以给网络添加这些参数的所有可能的值，由网络自己去学习，比如下图，在一层中使用了多种卷积，有1 * 1过滤器，3 * 3过滤器，但是由于padding为same，代表输出和输入维度是一样的，对输入进行填充，最后将所有过滤器的内容排起来，作为下一层的输入</p>
-<p><img src="/2023/07/19/week4-2/image-20230713150632543.png" alt="image-20230713150632543"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713150632543.png" alt="image-20230713150632543"></p>
 <p>但是直接将一个维度很大的变量压缩成一个维度很小的变量，这样的计算成本很大，因为每个点都需要计算很多次，可以先用1 * 1卷积训练乘以一个维度较小的变量，再将其扩大，这个维度较小的变量叫做瓶颈，合理利用瓶颈可以提高计算效率</p>
 <h2 id="inception网络"><a href="#inception网络" class="headerlink" title="inception网络"></a>inception网络</h2><p>如图所示，和上节讲的一致，一层不止用一种卷积，同时对于大维度的变量，先压缩成瓶颈再扩大，</p>
-<p><img src="/2023/07/19/week4-2/image-20230713171112496.png" alt="image-20230713171112496"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713171112496.png" alt="image-20230713171112496"></p>
 <p>google的inception网络</p>
-<p><img src="/2023/07/19/week4-2/image-20230713171614807.png" alt="image-20230713171614807"></p>
-<h2 id="使用开源的实现方案"><a href="#使用开源的实现方案" class="headerlink" title="使用开源的实现方案"></a>使用开源的实现方案</h2><h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>恒等块（维度一致）：<img src="/2023/07/19/week4-2/image-20230713185011241.png" alt="image-20230713185011241"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713171614807.png" alt="image-20230713171614807"></p>
+<h2 id="使用开源的实现方案"><a href="#使用开源的实现方案" class="headerlink" title="使用开源的实现方案"></a>使用开源的实现方案</h2><h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>恒等块（维度一致）：<img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713185011241.png" alt="image-20230713185011241"></p>
 <p>卷积块（维度不一致，需要用卷积调整维度）：</p>
-<p><img src="/2023/07/19/week4-2/image-20230713185100305.png" alt="image-20230713185100305"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-2/image-20230713185100305.png" alt="image-20230713185100305"></p>
 
       
       
@@ -982,10 +982,10 @@
 
 
   
-    <article id="post-week4-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week4-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week4-1/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/" class="article-date">
       <time datetime="2023-07-19T12:22:55.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -999,7 +999,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week4-1/">深度学习week4_1</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/">深度学习week4_1</a>
     </h1>
   
 
@@ -1010,55 +1010,55 @@
       
           
         <h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p>计算机视觉可以做到的事情(分类、识别、转换)：</p>
-<p><img src="/2023/07/19/week4-1/image-20230711214114438.png" alt="image-20230711214114438"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711214114438.png" alt="image-20230711214114438"></p>
 <p>对于图片来说，越清晰的图片像素点越多，样本维度也就越大，对于过大的可以用卷积</p>
 <h2 id="边缘检测示例"><a href="#边缘检测示例" class="headerlink" title="边缘检测示例"></a>边缘检测示例</h2><p>*在这儿代表着卷积运算，中间那个3 * 3的方块相当于（垂直边缘检测器）过滤器：</p>
-<p><img src="/2023/07/19/week4-1/image-20230711214724539.png" alt="image-20230711214724539"></p>
-<p><img src="/2023/07/19/week4-1/image-20230711214746368.png" alt="image-20230711214746368"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711214724539.png" alt="image-20230711214724539"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711214746368.png" alt="image-20230711214746368"></p>
 <p>为什么可以这么做卷积(可以很好的识别出图像的垂直边缘，比如最左边的图中间是垂直边缘，然后通过卷积，可以识别出中间是边缘，中间就做了高像素处理)：</p>
-<p><img src="/2023/07/19/week4-1/image-20230711215116492.png" alt="image-20230711215116492"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711215116492.png" alt="image-20230711215116492"></p>
 <h2 id="更多边缘检测内容"><a href="#更多边缘检测内容" class="headerlink" title="更多边缘检测内容"></a>更多边缘检测内容</h2><p>区分正边和负边</p>
 <p>按照上面的类似情况还有如下（这种就需要转换为绝对值）：</p>
-<p><img src="/2023/07/19/week4-1/image-20230711230502838.png" alt="image-20230711230502838"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711230502838.png" alt="image-20230711230502838"></p>
 <p>类似的还有水平边缘检测器：</p>
 <p>1   1   1 </p>
 <p>0   0   0</p>
 <p>-1 -1 -1</p>
 <p>事实上存在着很多的水平或者垂直过滤器，事实上，我们不一定要照抄别人有的过滤器，我们可以通过自定义参数设置过滤器，然后通过反向传播不断更新迭代，重点就是<strong>怎么用反向传播进行更新迭代</strong></p>
-<p><img src="/2023/07/19/week4-1/image-20230711231148663.png" alt="image-20230711231148663"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711231148663.png" alt="image-20230711231148663"></p>
 <h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><p>卷积的两个缺点：6 * 6的像素会变成4 * 4，元素会减少，这并不是一件好事；并且中间元素会被重复计算很多次，耳边元素只会被计算一次</p>
 <p>方法：扩大输入图像像素点，比如下图中的p，p&#x3D;1就是往外扩大一层，p&#x3D;2就是往外扩大两层</p>
-<p><img src="/2023/07/19/week4-1/image-20230711232503821.png" alt="image-20230711232503821"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711232503821.png" alt="image-20230711232503821"></p>
 <p>valid的是无padding,没有扩充，same是让输入和输出大小一致</p>
-<p><img src="/2023/07/19/week4-1/image-20230711232927694.png" alt="image-20230711232927694"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230711232927694.png" alt="image-20230711232927694"></p>
 <h2 id="卷积步长"><a href="#卷积步长" class="headerlink" title="卷积步长"></a>卷积步长</h2><p>步长：过滤器每次和相符的矩阵进行计算，该矩阵移动方式为两步，计算出输出函数公式向下取整</p>
-<p><img src="/2023/07/19/week4-1/image-20230712004337356.png" alt="image-20230712004337356"></p>
-<p><img src="/2023/07/19/week4-1/image-20230712083616130.png" alt="image-20230712083616130"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712004337356.png" alt="image-20230712004337356"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712083616130.png" alt="image-20230712083616130"></p>
 <p>很多卷积定义是这样的：</p>
-<p><img src="/2023/07/19/week4-1/image-20230712083518181.png" alt="image-20230712083518181"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712083518181.png" alt="image-20230712083518181"></p>
 <h2 id="三维卷积"><a href="#三维卷积" class="headerlink" title="三维卷积"></a>三维卷积</h2><p>上一节是针对二维图像的卷积</p>
-<p>针对三位卷积：将过滤器也定义成三维的(上面那一层是只对红色做垂直边缘检测，下面那一层是对所有颜色做边缘检测，输入图像的channel和过滤器的channel要一致，最后输出是一维的，用方块来做计算)：<br><img src="/2023/07/19/week4-1/image-20230712084320299.png" alt="image-20230712084320299"></p>
+<p>针对三位卷积：将过滤器也定义成三维的(上面那一层是只对红色做垂直边缘检测，下面那一层是对所有颜色做边缘检测，输入图像的channel和过滤器的channel要一致，最后输出是一维的，用方块来做计算)：<br><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712084320299.png" alt="image-20230712084320299"></p>
 <p>如果又要做垂直边缘检测又要做水平边缘检测，就做两层然后将他们结合起来</p>
-<p><img src="/2023/07/19/week4-1/image-20230712084644273.png" alt="image-20230712084644273"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712084644273.png" alt="image-20230712084644273"></p>
 <h2 id="单层卷积网络："><a href="#单层卷积网络：" class="headerlink" title="单层卷积网络："></a>单层卷积网络：</h2><p>用多少过滤器输出就有多少维度，下图展示了a[0]到a[1]的过程</p>
-<p><img src="/2023/07/19/week4-1/image-20230712084955696.png" alt="image-20230712084955696"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712084955696.png" alt="image-20230712084955696"></p>
 <p>单层卷积网络（输出维度和过滤器数量一致，权重是过滤器乘以它的数量，权重的高宽是一致的，权重的channel和输入的channel是一致的）：</p>
-<p><img src="/2023/07/19/week4-1/image-20230712085714334.png" alt="image-20230712085714334"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712085714334.png" alt="image-20230712085714334"></p>
 <h2 id="简单卷积网络示例"><a href="#简单卷积网络示例" class="headerlink" title="简单卷积网络示例"></a>简单卷积网络示例</h2><p>趋势：高和宽不断变小，维度增大，最后将7 * 7 * 40的图像变成一个一维的，和前面三维图像变一维一致</p>
-<p><img src="/2023/07/19/week4-1/image-20230712090822392.png" alt="image-20230712090822392"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712090822392.png" alt="image-20230712090822392"></p>
 <p>一个卷积网络往往分为三层（但是只用卷积也可能有很好的效果，池化层和全连接层比卷积层好实现）：</p>
-<p><img src="/2023/07/19/week4-1/image-20230712091042761.png" alt="image-20230712091042761"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712091042761.png" alt="image-20230712091042761"></p>
 <h2 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h2><p>最大池化（使用频率高）：如果在过滤器中提取到某个特征，那么保留其最大值，最大池化的效率也挺高：</p>
-<p><img src="/2023/07/19/week4-1/image-20230712091346938.png" alt="image-20230712091346938"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712091346938.png" alt="image-20230712091346938"></p>
 <p>输入和输出维度一致</p>
-<p><img src="/2023/07/19/week4-1/image-20230712091547489.png" alt="image-20230712091547489"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712091547489.png" alt="image-20230712091547489"></p>
 <p>平均池化：取平均值</p>
 <p>池化没有参数</p>
 <h2 id="卷积神经网络示例"><a href="#卷积神经网络示例" class="headerlink" title="卷积神经网络示例"></a>卷积神经网络示例</h2><p>卷积神经网络常见状态：就如图像最下面所示，全连接和前面所讲的神经网络类似，一般是卷积层跟着池化层，由于池化层没有参数，所以池化层和卷积层很多时候称为一层</p>
-<p><img src="/2023/07/19/week4-1/image-20230712092339751.png" alt="image-20230712092339751"></p>
-<p><img src="/2023/07/19/week4-1/image-20230712092630679.png" alt="image-20230712092630679"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712092339751.png" alt="image-20230712092339751"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712092630679.png" alt="image-20230712092630679"></p>
 <h2 id="参数共享和稀疏连接"><a href="#参数共享和稀疏连接" class="headerlink" title="参数共享和稀疏连接"></a>参数共享和稀疏连接</h2><p>如果使用正常神经网络会出现参数过大的情况：</p>
-<p><img src="/2023/07/19/week4-1/image-20230712093340375.png" alt="image-20230712093340375"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week4-1/image-20230712093340375.png" alt="image-20230712093340375"></p>
 <p>卷积网络的输出每一个像素点只和一部分像素有关，避免过度拟合，并且改变输入的一些像素点只有对应的像素点会被改变</p>
 
       
@@ -1095,10 +1095,10 @@
 
 
   
-    <article id="post-week3-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week3-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week3-2/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-2/" class="article-date">
       <time datetime="2023-07-19T12:21:23.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -1112,7 +1112,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week3-2/">week3_2</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-2/">week3_2</a>
     </h1>
   
 
@@ -1129,7 +1129,7 @@
 <li>如果比较高就可以处理，可以在标签中新建一行用来表示是狗</li>
 </ul>
 <h2 id="清楚标注错误的来源"><a href="#清楚标注错误的来源" class="headerlink" title="清楚标注错误的来源"></a>清楚标注错误的来源</h2><p>错误分析图像中添加一列用来表示标记错误：</p>
-<p><img src="/2023/07/19/week3-2/image-20230711092245412.png" alt="image-20230711092245412"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-2/image-20230711092245412.png" alt="image-20230711092245412"></p>
 <p>开发集和测试集必须来自同一分布，而对训练集要求没那么严格</p>
 <h2 id="快速搭建你的第一个系统并进行迭代"><a href="#快速搭建你的第一个系统并进行迭代" class="headerlink" title="快速搭建你的第一个系统并进行迭代"></a>快速搭建你的第一个系统并进行迭代</h2><p>快速建立一个学习算法，然后根据结果进行不断调整，进行错误分析</p>
 <h2 id="在不同的划分上进行训练和测试"><a href="#在不同的划分上进行训练和测试" class="headerlink" title="在不同的划分上进行训练和测试"></a>在不同的划分上进行训练和测试</h2><p>处理训练集和测试集存在差异的情况</p>
@@ -1143,13 +1143,13 @@
 <p>解决方法：再定义一组新的数据 训练开发集 用控制变量法 	训练开发集和训练集来自同一分布	</p>
 <p>还是在训练集进行训练，然后分别测试训练开发集和开发集的准确率，如果训练开发集和开发集准确率差不多就称作方差过大，训练集过度拟合	如果训练开发集和训练集误差相近，就猜测是开发集和测试集数据不匹配的问题</p>
 <p>确定各集合错误率之差，确定是由于可避免方差还是方差还是数据不匹配</p>
-<p><img src="/2023/07/19/week3-2/image-20230711101008076.png" alt="image-20230711101008076"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-2/image-20230711101008076.png" alt="image-20230711101008076"></p>
 <h2 id="解决数据不匹配"><a href="#解决数据不匹配" class="headerlink" title="解决数据不匹配"></a>解决数据不匹配</h2><p>人工查看开发集和训练集之间的差异</p>
 <p>将开发集或者测试集中的部分数据加载到训练集中，可能导致过度拟合</p>
 <h2 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h2><p>如果想从任务A学习，并迁移一些知识到任务B，那么当任务A和任务B都有相同的输入x时，迁移学习是有意义的，当任务A的数据比任务B多得多时，迁移学习的意义更大，当A的数据量比B还要小的时候，用处就不大</p>
 <h2 id="多任务学习"><a href="#多任务学习" class="headerlink" title="多任务学习"></a>多任务学习</h2><p>和多分类不同的是，多任务学习可能有多个标志为1，比如一张图片既有猫又有狗，这样的话它的损失函数就需要一个变量一个变量的求</p>
 <h2 id="什么是端到端的深度学习"><a href="#什么是端到端的深度学习" class="headerlink" title="什么是端到端的深度学习"></a>什么是端到端的深度学习</h2><p>如果训练集足够大，神经网络足够大，这种方法很好，但有时候训练集不够大，需要将端到端拆分成子任务，比如人脸识别系统，最好的就是先识别人所在的位置，给出人所在的坐标，对图像进行放大，再对放大的图像做人脸识别效果会好很多</p>
-<h2 id="是否要使用端到端的深度学习"><a href="#是否要使用端到端的深度学习" class="headerlink" title="是否要使用端到端的深度学习"></a>是否要使用端到端的深度学习</h2><p><img src="/2023/07/19/week3-2/image-20230711211351195.png" alt="image-20230711211351195"></p>
+<h2 id="是否要使用端到端的深度学习"><a href="#是否要使用端到端的深度学习" class="headerlink" title="是否要使用端到端的深度学习"></a>是否要使用端到端的深度学习</h2><p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-2/image-20230711211351195.png" alt="image-20230711211351195"></p>
 
       
       
@@ -1185,10 +1185,10 @@
 
 
   
-    <article id="post-week3-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week3-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week3-1/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-1/" class="article-date">
       <time datetime="2023-07-19T12:21:20.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -1202,7 +1202,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week3-1/">week3_1</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-1/">week3_1</a>
     </h1>
   
 
@@ -1213,12 +1213,12 @@
       
           
         <h2 id="为什么是ML策略"><a href="#为什么是ML策略" class="headerlink" title="为什么是ML策略"></a>为什么是ML策略</h2><p>优化深度学习时考虑的策略</p>
-<p><img src="/2023/07/19/week3-1/image-20230710203005397.png" alt="image-20230710203005397"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-1/image-20230710203005397.png" alt="image-20230710203005397"></p>
 <p>帮助我们选择更好的算法</p>
 <h2 id="正交化"><a href="#正交化" class="headerlink" title="正交化"></a>正交化</h2><p>机器学习可以选择的调整方法有很多，就比如超参数的调节就有很多</p>
 <p>正交化：调整最有效的参数，使各参数之间的调节更加独立化</p>
 <p>有四个问题，对应相应的解决方法，问题一：更大的数据集或者Adam优化算法	问题二：正则化或者更大的训练集	问题三：更大的验证集	问题四：改变成本函数等</p>
-<p><img src="/2023/07/19/week3-1/image-20230710204058825.png" alt="image-20230710204058825"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-1/image-20230710204058825.png" alt="image-20230710204058825"></p>
 <h2 id="单一数字评估指标"><a href="#单一数字评估指标" class="headerlink" title="单一数字评估指标"></a>单一数字评估指标</h2><p>用一个数字评估告诉我更换新方法之后的性能是否提升</p>
 <p>一种方法是查看算法的准确率：</p>
 <ul>
@@ -1237,7 +1237,7 @@
 <p>很多时候没有测试集，人们直接在开发集上进行迭代，但是人们往往叫他测试集</p>
 <h2 id="什么时候该改变开发-测试集和指标"><a href="#什么时候该改变开发-测试集和指标" class="headerlink" title="什么时候该改变开发_测试集和指标"></a>什么时候该改变开发_测试集和指标</h2><h2 id="理解人的表现"><a href="#理解人的表现" class="headerlink" title="理解人的表现"></a>理解人的表现</h2><p>将人的最好表现设置为估计贝叶斯错误率	但是一般也和你这个系统的最终目的有关</p>
 <p>可避免偏差是min(贝叶斯错误率和测试集之间的差,测试集和开发集之间的差)</p>
-<p><img src="/2023/07/19/week3-1/image-20230710214505203.png" alt="image-20230710214505203"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week3-1/image-20230710214505203.png" alt="image-20230710214505203"></p>
 
       
       
@@ -1273,10 +1273,10 @@
 
 
   
-    <article id="post-week2-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深度学习/week2-3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/19/week2-3/" class="article-date">
+      <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/" class="article-date">
       <time datetime="2023-07-19T12:13:52.000Z" itemprop="datePublished">2023-07-19</time>
 </a>
     </div>
@@ -1290,7 +1290,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/19/week2-3/">week2_3</a>
+      <a class="article-title" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/">week2_3</a>
     </h1>
   
 
@@ -1302,54 +1302,54 @@
           
         <h2 id="调试处理"><a href="#调试处理" class="headerlink" title="调试处理"></a>调试处理</h2><p>超参数：α β β1 β2 layers ε hidden-units learning-rate decay mini-batch-size</p>
 <p>红色是最需要调试的，其次是黄色，再其次是紫色	β是指用momentum是的参数	β1、β2是指用adam所有的参数	</p>
-<p><img src="/2023/07/19/week2-3/image-20230709084235636.png" alt="zz"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709084235636.png" alt="zz"></p>
 <p>两个超参数选择</p>
 <p>方法一：传统方法，取取样点，比如下图可以尝试这二十五个点，然后选择哪个参数最好，当参数的数量相对较小时，实用</p>
-<p><img src="/2023/07/19/week2-3/image-20230709084949711.png" alt="image-20230709084949711"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709084949711.png" alt="image-20230709084949711"></p>
 <p>方法二：随机选择取样点，因为可能这两个超参数影响度不一样，可能有一个超参数不会起很大作用，那另一个如果用传统方法只有五个可选点，比较少</p>
-<p><img src="/2023/07/19/week2-3/image-20230709085002493.png" alt="image-20230709085002493"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709085002493.png" alt="image-20230709085002493"></p>
 <p>对于三层，再进行扩展</p>
 <p>如果发现某一个区域的效果都比较好，那就放大这个区域，然后再精确的取一些值</p>
-<p><img src="/2023/07/19/week2-3/image-20230709085204659.png" alt="image-20230709085204659"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709085204659.png" alt="image-20230709085204659"></p>
 <h2 id="为超参数选择合适的范围"><a href="#为超参数选择合适的范围" class="headerlink" title="为超参数选择合适的范围"></a>为超参数选择合适的范围</h2><p>随机取值并不是在有效值范围内的随机均匀取值，而是选择合适的步进值</p>
 <p>如果要选择α在0.0001-1,这样选择0.1-1之间的概率会比较高</p>
 <p>所以更好的方法是设置每一组随机选择的概率相同</p>
-<p><img src="/2023/07/19/week2-3/image-20230709090604179.png" alt="image-20230709090604179"></p>
-<p><img src="/2023/07/19/week2-3/image-20230709091204679.png" alt="image-20230709091204679"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709090604179.png" alt="image-20230709090604179"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709091204679.png" alt="image-20230709091204679"></p>
 <h2 id="超参数训练的实践"><a href="#超参数训练的实践" class="headerlink" title="超参数训练的实践"></a>超参数训练的实践</h2><p>Babysitting one model:每隔一个阶段就观察成本函数，并根据成本函数的变化趋势调整参数，这种方法通常是在计算机计算能力不够的时候进行的(panda,熊猫)</p>
 <p>Training many models in parallel:多个模型同时运行，选择效果最好的(cavier,鱼子酱)</p>
 <h2 id="正则化网络的激活函数"><a href="#正则化网络的激活函数" class="headerlink" title="正则化网络的激活函数"></a>正则化网络的激活函数</h2><p>batch归一化，这种方法可以使我的参数搜索问题变得简单，使神经网络对超参数的选择更加稳定，超参数的范围会庞大，工作效果也更好</p>
 <p>在逻辑回归归一化设置中 X-&#x3D;μ X&#x2F;&#x3D;σ</p>
 <p>对于batch归一化，归一上一层的a[i]，以更快速的训练W[3]b[3]，实际上我们归一的是z[i]不是a[i]</p>
 <p>可以选择直接归一化，和逻辑回归归一化一样，这样z会有平均值0和方差1，但是通常我们希望z有平均值和方差，γ和β可以仿造w和b权重更新的方法进行更新 γ和β是为了设置z的平均值和方差</p>
-<p><img src="/2023/07/19/week2-3/image-20230709102954012.png" alt="image-20230709102954012"></p>
-<h2 id="将Batch-Norm拟合进神经网络"><a href="#将Batch-Norm拟合进神经网络" class="headerlink" title="将Batch Norm拟合进神经网络"></a>将Batch Norm拟合进神经网络</h2><p><img src="/2023/07/19/week2-3/image-20230709110555224.png" alt="image-20230709110555224"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709102954012.png" alt="image-20230709102954012"></p>
+<h2 id="将Batch-Norm拟合进神经网络"><a href="#将Batch-Norm拟合进神经网络" class="headerlink" title="将Batch Norm拟合进神经网络"></a>将Batch Norm拟合进神经网络</h2><p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709110555224.png" alt="image-20230709110555224"></p>
 <p>b[i]在这里作用不大，因为z进行batch归一化的时候，会先将均值设置为0，这样的话b[i]的用处就不大，可以去掉，注意β[i]和γ[i]的维度都是n[l] * 1</p>
-<p><img src="/2023/07/19/week2-3/image-20230709111240690.png" alt="image-20230709111240690"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709111240690.png" alt="image-20230709111240690"></p>
 <p>伪代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,numMiniBatches):</span><br><span class="line">    parameters=initParameters(layerdims)</span><br><span class="line">    AL,cache=forward(parameters,X&#123;t&#125;)</span><br><span class="line">    cost=compute_cost(AL,Y&#123;t&#125;)</span><br><span class="line">    grads=backforward(cost,cache,X)</span><br><span class="line">    parameters=update_parameters(parameters)</span><br></pre></td></tr></table></figure>
 
 <p>这里的parameters有参数 W β γ	grads对应</p>
-<p><img src="/2023/07/19/week2-3/image-20230709111955428.png" alt="image-20230709111955428"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709111955428.png" alt="image-20230709111955428"></p>
 <h2 id="Batch-Norm为什么奏效"><a href="#Batch-Norm为什么奏效" class="headerlink" title="Batch Norm为什么奏效"></a>Batch Norm为什么奏效</h2><h2 id="测试时的Batch-Norm"><a href="#测试时的Batch-Norm" class="headerlink" title="测试时的Batch Norm"></a>测试时的Batch Norm</h2><p>μ和σ通常用指数加权平均来估算</p>
 <p>到最后测试的时候，就不再计算μ和σ</p>
-<p><img src="/2023/07/19/week2-3/image-20230709134945572.png" alt="image-20230709134945572"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709134945572.png" alt="image-20230709134945572"></p>
 <h2 id="Softmax回归"><a href="#Softmax回归" class="headerlink" title="Softmax回归"></a>Softmax回归</h2><p>不再是只识别两个分类，可以识别多个分类</p>
 <p>参数：C表示输入会被分入的类别总个数 最后一层的维数不再是1，而是4了(是4的原因是这儿有四个输出变量)</p>
-<p><img src="/2023/07/19/week2-3/image-20230709135324845.png" alt="image-20230709135324845"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709135324845.png" alt="image-20230709135324845"></p>
 <p>最后一层应用Softmax激活函数</p>
 <p>参数：临时变量 t&#x3D;e^z[l]</p>
-<p><img src="/2023/07/19/week2-3/image-20230709202801516.png" alt="image-20230709202801516"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709202801516.png" alt="image-20230709202801516"></p>
 <h2 id="训练一个Softmax分类器"><a href="#训练一个Softmax分类器" class="headerlink" title="训练一个Softmax分类器"></a>训练一个Softmax分类器</h2><p>损失函数和成本函数的计算：</p>
-<p><img src="/2023/07/19/week2-3/image-20230709203056569.png" alt="image-20230709203056569"></p>
-<p><img src="/2023/07/19/week2-3/image-20230709203239795.png" alt="image-20230709203239795"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709203056569.png" alt="image-20230709203056569"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709203239795.png" alt="image-20230709203239795"></p>
 <h2 id="深度学习框架"><a href="#深度学习框架" class="headerlink" title="深度学习框架"></a>深度学习框架</h2><p>eg:</p>
-<p><img src="/2023/07/19/week2-3/image-20230709203825234.png" alt="image-20230709203825234"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709203825234.png" alt="image-20230709203825234"></p>
 <h2 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h2><p>一种深度学习框架 只需要我们写正向传播，会自动帮我们计算反向传播</p>
-<p><img src="/2023/07/19/week2-3/image-20230709205405507.png" alt="image-20230709205405507"></p>
-<p>placeholder在这儿表示等会就会提供x的值，提供方式如下：<img src="/2023/07/19/week2-3/image-20230709204902762.png" alt="image-20230709204902762"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709205405507.png" alt="image-20230709205405507"></p>
+<p>placeholder在这儿表示等会就会提供x的值，提供方式如下：<img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709204902762.png" alt="image-20230709204902762"></p>
 <p>session相同表示方法：</p>
-<p><img src="/2023/07/19/week2-3/image-20230709205716809.png" alt="image-20230709205716809"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/week2-3/image-20230709205716809.png" alt="image-20230709205716809"></p>
 <p>对于Tensorflow的代码实现而言，实现代码的结构如下：</p>
 <ol>
 <li>创建Tensorflow变量（此时，尚未直接计算）</li>
