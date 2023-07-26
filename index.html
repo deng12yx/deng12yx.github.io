@@ -379,7 +379,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 18:11:20" itemprop="dateModified" datetime="2023-07-26T18:11:20+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -446,7 +446,7 @@
 <li><p>以word的长度为0作为判断条件，但是需要确保向下邻近或者向有邻近的字符是#或者没有</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">placeWordInCrossword</span><span class="params">(vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board, string word)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> x=board.<span class="built_in">size</span>();<span class="comment">//行数</span></span><br><span class="line">        <span class="type">int</span> y=board[<span class="number">0</span>].<span class="built_in">size</span>();<span class="comment">//列数</span></span><br><span class="line">        string word2=word;<span class="comment">//为了恢复</span></span><br><span class="line">        <span class="type">char</span> firstChar = word[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> xx=<span class="number">0</span>;xx&lt;x;xx++)&#123;<span class="comment">//对每一行</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> yy=<span class="number">0</span>;yy&lt;y;yy++)&#123;<span class="comment">//对每一行的每个位置</span></span><br><span class="line">                <span class="keyword">if</span>((y-yy)&gt;=word.<span class="built_in">length</span>()&amp;&amp;board[xx][yy]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(board[xx][yy]!=firstChar&amp;&amp;board[xx][yy]!=<span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">                        word=word2;</span><br><span class="line">                        firstChar = word[<span class="number">0</span>];</span><br><span class="line">                        <span class="keyword">while</span>((y-yy)&gt;=word.<span class="built_in">length</span>()&amp;&amp;yy&lt;y<span class="number">-1</span>&amp;&amp;board[xx][yy+<span class="number">1</span>]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                            yy++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                            word.<span class="built_in">erase</span>(<span class="number">0</span>, <span class="number">1</span>);<span class="comment">//erase 函数的第一个参数表示要删除的起始位置，第二个参数表示要删除的字符数量。</span></span><br><span class="line">                            <span class="keyword">if</span>(word.<span class="built_in">length</span>()==<span class="number">0</span>)&#123;</span><br><span class="line">                                <span class="keyword">if</span>(yy&lt;y<span class="number">-1</span>&amp;&amp;board[xx][yy+<span class="number">1</span>]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                                    word=word2;</span><br><span class="line">                                    <span class="keyword">while</span>((y-yy)&gt;=word.<span class="built_in">length</span>()&amp;&amp;yy&lt;y<span class="number">-1</span>&amp;&amp;board[xx][yy+<span class="number">1</span>]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                                        yy++;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                                &#125; </span><br><span class="line">                            &#125;</span><br><span class="line">                            firstChar = word[<span class="number">0</span>];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    word=word2;</span><br><span class="line">                    firstChar = word[<span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        word=word2;</span><br><span class="line">        firstChar = word[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> yy=<span class="number">0</span>;yy&lt;y;yy++)&#123;<span class="comment">//对每一列</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> xx=<span class="number">0</span>;xx&lt;x;xx++)&#123;<span class="comment">//对每一行的每个位置</span></span><br><span class="line">                <span class="keyword">if</span>((x-xx)&gt;=word.<span class="built_in">length</span>()&amp;&amp;board[xx][yy]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(board[xx][yy]!=firstChar&amp;&amp;board[xx][yy]!=<span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">                        word=word2;</span><br><span class="line">                        firstChar = word[<span class="number">0</span>];</span><br><span class="line">                        <span class="keyword">while</span>(xx&lt;x<span class="number">-1</span>&amp;&amp;board[xx+<span class="number">1</span>][yy]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                        xx++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                            word.<span class="built_in">erase</span>(<span class="number">0</span>, <span class="number">1</span>);<span class="comment">//erase 函数的第一个参数表示要删除的起始位置，第二个参数表示要删除的字符数量。</span></span><br><span class="line">                            <span class="keyword">if</span>(word.<span class="built_in">length</span>()==<span class="number">0</span>)&#123;</span><br><span class="line">                                <span class="keyword">if</span>(xx&lt;x<span class="number">-1</span>&amp;&amp;board[xx+<span class="number">1</span>][yy]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                                    word=word2;</span><br><span class="line">                                    <span class="keyword">while</span>(xx&lt;x<span class="number">-1</span>&amp;&amp;board[xx+<span class="number">1</span>][yy]!=<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">                                        xx++;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                                &#125; </span><br><span class="line">                            &#125;</span><br><span class="line">                            firstChar = word[<span class="number">0</span>];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    word=word2;</span><br><span class="line">                    firstChar = word[<span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(word2.<span class="built_in">begin</span>(),word2.<span class="built_in">end</span>());</span><br><span class="line">        word=word2;</span><br><span class="line">        firstChar = word[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
 </ol>
-
+<h2 id="跳跃游戏（中等）"><a href="#跳跃游戏（中等）" class="headerlink" title="跳跃游戏（中等）"></a>跳跃游戏（中等）</h2>
       
     </div>
 
@@ -496,7 +496,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 18:07:22" itemprop="dateModified" datetime="2023-07-26T18:07:22+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -524,77 +524,57 @@
 <li>建立一个编码网络，对输入进行编码，也就是进行学习</li>
 <li>建立一个解码网络，当所有的输入完了之后对编码后的变量进行解码得到翻译的结果</li>
 </ul>
-<img src="/post/92da2407/92da2407/image-20230716152818762.png" class title="image-20230716152818762">
-
+<p><img src="/post/92da2407/image-20230716152818762.png" alt="image-20230716152818762"></p>
 <p>类似的还有通过一张图片得到输出(img2seq)，比如通过如下图片得到这只猫坐在沙发上的句子：</p>
-<img src="/post/92da2407/92da2407/image-20230716152954800.png" class title="image-20230716152954800">
-
+<p><img src="/post/92da2407/image-20230716152954800.png" alt="image-20230716152954800"></p>
 <h2 id="选择最可能的句子"><a href="#选择最可能的句子" class="headerlink" title="选择最可能的句子"></a>选择最可能的句子</h2><p>机器翻译vs语言模型，有很多类似的地方，机器翻译也叫做局限性的语言模型</p>
-<img src="/post/92da2407/92da2407/image-20230716153252292.png" class title="image-20230716153252292">
-
+<p><img src="/post/92da2407/image-20230716153252292.png" alt="image-20230716153252292"></p>
 <p>但是生成的y的质量要确保最好，使得最好的那项最大化</p>
 <p>可能的结果：</p>
-<img src="/post/92da2407/92da2407/image-20230716153444023.png" class title="image-20230716153444023">
-
+<p><img src="/post/92da2407/image-20230716153444023.png" alt="image-20230716153444023"></p>
 <p>为什么不选择贪心算法，贪心算法是一个一个的选单词出来，先选最有可能的y1，再在这个基础上选最有可能的y2，但是可能就会导致初夏下图第二排的结果，因为going比visiting更常见，但是我们不希望这种：</p>
-<img src="/post/92da2407/92da2407/image-20230716191250724.png" class title="image-20230716191250724">
-
+<p><img src="/post/92da2407/image-20230716191250724.png" alt="image-20230716191250724"></p>
 <h2 id="定向搜索"><a href="#定向搜索" class="headerlink" title="定向搜索"></a>定向搜索</h2><p>也叫做集束搜索</p>
 <p>集束搜索会考虑多个选择，贪心算法只会选择最有概率的那个 B：集束宽，表示一次考虑B个选择，比如step1，就从所有词表中选出三个最有可能的选择，然后分别对这三个选择再算其所有词表的概率，从30000个里面选出最优的三个选择	</p>
-<img src="/post/92da2407/92da2407/image-20230716191901310.png" class title="image-20230716191901310">
-
+<p><img src="/post/92da2407/image-20230716191901310.png" alt="image-20230716191901310"></p>
 <h2 id="改进定向搜索"><a href="#改进定向搜索" class="headerlink" title="改进定向搜索"></a>改进定向搜索</h2><p>长度归一化（如果不归一化最后得到的概率一定是一个很小的数字，因为有很多个小于1的数字相乘，两种方法，直接log或者再除于这段语句的长度）：</p>
-<img src="/post/92da2407/92da2407/image-20230716193157256.png" class title="image-20230716193157256">
-
+<p><img src="/post/92da2407/image-20230716193157256.png" alt="image-20230716193157256"></p>
 <p>怎么选择B(束)：</p>
-<img src="/post/92da2407/92da2407/image-20230716193449880.png" class title="image-20230716193449880">
-
+<p><img src="/post/92da2407/image-20230716193449880.png" alt="image-20230716193449880"></p>
 <h2 id="定向搜索的误差分析"><a href="#定向搜索的误差分析" class="headerlink" title="定向搜索的误差分析"></a>定向搜索的误差分析</h2><p>出现错误的翻译（比较输出错误的概率和正确的概率）：</p>
-<img src="/post/92da2407/92da2407/image-20230716193812475.png" class title="image-20230716193812475">
-
+<p><img src="/post/92da2407/image-20230716193812475.png" alt="image-20230716193812475"></p>
 <p>如果算法得到的单词比人类的单词概率更高，说明是RNN模型有问题(尝试正则化或者增加样本)，如果更低，就是束搜索有问题，选择了错误的y（尝试更大的B）</p>
-<img src="/post/92da2407/92da2407/image-20230716194017928.png" class title="image-20230716194017928">
-
+<p><img src="/post/92da2407/image-20230716194017928.png" alt="image-20230716194017928"></p>
 <h2 id="Bleu得分"><a href="#Bleu得分" class="headerlink" title="Bleu得分"></a>Bleu得分</h2><p>评估模型</p>
 <p>给定一个机器生成的翻译，它能够自动的计算一个分数来衡量机器的好坏</p>
 <p>衡量的一个指标是精确度，就是机器翻译结果的每一个单词在参考中是否出现，第二个是机器翻译的结果在参考中出现最多的是多少个单词</p>
-<img src="/post/92da2407/92da2407/image-20230716194626721.png" class title="image-20230716194626721">
-
+<p><img src="/post/92da2407/image-20230716194626721.png" alt="image-20230716194626721"></p>
 <p>比较二元词组（count是出现在输出里的次数，countclip是在参考中的最多的出现次数）：</p>
-<img src="/post/92da2407/92da2407/image-20230716194917738.png" class title="image-20230716194917738">
-
+<p><img src="/post/92da2407/image-20230716194917738.png" alt="image-20230716194917738"></p>
 <p>多元词组：</p>
-<img src="/post/92da2407/92da2407/image-20230716195107275.png" class title="image-20230716195107275">
-
+<p><img src="/post/92da2407/image-20230716195107275.png" alt="image-20230716195107275"></p>
 <p>Coursera官网提示: 这里的otherwise应该是exp(1-reference_output_length&#x2F;MT_output_length)</p>
 <p>这里是得分，如果MT翻译短了得分需要降低，所以幂需要变小，减掉的项应该变大，所以应该是reference&#x2F;MT</p>
-<img src="/post/92da2407/92da2407/image-20230716195226374.png" class title="image-20230716195226374">
-
+<p><img src="/post/92da2407/image-20230716195226374.png" alt="image-20230716195226374"></p>
 <h2 id="注意力模型直观理解"><a href="#注意力模型直观理解" class="headerlink" title="注意力模型直观理解"></a>注意力模型直观理解</h2><p>如果机器每次都要先记忆整个句子输入完了之后在翻译，有可能这个句子非常的长，这将导致记忆很困难，最后的输出就像蓝色的线，对于短句子效果好，对于长句子效果不好</p>
-<img src="/post/92da2407/92da2407/image-20230716200013916.png" class title="image-20230716200013916">
-
+<p><img src="/post/92da2407/image-20230716200013916.png" alt="image-20230716200013916"></p>
 <p>注意力模型实现绿色的线</p>
 <p>在正常双向RNN计算出输出之后，再有一层隐藏单元，这里的α&lt;1,1&gt;表示注意力，表示第一个输出的再第一个输入的输出这里的注意值是多少，以此类推</p>
-<img src="/post/92da2407/92da2407/image-20230716200725180.png" class title="image-20230716200725180">
-
+<p><img src="/post/92da2407/image-20230716200725180.png" alt="image-20230716200725180"></p>
 <h2 id="注意力模型"><a href="#注意力模型" class="headerlink" title="注意力模型"></a>注意力模型</h2><p>对于一个输出，所有的注意力权重之和为1，如图所示c&lt;1&gt; c&lt;2&gt;是算出来的输入到隐藏层的值</p>
-<img src="/post/92da2407/92da2407/image-20230716201246436.png" class title="image-20230716201246436">
-
+<p><img src="/post/92da2407/image-20230716201246436.png" alt="image-20230716201246436"></p>
 <p>如图所示a&lt;t,t_hat&gt;是和S<t-1>和a<t_hat>有关的，代表t_hat输入对t输出的注意力值，因为如图右边，s<t>的得出需要a和y<t-1>，同时y<t-1>是由s<t-1>得出来的，所以有这个结果</t-1></t-1></t-1></t></t_hat></t-1></p>
-<img src="/post/92da2407/92da2407/image-20230716201654655.png" class title="image-20230716201654655">
-
+<p><img src="/post/92da2407/image-20230716201654655.png" alt="image-20230716201654655"></p>
 <h2 id="语音辨识"><a href="#语音辨识" class="headerlink" title="语音辨识"></a>语音辨识</h2><p>将音频自动生成文字</p>
 <p>音频数据的常见预处理步骤：就是运行这个原始的音频片段，然后生成一个声谱图，横轴是时间，纵轴是频率，图中的颜色代表了声音的能量，还有伪空白输出，也就是在音频被输入到学习算法之前，而人耳所做的计算</p>
 <p>过去科学家们认为用一些基本的音位单元来表示音频是做语音识别最好的方式，现在已经不需要了</p>
 <p>注意力模型的语音辨识：</p>
-<img src="/post/92da2407/92da2407/image-20230716202416099.png" class title="image-20230716202416099">
-
+<p><img src="/post/92da2407/image-20230716202416099.png" alt="image-20230716202416099"></p>
 <p>还有种方法：CTC损失函数，语音识别通常输入维度大于输出维度，因为语音识别的话输入是赫兹，可能包含很多个样本，那对于一个输入对应一个输出的结构怎么办呢：用特殊字符代表空白字符，这里用下划线表示空白字符：</p>
-<img src="/post/92da2407/92da2407/image-20230716202644473.png" class title="image-20230716202644473">
-
+<p><img src="/post/92da2407/image-20230716202644473.png" alt="image-20230716202644473"></p>
 <h2 id="触发字检测"><a href="#触发字检测" class="headerlink" title="触发字检测"></a>触发字检测</h2><p>所谓触发字检测就是，语音说敏感词汇：比如 嘿siri</p>
 <p>在接收到敏感词汇时输出1</p>
-<img src="/post/92da2407/92da2407/image-20230716202909321.png" class title="image-20230716202909321">
+<p><img src="/post/92da2407/image-20230716202909321.png" alt="image-20230716202909321"></p>
 
       
     </div>
