@@ -22,32 +22,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="目标定位对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置 对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置 在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)   特征点检测用pc表示该图中是否有对象，">
+  <meta name="description" content="目标定位对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置 对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置 在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)  特征点检测用pc表示该图中是否有对象，p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习week4_3">
 <meta property="og:url" content="http://example.com/post/93184e30.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="目标定位对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置 对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置 在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)   特征点检测用pc表示该图中是否有对象，">
+<meta property="og:description" content="目标定位对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置 对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置 在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)  特征点检测用pc表示该图中是否有对象，p">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714112547108.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714113505256.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714113858158.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714140236101.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714140830432.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714144410366.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714145323910.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714145730075.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714151352052.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714152049129.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714154407218.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714155148045.png">
-<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714163521661.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714112547108.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714113505256.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714113858158.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714140236101.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714140830432.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714144410366.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714145323910.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714145730075.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714151352052.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714152049129.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714154407218.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714155148045.png">
+<meta property="og:image" content="http://example.com/post/93184e30/image-20230714163521661.png">
 <meta property="article:published_time" content="2023-07-19T12:23:08.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:02:48.337Z">
+<meta property="article:modified_time" content="2023-07-26T09:57:25.648Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/post/93184e30/93184e30/image-20230714112547108.png">
+<meta name="twitter:image" content="http://example.com/post/93184e30/image-20230714112547108.png">
 
 <link rel="canonical" href="http://example.com/post/93184e30.html">
 
@@ -246,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:57:25" itemprop="dateModified" datetime="2023-07-26T17:57:25+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,50 +272,37 @@
         <h2 id="目标定位"><a href="#目标定位" class="headerlink" title="目标定位"></a>目标定位</h2><p>对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置</p>
 <p>对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置</p>
 <p>在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)</p>
-<img src="/post/93184e30/93184e30/image-20230714112547108.png" class title="image-20230714112547108">
-
+<p><img src="/post/93184e30/image-20230714112547108.png" alt="image-20230714112547108"></p>
 <h2 id="特征点检测"><a href="#特征点检测" class="headerlink" title="特征点检测"></a>特征点检测</h2><p>用pc表示该图中是否有对象，pc&#x3D;0表示没有对象，那坐标，对象分类就没有意义了，loss函数只算pc和真实的y的值的误差；如果pc&#x3D;1表示有对象，就需要算每个参数的误差</p>
-<img src="/post/93184e30/93184e30/image-20230714113505256.png" class title="image-20230714113505256">
-
+<p><img src="/post/93184e30/image-20230714113505256.png" alt="image-20230714113505256"></p>
 <p>such as(如果要识别人脸的话，要确认眼角或者嘴角的具体坐标，先输出这张图是否包含人脸，如果包含再输出眼角或者嘴角的具体坐标，可能有很多，在下图中标记了64个嘴巴的坐标，更好学习，但是训练集需要手工标注，最后就需要了解用二维坐标确认人脸，同时确保所有标签在所有图片中处于同一位置，比如一个坐标是左眼角，那在所有的图片中该坐标都要表示左眼角):</p>
-<img src="/post/93184e30/93184e30/image-20230714113858158.png" class title="image-20230714113858158">
-
+<p><img src="/post/93184e30/image-20230714113858158.png" alt="image-20230714113858158"></p>
 <h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><p>基于滑动窗口的目标检测</p>
 <p>如图所示，采取不同大小的窗口，在一张图上做遍历，如果这个窗口所在位置检测到了对象，就输出1，窗口越大可能影响性能，窗口越小，成本函数代价大</p>
-<img src="/post/93184e30/93184e30/image-20230714140236101.png" class title="image-20230714140236101">
-
+<p><img src="/post/93184e30/image-20230714140236101.png" alt="image-20230714140236101"></p>
 <h2 id="卷积的滑动窗口实现"><a href="#卷积的滑动窗口实现" class="headerlink" title="卷积的滑动窗口实现"></a>卷积的滑动窗口实现</h2><p>全连接层变成卷积层（如图所示，下面那一排全连接层的计算是用一个和输入维度一样的过滤器，过滤器的数量就是所有元素的数量，这里是400个，这样也能得到和全连接层一样维度的结果，但是神经网络更深）：</p>
-<img src="/post/93184e30/93184e30/image-20230714140830432.png" class title="image-20230714140830432">
-
+<p><img src="/post/93184e30/image-20230714140830432.png" alt="image-20230714140830432"></p>
 <p>事先训练好了14 *14的训练集，然后新的样本是16 * 16的，我们应该用滑动窗口的方式，以14为一个，然后移动，但是这样重复的点会太多，我们发现直接在16上进行训练，最后得到的2 * 2矩阵就是我们用滑动窗口分别得到的结果，移动步长是2是因为，在最大池化那里的步长是2，在最下面那一排是一样的</p>
-<img src="/post/93184e30/93184e30/image-20230714144410366.png" class title="image-20230714144410366">
-
+<p><img src="/post/93184e30/image-20230714144410366.png" alt="image-20230714144410366"></p>
 <p>我们不用将图片划分成多个样本，直接在一张图片上做预测，最后的结果是一点，当然不止一点，一点以及它后面的所有信道</p>
 <h2 id="Bounding-Box预测"><a href="#Bounding-Box预测" class="headerlink" title="Bounding Box预测"></a>Bounding Box预测</h2><p>上节不能输出精确的边界框，能识别在某一个框中有对象，但是不一定正好包括</p>
 <p>Yolo算法（比如下图，将输入分成3 * 3的格子，最后的输出也是3 * 3的，然后每个格子的输出包括了其是否有对象，有对象的话对象的中点坐标，长和宽）：</p>
-<img src="/post/93184e30/93184e30/image-20230714145323910.png" class title="image-20230714145323910">
-
+<p><img src="/post/93184e30/image-20230714145323910.png" alt="image-20230714145323910"></p>
 <p>中点在该格子中才代表该格子有对象，但是长和宽不一定在格子里面，这里是前面所说的一个格子的坐标在(0,0)-(1,1)之间，所有说中点坐标在0-1之间</p>
-<img src="/post/93184e30/93184e30/image-20230714145730075.png" class title="image-20230714145730075">
-
+<p><img src="/post/93184e30/image-20230714145730075.png" alt="image-20230714145730075"></p>
 <h2 id="交并比"><a href="#交并比" class="headerlink" title="交并比"></a>交并比</h2><p>用于判断对象检测是否准确（loU代表检测出来的边框和实际的交集和并集的比值，通常这个比值大于等于0.5就认为准确）：</p>
-<img src="/post/93184e30/93184e30/image-20230714151352052.png" class title="image-20230714151352052">
-
+<p><img src="/post/93184e30/image-20230714151352052.png" alt="image-20230714151352052"></p>
 <h2 id="非极大值抑制"><a href="#非极大值抑制" class="headerlink" title="非极大值抑制"></a>非极大值抑制</h2><p>当多个格子都认为自己包含了同一辆车子的中点，那就取pc值最大的那个中点</p>
-<img src="/post/93184e30/93184e30/image-20230714152049129.png" class title="image-20230714152049129">
-
+<p><img src="/post/93184e30/image-20230714152049129.png" alt="image-20230714152049129"></p>
 <p>对象检测，识别出边框之后首先去掉pc值比较低的边框，针对同一个对象，选择最佳边框</p>
 <p>对每个类别分别运行非最大值预测</p>
 <h2 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h2><p>目前对象检测的局限有每个格子只能检测出一个对象</p>
 <p>如图所示，y里面包含了两个pc，分别表示有车还是有人，或者是又有车又有人，如果想要有更多的对象，y的维度更高</p>
-<img src="/post/93184e30/93184e30/image-20230714154407218.png" class title="image-20230714154407218">
-
-<h2 id="Yolo算法"><a href="#Yolo算法" class="headerlink" title="Yolo算法"></a>Yolo算法</h2><img src="/post/93184e30/93184e30/image-20230714155148045.png" class title="image-20230714155148045">
-
+<p><img src="/post/93184e30/image-20230714154407218.png" alt="image-20230714154407218"></p>
+<h2 id="Yolo算法"><a href="#Yolo算法" class="headerlink" title="Yolo算法"></a>Yolo算法</h2><p><img src="/post/93184e30/image-20230714155148045.png" alt="image-20230714155148045"></p>
 <h2 id="候选区域"><a href="#候选区域" class="headerlink" title="候选区域"></a>候选区域</h2><p>R-CNN：带区域的卷积网络</p>
 <p>将图像分成色块，因为如果整个图像都进行检测，很多窗口没有对象就会浪费性能，通过颜色分块，预测哪些块可能有对象</p>
-<img src="/post/93184e30/93184e30/image-20230714163521661.png" class title="image-20230714163521661">
-
+<p><img src="/post/93184e30/image-20230714163521661.png" alt="image-20230714163521661"></p>
 <p>​    第二步：找到最大值的锚框的索引以及对应的最大值的锚框的分数    </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">参数：</span><br><span class="line">        box_confidence  - tensor类型，维度为（<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">1</span>）,包含19x19单元格中每个单元格预测的<span class="number">5</span>个锚框中的所有的锚框的pc （一些对象的置信概率）。</span><br><span class="line">        boxes - tensor类型，维度为(<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">4</span>)，包含了所有的锚框的（px,py,ph,pw ）。</span><br><span class="line">        box_class_probs - tensor类型，维度为(<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">80</span>)，包含了所有单元格中所有锚框的所有对象( c1,c2,c3，···，c80 )检测的概率。</span><br><span class="line">        threshold - 实数，阈值，如果分类预测的概率高于它，那么这个分类预测的概率就会被保留。</span><br><span class="line">    </span><br><span class="line">    返回：</span><br><span class="line">        scores - tensor 类型，维度为(<span class="literal">None</span>,)，包含了保留了的锚框的分类概率。</span><br><span class="line">        boxes - tensor 类型，维度为(<span class="literal">None</span>,<span class="number">4</span>)，包含了保留了的锚框的(b_x, b_y, b_h, b_w)</span><br><span class="line">        classess - tensor 类型，维度为(<span class="literal">None</span>,)，包含了保留了的锚框的索引</span><br><span class="line">box_classes = K.argmax(box_scores, axis=-<span class="number">1</span>)    </span><br><span class="line">box_class_scores = K.<span class="built_in">max</span>(box_scores, axis=-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
@@ -337,13 +324,13 @@
       <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\e2d4bc4d.html" rel="bookmark">深度学习week1_2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\1a7d5752.html" rel="bookmark">week2_1</a></div>
+      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\bb71978.html" rel="bookmark">深度学习week1_4</a></div>
     </li>
   </ul>
 

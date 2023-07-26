@@ -22,44 +22,44 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="词汇表征将RNN GRU LSTM用于自然语言处理（NLP） 词嵌入：让算法自动的理解一些类似的词 我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：   现在变成特征">
+  <meta name="description" content="词汇表征将RNN GRU LSTM用于自然语言处理（NLP） 词嵌入：让算法自动的理解一些类似的词 我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：  现在变成特征化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习week5_2">
 <meta property="og:url" content="http://example.com/post/e5dd1491.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="词汇表征将RNN GRU LSTM用于自然语言处理（NLP） 词嵌入：让算法自动的理解一些类似的词 我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：   现在变成特征">
+<meta property="og:description" content="词汇表征将RNN GRU LSTM用于自然语言处理（NLP） 词嵌入：让算法自动的理解一些类似的词 我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：  现在变成特征化">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716085326082.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716090208200.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716090359957.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716090910001.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716091323600.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716091741875.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716092632787.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716131131937.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716131332253.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716132747851.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716133405684.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716133806764.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716134123485.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716134416765.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716134911235.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716135912729.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716140423569.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716141711423.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716143026674.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716150111482.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716150405613.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716150737836.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716150930621.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716151157772.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716151649161.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716085326082.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716090208200.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716090359957.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716090910001.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716091323600.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716091741875.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716092632787.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716131131937.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716131332253.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716132747851.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716133405684.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716133806764.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716134123485.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716134416765.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716134911235.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716135912729.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716140423569.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716141711423.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716143026674.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150111482.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150405613.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150737836.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150930621.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716151157772.png">
+<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716151649161.png">
 <meta property="article:published_time" content="2023-07-19T12:27:06.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:02:48.340Z">
+<meta property="article:modified_time" content="2023-07-26T09:57:52.054Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/post/e5dd1491/e5dd1491/image-20230716085326082.png">
+<meta name="twitter:image" content="http://example.com/post/e5dd1491/image-20230716085326082.png">
 
 <link rel="canonical" href="http://example.com/post/e5dd1491.html">
 
@@ -258,7 +258,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:57:52" itemprop="dateModified" datetime="2023-07-26T17:57:52+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,87 +284,64 @@
         <h2 id="词汇表征"><a href="#词汇表征" class="headerlink" title="词汇表征"></a>词汇表征</h2><p>将RNN GRU LSTM用于自然语言处理（NLP）</p>
 <p>词嵌入：让算法自动的理解一些类似的词</p>
 <p>我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716085326082.png" class title="image-20230716085326082">
-
-<p>现在变成特征化表达：<img src="/post/e5dd1491/e5dd1491/image-20230716090208200.png" class title="image-20230716090208200"></p>
+<p><img src="/post/e5dd1491/image-20230716085326082.png" alt="image-20230716085326082"></p>
+<p>现在变成特征化表达：<img src="/post/e5dd1491/image-20230716090208200.png" alt="image-20230716090208200"></p>
 <p>可以将多维的特征降维（t-SNE），有点像k聚类</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716090359957.png" class title="image-20230716090359957">
-
+<p><img src="/post/e5dd1491/image-20230716090359957.png" alt="image-20230716090359957"></p>
 <h2 id="使用词嵌入"><a href="#使用词嵌入" class="headerlink" title="使用词嵌入"></a>使用词嵌入</h2><p>如果遇到一些不常见的词，而自己的训练样本又比较小，可以考虑迁移学习，用网上已经学习好的词嵌入模型</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716090910001.png" class title="image-20230716090910001">
-
+<p><img src="/post/e5dd1491/image-20230716090910001.png" alt="image-20230716090910001"></p>
 <p>当训练集越小时，词嵌入效果越好，词嵌入基本流程：</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716091323600.png" class title="image-20230716091323600">
-
+<p><img src="/post/e5dd1491/image-20230716091323600.png" alt="image-20230716091323600"></p>
 <p>和卷积网络所学到的比较两张人脸有一定相似性</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716091741875.png" class title="image-20230716091741875">
-
+<p><img src="/post/e5dd1491/image-20230716091741875.png" alt="image-20230716091741875"></p>
 <h2 id="词嵌入的特性"><a href="#词嵌入的特性" class="headerlink" title="词嵌入的特性"></a>词嵌入的特性</h2><p>词嵌入可以帮助实现类比推理</p>
 <p>比如我们知道男人对应女人，怎么让机器推导出国王对应王后呢：比较它们的差</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716092632787.png" class title="image-20230716092632787">
-
+<p><img src="/post/e5dd1491/image-20230716092632787.png" alt="image-20230716092632787"></p>
 <p>将要求的单词设为e_w,求相似度:</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716131131937.png" class title="image-20230716131131937">
-
+<p><img src="/post/e5dd1491/image-20230716131131937.png" alt="image-20230716131131937"></p>
 <p>余弦相似度，感觉相当于一个向量是一个点：</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716131332253.png" class title="image-20230716131332253">
-
+<p><img src="/post/e5dd1491/image-20230716131332253.png" alt="image-20230716131332253"></p>
 <h2 id="嵌入矩阵"><a href="#嵌入矩阵" class="headerlink" title="嵌入矩阵"></a>嵌入矩阵</h2><p>当利用算法学习一个词嵌入的时候相当于是在学习一个嵌入矩阵</p>
 <p>相当于总共有300个特征，每个单词都是一个特征，300维，把这个矩阵叫做嵌入矩阵E,每次我们要取某个单词的特征的时候，我们用特征 * one_hot的值，就可以得到一个300维该单词的特征</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716132747851.png" class title="image-20230716132747851">
-
+<p><img src="/post/e5dd1491/image-20230716132747851.png" alt="image-20230716132747851"></p>
 <h2 id="学习词嵌入"><a href="#学习词嵌入" class="headerlink" title="学习词嵌入"></a>学习词嵌入</h2><p>神经网络结构：</p>
 <p>E是嵌入矩阵，o是one_hot,算出e是该单词的300维的特征向量，然后输出，参数可以通过梯度函数调整，很好的学习两个特征值相近的词，可以规定只从前面几个词学习</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716133405684.png" class title="image-20230716133405684">
-
+<p><img src="/post/e5dd1491/image-20230716133405684.png" alt="image-20230716133405684"></p>
 <p>如果我们想训练出一个语言模型，只选择相邻几个单词学习是一种不错的选择，如果我们想学习其他嵌入算法，可以选择另外的单词学习</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716133806764.png" class title="image-20230716133806764">
-
+<p><img src="/post/e5dd1491/image-20230716133806764.png" alt="image-20230716133806764"></p>
 <h2 id="Word2Vec"><a href="#Word2Vec" class="headerlink" title="Word2Vec"></a>Word2Vec</h2><p>skip-grams（感觉像是训练两个邻近的单词的对应关系，上下文某个单词-&gt;目标单词）：</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716134123485.png" class title="image-20230716134123485">
-
+<p><img src="/post/e5dd1491/image-20230716134123485.png" alt="image-20230716134123485"></p>
 <p>简单模型，输出是一个10000维的向量，和one_hot一样：</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716134416765.png" class title="image-20230716134416765">
-
+<p><img src="/post/e5dd1491/image-20230716134416765.png" alt="image-20230716134416765"></p>
 <p>强迫算法去做预测，算法只能根据词嵌入矩阵来预测，然后告诉算法你算错了，算法就自己去修改词嵌入矩阵了</p>
 <p>但是直接这样计算softmax，由于维度已经10000了可能更高，算法效率低，可以考虑采用分级softmax分类器（二叉树），使用的树，常用词在顶部，不常用词在深度，方便查找，通常不是平衡的二叉树</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716134911235.png" class title="image-20230716134911235">
-
+<p><img src="/post/e5dd1491/image-20230716134911235.png" alt="image-20230716134911235"></p>
 <h2 id="负采样"><a href="#负采样" class="headerlink" title="负采样"></a>负采样</h2><p>构造新的监督模型</p>
 <p>先随机选择一个单词作为context，然后在近10个单词中选择word，设为正样本，然后再从词表中随机找k个单词，将这一组设为负样本，监督学习，最后的输入就行x，预测y，预测他是正样本还是负样本</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716135912729.png" class title="image-20230716135912729">
-
+<p><img src="/post/e5dd1491/image-20230716135912729.png" alt="image-20230716135912729"></p>
 <p>之前就需要算10000维的softmax，这里就不需要，将输入应用到10000个神经元，每次只更新k+1个，这里k是4，用得出来的正样本和负样本去进行迭代</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716140423569.png" class title="image-20230716140423569">
-
+<p><img src="/post/e5dd1491/image-20230716140423569.png" alt="image-20230716140423569"></p>
 <p>怎么进行负采样（怎么随机选择负采样的word,图下是比较常用的方法):</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716141711423.png" class title="image-20230716141711423">
-
+<p><img src="/post/e5dd1491/image-20230716141711423.png" alt="image-20230716141711423"></p>
 <h2 id="GloVe词向量"><a href="#GloVe词向量" class="headerlink" title="GloVe词向量"></a>GloVe词向量</h2><p>Xij是一个能够获取单词i和单词j出现位置相近时或者彼此接近的频率的计数器</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716143026674.png" class title="image-20230716143026674">
-
+<p><img src="/post/e5dd1491/image-20230716143026674.png" alt="image-20230716143026674"></p>
 <p>本质是用词嵌入矩阵去构造一个网络去预测两个词同时出现的频率，但是我们并不需要这个网络，而仅仅通过网络来训练词嵌入矩阵</p>
 <p>每一个可能的目标词有一个参数向量$\theta_{t}$和另一个参数向量$e_{c}$</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716150111482.png" class title="image-20230716150111482">
-
+<p><img src="/post/e5dd1491/image-20230716150111482.png" alt="image-20230716150111482"></p>
 <p>实际上最后通过网络的到这些向量特征不是简单的Gender这些特征</p>
 <p>各轴之间可能有关联</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716150405613.png" class title="image-20230716150405613">
-
+<p><img src="/post/e5dd1491/image-20230716150405613.png" alt="image-20230716150405613"></p>
 <h2 id="情绪分类"><a href="#情绪分类" class="headerlink" title="情绪分类"></a>情绪分类</h2><p>最大的挑战是标记的数据集不够多</p>
 <p>用所有特征相加求平均值的方法（缺点：没考虑词序）：</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716150737836.png" class title="image-20230716150737836">
-
+<p><img src="/post/e5dd1491/image-20230716150737836.png" alt="image-20230716150737836"></p>
 <p>解决方式（用RNN做）：</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716150930621.png" class title="image-20230716150930621">
-
+<p><img src="/post/e5dd1491/image-20230716150930621.png" alt="image-20230716150930621"></p>
 <h2 id="词嵌入除偏"><a href="#词嵌入除偏" class="headerlink" title="词嵌入除偏"></a>词嵌入除偏</h2><p>存在偏见，如下图，下图是一个训练好的语言模型得到的结果</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716151157772.png" class title="image-20230716151157772">
-
+<p><img src="/post/e5dd1491/image-20230716151157772.png" alt="image-20230716151157772"></p>
 <p>第一步：判断出我们要减少什么偏见</p>
 <p>第二步：对本来不应该有偏见的词，即中立的词出现偏见之后将他们往中和值靠近</p>
 <p>第三步：把本身对立的，比如祖母和祖父移到靠近中和值差不多位置的地方</p>
-<img src="/post/e5dd1491/e5dd1491/image-20230716151649161.png" class title="image-20230716151649161">
+<p><img src="/post/e5dd1491/image-20230716151649161.png" alt="image-20230716151649161"></p>
 
     </div>
 
@@ -381,13 +358,13 @@
       <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\e2d4bc4d.html" rel="bookmark">深度学习week1_2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\1a7d5752.html" rel="bookmark">week2_1</a></div>
+      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\bb71978.html" rel="bookmark">深度学习week1_4</a></div>
     </li>
   </ul>
 

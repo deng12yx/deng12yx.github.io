@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:56:46" itemprop="dateModified" datetime="2023-07-26T17:56:46+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,14 +253,12 @@
 
       
           <h2 id="为什么是ML策略"><a href="#为什么是ML策略" class="headerlink" title="为什么是ML策略"></a>为什么是ML策略</h2><p>优化深度学习时考虑的策略</p>
-<img src="/post/1bbf3d65/1bbf3d65/image-20230710203005397.png" class title="image-20230710203005397">
-
+<p><img src="/post/1bbf3d65/image-20230710203005397.png" alt="image-20230710203005397"></p>
 <p>帮助我们选择更好的算法</p>
 <h2 id="正交化"><a href="#正交化" class="headerlink" title="正交化"></a>正交化</h2><p>机器学习可以选择的调整方法有很多，就比如超参数的调节就有很多</p>
 <p>正交化：调整最有效的参数，使各参数之间的调节更加独立化</p>
 <p>有四个问题，对应相应的解决方法，问题一：更大的数据集或者Adam优化算法	问题二：正则化或者更大的训练集	问题三：更大的验证集	问题四：改变成本函数等</p>
-<img src="/post/1bbf3d65/1bbf3d65/image-20230710204058825.png" class title="image-20230710204058825">
-
+<p><img src="/post/1bbf3d65/image-20230710204058825.png" alt="image-20230710204058825"></p>
 <h2 id="单一数字评估指标"><a href="#单一数字评估指标" class="headerlink" title="单一数字评估指标"></a>单一数字评估指标</h2><p>用一个数字评估告诉我更换新方法之后的性能是否提升</p>
 <p>一种方法是查看算法的准确率：</p>
 <ul>
@@ -279,7 +277,7 @@
 <p>很多时候没有测试集，人们直接在开发集上进行迭代，但是人们往往叫他测试集</p>
 <h2 id="什么时候该改变开发-测试集和指标"><a href="#什么时候该改变开发-测试集和指标" class="headerlink" title="什么时候该改变开发_测试集和指标"></a>什么时候该改变开发_测试集和指标</h2><h2 id="理解人的表现"><a href="#理解人的表现" class="headerlink" title="理解人的表现"></a>理解人的表现</h2><p>将人的最好表现设置为估计贝叶斯错误率	但是一般也和你这个系统的最终目的有关</p>
 <p>可避免偏差是min(贝叶斯错误率和测试集之间的差,测试集和开发集之间的差)</p>
-<img src="/post/1bbf3d65/1bbf3d65/image-20230710214505203.png" class title="image-20230710214505203">
+<p><img src="/post/1bbf3d65/image-20230710214505203.png" alt="image-20230710214505203"></p>
 
       
     </div>
@@ -330,7 +328,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:56:31" itemprop="dateModified" datetime="2023-07-26T17:56:31+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -355,72 +353,54 @@
       
           <h2 id="调试处理"><a href="#调试处理" class="headerlink" title="调试处理"></a>调试处理</h2><p>超参数：α β β1 β2 layers ε hidden-units learning-rate decay mini-batch-size</p>
 <p>红色是最需要调试的，其次是黄色，再其次是紫色	β是指用momentum是的参数	β1、β2是指用adam所有的参数	</p>
-<img src="/post/f473367e/f473367e/image-20230709084235636.png" class title="zz">
-
+<p><img src="/post/f473367e/image-20230709084235636.png" alt="zz"></p>
 <p>两个超参数选择</p>
 <p>方法一：传统方法，取取样点，比如下图可以尝试这二十五个点，然后选择哪个参数最好，当参数的数量相对较小时，实用</p>
-<img src="/post/f473367e/f473367e/image-20230709084949711.png" class title="image-20230709084949711">
-
+<p><img src="/post/f473367e/image-20230709084949711.png" alt="image-20230709084949711"></p>
 <p>方法二：随机选择取样点，因为可能这两个超参数影响度不一样，可能有一个超参数不会起很大作用，那另一个如果用传统方法只有五个可选点，比较少</p>
-<img src="/post/f473367e/f473367e/image-20230709085002493.png" class title="image-20230709085002493">
-
+<p><img src="/post/f473367e/image-20230709085002493.png" alt="image-20230709085002493"></p>
 <p>对于三层，再进行扩展</p>
 <p>如果发现某一个区域的效果都比较好，那就放大这个区域，然后再精确的取一些值</p>
-<img src="/post/f473367e/f473367e/image-20230709085204659.png" class title="image-20230709085204659">
-
+<p><img src="/post/f473367e/image-20230709085204659.png" alt="image-20230709085204659"></p>
 <h2 id="为超参数选择合适的范围"><a href="#为超参数选择合适的范围" class="headerlink" title="为超参数选择合适的范围"></a>为超参数选择合适的范围</h2><p>随机取值并不是在有效值范围内的随机均匀取值，而是选择合适的步进值</p>
 <p>如果要选择α在0.0001-1,这样选择0.1-1之间的概率会比较高</p>
 <p>所以更好的方法是设置每一组随机选择的概率相同</p>
-<img src="/post/f473367e/f473367e/image-20230709090604179.png" class title="image-20230709090604179">
-
-<img src="/post/f473367e/f473367e/image-20230709091204679.png" class title="image-20230709091204679">
-
+<p><img src="/post/f473367e/image-20230709090604179.png" alt="image-20230709090604179"></p>
+<p><img src="/post/f473367e/image-20230709091204679.png" alt="image-20230709091204679"></p>
 <h2 id="超参数训练的实践"><a href="#超参数训练的实践" class="headerlink" title="超参数训练的实践"></a>超参数训练的实践</h2><p>Babysitting one model:每隔一个阶段就观察成本函数，并根据成本函数的变化趋势调整参数，这种方法通常是在计算机计算能力不够的时候进行的(panda,熊猫)</p>
 <p>Training many models in parallel:多个模型同时运行，选择效果最好的(cavier,鱼子酱)</p>
 <h2 id="正则化网络的激活函数"><a href="#正则化网络的激活函数" class="headerlink" title="正则化网络的激活函数"></a>正则化网络的激活函数</h2><p>batch归一化，这种方法可以使我的参数搜索问题变得简单，使神经网络对超参数的选择更加稳定，超参数的范围会庞大，工作效果也更好</p>
 <p>在逻辑回归归一化设置中 X-&#x3D;μ X&#x2F;&#x3D;σ</p>
 <p>对于batch归一化，归一上一层的a[i]，以更快速的训练W[3]b[3]，实际上我们归一的是z[i]不是a[i]</p>
 <p>可以选择直接归一化，和逻辑回归归一化一样，这样z会有平均值0和方差1，但是通常我们希望z有平均值和方差，γ和β可以仿造w和b权重更新的方法进行更新 γ和β是为了设置z的平均值和方差</p>
-<img src="/post/f473367e/f473367e/image-20230709102954012.png" class title="image-20230709102954012">
-
-<h2 id="将Batch-Norm拟合进神经网络"><a href="#将Batch-Norm拟合进神经网络" class="headerlink" title="将Batch Norm拟合进神经网络"></a>将Batch Norm拟合进神经网络</h2><img src="/post/f473367e/f473367e/image-20230709110555224.png" class title="image-20230709110555224">
-
+<p><img src="/post/f473367e/image-20230709102954012.png" alt="image-20230709102954012"></p>
+<h2 id="将Batch-Norm拟合进神经网络"><a href="#将Batch-Norm拟合进神经网络" class="headerlink" title="将Batch Norm拟合进神经网络"></a>将Batch Norm拟合进神经网络</h2><p><img src="/post/f473367e/image-20230709110555224.png" alt="image-20230709110555224"></p>
 <p>b[i]在这里作用不大，因为z进行batch归一化的时候，会先将均值设置为0，这样的话b[i]的用处就不大，可以去掉，注意β[i]和γ[i]的维度都是n[l] * 1</p>
-<img src="/post/f473367e/f473367e/image-20230709111240690.png" class title="image-20230709111240690">
-
+<p><img src="/post/f473367e/image-20230709111240690.png" alt="image-20230709111240690"></p>
 <p>伪代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,numMiniBatches):</span><br><span class="line">    parameters=initParameters(layerdims)</span><br><span class="line">    AL,cache=forward(parameters,X&#123;t&#125;)</span><br><span class="line">    cost=compute_cost(AL,Y&#123;t&#125;)</span><br><span class="line">    grads=backforward(cost,cache,X)</span><br><span class="line">    parameters=update_parameters(parameters)</span><br></pre></td></tr></table></figure>
 
 <p>这里的parameters有参数 W β γ	grads对应</p>
-<img src="/post/f473367e/f473367e/image-20230709111955428.png" class title="image-20230709111955428">
-
+<p><img src="/post/f473367e/image-20230709111955428.png" alt="image-20230709111955428"></p>
 <h2 id="Batch-Norm为什么奏效"><a href="#Batch-Norm为什么奏效" class="headerlink" title="Batch Norm为什么奏效"></a>Batch Norm为什么奏效</h2><h2 id="测试时的Batch-Norm"><a href="#测试时的Batch-Norm" class="headerlink" title="测试时的Batch Norm"></a>测试时的Batch Norm</h2><p>μ和σ通常用指数加权平均来估算</p>
 <p>到最后测试的时候，就不再计算μ和σ</p>
-<img src="/post/f473367e/f473367e/image-20230709134945572.png" class title="image-20230709134945572">
-
+<p><img src="/post/f473367e/image-20230709134945572.png" alt="image-20230709134945572"></p>
 <h2 id="Softmax回归"><a href="#Softmax回归" class="headerlink" title="Softmax回归"></a>Softmax回归</h2><p>不再是只识别两个分类，可以识别多个分类</p>
 <p>参数：C表示输入会被分入的类别总个数 最后一层的维数不再是1，而是4了(是4的原因是这儿有四个输出变量)</p>
-<img src="/post/f473367e/f473367e/image-20230709135324845.png" class title="image-20230709135324845">
-
+<p><img src="/post/f473367e/image-20230709135324845.png" alt="image-20230709135324845"></p>
 <p>最后一层应用Softmax激活函数</p>
 <p>参数：临时变量 t&#x3D;e^z[l]</p>
-<img src="/post/f473367e/f473367e/image-20230709202801516.png" class title="image-20230709202801516">
-
+<p><img src="/post/f473367e/image-20230709202801516.png" alt="image-20230709202801516"></p>
 <h2 id="训练一个Softmax分类器"><a href="#训练一个Softmax分类器" class="headerlink" title="训练一个Softmax分类器"></a>训练一个Softmax分类器</h2><p>损失函数和成本函数的计算：</p>
-<img src="/post/f473367e/f473367e/image-20230709203056569.png" class title="image-20230709203056569">
-
-<img src="/post/f473367e/f473367e/image-20230709203239795.png" class title="image-20230709203239795">
-
+<p><img src="/post/f473367e/image-20230709203056569.png" alt="image-20230709203056569"></p>
+<p><img src="/post/f473367e/image-20230709203239795.png" alt="image-20230709203239795"></p>
 <h2 id="深度学习框架"><a href="#深度学习框架" class="headerlink" title="深度学习框架"></a>深度学习框架</h2><p>eg:</p>
-<img src="/post/f473367e/f473367e/image-20230709203825234.png" class title="image-20230709203825234">
-
+<p><img src="/post/f473367e/image-20230709203825234.png" alt="image-20230709203825234"></p>
 <h2 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h2><p>一种深度学习框架 只需要我们写正向传播，会自动帮我们计算反向传播</p>
-<img src="/post/f473367e/f473367e/image-20230709205405507.png" class title="image-20230709205405507">
-
-<p>placeholder在这儿表示等会就会提供x的值，提供方式如下：<img src="/post/f473367e/f473367e/image-20230709204902762.png" class title="image-20230709204902762"></p>
+<p><img src="/post/f473367e/image-20230709205405507.png" alt="image-20230709205405507"></p>
+<p>placeholder在这儿表示等会就会提供x的值，提供方式如下：<img src="/post/f473367e/image-20230709204902762.png" alt="image-20230709204902762"></p>
 <p>session相同表示方法：</p>
-<img src="/post/f473367e/f473367e/image-20230709205716809.png" class title="image-20230709205716809">
-
+<p><img src="/post/f473367e/image-20230709205716809.png" alt="image-20230709205716809"></p>
 <p>对于Tensorflow的代码实现而言，实现代码的结构如下：</p>
 <ol>
 <li>创建Tensorflow变量（此时，尚未直接计算）</li>
@@ -498,7 +478,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:56:21" itemprop="dateModified" datetime="2023-07-26T17:56:21+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -526,33 +506,26 @@
 <p>现在选择算法使进行正向传播前先优化参数</p>
 <p>可以把训练集分割成小一点的训练集，这些子集叫做mini-batch,如图所示，假设X有5000000个样本  将每1000个分成一个集合-&gt;x{i}</p>
 <p>同时训练这些小的训练集</p>
-<img src="/post/837406e8/837406e8/image-20230708162045308.png" class title="image-20230708162045308">
-
+<p><img src="/post/837406e8/image-20230708162045308.png" alt="image-20230708162045308"></p>
 <p>伪代码(如果使用batch,要计算5000000个样本才迭代一次，但是如果使用mini-batch，每1000个样本就可以迭代一次参数)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5000</span>):</span><br><span class="line">    AL,cache=forward(X&#123;i&#125;,Y&#123;i&#125;,parameters)</span><br><span class="line">    cost=compute_cost(AL,Y&#123;i&#125;)</span><br><span class="line">    grads=back_forward(parameters,cache)</span><br><span class="line">    parameters=update_parameters(parameters,grads)</span><br></pre></td></tr></table></figure>
 
 <h2 id="理解mini-batch梯度下降法"><a href="#理解mini-batch梯度下降法" class="headerlink" title="理解mini-batch梯度下降法"></a>理解mini-batch梯度下降法</h2><p>成本函数图像可能不再严格单调递减，但是总体趋势一定是递减的</p>
-<img src="/post/837406e8/837406e8/image-20230708163120090.png" class title="image-20230708163120090">
-
+<p><img src="/post/837406e8/image-20230708163120090.png" alt="image-20230708163120090"></p>
 <p>超参数：mini-batch的大小 如果mini-batch&#x3D;m即代表就是batch,并未拆分	x{1},y{1}&#x3D;x,y 每次迭代需要处理大量样本，耗时长</p>
 <p>mini-batch&#x3D;1:就有了新的算法，叫做随机梯度下降法，每个样本都互相独立，该种方法不可能有极小值，因为每个样本之间多少会有一定的差距，适合某一个样本的参数不一定就适合另一个样本，需要降低学习率</p>
 <p>蓝色是m的迭代方向，紫色是1的迭代方向，绿色是采用mini-batch方法的迭代方向</p>
-<img src="/post/837406e8/837406e8/image-20230708163703647.png" class title="image-20230708163703647">
-
+<p><img src="/post/837406e8/image-20230708163703647.png" alt="image-20230708163703647"></p>
 <h2 id="指数加权平均"><a href="#指数加权平均" class="headerlink" title="指数加权平均"></a>指数加权平均</h2><p>eg:</p>
-<img src="/post/837406e8/837406e8/image-20230708164540431.png" class title="image-20230708164540431">
-
+<p><img src="/post/837406e8/image-20230708164540431.png" alt="image-20230708164540431"></p>
 <p>β越大，曲线越平缓：</p>
-<img src="/post/837406e8/837406e8/image-20230708164854520.png" class title="image-20230708164854520">
-
+<p><img src="/post/837406e8/image-20230708164854520.png" alt="image-20230708164854520"></p>
 <h2 id="理解指数加权平均"><a href="#理解指数加权平均" class="headerlink" title="理解指数加权平均"></a>理解指数加权平均</h2><h2 id="指数加权平均的指数修正"><a href="#指数加权平均的指数修正" class="headerlink" title="指数加权平均的指数修正"></a>指数加权平均的指数修正</h2><p>实际上我们得到的图形是紫线，因为设置初始值为0，v1&#x3D;0.02θ1，很小，为了修正这种偏差，令除了Vi&#x3D;0.98V(i-1)+0.02θi之外，再除以1-β^t，随着t越来越大，1-β^t越来越接近于1，紫线和绿线越来越接近</p>
-<img src="/post/837406e8/837406e8/image-20230708190504966.png" class title="image-20230708190504966">
-
+<p><img src="/post/837406e8/image-20230708190504966.png" alt="image-20230708190504966"></p>
 <h2 id="动量梯度下降法"><a href="#动量梯度下降法" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h2><p>Momentum梯度下降法：计算梯度的指数加权平均数，并利用该梯度更新权重</p>
 <p>成本函数理想要求：学习率不宜过高，不然波幅就会很大，同时也希望学习时间够快</p>
 <p>得到dw的移动平均数，这样可以减缓梯度下降的幅度，因为如下图，可能发现成本函数接近极小值的图象是纵轴上的摆动平均值接近于0，最终纵轴摆动变小了，学习速度变快</p>
-<img src="/post/837406e8/837406e8/image-20230708192134734.png" class title="image-20230708192134734">
-
+<p><img src="/post/837406e8/image-20230708192134734.png" alt="image-20230708192134734"></p>
 <p>现在有超参数α和β，β控制着指数加权平均数，最常用的值是0.9，相当于平均了前十次的导数</p>
 <p>两个初始值都是0(紫色部分也是一种，但是不怎么用)</p>
 <p><img src="/post/837406e8/Users\86157\AppData\Roaming\Typora\typora-user-images\image-20230708192425356.png" alt="image-20230708192425356"></p>
@@ -560,20 +533,16 @@
 <p>该算法也可以加快梯度下降</p>
 <p>这里b表示纵轴，w表示横轴，现在希望b变化幅度不要太大，加快w的变化</p>
 <p>db会比较大，从而导致Sdb也比较大，dw会比较小，从而导致Sdw也比较小，从而使b变化幅度不会太大，w变化幅度也不会太小，从蓝色图像变成绿色图像，同时可以用更大的学习率加快学习，一般为了防止根号下的内容过于小，会加上一个很小的值</p>
-<img src="/post/837406e8/837406e8/image-20230708193531517.png" class title="image-20230708193531517">
-
+<p><img src="/post/837406e8/image-20230708193531517.png" alt="image-20230708193531517"></p>
 <h2 id="Adam优化算法"><a href="#Adam优化算法" class="headerlink" title="Adam优化算法"></a>Adam优化算法</h2><p>adaptive moment estimation</p>
 <p>将RMSprop和动量梯度下降法结合起来</p>
-<img src="/post/837406e8/837406e8/image-20230708194139616.png" class title="image-20230708194139616">
-
+<p><img src="/post/837406e8/image-20230708194139616.png" alt="image-20230708194139616"></p>
 <p>参数设置，学习率需要不断调试选出最合适的</p>
-<img src="/post/837406e8/837406e8/image-20230708194741374-168976898551518.png" class title="image-20230708194741374">
-
+<p><img src="/post/837406e8/image-20230708194741374-168976898551518.png" alt="image-20230708194741374"></p>
 <h2 id="学习率衰减"><a href="#学习率衰减" class="headerlink" title="学习率衰减"></a>学习率衰减</h2><p>比如使用mini-batch时，成本函数在迭代过程中会有波幅，但都是下降朝向最小值，会不断精确的收敛，但是不会真正的收敛，因为用的α是固定值</p>
 <p>所以α应该在前期是比较大的，然后随着不断学习，要做到精确收敛，α要不断变小</p>
 <p>decay-rate是衰减率，epoch-num是次数</p>
-<img src="/post/837406e8/837406e8/image-20230708201502202.png" class title="image-20230708201502202">
-
+<p><img src="/post/837406e8/image-20230708201502202.png" alt="image-20230708201502202"></p>
 <p>α的其他衰减函数</p>
 <h2 id="局部最优的问题"><a href="#局部最优的问题" class="headerlink" title="局部最优的问题"></a>局部最优的问题</h2>
       
@@ -625,7 +594,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:56:11" itemprop="dateModified" datetime="2023-07-26T17:56:11+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -666,40 +635,33 @@
 <h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>正则化：针对过度拟合</p>
 <p>L2正则化(最常见)：正则化其实是限制了W数据本身，使得最后分类的曲线不要太奇形怪状，就能抑制过拟合</p>
 <p>如果λ太大，也可能会“过度平滑”，从而导致模型高偏差</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707110026468.png" class title="image-20230707110026468">
-
+<p><img src="/post/1a7d5752/image-20230707110026468.png" alt="image-20230707110026468"></p>
 <p>L1正则化：W会比较稀疏，也就是说W向量中有很多0</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707110251006.png" class title="image-20230707110251006">
-
+<p><img src="/post/1a7d5752/image-20230707110251006.png" alt="image-20230707110251006"></p>
 <p>L1正则化W更稀疏原因：</p>
 <ul>
 <li><p>L1和L2正则常被用来解决过拟合问题。而L1正则也常被用来进行特征选择，主要原因在于L1正则化会使得较多的参数为0，从而产生稀疏解，将0对应的特征遗弃，进而用来选择特征。</p>
 <p>但为什么L1正则会产生稀疏解呢？这里利用公式进行解释。</p>
 <p>假设只有一个参数为 w，损失函数为L(w)，分别加上L1正则项和L2正则项后有：</p>
 <p>假设L(w)在0处的倒数为 d0 ，即</p>
-<img src="/post/1a7d5752/1a7d5752/100045082-79912-2.png" class title="img">
-
+<p><img src="/post/1a7d5752/100045082-79912-2.png" alt="img"></p>
 <p>则可以推导使用L1正则和L2正则时的导数</p>
 <p>引入L2正则项，在 0 处的导数</p>
-<img src="/post/1a7d5752/1a7d5752/100045082-79913-3.png" class title="img">
-
+<p><img src="/post/1a7d5752/100045082-79913-3.png" alt="img"></p>
 <p>引入L1正则项，在0处的导数</p>
-<img src="/post/1a7d5752/1a7d5752/100045082-79914-4.png" class title="img">
-
+<p><img src="/post/1a7d5752/100045082-79914-4.png" alt="img"></p>
 <p>可见，引入L2正则时，代价函数在 0 处的导数仍是 d0 ，无变化。而引入L1正则后，代价函数在0处的导数有一个突变。从 d0 + λ 到 d0 − λ ，若 d0 + λ 和 d0 − λ 异号，则在 0 处会是一个极小值点。因此，优化时，很可能优化到该极小值点上，即 w &#x3D; 0 处。</p>
 <p>这里只解释了有一个参数的情况，如果有更多的参数，也是类似的。因此，用L1正则更容易产生稀疏解。</p>
 </li>
 </ul>
 <p>这里的入是正则化参数</p>
 <p>对于多层神经网络：相当于在原来的W&#x3D;W-α * dW的基础上再减    λ&#x2F;m * W,</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707113908610.png" class title="image-20230707113908610">
-
+<p><img src="/post/1a7d5752/image-20230707113908610.png" alt="image-20230707113908610"></p>
 <h2 id="为什么正则化有利于预防过拟合呢"><a href="#为什么正则化有利于预防过拟合呢" class="headerlink" title="为什么正则化有利于预防过拟合呢"></a>为什么正则化有利于预防过拟合呢</h2><p>如果入足够大，W就越接近于0，当正则化参数足够大，W会变小，Z会变小</p>
 <p>如果不用正则化，则成本函数根据次数迭代可能就不是单调递减的</p>
 <h2 id="Dropout正则化"><a href="#Dropout正则化" class="headerlink" title="Dropout正则化"></a>Dropout正则化</h2><p>dropout会遍历网络的每一层，并设置消除神经网络中结点的概率</p>
 <p>比如每一层的每个节点得以保留和消除的概率都是0.5，然后删除一些节点并删除相应的连线，对于每一个训练样本，都将采取一个精简后的神经网络来训练它</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707133559373.png" class title="image-20230707133559373">
-
+<p><img src="/post/1a7d5752/image-20230707133559373.png" alt="image-20230707133559373"></p>
 <p>最常用的Dropout正则化方法：inverted dropout(反向随机失活)（以三层神经网络为例）：</p>
 <ul>
 <li>首先定义变量d，d3表示一个三层的dropout变量 d3&#x3D;np.random.randn(a3.shape[0],a3.shape[1])&lt;<strong>keep-prob</strong>(keepprob表示一个具体的数字，eg:0.8,表示保留某个隐藏单元的概率，它的作用是生成随机矩阵)</li>
@@ -729,44 +691,35 @@
 <h2 id="归一化输入"><a href="#归一化输入" class="headerlink" title="归一化输入"></a>归一化输入</h2><p>归一化输入可以加快训练方法</p>
 <p>归一化输入有两个步骤：</p>
 <p>第一步是零均值化：</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707214829466.png" class title="image-20230707214829466">
-
+<p><img src="/post/1a7d5752/image-20230707214829466.png" alt="image-20230707214829466"></p>
 <p>第二步是归一化方差：</p>
 <p>比如上图中X1的方差比X2大：</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707215217361.png" class title="image-20230707215217361">
-
+<p><img src="/post/1a7d5752/image-20230707215217361.png" alt="image-20230707215217361"></p>
 <p>如果选好了参数进行训练集归一化，那么测试集要用相同的参数</p>
 <p>就不再计算如果使用非归一化，代价函数不直观：</p>
-<img src="/post/1a7d5752/1a7d5752/100045082-79911-1.png" class title="image-20230707231953543">
-
+<p><img src="/post/1a7d5752/100045082-79911-1.png" alt="image-20230707231953543"></p>
 <p>标准化：</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707232321944.png" class title="image-20230707232321944">
-
+<p><img src="/post/1a7d5752/image-20230707232321944.png" alt="image-20230707232321944"></p>
 <p>如果不归一化学习率很小，因为W可变范围不大</p>
 <p>因此如果输入特征的范围值差别太大，比如有些是0-1，有些是1-1000，就需要归一化，如果相近就不需要归一化</p>
 <h2 id="梯度消失和梯度爆炸"><a href="#梯度消失和梯度爆炸" class="headerlink" title="梯度消失和梯度爆炸"></a>梯度消失和梯度爆炸</h2><p>导数和梯度有可能非常小或者非常大，这加大了训练的难度</p>
 <p>W&gt;1时，成本函数指数增长	W&lt;0时成本函数指数降低</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230707233203258.png" class title="image-20230707233203258">
-
+<p><img src="/post/1a7d5752/image-20230707233203258.png" alt="image-20230707233203258"></p>
 <p>抛出两个梯度下降中的两个存在性问题  在多层隐藏层的情况下 W&gt;1 可能会造成梯度爆炸，W&lt;1 可能会造成梯度消失的情况</p>
 <h2 id="神经网络的权重初始化"><a href="#神经网络的权重初始化" class="headerlink" title="神经网络的权重初始化"></a>神经网络的权重初始化</h2><p>假设一层神经网络 a&#x3D;g(z) z&#x3D;W * X + b&#x3D;w1 * x1 + w2 * x2 + w3 * x3 + ……，如果n越大，也就是X的特征值越多，就希望wi的值小，不然得出的z就会很大，最合理的方式是wi的方差为1&#x2F;n</p>
 <p>我们从一个<strong>正态分布</strong>（均值为零，单位标准差）中<strong>抽取随机值</strong>，然后乘以一个小数字，比如<strong>0.01</strong>。结果将是一个标准差接近<strong>0.01</strong>的权重集。如果是ReLU函数，令方差是2&#x2F;n,因为ReLu在z&lt;0段导数和值都为0,注意，这里的np.sqrt是开方的意思	[W要乘以1&#x2F;n的原因](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/27919794">深度前馈网络与Xavier初始化原理 - 知乎 (zhihu.com)</a>)</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230708134430767.png" class title="image-20230708134430767">
-
+<p><img src="/post/1a7d5752/image-20230708134430767.png" alt="image-20230708134430767"></p>
 <h2 id="梯度的数值逼近"><a href="#梯度的数值逼近" class="headerlink" title="梯度的数值逼近"></a>梯度的数值逼近</h2><p>使用双边误差的方法更接近导数</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230708134824440.png" class title="image-20230708134824440">
-
+<p><img src="/post/1a7d5752/image-20230708134824440.png" alt="image-20230708134824440"></p>
 <p>使用双边误差来判断导数是否正确实现了函数f的偏导，可以用这个方法来检验反向传播函数是否正确进行</p>
 <h2 id="梯度检验"><a href="#梯度检验" class="headerlink" title="梯度检验"></a>梯度检验</h2><p>梯度检验(Grad check)可以检验反向传播的过程是否有误</p>
 <p>第一步：将所有参数转换成一个巨大的向量数据</p>
-<img src="/post/1a7d5752/1a7d5752/image-20230708140048097.png" class title="image-20230708140048097">
-
+<p><img src="/post/1a7d5752/image-20230708140048097.png" alt="image-20230708140048097"></p>
 <p>就是之前求梯度是通过推出的公式，这里求梯度是通过邻近两个割点求近似值，如果这两个梯度值差不多的话，那么就说明我们之前做的是对的</p>
 <p>检查你在反向传播阶段做求偏导运算时有没有算错</p>
-<p>差值(这里的2是指ord为2的范数，即除以<img src="/post/1a7d5752/1a7d5752/image-20230708154400361.png" class="sqrt%7Bx_%7B1%7D%5E%7B2%7D%20&amp;plus;%20x_%7B2%7D%5E%7B2%7D%20&amp;plus;%20...%20&amp;plus;%20x_%7Bn%7D%5E%7B2%7D%7D \sqrt{x_{1}^{2} + x_{2}^{2} + ... + x_{n}^{2}} %})：&lt;&#x2F;p&gt;
-{% asset_img" title="image-20230708154400361">
-
-</p><h2 id="关于梯度检验实现的注记"><a href="#关于梯度检验实现的注记" class="headerlink" title="关于梯度检验实现的注记"></a>关于梯度检验实现的注记</h2><p>首先不要在训练中使用梯度检验，他只用于调试</p>
+<p>差值(这里的2是指ord为2的范数，即除以<img src="/post/1a7d5752/sqrt%7Bx_%7B1%7D%5E%7B2%7D%20&plus;%20x_%7B2%7D%5E%7B2%7D%20&plus;%20...%20&plus;%20x_%7Bn%7D%5E%7B2%7D%7D" alt="\sqrt{x_{1}^{2} + x_{2}^{2} + ... + x_{n}^{2}}">)：</p>
+<p><img src="/post/1a7d5752/image-20230708154400361.png" alt="image-20230708154400361"></p>
+<h2 id="关于梯度检验实现的注记"><a href="#关于梯度检验实现的注记" class="headerlink" title="关于梯度检验实现的注记"></a>关于梯度检验实现的注记</h2><p>首先不要在训练中使用梯度检验，他只用于调试</p>
 <p>梯度检验和dropout不能同时使用，除非将keep-prob设置为1</p>
 
       
@@ -818,7 +771,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:55:56" itemprop="dateModified" datetime="2023-07-26T17:55:56+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -868,8 +821,7 @@
 <h2 id="为什么使用深层表示"><a href="#为什么使用深层表示" class="headerlink" title="为什么使用深层表示"></a>为什么使用深层表示</h2><p>深度即更多的隐藏层，为什么需要这么多的隐藏层呢(输入层和输出层不算隐藏层)</p>
 <p>深度神经网络结构：第0层即输入层，比如输入的一张图片，输入层就相当于特征提取器，假设建立20个隐藏单元的深度神经网络，隐藏单元就是图里的一些小单元，然后将照片里组成边缘的像素们放在一起看，然后它可以把探测到的边缘组合成面部的不同部分</p>
 <h2 id="搭建深层神经网络块"><a href="#搭建深层神经网络块" class="headerlink" title="搭建深层神经网络块"></a>搭建深层神经网络块</h2><p>上面是正向传播，下面是反向传播</p>
-<img src="/post/bb71978/bb71978/image-20230706093807182.png" class title="image-20230706093807182">
-
+<p><img src="/post/bb71978/image-20230706093807182.png" alt="image-20230706093807182"></p>
 <h2 id="参数VS超参数"><a href="#参数VS超参数" class="headerlink" title="参数VS超参数"></a>参数VS超参数</h2><p>参数：比如W,b</p>
 <p>超参数：比如α(学习率)，梯度下降法循环的数量，隐层数L，隐藏单元数(n[0],n[1],n[2]……)，激活函数的选择	——&gt;这些数字实际上是由我们自己设置的，并且会影响参数W和b的值，所以称为超参数</p>
 <p>如果无法确定选择什么α,可以先用不同的α来测试cost的大小，找到最适合的α</p>
@@ -926,7 +878,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:55:38" itemprop="dateModified" datetime="2023-07-26T17:55:38+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -951,26 +903,20 @@
       
           <h2 id="神经网络概论"><a href="#神经网络概论" class="headerlink" title="神经网络概论"></a>神经网络概论</h2><p>引入层的概念，x(i)表示第i个样本 w[1]表示第一层的w，表示是在第一层用到的w</p>
 <p>上一节学到的模型如下：</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230630222739969-16897684888191.png" class title="image-20230630222739969">
-
+<p><img src="/post/95d38cdb/image-20230630222739969-16897684888191.png" alt="image-20230630222739969"></p>
 <p>扩展：</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230630222752919-16897684888202.png" class title="image-20230630222752919">
-
+<p><img src="/post/95d38cdb/image-20230630222752919-16897684888202.png" alt="image-20230630222752919"></p>
 <p>和上面的图一样，算出a[1],但是会继续算，继续根据参数计算z[2],最后得到损失函数(交叉熵损失)</p>
 <h2 id="神经网络表示"><a href="#神经网络表示" class="headerlink" title="神经网络表示"></a>神经网络表示</h2><p>隐藏层：在训练集中，这些中间节点的真实数据，但是在训练集中是看不见的，只能看到输入输出</p>
 <p>下图是双层神经网络示例：是双层不是三层是因为输入层通常不被看作一个层，第零层</p>
 <p>从左到右依次是输入层，隐藏层，输出层</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230630223343705-16897684888203.png" class title="image-20230630223343705">
-
+<p><img src="/post/95d38cdb/image-20230630223343705-16897684888203.png" alt="image-20230630223343705"></p>
 <p>X:输入特征，或者用a[0]表示，这里的0代表第0层，就是输入层，输入层将X&#x2F;a[0]传给隐藏层，隐藏层产生a[1],在上图中a[1]应该是一个4*1的矩阵，最后的y_hat&#x3D;a[2]，隐藏层可能有两个相关参数w[1],b[1],这里的w应该是3 * 4的矩阵，b是4 * 1矩阵，4代表这里有四个输出，即a[1]是一个4 * 1的矩阵，3代表x的输入特征数，输出层有两个相关参数w[2],b[2],</p>
 <h2 id="计算神经网络的输出"><a href="#计算神经网络的输出" class="headerlink" title="计算神经网络的输出"></a>计算神经网络的输出</h2><p>如图所示，双层神经网络logistic函数</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230704175622967-16897684888214.png" class title="image-20230704175622967">
-
-<img src="/post/95d38cdb/95d38cdb/image-20230704184159224-16897684888215.png" class title="image-20230704184159224">
-
+<p><img src="/post/95d38cdb/image-20230704175622967-16897684888214.png" alt="image-20230704175622967"></p>
+<p><img src="/post/95d38cdb/image-20230704184159224-16897684888215.png" alt="image-20230704184159224"></p>
 <p>如图所示，这里将一层的w列为了一个矩阵，每一层的每个w都是nx * 1矩阵，和x是一样的，上图中第一层有四个结点，就用了四个w，将四个w排成一个矩阵，也就是nx * 4矩阵，然后将这个排列好的矩阵转置，变成上图所示的形状，再乘上x，再加上b，将第一层的b也设为一个矩阵，将上图总结：</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230704184843687-16897684888216.png" class title="image-20230704184843687">
-
+<p><img src="/post/95d38cdb/image-20230704184843687-16897684888216.png" alt="image-20230704184843687"></p>
 <p>伪代码如下(m个样本):</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m):</span><br><span class="line">    z[<span class="number">1</span>](i)=W[<span class="number">1</span>] * x(i) + b[<span class="number">1</span>]</span><br><span class="line">    a[<span class="number">1</span>](i)=sigmoid(z[<span class="number">1</span>](i))</span><br><span class="line">    z[<span class="number">2</span>](i)=W[<span class="number">2</span>] * x(i) + b[<span class="number">2</span>]</span><br><span class="line">    a[<span class="number">2</span>](i)=sigmoid(z[<span class="number">2</span>](i))</span><br></pre></td></tr></table></figure>
 
@@ -980,13 +926,11 @@
 <h2 id="向量化实现的解释"><a href="#向量化实现的解释" class="headerlink" title="向量化实现的解释"></a>向量化实现的解释</h2><p>激活函数(sigmoid)可以有更多选择</p>
 <h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>g()用更多的选择，不止sigmoid()函数</p>
 <p>比如用tanh(z)代替sigmoid(),前者的函数：e^z-e^(-z)&#x2F;e^z+e^(-z)	后者的函数：1&#x2F;1+e^(-z),前者是后者的平移，且平均值为0如图所示：</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230704203251929-16897684888227.png" class title="image-20230704203251929">
-
+<p><img src="/post/95d38cdb/image-20230704203251929-16897684888227.png" alt="image-20230704203251929"></p>
 <p>当要二元分类的时候，也就是y是0&#x2F;1时，用sigmoid更方便，但是在前面几层可以tanh函数</p>
 <p>sigmoid和tanh函数的缺点，当z很大的时候，斜率很低</p>
 <p>RelU(修正线性函数)函数：a&#x3D;max(0,z),如图</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230704203606547-16897684888228.png" class title="image-20230704203606547">
-
+<p><img src="/post/95d38cdb/image-20230704203606547-16897684888228.png" alt="image-20230704203606547"></p>
 <p>选择激活函数的方法：</p>
 <ul>
 <li>如果要求二元分类，选择sigmoid,然后其他单元都选择ReLU，ReLU运算的速度会比其他的快很多</li>
@@ -1009,24 +953,22 @@
 <li><p>tanh函数导数：</p>
 </li>
 </ul>
-<img src="/post/95d38cdb/95d38cdb/image-20230704212033011-16897684888229.png" class title="image-20230704212033011">
-
+<p><img src="/post/95d38cdb/image-20230704212033011-16897684888229.png" alt="image-20230704212033011"></p>
 <ul>
 <li><p>ReLU函数：max(0,z),导数比较好计算，但是z等于0的导数需要自己定义</p>
 </li>
 <li><p>泄露的ReLU函数：max(0.01 * z,z),同样，z&#x3D;0是需要自己定义的：</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230704212427680-168976848882210.png" class title="image-20230704212427680"></li>
+<p><img src="/post/95d38cdb/image-20230704212427680-168976848882210.png" alt="image-20230704212427680"></p>
+</li>
 </ul>
 <h2 id="神经网络的梯度下降法"><a href="#神经网络的梯度下降法" class="headerlink" title="神经网络的梯度下降法"></a>神经网络的梯度下降法</h2><h6 id="单层隐藏神经网络的反向传播："><a href="#单层隐藏神经网络的反向传播：" class="headerlink" title="单层隐藏神经网络的反向传播："></a>单层隐藏神经网络的反向传播：</h6><p>参数设置：W[1] b[1] W[2] b[2],n[0]表示多输入特征，n[1]表示隐藏单元，n[2]表示输出单元(前面讲的情形中n[2]是1)</p>
 <p>W[1]是n[1] * n[0],b[1]是n[1] * 1,W[2]是n[2] * n[1],b[2]是n[2] * 1</p>
 <p>成本函数(cost function):J(W[1],b[1],W[2],b[2])&#x3D;Σ(L(y_hat,y))&#x2F;m,在该情形中，y_hat是a[2]</p>
 <p>初始化参数对于梯度下降法很重要：</p>
 <p>repeat:	dw[1]&#x3D;dJ&#x2F;dw[1],dw[2]&#x3D;dJ&#x2F;dw[2],db[1]&#x3D;dJ&#x2F;db[1],db[2]&#x3D;dJ&#x2F;db[2],w[1]&#x3D;w[1]-α * dw[1]……</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230704215112255-168976848882211.png" class title="image-20230704215112255">
-
+<p><img src="/post/95d38cdb/image-20230704215112255-168976848882211.png" alt="image-20230704215112255"></p>
 <p>由前面的计算得,dz[1]的乘法是相同维度的矩阵对应位置元素相乘</p>
-<img src="/post/95d38cdb/95d38cdb/image-20230704215936385-168976848882212.png" class title="image-20230704215936385">
-
+<p><img src="/post/95d38cdb/image-20230704215936385-168976848882212.png" alt="image-20230704215936385"></p>
 <h2 id="随机初始化"><a href="#随机初始化" class="headerlink" title="随机初始化"></a>随机初始化</h2><p>不能直接讲W1&#x2F;W2都定义成zero矩阵，这样对于隐藏节点没有意义，以为相当于是用相同的方法进行计算</p>
 <p>因此选择用随机初始化：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">W1=np.random.randn(n_h,n_x)*<span class="number">0.01</span></span><br><span class="line">b1=np.zero((n_h,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
@@ -1081,7 +1023,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:55:24" itemprop="dateModified" datetime="2023-07-26T17:55:24+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1114,17 +1056,15 @@
 <p>输入：x-&gt;n * m	w-&gt;n * m	b-&gt;R</p>
 <p>输出：y</p>
 <p>若用线性回归方程：y&#x3D;w(T) * x+b	无法确保y的范围	solution: use sigmoid(Z)函数——&gt;y&#x3D;sigmoid(w^T * x+b),sigmoid为激活函数，通过该方法，b和w才是需要学习找到的参数</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628205550177.png" class title="image-20230628205550177">
-
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628205903577.png" class title="image-20230628205903577">
-
+<p><img src="/post/e2d4bc4d/image-20230628205550177.png" alt="image-20230628205550177"></p>
+<p><img src="/post/e2d4bc4d/image-20230628205903577.png" alt="image-20230628205903577"></p>
 <h2 id="logistic回归损失函数"><a href="#logistic回归损失函数" class="headerlink" title="logistic回归损失函数"></a>logistic回归损失函数</h2><p>为了训练w,b需要定义一个成本函数(cost function)</p>
 <p>令z(i)&#x3D;w^T*x(i)+b</p>
 <h4 id="loss-error-function"><a href="#loss-error-function" class="headerlink" title="loss(error) function:"></a>loss(error) function:</h4><ul>
 <li><p>训练出的y和实际的y的差，或者是他们差平方的二分之一(但是这样不适用于梯度下降法)</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628210813246.png" class title="image-20230628210813246">
+<p><img src="/post/e2d4bc4d/image-20230628210813246.png" alt="image-20230628210813246"></p>
 </li>
-<li><p>逻辑回归实际使用的损失函数：<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628211023644.png" class title="image-20230628211023644"></p>
+<li><p>逻辑回归实际使用的损失函数：<img src="/post/e2d4bc4d/image-20230628211023644.png" alt="image-20230628211023644"></p>
 </li>
 <li><p>损失函数是针对单个训练样本，是衡量在单个训练样本上的表现</p>
 </li>
@@ -1134,25 +1074,20 @@
 <li>成本函数：J(w,b)&#x3D;1&#x2F;m*ΣL(y(hat)，y)-&gt;损失函数求和求平均值</li>
 </ul>
 <h2 id="梯度下降法-gradient-decent-algorithm"><a href="#梯度下降法-gradient-decent-algorithm" class="headerlink" title="梯度下降法(gradient decent algorithm)"></a>梯度下降法(gradient decent algorithm)</h2><p>用梯度下降法训练w和b，即找到令成本函数J(w,b)最小的w,b</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628212108282.png" class title="image-20230628212108282">
-
+<p><img src="/post/e2d4bc4d/image-20230628212108282.png" alt="image-20230628212108282"></p>
 <p>针对这种凹图形，首先找到任意的w,b初始化，梯度下降法就是从初始点开始，朝最陡的下坡方向走一步，是梯度下降的不断迭代，到最后收敛到全局最优解</p>
 <p>eg:α是学习率，学习率可以控制每一次迭代(步长)，比如如果该点的导数小于零，w就增加，如果该点的导数大于零，w就减小，在该图中为了方便省去了b </p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628213522865.png" class title="image-20230628213522865">
-
-<p>如果考虑到w和b两个参数，就用偏导数，式子大致不变，导数变成对w&#x2F;b的偏导数<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628213803459.png" class title="image-20230628213803459"></p>
+<p><img src="/post/e2d4bc4d/image-20230628213522865.png" alt="image-20230628213522865"></p>
+<p>如果考虑到w和b两个参数，就用偏导数，式子大致不变，导数变成对w&#x2F;b的偏导数<img src="/post/e2d4bc4d/image-20230628213803459.png" alt="image-20230628213803459"></p>
 <h2 id="计算图"><a href="#计算图" class="headerlink" title="计算图"></a>计算图</h2><p>正向传播 and 反向传播：</p>
 <p>首先通过样本正向计算出神经网络的输出，紧接着进行一个反向传输操作，用来计算出对应的梯度，导数</p>
 <h2 id="logistic回归中的梯度下降法"><a href="#logistic回归中的梯度下降法" class="headerlink" title="logistic回归中的梯度下降法"></a>logistic回归中的梯度下降法</h2><p>eg:只有一个样本的情况</p>
 <p>这里感觉有点懵，再解释一下：这里的x1,x2代表一个样本的两个值输入,此处的m就是1，然后初始化w1,w2,b,w也是个矩阵，和x的行数和列数一致，此处是将w置换之后再和x相乘，z应该是一个1 * 1的矩阵，再通过sigmod函数找到y(hat),也是一个1*1的函数，对应该样本的估计y(hat),再通过单个样本的损失函数计算损失</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628223000843.png" class title="image-20230628223000843">
-
+<p><img src="/post/e2d4bc4d/image-20230628223000843.png" alt="image-20230628223000843"></p>
 <p>这儿的da&#x2F;dz不太好理解，列了个式子：</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230630162532939.png" class title="image-20230630162532939">
-
+<p><img src="/post/e2d4bc4d/image-20230630162532939.png" alt="image-20230630162532939"></p>
 <h2 id="m个样本的梯度下降"><a href="#m个样本的梯度下降" class="headerlink" title="m个样本的梯度下降"></a>m个样本的梯度下降</h2><p>正如我们前面所知，成本函数J(w,b)是损失函数平均值，则依然用前面样本的例子J(w,b)对w1求导就是每个样本的损失函数对w1求导的平均值</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230628223929648.png" class title="image-20230628223929648">
-
+<p><img src="/post/e2d4bc4d/image-20230628223929648.png" alt="image-20230628223929648"></p>
 <p>用代码实现：</p>
 <p>可以用向量化省去过于冗杂的for循环</p>
 <p>伪代码：</p>
@@ -1162,8 +1097,7 @@
 <p>可扩展深度学习实现可在CPU或者GPU中执行，两者都支持并行（SIMD)</p>
 <p>np.dot可快速计算矩阵的乘积，比for快几百倍</p>
 <h2 id="向量化的更多例子"><a href="#向量化的更多例子" class="headerlink" title="向量化的更多例子"></a>向量化的更多例子</h2><p>等价：</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230630170937902.png" class title="image-20230630170937902">
-
+<p><img src="/post/e2d4bc4d/image-20230630170937902.png" alt="image-20230630170937902"></p>
 <p>np.exp(v):v矩阵每个元素进行e^运算</p>
 <p>np.log(v)</p>
 <p>np.abs(v):绝对值</p>
@@ -1172,8 +1106,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dw=np.zero((nx,<span class="number">1</span>))</span><br><span class="line">dw+=x[i]*(a[i]-y[i])//这里的x[i]指的是第i个样本的nx*<span class="number">1</span>矩阵</span><br></pre></td></tr></table></figure>
 
 <h2 id="向量化logistic回归"><a href="#向量化logistic回归" class="headerlink" title="向量化logistic回归"></a>向量化logistic回归</h2><p>将多个样本用一个矩阵表示</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230630173643895.png" class title="image-20230630173643895">
-
+<p><img src="/post/e2d4bc4d/image-20230630173643895.png" alt="image-20230630173643895"></p>
 <p>细节解释：这里用了一个矩阵加一个实数，在python中，该实数会根据前面的矩阵扩展成对应形式，即前面的矩阵的每一项都会加上b，然后得到一个新的矩阵</p>
 <p>​	伪代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">A=np.zero((<span class="number">1</span>,m))//m个样本</span><br><span class="line">W=np.zero((nx,<span class="number">1</span>))//x有n个特征</span><br><span class="line">X=np.zero((nx,m))//nx个特征，m个样本</span><br><span class="line">Y=np.zero((<span class="number">1</span>,m))</span><br><span class="line">dW=np.zero((nx,<span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> <span class="number">1000</span></span><br><span class="line">	A=sigmod(W(T)*X+b)</span><br><span class="line">    dZ=A-y</span><br><span class="line">    dW=X*((A-Y)(T))/m</span><br><span class="line">    db=np.<span class="built_in">sum</span>(A-y)/m</span><br><span class="line">W=W-α*dW</span><br><span class="line">b=b-α*db</span><br></pre></td></tr></table></figure>
@@ -1182,8 +1115,7 @@
 <p>cal&#x3D;A.sum(axis&#x3D;0):表示将A的每一列相加形成新矩阵，如果是水平轴求和axis&#x3D;1</p>
 <p>percentage&#x3D;100 * A&#x2F;cal.reshape(1,4):将A的每一列的每一个值除以cal的对应列，这儿的reshape是为了确保cal是一个1*4的矩阵</p>
 <p>python中广播常见例子：</p>
-<img src="/post/e2d4bc4d/e2d4bc4d/image-20230630182902907.png" class title="image-20230630182902907">
-
+<p><img src="/post/e2d4bc4d/image-20230630182902907.png" alt="image-20230630182902907"></p>
 <h2 id="关于python-numpy向量的说明"><a href="#关于python-numpy向量的说明" class="headerlink" title="关于python_numpy向量的说明"></a>关于python_numpy向量的说明</h2><p>a&#x3D;np.random.randn(5)-&gt;a.shape&#x3D;(5,)</p>
 <p>a&#x3D;np.random.rand(5,1)-&gt;a.shape&#x3D;(5,1)</p>
 <p>如果定义成了第一种，可以用reshape(5,1)变成(5,1)的</p>
@@ -1246,7 +1178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:52:05" itemprop="dateModified" datetime="2023-07-26T17:52:05+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1273,8 +1205,7 @@
 <h4 id="Improving-Deep-Neural-Networks-Hyperparameter-tuning-超参数调整-，Regularization-正则化-and-Optimization-高级优化算法"><a href="#Improving-Deep-Neural-Networks-Hyperparameter-tuning-超参数调整-，Regularization-正则化-and-Optimization-高级优化算法" class="headerlink" title="Improving Deep Neural Networks: Hyperparameter tuning(超参数调整)，Regularization(正则化) and Optimization(高级优化算法)"></a>Improving Deep Neural Networks: Hyperparameter tuning(超参数调整)，Regularization(正则化) and Optimization(高级优化算法)</h4><h4 id="Structuring-your-Machine-Learning-project"><a href="#Structuring-your-Machine-Learning-project" class="headerlink" title="Structuring your Machine Learning project"></a>Structuring your Machine Learning project</h4><h4 id="Convolutional-Neural-Networks-卷积神经网络，CNN"><a href="#Convolutional-Neural-Networks-卷积神经网络，CNN" class="headerlink" title="Convolutional Neural Networks(卷积神经网络，CNN)"></a>Convolutional Neural Networks(卷积神经网络，CNN)</h4><p>always apply for images</p>
 <h4 id="National-Language-Procession-Building-sequence-models"><a href="#National-Language-Procession-Building-sequence-models" class="headerlink" title="National Language Procession: Building sequence models"></a>National Language Procession: Building sequence models</h4><p>include Recurrent Neural Networks(循环神经网络，RNN)</p>
 <h2 id="1-2-什么是神经学习"><a href="#1-2-什么是神经学习" class="headerlink" title="1.2 什么是神经学习"></a>1.2 什么是神经学习</h2><p>deep learning refers to training neural networks</p>
-<img src="/post/7bddedf7/7bddedf7/image-20230628162111118.png" class title="image-20230628162111118">
-
+<p><img src="/post/7bddedf7/image-20230628162111118.png" alt="image-20230628162111118"></p>
 <ul>
 <li><p>standard neural network</p>
 <ul>

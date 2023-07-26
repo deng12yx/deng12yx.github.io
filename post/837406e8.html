@@ -29,24 +29,24 @@
 <meta property="og:site_name" content="BeautyFlower">
 <meta property="og:description" content="Mini-batch梯度下降法优化算法可以帮助我们快速训练模型 虽然向量化可以帮助我们提高运算速率，但是如果m很大，效率还是很低，因为我们每更新一次参数就需要重新进行正向传播，再更新参数，不断重复 现在选择算法使进行正向传播前先优化参数 可以把训练集分割成小一点的训练集，这些子集叫做mini-batch,如图所示，假设X有5000000个样本  将每1000个分成一个集合-&gt;x{i} 同时训">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708162045308.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708163120090.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708163703647.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708164540431.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708164854520.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708190504966.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708192134734.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708162045308.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708163120090.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708163703647.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708164540431.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708164854520.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708190504966.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708192134734.png">
 <meta property="og:image" content="http://example.com/post/837406e8/Users/86157/AppData/Roaming/Typora/typora-user-images/image-20230708192425356.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708193531517.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708194139616.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708194741374-168976898551518.png">
-<meta property="og:image" content="http://example.com/post/837406e8/837406e8/image-20230708201502202.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708193531517.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708194139616.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708194741374-168976898551518.png">
+<meta property="og:image" content="http://example.com/post/837406e8/image-20230708201502202.png">
 <meta property="article:published_time" content="2023-07-19T12:13:49.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:02:48.332Z">
+<meta property="article:modified_time" content="2023-07-26T09:56:21.017Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/post/837406e8/837406e8/image-20230708162045308.png">
+<meta name="twitter:image" content="http://example.com/post/837406e8/image-20230708162045308.png">
 
 <link rel="canonical" href="http://example.com/post/837406e8.html">
 
@@ -245,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:56:21" itemprop="dateModified" datetime="2023-07-26T17:56:21+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,33 +273,26 @@
 <p>现在选择算法使进行正向传播前先优化参数</p>
 <p>可以把训练集分割成小一点的训练集，这些子集叫做mini-batch,如图所示，假设X有5000000个样本  将每1000个分成一个集合-&gt;x{i}</p>
 <p>同时训练这些小的训练集</p>
-<img src="/post/837406e8/837406e8/image-20230708162045308.png" class title="image-20230708162045308">
-
+<p><img src="/post/837406e8/image-20230708162045308.png" alt="image-20230708162045308"></p>
 <p>伪代码(如果使用batch,要计算5000000个样本才迭代一次，但是如果使用mini-batch，每1000个样本就可以迭代一次参数)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5000</span>):</span><br><span class="line">    AL,cache=forward(X&#123;i&#125;,Y&#123;i&#125;,parameters)</span><br><span class="line">    cost=compute_cost(AL,Y&#123;i&#125;)</span><br><span class="line">    grads=back_forward(parameters,cache)</span><br><span class="line">    parameters=update_parameters(parameters,grads)</span><br></pre></td></tr></table></figure>
 
 <h2 id="理解mini-batch梯度下降法"><a href="#理解mini-batch梯度下降法" class="headerlink" title="理解mini-batch梯度下降法"></a>理解mini-batch梯度下降法</h2><p>成本函数图像可能不再严格单调递减，但是总体趋势一定是递减的</p>
-<img src="/post/837406e8/837406e8/image-20230708163120090.png" class title="image-20230708163120090">
-
+<p><img src="/post/837406e8/image-20230708163120090.png" alt="image-20230708163120090"></p>
 <p>超参数：mini-batch的大小 如果mini-batch&#x3D;m即代表就是batch,并未拆分	x{1},y{1}&#x3D;x,y 每次迭代需要处理大量样本，耗时长</p>
 <p>mini-batch&#x3D;1:就有了新的算法，叫做随机梯度下降法，每个样本都互相独立，该种方法不可能有极小值，因为每个样本之间多少会有一定的差距，适合某一个样本的参数不一定就适合另一个样本，需要降低学习率</p>
 <p>蓝色是m的迭代方向，紫色是1的迭代方向，绿色是采用mini-batch方法的迭代方向</p>
-<img src="/post/837406e8/837406e8/image-20230708163703647.png" class title="image-20230708163703647">
-
+<p><img src="/post/837406e8/image-20230708163703647.png" alt="image-20230708163703647"></p>
 <h2 id="指数加权平均"><a href="#指数加权平均" class="headerlink" title="指数加权平均"></a>指数加权平均</h2><p>eg:</p>
-<img src="/post/837406e8/837406e8/image-20230708164540431.png" class title="image-20230708164540431">
-
+<p><img src="/post/837406e8/image-20230708164540431.png" alt="image-20230708164540431"></p>
 <p>β越大，曲线越平缓：</p>
-<img src="/post/837406e8/837406e8/image-20230708164854520.png" class title="image-20230708164854520">
-
+<p><img src="/post/837406e8/image-20230708164854520.png" alt="image-20230708164854520"></p>
 <h2 id="理解指数加权平均"><a href="#理解指数加权平均" class="headerlink" title="理解指数加权平均"></a>理解指数加权平均</h2><h2 id="指数加权平均的指数修正"><a href="#指数加权平均的指数修正" class="headerlink" title="指数加权平均的指数修正"></a>指数加权平均的指数修正</h2><p>实际上我们得到的图形是紫线，因为设置初始值为0，v1&#x3D;0.02θ1，很小，为了修正这种偏差，令除了Vi&#x3D;0.98V(i-1)+0.02θi之外，再除以1-β^t，随着t越来越大，1-β^t越来越接近于1，紫线和绿线越来越接近</p>
-<img src="/post/837406e8/837406e8/image-20230708190504966.png" class title="image-20230708190504966">
-
+<p><img src="/post/837406e8/image-20230708190504966.png" alt="image-20230708190504966"></p>
 <h2 id="动量梯度下降法"><a href="#动量梯度下降法" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h2><p>Momentum梯度下降法：计算梯度的指数加权平均数，并利用该梯度更新权重</p>
 <p>成本函数理想要求：学习率不宜过高，不然波幅就会很大，同时也希望学习时间够快</p>
 <p>得到dw的移动平均数，这样可以减缓梯度下降的幅度，因为如下图，可能发现成本函数接近极小值的图象是纵轴上的摆动平均值接近于0，最终纵轴摆动变小了，学习速度变快</p>
-<img src="/post/837406e8/837406e8/image-20230708192134734.png" class title="image-20230708192134734">
-
+<p><img src="/post/837406e8/image-20230708192134734.png" alt="image-20230708192134734"></p>
 <p>现在有超参数α和β，β控制着指数加权平均数，最常用的值是0.9，相当于平均了前十次的导数</p>
 <p>两个初始值都是0(紫色部分也是一种，但是不怎么用)</p>
 <p><img src="/post/837406e8/Users\86157\AppData\Roaming\Typora\typora-user-images\image-20230708192425356.png" alt="image-20230708192425356"></p>
@@ -307,20 +300,16 @@
 <p>该算法也可以加快梯度下降</p>
 <p>这里b表示纵轴，w表示横轴，现在希望b变化幅度不要太大，加快w的变化</p>
 <p>db会比较大，从而导致Sdb也比较大，dw会比较小，从而导致Sdw也比较小，从而使b变化幅度不会太大，w变化幅度也不会太小，从蓝色图像变成绿色图像，同时可以用更大的学习率加快学习，一般为了防止根号下的内容过于小，会加上一个很小的值</p>
-<img src="/post/837406e8/837406e8/image-20230708193531517.png" class title="image-20230708193531517">
-
+<p><img src="/post/837406e8/image-20230708193531517.png" alt="image-20230708193531517"></p>
 <h2 id="Adam优化算法"><a href="#Adam优化算法" class="headerlink" title="Adam优化算法"></a>Adam优化算法</h2><p>adaptive moment estimation</p>
 <p>将RMSprop和动量梯度下降法结合起来</p>
-<img src="/post/837406e8/837406e8/image-20230708194139616.png" class title="image-20230708194139616">
-
+<p><img src="/post/837406e8/image-20230708194139616.png" alt="image-20230708194139616"></p>
 <p>参数设置，学习率需要不断调试选出最合适的</p>
-<img src="/post/837406e8/837406e8/image-20230708194741374-168976898551518.png" class title="image-20230708194741374">
-
+<p><img src="/post/837406e8/image-20230708194741374-168976898551518.png" alt="image-20230708194741374"></p>
 <h2 id="学习率衰减"><a href="#学习率衰减" class="headerlink" title="学习率衰减"></a>学习率衰减</h2><p>比如使用mini-batch时，成本函数在迭代过程中会有波幅，但都是下降朝向最小值，会不断精确的收敛，但是不会真正的收敛，因为用的α是固定值</p>
 <p>所以α应该在前期是比较大的，然后随着不断学习，要做到精确收敛，α要不断变小</p>
 <p>decay-rate是衰减率，epoch-num是次数</p>
-<img src="/post/837406e8/837406e8/image-20230708201502202.png" class title="image-20230708201502202">
-
+<p><img src="/post/837406e8/image-20230708201502202.png" alt="image-20230708201502202"></p>
 <p>α的其他衰减函数</p>
 <h2 id="局部最优的问题"><a href="#局部最优的问题" class="headerlink" title="局部最优的问题"></a>局部最优的问题</h2>
     </div>
@@ -338,13 +327,13 @@
       <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\e2d4bc4d.html" rel="bookmark">深度学习week1_2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\1a7d5752.html" rel="bookmark">week2_1</a></div>
+      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\bb71978.html" rel="bookmark">深度学习week1_4</a></div>
     </li>
   </ul>
 

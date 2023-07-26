@@ -29,13 +29,13 @@
 <meta property="og:site_name" content="BeautyFlower">
 <meta property="og:description" content="深层神经网络更多的层数，更多的隐藏节点 新的参数：L-&gt;层数	n[i]第i层的节点数，输入层是第0层 X&#x3D;a[0]	a[i]表示激活函数-&gt;a[i]&#x3D;g(z[i])	a[L]&#x3D;y_hat 每一层完成的工作：input a[i-1]	output a[i]     cache z[i] z[i]&#x3D;W[i] * a[i-1] + b[i] a[i]&amp;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/post/bb71978/bb71978/image-20230706093807182.png">
+<meta property="og:image" content="http://example.com/post/bb71978/image-20230706093807182.png">
 <meta property="article:published_time" content="2023-07-19T12:05:41.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:02:48.330Z">
+<meta property="article:modified_time" content="2023-07-26T09:55:56.983Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/post/bb71978/bb71978/image-20230706093807182.png">
+<meta name="twitter:image" content="http://example.com/post/bb71978/image-20230706093807182.png">
 
 <link rel="canonical" href="http://example.com/post/bb71978.html">
 
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:55:56" itemprop="dateModified" datetime="2023-07-26T17:55:56+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,8 +284,7 @@
 <h2 id="为什么使用深层表示"><a href="#为什么使用深层表示" class="headerlink" title="为什么使用深层表示"></a>为什么使用深层表示</h2><p>深度即更多的隐藏层，为什么需要这么多的隐藏层呢(输入层和输出层不算隐藏层)</p>
 <p>深度神经网络结构：第0层即输入层，比如输入的一张图片，输入层就相当于特征提取器，假设建立20个隐藏单元的深度神经网络，隐藏单元就是图里的一些小单元，然后将照片里组成边缘的像素们放在一起看，然后它可以把探测到的边缘组合成面部的不同部分</p>
 <h2 id="搭建深层神经网络块"><a href="#搭建深层神经网络块" class="headerlink" title="搭建深层神经网络块"></a>搭建深层神经网络块</h2><p>上面是正向传播，下面是反向传播</p>
-<img src="/post/bb71978/bb71978/image-20230706093807182.png" class title="image-20230706093807182">
-
+<p><img src="/post/bb71978/image-20230706093807182.png" alt="image-20230706093807182"></p>
 <h2 id="参数VS超参数"><a href="#参数VS超参数" class="headerlink" title="参数VS超参数"></a>参数VS超参数</h2><p>参数：比如W,b</p>
 <p>超参数：比如α(学习率)，梯度下降法循环的数量，隐层数L，隐藏单元数(n[0],n[1],n[2]……)，激活函数的选择	——&gt;这些数字实际上是由我们自己设置的，并且会影响参数W和b的值，所以称为超参数</p>
 <p>如果无法确定选择什么α,可以先用不同的α来测试cost的大小，找到最适合的α</p>
@@ -308,10 +307,10 @@
       <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
+      <div class="popular-posts-title"><a href="\post\e2d4bc4d.html" rel="bookmark">深度学习week1_2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\e2d4bc4d.html" rel="bookmark">深度学习week1_2</a></div>
+      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\1a7d5752.html" rel="bookmark">week2_1</a></div>

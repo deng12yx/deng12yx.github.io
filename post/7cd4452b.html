@@ -22,44 +22,44 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="为什么选择序列模型序列模型的适用范围   数学符号X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数 y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0     有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用表示">
+  <meta name="description" content="为什么选择序列模型序列模型的适用范围  数学符号X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数 y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0   有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用表示 循环神">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习week5_1">
 <meta property="og:url" content="http://example.com/post/7cd4452b.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="为什么选择序列模型序列模型的适用范围   数学符号X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数 y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0     有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用表示">
+<meta property="og:description" content="为什么选择序列模型序列模型的适用范围  数学符号X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数 y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0   有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用表示 循环神">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715162320554.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715164647496.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715165031120.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715165420478.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715165930365.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715170510059.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715170939331.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715171559045.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715172301464.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715172318331.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715172558615.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715172748471.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715172933246.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715181025055.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715181237526.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715181759315.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715182145155.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715185759017.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715190801359.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715191209300.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715191739066.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715192057173.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715192351213.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715192703914.png">
-<meta property="og:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715193833334.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715162320554.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715164647496.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715165031120.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715165420478.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715165930365.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715170510059.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715170939331.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715171559045.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715172301464.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715172318331.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715172558615.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715172748471.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715172933246.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715181025055.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715181237526.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715181759315.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715182145155.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715185759017.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715190801359.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715191209300.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715191739066.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715192057173.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715192351213.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715192703914.png">
+<meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715193833334.png">
 <meta property="article:published_time" content="2023-07-19T12:27:02.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:02:48.339Z">
+<meta property="article:modified_time" content="2023-07-26T09:57:42.884Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/post/7cd4452b/7cd4452b/image-20230715162320554.png">
+<meta name="twitter:image" content="http://example.com/post/7cd4452b/image-20230715162320554.png">
 
 <link rel="canonical" href="http://example.com/post/7cd4452b.html">
 
@@ -258,7 +258,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-26 17:57:42" itemprop="dateModified" datetime="2023-07-26T17:57:42+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,101 +282,75 @@
 
       
         <h2 id="为什么选择序列模型"><a href="#为什么选择序列模型" class="headerlink" title="为什么选择序列模型"></a>为什么选择序列模型</h2><p>序列模型的适用范围</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715162320554.png" class title="image-20230715162320554">
-
+<p><img src="/post/7cd4452b/image-20230715162320554.png" alt="image-20230715162320554"></p>
 <h2 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h2><p>X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数</p>
 <p>y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715164647496.png" class title="image-20230715164647496">
-
-<img src="/post/7cd4452b/7cd4452b/image-20230715165031120.png" class title="image-20230715165031120">
-
+<p><img src="/post/7cd4452b/image-20230715164647496.png" alt="image-20230715164647496"></p>
+<p><img src="/post/7cd4452b/image-20230715165031120.png" alt="image-20230715165031120"></p>
 <p>有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用<UNK>表示</UNK></p>
 <h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p>两个难点：</p>
 <ul>
 <li>一个句子的长度不是固定的</li>
 <li>希望得出来的结果是根据文本内容进行判断的，而不是单词位置，同时x可能是词表的映射，可能是一个维度很大的向量</li>
 </ul>
-<img src="/post/7cd4452b/7cd4452b/image-20230715165420478.png" class title="image-20230715165420478">
-
+<p><img src="/post/7cd4452b/image-20230715165420478.png" alt="image-20230715165420478"></p>
 <p>循环神经网络（这是表示一个单词一个单词做判断，但是单词之间不是独立的，第一个单词训练时，会用到初始变量a&lt;0&gt;，第二个单词判断时会用到第一个单词训练时产生的参数a&lt;1&gt;,也就是说，第i个单词判断时，会和前i-1个单词都有关，包括初始变量，输入时用到的参数时Wax,激活变量用到的参数是Waa,输出变量用到的参数是Wya,ax表示要乘以x计算出a,aa表示要乘以a计算出a,ya表示要乘以a计算出y）：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715165930365.png" class title="image-20230715165930365">
-
+<p><img src="/post/7cd4452b/image-20230715165930365.png" alt="image-20230715165930365"></p>
 <p>向前传播的过程，向前传播一般用tanh，有时候也用RELU</p>
 <p>输出就看是二分类还是多分类</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715170510059.png" class title="image-20230715170510059">
-
+<p><img src="/post/7cd4452b/image-20230715170510059.png" alt="image-20230715170510059"></p>
 <p>a<t-1>和x<t>是同列数的，将Waa和Wax结合起来，将a<t-1>和x<t>结合起来</t></t-1></t></t-1></p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715170939331.png" class title="image-20230715170939331">
-
+<p><img src="/post/7cd4452b/image-20230715170939331.png" alt="image-20230715170939331"></p>
 <h2 id="通过时间的反向传播"><a href="#通过时间的反向传播" class="headerlink" title="通过时间的反向传播"></a>通过时间的反向传播</h2><p>反向传播，用的参数都是一样的，然后算导数，算梯度：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715171559045.png" class title="image-20230715171559045">
-
+<p><img src="/post/7cd4452b/image-20230715171559045.png" alt="image-20230715171559045"></p>
 <h2 id="不同类型的循环神经网络"><a href="#不同类型的循环神经网络" class="headerlink" title="不同类型的循环神经网络"></a>不同类型的循环神经网络</h2><p>上面所讲的循环神经网络是输入维度等于输出维度（T_x&#x3D;T_y）</p>
 <p>下面介绍不等的情况</p>
 <p>比如情感分类：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715172301464.png" class title="image-20230715172301464">
-
+<p><img src="/post/7cd4452b/image-20230715172301464.png" alt="image-20230715172301464"></p>
 <p>比如翻译：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715172318331.png" class title="image-20230715172318331">
-
+<p><img src="/post/7cd4452b/image-20230715172318331.png" alt="image-20230715172318331"></p>
 <p>多对一和长度相等的多对多：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715172558615.png" class title="image-20230715172558615">
-
+<p><img src="/post/7cd4452b/image-20230715172558615.png" alt="image-20230715172558615"></p>
 <p>一对多（第一个输入对应一个输出，再自动生成输出）和长度不等的多对多（先获取所有输入，再进行输出）</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715172748471.png" class title="image-20230715172748471">
-
+<p><img src="/post/7cd4452b/image-20230715172748471.png" alt="image-20230715172748471"></p>
 <p>总结：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715172933246.png" class title="image-20230715172933246">
-
-<h2 id="语言模型和序列生成"><a href="#语言模型和序列生成" class="headerlink" title="语言模型和序列生成"></a>语言模型和序列生成</h2><p>识别概率：<img src="/post/7cd4452b/7cd4452b/image-20230715181025055.png" class title="image-20230715181025055"></p>
+<p><img src="/post/7cd4452b/image-20230715172933246.png" alt="image-20230715172933246"></p>
+<h2 id="语言模型和序列生成"><a href="#语言模型和序列生成" class="headerlink" title="语言模型和序列生成"></a>语言模型和序列生成</h2><p>识别概率：<img src="/post/7cd4452b/image-20230715181025055.png" alt="image-20230715181025055"></p>
 <p>可以选择用<EOS>表示一句话结尾，同时如果Mau不在字典里面，就用<UNK>表示，表示不在字典里面</UNK></EOS></p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715181237526.png" class title="image-20230715181237526">
-
-
-
+<p><img src="/post/7cd4452b/image-20230715181237526.png" alt="image-20230715181237526"></p>
 <p>输出是softmax输出，告诉我是每个单词的概率是多少，感觉这里是自动生成</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715181759315.png" class title="image-20230715181759315">
-
+<p><img src="/post/7cd4452b/image-20230715181759315.png" alt="image-20230715181759315"></p>
 <h2 id="新序列采样"><a href="#新序列采样" class="headerlink" title="新序列采样"></a>新序列采样</h2><p>在训练了一个模型之后，要知道该模型完成了什么功能，就要进行新序列采样</p>
 <p>输出是softmax，包含了输出是某个单词的概率分别是多少，</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715182145155.png" class title="image-20230715182145155">
-
+<p><img src="/post/7cd4452b/image-20230715182145155.png" alt="image-20230715182145155"></p>
 <p>建立一个语言模型并去使用它，对训练出来的语言模型进行采样，比如给机器一串新闻，让他以某种人的语气输出来</p>
 <h2 id="带有神经网络的梯度消失"><a href="#带有神经网络的梯度消失" class="headerlink" title="带有神经网络的梯度消失"></a>带有神经网络的梯度消失</h2><p>对于一个很深的神经网络，很难靠影响前面的层来影响后面的层，所以对于一个句子，过于前面的内容很难影响到后面的句子，但是后面的句子可能就是依靠与前面的内容，所以基本的RNN有很多局部影响，但是还是很难做到影响，这是RNN的一个难点，梯度爆炸可以用梯度修剪处理，但是梯度消失很难</p>
 <h2 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h2><p>处理梯度消失：GRU（门控循环单元）</p>
 <p>改变了RNN的隐藏层，可以更好的捕捉深层连接，</p>
 <p>RNN隐藏层：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715185759017.png" class title="image-20230715185759017">
-
+<p><img src="/post/7cd4452b/image-20230715185759017.png" alt="image-20230715185759017"></p>
 <p>GRU会产生一个c：记忆细胞，提供了记忆的能力</p>
 <p>因为当前time step输出的激活值会随着时间推移，由于后层各种输入和计算逐渐对后层失去影响，所以想用一个记忆单元保存当前时刻的激活值，在后层计算时施加影响。也就是说at会被替换成ct</p>
 <p>有一个门，他会记录一个记忆细胞，并决定什么时候更新这个记忆细胞</p>
 <p>如图所示，ct和at的值实际上是一样的，ct就是记忆细胞，门是用来决定是不是要更新ct，就如下方ct的函数，门的值也是通过ct-1和x的值决定的，用的sigmoid方法，输出只有0-1，用来觉得ct和ct-1的关系，以及该层ct_hat的值，然后算出yt</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715190801359.png" class title="如图所示">
-
+<p><img src="/post/7cd4452b/image-20230715190801359.png" alt="如图所示"></p>
 <p>另一种GRU:门r表示ct-1和ct的相关性，也是为了应对梯度消失的问题:</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715191209300.png" class title="image-20230715191209300">
-
+<p><img src="/post/7cd4452b/image-20230715191209300.png" alt="image-20230715191209300"></p>
 <h2 id="LSTM（长短期记忆）"><a href="#LSTM（长短期记忆）" class="headerlink" title="LSTM（长短期记忆）"></a>LSTM（长短期记忆）</h2><p>增加了门f：遗忘门</p>
 <p>有三个门，更新门，遗忘门，输出门，门值都在0-1之间</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715191739066.png" class title="image-20230715191739066">
-
+<p><img src="/post/7cd4452b/image-20230715191739066.png" alt="image-20230715191739066"></p>
 <p>如果门不止和a x有关，可以自己添加	如下面那一排所示，c0很容易传递下去</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715192057173.png" class title="image-20230715192057173">
-
+<p><img src="/post/7cd4452b/image-20230715192057173.png" alt="image-20230715192057173"></p>
 <p>推荐LSTM</p>
 <h2 id="双向神经网络"><a href="#双向神经网络" class="headerlink" title="双向神经网络"></a>双向神经网络</h2><p>单项示例：可能是RNN块，GRU块，LSTM块：</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715192351213.png" class title="image-20230715192351213">
-
+<p><img src="/post/7cd4452b/image-20230715192351213.png" alt="image-20230715192351213"></p>
 <p>输出就和正向传播和逆向传播参数都有关</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715192703914.png" class title="image-20230715192703914">
-
+<p><img src="/post/7cd4452b/image-20230715192703914.png" alt="image-20230715192703914"></p>
 <p>需要完整的句子才能进行预测</p>
 <h2 id="深层循环神经网络"><a href="#深层循环神经网络" class="headerlink" title="深层循环神经网络"></a>深层循环神经网络</h2><p>通常我们会把RNN的多个层堆叠起来，构建更深的模型</p>
 <p>[]里面是第几层的参数</p>
 <p>&lt;&gt;里面是第几个单词或者字符</p>
-<img src="/post/7cd4452b/7cd4452b/image-20230715193833334.png" class title="image-20230715193833334">
-
+<p><img src="/post/7cd4452b/image-20230715193833334.png" alt="image-20230715193833334"></p>
 
     </div>
 
@@ -393,13 +367,13 @@
       <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\e2d4bc4d.html" rel="bookmark">深度学习week1_2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\1a7d5752.html" rel="bookmark">week2_1</a></div>
+      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\bb71978.html" rel="bookmark">深度学习week1_4</a></div>
     </li>
   </ul>
 
