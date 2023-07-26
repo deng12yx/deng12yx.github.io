@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="目标定位对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置 对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置 在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)   特征点检测用pc表示该图中是否有对象，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习week4_3">
+<meta property="og:url" content="http://example.com/post/93184e30.html">
+<meta property="og:site_name" content="BeautyFlower">
+<meta property="og:description" content="目标定位对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置 对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置 在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)   特征点检测用pc表示该图中是否有对象，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714112547108.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714113505256.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714113858158.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714140236101.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714140830432.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714144410366.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714145323910.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714145730075.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714151352052.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714152049129.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714154407218.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714155148045.png">
+<meta property="og:image" content="http://example.com/post/93184e30/93184e30/image-20230714163521661.png">
+<meta property="article:published_time" content="2023-07-19T12:23:08.000Z">
+<meta property="article:modified_time" content="2023-07-26T09:02:48.337Z">
+<meta property="article:author" content="yyyyyyxnp">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/post/93184e30/93184e30/image-20230714112547108.png">
+
+<link rel="canonical" href="http://example.com/post/93184e30.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>深度学习week4_3 | BeautyFlower</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="BeautyFlower" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BeautyFlower</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">欢迎来到米奇淼淼屋</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/resume/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/deng12yx" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/93184e30.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/head.jpg">
+      <meta itemprop="name" content="yyyyyyxnp">
+      <meta itemprop="description" content="保持独立思考,不卑不亢不怂">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BeautyFlower">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深度学习week4_3
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-19 20:23:08" itemprop="dateCreated datePublished" datetime="2023-07-19T20:23:08+08:00">2023-07-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-07-26 17:02:48" itemprop="dateModified" datetime="2023-07-26T17:02:48+08:00">2023-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="目标定位"><a href="#目标定位" class="headerlink" title="目标定位"></a>目标定位</h2><p>对象位置分类(classification with localization)：在一张图中有一个较大的对象，对他进行识别并确认出位置</p>
+<p>对象检测(detection)：在一张图中有多个对象，对这多个位置对象进行检测识别并确认出位置</p>
+<p>在输出中添加位置标签，bx by是物体中心点的坐标，宽bw，高bh，整张图片起始坐标为(0,0),终坐标为(1,1)</p>
+<img src="/post/93184e30/93184e30/image-20230714112547108.png" class title="image-20230714112547108">
+
+<h2 id="特征点检测"><a href="#特征点检测" class="headerlink" title="特征点检测"></a>特征点检测</h2><p>用pc表示该图中是否有对象，pc&#x3D;0表示没有对象，那坐标，对象分类就没有意义了，loss函数只算pc和真实的y的值的误差；如果pc&#x3D;1表示有对象，就需要算每个参数的误差</p>
+<img src="/post/93184e30/93184e30/image-20230714113505256.png" class title="image-20230714113505256">
+
+<p>such as(如果要识别人脸的话，要确认眼角或者嘴角的具体坐标，先输出这张图是否包含人脸，如果包含再输出眼角或者嘴角的具体坐标，可能有很多，在下图中标记了64个嘴巴的坐标，更好学习，但是训练集需要手工标注，最后就需要了解用二维坐标确认人脸，同时确保所有标签在所有图片中处于同一位置，比如一个坐标是左眼角，那在所有的图片中该坐标都要表示左眼角):</p>
+<img src="/post/93184e30/93184e30/image-20230714113858158.png" class title="image-20230714113858158">
+
+<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><p>基于滑动窗口的目标检测</p>
+<p>如图所示，采取不同大小的窗口，在一张图上做遍历，如果这个窗口所在位置检测到了对象，就输出1，窗口越大可能影响性能，窗口越小，成本函数代价大</p>
+<img src="/post/93184e30/93184e30/image-20230714140236101.png" class title="image-20230714140236101">
+
+<h2 id="卷积的滑动窗口实现"><a href="#卷积的滑动窗口实现" class="headerlink" title="卷积的滑动窗口实现"></a>卷积的滑动窗口实现</h2><p>全连接层变成卷积层（如图所示，下面那一排全连接层的计算是用一个和输入维度一样的过滤器，过滤器的数量就是所有元素的数量，这里是400个，这样也能得到和全连接层一样维度的结果，但是神经网络更深）：</p>
+<img src="/post/93184e30/93184e30/image-20230714140830432.png" class title="image-20230714140830432">
+
+<p>事先训练好了14 *14的训练集，然后新的样本是16 * 16的，我们应该用滑动窗口的方式，以14为一个，然后移动，但是这样重复的点会太多，我们发现直接在16上进行训练，最后得到的2 * 2矩阵就是我们用滑动窗口分别得到的结果，移动步长是2是因为，在最大池化那里的步长是2，在最下面那一排是一样的</p>
+<img src="/post/93184e30/93184e30/image-20230714144410366.png" class title="image-20230714144410366">
+
+<p>我们不用将图片划分成多个样本，直接在一张图片上做预测，最后的结果是一点，当然不止一点，一点以及它后面的所有信道</p>
+<h2 id="Bounding-Box预测"><a href="#Bounding-Box预测" class="headerlink" title="Bounding Box预测"></a>Bounding Box预测</h2><p>上节不能输出精确的边界框，能识别在某一个框中有对象，但是不一定正好包括</p>
+<p>Yolo算法（比如下图，将输入分成3 * 3的格子，最后的输出也是3 * 3的，然后每个格子的输出包括了其是否有对象，有对象的话对象的中点坐标，长和宽）：</p>
+<img src="/post/93184e30/93184e30/image-20230714145323910.png" class title="image-20230714145323910">
+
+<p>中点在该格子中才代表该格子有对象，但是长和宽不一定在格子里面，这里是前面所说的一个格子的坐标在(0,0)-(1,1)之间，所有说中点坐标在0-1之间</p>
+<img src="/post/93184e30/93184e30/image-20230714145730075.png" class title="image-20230714145730075">
+
+<h2 id="交并比"><a href="#交并比" class="headerlink" title="交并比"></a>交并比</h2><p>用于判断对象检测是否准确（loU代表检测出来的边框和实际的交集和并集的比值，通常这个比值大于等于0.5就认为准确）：</p>
+<img src="/post/93184e30/93184e30/image-20230714151352052.png" class title="image-20230714151352052">
+
+<h2 id="非极大值抑制"><a href="#非极大值抑制" class="headerlink" title="非极大值抑制"></a>非极大值抑制</h2><p>当多个格子都认为自己包含了同一辆车子的中点，那就取pc值最大的那个中点</p>
+<img src="/post/93184e30/93184e30/image-20230714152049129.png" class title="image-20230714152049129">
+
+<p>对象检测，识别出边框之后首先去掉pc值比较低的边框，针对同一个对象，选择最佳边框</p>
+<p>对每个类别分别运行非最大值预测</p>
+<h2 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h2><p>目前对象检测的局限有每个格子只能检测出一个对象</p>
+<p>如图所示，y里面包含了两个pc，分别表示有车还是有人，或者是又有车又有人，如果想要有更多的对象，y的维度更高</p>
+<img src="/post/93184e30/93184e30/image-20230714154407218.png" class title="image-20230714154407218">
+
+<h2 id="Yolo算法"><a href="#Yolo算法" class="headerlink" title="Yolo算法"></a>Yolo算法</h2><img src="/post/93184e30/93184e30/image-20230714155148045.png" class title="image-20230714155148045">
+
+<h2 id="候选区域"><a href="#候选区域" class="headerlink" title="候选区域"></a>候选区域</h2><p>R-CNN：带区域的卷积网络</p>
+<p>将图像分成色块，因为如果整个图像都进行检测，很多窗口没有对象就会浪费性能，通过颜色分块，预测哪些块可能有对象</p>
+<img src="/post/93184e30/93184e30/image-20230714163521661.png" class title="image-20230714163521661">
+
+<p>​    第二步：找到最大值的锚框的索引以及对应的最大值的锚框的分数    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">参数：</span><br><span class="line">        box_confidence  - tensor类型，维度为（<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">1</span>）,包含19x19单元格中每个单元格预测的<span class="number">5</span>个锚框中的所有的锚框的pc （一些对象的置信概率）。</span><br><span class="line">        boxes - tensor类型，维度为(<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">4</span>)，包含了所有的锚框的（px,py,ph,pw ）。</span><br><span class="line">        box_class_probs - tensor类型，维度为(<span class="number">19</span>,<span class="number">19</span>,<span class="number">5</span>,<span class="number">80</span>)，包含了所有单元格中所有锚框的所有对象( c1,c2,c3，···，c80 )检测的概率。</span><br><span class="line">        threshold - 实数，阈值，如果分类预测的概率高于它，那么这个分类预测的概率就会被保留。</span><br><span class="line">    </span><br><span class="line">    返回：</span><br><span class="line">        scores - tensor 类型，维度为(<span class="literal">None</span>,)，包含了保留了的锚框的分类概率。</span><br><span class="line">        boxes - tensor 类型，维度为(<span class="literal">None</span>,<span class="number">4</span>)，包含了保留了的锚框的(b_x, b_y, b_h, b_w)</span><br><span class="line">        classess - tensor 类型，维度为(<span class="literal">None</span>,)，包含了保留了的锚框的索引</span><br><span class="line">box_classes = K.argmax(box_scores, axis=-<span class="number">1</span>)    </span><br><span class="line">box_class_scores = K.<span class="built_in">max</span>(box_scores, axis=-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>box_classes是返回最大值的索引值，是(19,19,5,1),保留的是box_scores中每一个信道，在本题中就是80个里面最大值的索引值</p>
+<p>box_class_scores是返回80个中的最大值</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\5443fa2d.html" rel="bookmark">复杂网络学习</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\e2d4bc4d.html" rel="bookmark">深度学习week1_2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\bb71978.html" rel="bookmark">深度学习week1_4</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/img/wechatpay.png" alt="yyyyyyxnp WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+          
+            <a href="/" rel="tag"><i class="fa fa-tag"></i> </a>
+          
+</div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/e41f7ea6.html" rel="prev" title="深度学习week4_2">
+      <i class="fa fa-chevron-left"></i> 深度学习week4_2
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/d7cdb93.html" rel="next" title="深度学习week4_4">
+      深度学习week4_4 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.</span> <span class="nav-text">目标定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E7%82%B9%E6%A3%80%E6%B5%8B"><span class="nav-number">2.</span> <span class="nav-text">特征点检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="nav-number">3.</span> <span class="nav-text">目标检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E7%9A%84%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.</span> <span class="nav-text">卷积的滑动窗口实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bounding-Box%E9%A2%84%E6%B5%8B"><span class="nav-number">5.</span> <span class="nav-text">Bounding Box预测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E5%B9%B6%E6%AF%94"><span class="nav-number">6.</span> <span class="nav-text">交并比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E6%9E%81%E5%A4%A7%E5%80%BC%E6%8A%91%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">非极大值抑制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anchor-Boxes"><span class="nav-number">8.</span> <span class="nav-text">Anchor Boxes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yolo%E7%AE%97%E6%B3%95"><span class="nav-number">9.</span> <span class="nav-text">Yolo算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%99%E9%80%89%E5%8C%BA%E5%9F%9F"><span class="nav-number">10.</span> <span class="nav-text">候选区域</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="yyyyyyxnp"
+      src="/img/head.jpg">
+  <p class="site-author-name" itemprop="name">yyyyyyxnp</p>
+  <div class="site-description" itemprop="description">保持独立思考,不卑不亢不怂</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    <a onclick="tidioChatApi.open();"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/deng12yx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;deng12yx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2021141530106@stu.scu.edu.cn" title="E-Mail → mailto:2021141530106@stu.scu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yyyyyyxnp</span>
+</div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  <script src="//code.tidio.co/.js"></script>
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+
+    </div>
+</body>
+</html>
