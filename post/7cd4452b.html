@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="为什么选择序列模型序列模型的适用范围  数学符号X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数 y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0   有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用表示 循环神">
+  <meta name="description" content="为什么选择序列模型序列模型的适用范围">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习week5_1">
 <meta property="og:url" content="http://example.com/post/7cd4452b.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="为什么选择序列模型序列模型的适用范围  数学符号X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数 y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0   有一个词表存储了所有的单词，x就用one-hot的方式表达，one-hot的意思是，一个列表中只有一个值为1，表示该词在词表的某位置，如果遇到了不在词表中的单词，就用表示 循环神">
+<meta property="og:description" content="为什么选择序列模型序列模型的适用范围">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715162320554.png">
 <meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715164647496.png">
@@ -55,7 +55,7 @@
 <meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715192703914.png">
 <meta property="og:image" content="http://example.com/post/7cd4452b/image-20230715193833334.png">
 <meta property="article:published_time" content="2023-07-19T12:27:02.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:57:42.884Z">
+<meta property="article:modified_time" content="2023-07-30T05:11:22.000Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -258,7 +258,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:57:42" itemprop="dateModified" datetime="2023-07-26T17:57:42+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-30 13:11:22" itemprop="dateModified" datetime="2023-07-30T13:11:22+08:00">2023-07-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,6 +283,8 @@
       
         <h2 id="为什么选择序列模型"><a href="#为什么选择序列模型" class="headerlink" title="为什么选择序列模型"></a>为什么选择序列模型</h2><p>序列模型的适用范围</p>
 <p><img src="/post/7cd4452b/image-20230715162320554.png" alt="image-20230715162320554"></p>
+<span id="more"></span>
+
 <h2 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h2><p>X(i)&lt; t &gt;表示第i个样本的第t个单词，T(i)表示第i个样本的单词总数</p>
 <p>y(i)&lt; t &gt;表示第i个样本的第t个单词的判断结果，1或者0</p>
 <p><img src="/post/7cd4452b/image-20230715164647496.png" alt="image-20230715164647496"></p>
@@ -487,14 +489,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

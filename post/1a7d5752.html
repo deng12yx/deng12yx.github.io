@@ -47,7 +47,7 @@
 <meta property="og:image" content="http://example.com/post/1a7d5752/sqrt%7Bx_%7B1%7D%5E%7B2%7D%20&plus;%20x_%7B2%7D%5E%7B2%7D%20&plus;%20...%20&plus;%20x_%7Bn%7D%5E%7B2%7D%7D">
 <meta property="og:image" content="http://example.com/post/1a7d5752/image-20230708154400361.png">
 <meta property="article:published_time" content="2023-07-19T12:13:45.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:56:11.083Z">
+<meta property="article:modified_time" content="2023-07-30T05:10:50.702Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:56:11" itemprop="dateModified" datetime="2023-07-26T17:56:11+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-30 13:10:50" itemprop="dateModified" datetime="2023-07-30T13:10:50+08:00">2023-07-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,6 +277,8 @@
 <p>训练数据分为三部分：训练集，验证集(dev_set)，测试集</p>
 <p>对于小型数据，70train 30test	or	60train 20dev_set 20test</p>
 <p>大数据:验证集和测试集的占比减少验证集是为了检验那种算法更有效，所以验证集要足够大，但是比如我们有100万条数据，如果20dev_test就是20万条数据，太多了，可能取一万条数据就能进行评估了，然后找出最好的算法，测试集的主要目的是正确评估分类器的性能，所以比如拥有100万条数据，只需要10000条测试集就够了</p>
+<span id="more"></span>
+
 <p>比如一个用户通过上传图片验证该图片是不是猫，网上猫的图片就是训练集，用户上传的图片是验证集和测试集，但是网上的照片可能比用户上传的更高清，更好分析，要保证验证集和测试集来自同一分布，因为要用验证机来评估不同的模型&#x2F;算法	测试集是对最后的神经网络做出无偏评估，不是必需的</p>
 <p>如果只有验证机没有测试集：在训练集上训练，尝试不同的模型框架，在验证集上评估这些模型，并选择适合的模型</p>
 <h2 id="偏差-方差"><a href="#偏差-方差" class="headerlink" title="偏差_方差"></a>偏差_方差</h2><p>过度拟合：“过于紧密或精确地对应于特定数据集的分析结果，因此可能无法拟合其他数据或可靠地预测未来的观察结果”</p>
@@ -513,14 +515,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

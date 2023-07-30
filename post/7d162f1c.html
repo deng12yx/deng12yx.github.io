@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="计算机视觉计算机视觉可以做到的事情(分类、识别、转换)：  对于图片来说，越清晰的图片像素点越多，样本维度也就越大，对于过大的可以用卷积 边缘检测示例*在这儿代表着卷积运算，中间那个3 * 3的方块相当于（垂直边缘检测器）过滤器：   为什么可以这么做卷积(可以很好的识别出图像的垂直边缘，比如最左边的图中间是垂直边缘，然后通过卷积，可以识别出中间是边缘，中间就做了高像素处理)：  更多边缘检测内容">
+  <meta name="description" content="计算机视觉计算机视觉可以做到的事情(分类、识别、转换)：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习week4_1">
 <meta property="og:url" content="http://example.com/post/7d162f1c.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="计算机视觉计算机视觉可以做到的事情(分类、识别、转换)：  对于图片来说，越清晰的图片像素点越多，样本维度也就越大，对于过大的可以用卷积 边缘检测示例*在这儿代表着卷积运算，中间那个3 * 3的方块相当于（垂直边缘检测器）过滤器：   为什么可以这么做卷积(可以很好的识别出图像的垂直边缘，比如最左边的图中间是垂直边缘，然后通过卷积，可以识别出中间是边缘，中间就做了高像素处理)：  更多边缘检测内容">
+<meta property="og:description" content="计算机视觉计算机视觉可以做到的事情(分类、识别、转换)：">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/post/7d162f1c/image-20230711214114438.png">
 <meta property="og:image" content="http://example.com/post/7d162f1c/image-20230711214724539.png">
@@ -52,7 +52,7 @@
 <meta property="og:image" content="http://example.com/post/7d162f1c/image-20230712092630679.png">
 <meta property="og:image" content="http://example.com/post/7d162f1c/image-20230712093340375.png">
 <meta property="article:published_time" content="2023-07-19T12:22:55.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:57:08.639Z">
+<meta property="article:modified_time" content="2023-07-30T05:11:08.753Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:57:08" itemprop="dateModified" datetime="2023-07-26T17:57:08+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-30 13:11:08" itemprop="dateModified" datetime="2023-07-30T13:11:08+08:00">2023-07-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,6 +280,8 @@
       
         <h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p>计算机视觉可以做到的事情(分类、识别、转换)：</p>
 <p><img src="/post/7d162f1c/image-20230711214114438.png" alt="image-20230711214114438"></p>
+<span id="more"></span>
+
 <p>对于图片来说，越清晰的图片像素点越多，样本维度也就越大，对于过大的可以用卷积</p>
 <h2 id="边缘检测示例"><a href="#边缘检测示例" class="headerlink" title="边缘检测示例"></a>边缘检测示例</h2><p>*在这儿代表着卷积运算，中间那个3 * 3的方块相当于（垂直边缘检测器）过滤器：</p>
 <p><img src="/post/7d162f1c/image-20230711214724539.png" alt="image-20230711214724539"></p>
@@ -465,14 +467,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

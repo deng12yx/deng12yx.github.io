@@ -22,16 +22,16 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="深层神经网络更多的层数，更多的隐藏节点 新的参数：L-&gt;层数	n[i]第i层的节点数，输入层是第0层 X&#x3D;a[0]	a[i]表示激活函数-&gt;a[i]&#x3D;g(z[i])	a[L]&#x3D;y_hat 每一层完成的工作：input a[i-1]	output a[i]     cache z[i] z[i]&#x3D;W[i] * a[i-1] + b[i] a[i]&amp;">
+  <meta name="description" content="深层神经网络更多的层数，更多的隐藏节点 新的参数：L-&gt;层数	n[i]第i层的节点数，输入层是第0层 X&#x3D;a[0]	a[i]表示激活函数-&gt;a[i]&#x3D;g(z[i]&#96;&#96;)	a[L]&#x3D;y_hat 每一层完成的工作：input a[i-1]	output a[i]     cache z[i] z[i]&#x3D;W[i] * a[i-1] + b[i] a[i]&#x3D;g(z[i])">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习week1_4">
 <meta property="og:url" content="http://example.com/post/bb71978.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="深层神经网络更多的层数，更多的隐藏节点 新的参数：L-&gt;层数	n[i]第i层的节点数，输入层是第0层 X&#x3D;a[0]	a[i]表示激活函数-&gt;a[i]&#x3D;g(z[i])	a[L]&#x3D;y_hat 每一层完成的工作：input a[i-1]	output a[i]     cache z[i] z[i]&#x3D;W[i] * a[i-1] + b[i] a[i]&amp;">
+<meta property="og:description" content="深层神经网络更多的层数，更多的隐藏节点 新的参数：L-&gt;层数	n[i]第i层的节点数，输入层是第0层 X&#x3D;a[0]	a[i]表示激活函数-&gt;a[i]&#x3D;g(z[i]&#96;&#96;)	a[L]&#x3D;y_hat 每一层完成的工作：input a[i-1]	output a[i]     cache z[i] z[i]&#x3D;W[i] * a[i-1] + b[i] a[i]&#x3D;g(z[i])">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/post/bb71978/image-20230706093807182.png">
 <meta property="article:published_time" content="2023-07-19T12:05:41.000Z">
-<meta property="article:modified_time" content="2023-07-26T09:55:56.983Z">
+<meta property="article:modified_time" content="2023-07-30T05:10:46.300Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-26 17:55:56" itemprop="dateModified" datetime="2023-07-26T17:55:56+08:00">2023-07-26</time>
+                <time title="Modified: 2023-07-30 13:10:46" itemprop="dateModified" datetime="2023-07-30T13:10:46+08:00">2023-07-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,22 +258,24 @@
 
       
         <h2 id="深层神经网络"><a href="#深层神经网络" class="headerlink" title="深层神经网络"></a>深层神经网络</h2><p>更多的层数，更多的隐藏节点</p>
-<p>新的参数：L-&gt;层数	n[i]第i层的节点数，输入层是第0层 X&#x3D;a[0]	a[i]表示激活函数-&gt;a[i]&#x3D;g(z[i])	a[L]&#x3D;y_hat</p>
-<p>每一层完成的工作：input a[i-1]	output a[i]     cache z[i]</p>
-<p>z[i]&#x3D;W[i] * a[i-1] + b[i]</p>
-<p>a[i]&#x3D;g(z[i])</p>
+<p>新的参数：L-&gt;层数	n[i]第i层的节点数，输入层是第0层 <code>X=a[0]</code>	a[i]表示激活函数-&gt;<code>a[i]=g(z[i]``)</code>	<code>a[L]=y_hat</code></p>
+<p>每一层完成的工作：<code>input a[i-1]	output a[i]     cache z[i]</code></p>
+<p><code>z[i]=W[i] * a[i-1] + b[i]</code></p>
+<p><code>a[i]=g(z[i])</code></p>
+<span id="more"></span>
+
 <p>反向传播：</p>
-<p>da[L]&#x3D;-y&#x2F;a+(1-y)&#x2F;(1-a)</p>
-<p>dz[L]&#x3D;da[L] * g&#96;(z[L])</p>
-<p>dW[L]&#x3D;dz[L] * a[L-1].T   </p>
-<p>db[L]&#x3D;np.sum(dz[L],axis&#x3D;1,keepdim&#x3D;True)</p>
-<p>da[L-1]&#x3D;W[L].T * dz[L]</p>
-<p>dz[L-1]&#x3D;da[L-1] * g&#96;(z[L-1])</p>
+<p><code>da[L]=-y/a+(1-y)/(1-a)</code></p>
+<p><code>dz[L]=da[L] * g</code>(z[L])&#96;</p>
+<p><code>dW[L]=dz[L] * a[L-1].T</code>   </p>
+<p><code>db[L]=np.sum(dz[L],axis=1,keepdim=True)</code></p>
+<p><code>da[L-1]=W[L].T * dz[L]</code></p>
+<p><code>dz[L-1]=da[L-1] * g</code>(z[L-1])&#96;</p>
 <h2 id="深层网络中的前向传播"><a href="#深层网络中的前向传播" class="headerlink" title="深层网络中的前向传播"></a>深层网络中的前向传播</h2><p>正向传播时：</p>
-<p>Z[1]&#x3D;W[1] * A[0] + b[1]</p>
-<p>A[1]&#x3D;g(Z[1])</p>
-<p>Z[2]&#x3D;W[1] * A[1] +b[1]</p>
-<p>A[2]&#x3D;g(Z[2])</p>
+<p><code>Z[1]=W[1] * A[0] + b[1]</code></p>
+<p><code>A[1]=g(Z[1])</code></p>
+<p><code>Z[2]=W[1] * A[1] +b[1]</code></p>
+<p><code>A[2]=g(Z[2])</code></p>
 <p>……</p>
 <p>上述使用for循环</p>
 <h2 id="核对矩阵的维数"><a href="#核对矩阵的维数" class="headerlink" title="核对矩阵的维数"></a>核对矩阵的维数</h2><p>Z[i]的横向量：第i层的节点数，纵向量：样本数	(n[i],m)</p>
@@ -427,14 +429,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
