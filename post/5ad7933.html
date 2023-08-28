@@ -22,46 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="词汇表征将RNN GRU LSTM用于自然语言处理（NLP） 词嵌入：让算法自动的理解一些类似的词 我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：">
+  <meta name="description" content="高阶网络一：高阶网络和传统网络区别看了那么多文献，大概总结于一点，高阶网络是多维的，传统网络是一维的，怎么解释呢，就是高阶网络不再停留于单纯两个节点之间的关系，而是多个节点的关系。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习week5_2">
-<meta property="og:url" content="http://example.com/post/e5dd1491.html">
+<meta property="og:title" content="高阶网络学习">
+<meta property="og:url" content="http://example.com/post/5ad7933.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="词汇表征将RNN GRU LSTM用于自然语言处理（NLP） 词嵌入：让算法自动的理解一些类似的词 我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：">
+<meta property="og:description" content="高阶网络一：高阶网络和传统网络区别看了那么多文献，大概总结于一点，高阶网络是多维的，传统网络是一维的，怎么解释呢，就是高阶网络不再停留于单纯两个节点之间的关系，而是多个节点的关系。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716085326082.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716090208200.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716090359957.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716090910001.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716091323600.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716091741875.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716092632787.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716131131937.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716131332253.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716132747851.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716133405684.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716133806764.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716134123485.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716134416765.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716134911235.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716135912729.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716140423569.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716141711423.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716143026674.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150111482.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150405613.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150737836.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716150930621.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716151157772.png">
-<meta property="og:image" content="http://example.com/post/e5dd1491/image-20230716151649161.png">
-<meta property="article:published_time" content="2023-07-19T12:27:06.000Z">
-<meta property="article:modified_time" content="2023-07-30T05:11:25.123Z">
+<meta property="article:published_time" content="2023-08-24T08:48:55.000Z">
+<meta property="article:modified_time" content="2023-08-28T03:23:08.815Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/post/e5dd1491/image-20230716085326082.png">
 
-<link rel="canonical" href="http://example.com/post/e5dd1491.html">
+<link rel="canonical" href="http://example.com/post/5ad7933.html">
 
 
 <script id="page-configurations">
@@ -74,7 +48,7 @@
   };
 </script>
 
-  <title>深度学习week5_2 | BeautyFlower</title>
+  <title>高阶网络学习 | BeautyFlower</title>
   
 
 
@@ -228,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/post/e5dd1491.html">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/5ad7933.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/img/head.jpg">
@@ -241,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          深度学习week5_2
+          高阶网络学习
         </h1>
 
         <div class="post-meta">
@@ -251,14 +225,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-19 20:27:06" itemprop="dateCreated datePublished" datetime="2023-07-19T20:27:06+08:00">2023-07-19</time>
+              <time title="Created: 2023-08-24 16:48:55" itemprop="dateCreated datePublished" datetime="2023-08-24T16:48:55+08:00">2023-08-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-30 13:11:25" itemprop="dateModified" datetime="2023-07-30T13:11:25+08:00">2023-07-30</time>
+                <time title="Modified: 2023-08-28 11:23:08" itemprop="dateModified" datetime="2023-08-28T11:23:08+08:00">2023-08-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +240,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                  <a href="/categories/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">复杂网络</span></a>
                 </span>
             </span>
 
@@ -281,69 +255,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="词汇表征"><a href="#词汇表征" class="headerlink" title="词汇表征"></a>词汇表征</h2><p>将RNN GRU LSTM用于自然语言处理（NLP）</p>
-<p>词嵌入：让算法自动的理解一些类似的词</p>
-<p>我们上周的理解是这样的,(one-hot)将所有词都存在一个词表里面，但是这样就会导致词和词之间是独立的，比如如下图的情况，orange和apple本来是很相近的两个词，比如下面两个句子都应该学习到后面的一个词是果汁，因为苹果和橙子是相近的两个词，但是如果相互独立就很难这么学习到：</p>
+        <h2 id="高阶网络"><a href="#高阶网络" class="headerlink" title="高阶网络"></a>高阶网络</h2><h3 id="一：高阶网络和传统网络区别"><a href="#一：高阶网络和传统网络区别" class="headerlink" title="一：高阶网络和传统网络区别"></a>一：高阶网络和传统网络区别</h3><p>看了那么多文献，大概总结于一点，高阶网络是多维的，传统网络是一维的，怎么解释呢，就是高阶网络不再停留于单纯两个节点之间的关系，而是多个节点的关系。</p>
 <span id="more"></span>
 
-<p><img src="/post/e5dd1491/image-20230716085326082.png" alt="image-20230716085326082"></p>
-<p>现在变成特征化表达：<img src="/post/e5dd1491/image-20230716090208200.png" alt="image-20230716090208200"></p>
-<p>可以将多维的特征降维（t-SNE），有点像k聚类</p>
-<p><img src="/post/e5dd1491/image-20230716090359957.png" alt="image-20230716090359957"></p>
-<h2 id="使用词嵌入"><a href="#使用词嵌入" class="headerlink" title="使用词嵌入"></a>使用词嵌入</h2><p>如果遇到一些不常见的词，而自己的训练样本又比较小，可以考虑迁移学习，用网上已经学习好的词嵌入模型</p>
-<p><img src="/post/e5dd1491/image-20230716090910001.png" alt="image-20230716090910001"></p>
-<p>当训练集越小时，词嵌入效果越好，词嵌入基本流程：</p>
-<p><img src="/post/e5dd1491/image-20230716091323600.png" alt="image-20230716091323600"></p>
-<p>和卷积网络所学到的比较两张人脸有一定相似性</p>
-<p><img src="/post/e5dd1491/image-20230716091741875.png" alt="image-20230716091741875"></p>
-<h2 id="词嵌入的特性"><a href="#词嵌入的特性" class="headerlink" title="词嵌入的特性"></a>词嵌入的特性</h2><p>词嵌入可以帮助实现类比推理</p>
-<p>比如我们知道男人对应女人，怎么让机器推导出国王对应王后呢：比较它们的差</p>
-<p><img src="/post/e5dd1491/image-20230716092632787.png" alt="image-20230716092632787"></p>
-<p>将要求的单词设为e_w,求相似度:</p>
-<p><img src="/post/e5dd1491/image-20230716131131937.png" alt="image-20230716131131937"></p>
-<p>余弦相似度，感觉相当于一个向量是一个点：</p>
-<p><img src="/post/e5dd1491/image-20230716131332253.png" alt="image-20230716131332253"></p>
-<h2 id="嵌入矩阵"><a href="#嵌入矩阵" class="headerlink" title="嵌入矩阵"></a>嵌入矩阵</h2><p>当利用算法学习一个词嵌入的时候相当于是在学习一个嵌入矩阵</p>
-<p>相当于总共有300个特征，每个单词都是一个特征，300维，把这个矩阵叫做嵌入矩阵E,每次我们要取某个单词的特征的时候，我们用特征 * one_hot的值，就可以得到一个300维该单词的特征</p>
-<p><img src="/post/e5dd1491/image-20230716132747851.png" alt="image-20230716132747851"></p>
-<h2 id="学习词嵌入"><a href="#学习词嵌入" class="headerlink" title="学习词嵌入"></a>学习词嵌入</h2><p>神经网络结构：</p>
-<p>E是嵌入矩阵，o是one_hot,算出e是该单词的300维的特征向量，然后输出，参数可以通过梯度函数调整，很好的学习两个特征值相近的词，可以规定只从前面几个词学习</p>
-<p><img src="/post/e5dd1491/image-20230716133405684.png" alt="image-20230716133405684"></p>
-<p>如果我们想训练出一个语言模型，只选择相邻几个单词学习是一种不错的选择，如果我们想学习其他嵌入算法，可以选择另外的单词学习</p>
-<p><img src="/post/e5dd1491/image-20230716133806764.png" alt="image-20230716133806764"></p>
-<h2 id="Word2Vec"><a href="#Word2Vec" class="headerlink" title="Word2Vec"></a>Word2Vec</h2><p>skip-grams（感觉像是训练两个邻近的单词的对应关系，上下文某个单词-&gt;目标单词）：</p>
-<p><img src="/post/e5dd1491/image-20230716134123485.png" alt="image-20230716134123485"></p>
-<p>简单模型，输出是一个10000维的向量，和one_hot一样：</p>
-<p><img src="/post/e5dd1491/image-20230716134416765.png" alt="image-20230716134416765"></p>
-<p>强迫算法去做预测，算法只能根据词嵌入矩阵来预测，然后告诉算法你算错了，算法就自己去修改词嵌入矩阵了</p>
-<p>但是直接这样计算softmax，由于维度已经10000了可能更高，算法效率低，可以考虑采用分级softmax分类器（二叉树），使用的树，常用词在顶部，不常用词在深度，方便查找，通常不是平衡的二叉树</p>
-<p><img src="/post/e5dd1491/image-20230716134911235.png" alt="image-20230716134911235"></p>
-<h2 id="负采样"><a href="#负采样" class="headerlink" title="负采样"></a>负采样</h2><p>构造新的监督模型</p>
-<p>先随机选择一个单词作为context，然后在近10个单词中选择word，设为正样本，然后再从词表中随机找k个单词，将这一组设为负样本，监督学习，最后的输入就行x，预测y，预测他是正样本还是负样本</p>
-<p><img src="/post/e5dd1491/image-20230716135912729.png" alt="image-20230716135912729"></p>
-<p>之前就需要算10000维的softmax，这里就不需要，将输入应用到10000个神经元，每次只更新k+1个，这里k是4，用得出来的正样本和负样本去进行迭代</p>
-<p><img src="/post/e5dd1491/image-20230716140423569.png" alt="image-20230716140423569"></p>
-<p>怎么进行负采样（怎么随机选择负采样的word,图下是比较常用的方法):</p>
-<p><img src="/post/e5dd1491/image-20230716141711423.png" alt="image-20230716141711423"></p>
-<h2 id="GloVe词向量"><a href="#GloVe词向量" class="headerlink" title="GloVe词向量"></a>GloVe词向量</h2><p>Xij是一个能够获取单词i和单词j出现位置相近时或者彼此接近的频率的计数器</p>
-<p><img src="/post/e5dd1491/image-20230716143026674.png" alt="image-20230716143026674"></p>
-<p>本质是用词嵌入矩阵去构造一个网络去预测两个词同时出现的频率，但是我们并不需要这个网络，而仅仅通过网络来训练词嵌入矩阵</p>
-<p>每一个可能的目标词有一个参数向量$\theta_{t}$和另一个参数向量$e_{c}$</p>
-<p><img src="/post/e5dd1491/image-20230716150111482.png" alt="image-20230716150111482"></p>
-<p>实际上最后通过网络的到这些向量特征不是简单的Gender这些特征</p>
-<p>各轴之间可能有关联</p>
-<p><img src="/post/e5dd1491/image-20230716150405613.png" alt="image-20230716150405613"></p>
-<h2 id="情绪分类"><a href="#情绪分类" class="headerlink" title="情绪分类"></a>情绪分类</h2><p>最大的挑战是标记的数据集不够多</p>
-<p>用所有特征相加求平均值的方法（缺点：没考虑词序）：</p>
-<p><img src="/post/e5dd1491/image-20230716150737836.png" alt="image-20230716150737836"></p>
-<p>解决方式（用RNN做）：</p>
-<p><img src="/post/e5dd1491/image-20230716150930621.png" alt="image-20230716150930621"></p>
-<h2 id="词嵌入除偏"><a href="#词嵌入除偏" class="headerlink" title="词嵌入除偏"></a>词嵌入除偏</h2><p>存在偏见，如下图，下图是一个训练好的语言模型得到的结果</p>
-<p><img src="/post/e5dd1491/image-20230716151157772.png" alt="image-20230716151157772"></p>
-<p>第一步：判断出我们要减少什么偏见</p>
-<p>第二步：对本来不应该有偏见的词，即中立的词出现偏见之后将他们往中和值靠近</p>
-<p>第三步：把本身对立的，比如祖母和祖父移到靠近中和值差不多位置的地方</p>
-<p><img src="/post/e5dd1491/image-20230716151649161.png" alt="image-20230716151649161"></p>
+<p>以链路预测举例吧，传统链路预测会为每两个节点之间预测连接概率，事实上这种方法忽视了很多重要信息，比如可能多个节点之间有重要联系，缺一不可，所以需要以整个节点组成的局部网络，也就是单纯形为研究对象。</p>
+<h3 id="二：高阶网络重要概念"><a href="#二：高阶网络重要概念" class="headerlink" title="二：高阶网络重要概念"></a>二：高阶网络重要概念</h3><h4 id="超图"><a href="#超图" class="headerlink" title="超图"></a>超图</h4><p>在介绍超图之前先介绍什么是超边吧，超边不是我们以为的那个边，有固定的两个点组成边，而是对于一组相互联系的边组成的集合，对于它们来说有一条边联系着它们，但是也不是传统的两个节点之间的边，所以就叫做<strong>超边</strong>。</p>
+<p><strong>超图</strong>顾名思义就是由超边组成的图</p>
+<h4 id="单纯复形"><a href="#单纯复形" class="headerlink" title="单纯复形"></a>单纯复形</h4><p>同样先介绍什么是<strong>单纯形</strong>(simplex)，和超图不同的是，同样对于一组相互联系的边组成的集合，对于超图来说，是由超边将节点连接起来的，对于单纯复形来说是由实实在在的边连接起来的，也就是全连接图，每个节点都和集合里的其他节点相连，例如，节点是0-单纯形，连接是1-单纯形，三角形是2-单纯形，四面体是3-单纯形，以此类推。</p>
+<p>单形的面是该单形的局部全连接子图，比如四面体里面存在三角形，存在连接，节点，那么0-单纯形，1-单纯形，2-单纯形都是3-单纯形的面</p>
+<p><strong>单纯复形</strong>就是由单纯形以及该单纯形的面组成的集合，<strong>和超图不同的</strong>是超图不一定有其超边的子超边，但是单纯复形一定有其单纯形的子单纯形，也就是面</p>
+<h3 id="三：时序网络"><a href="#三：时序网络" class="headerlink" title="三：时序网络"></a>三：时序网络</h3><p>网络不可能是一成不变的，即节点以及节点之间的连接是不可能一成不变的，可能会有新增节点，可能会有删除的节点，以及节点之间的联系有可能变小，有可能变大，这也就导致了不同时间下网络的状态往往是不同的，这就是时序网络。</p>
+<h3 id="四：链路预测"><a href="#四：链路预测" class="headerlink" title="四：链路预测"></a>四：链路预测</h3><p>基于时序网络，高阶网络，这里提到基于局部信息的链路预测，和传统链路预测不同点有两处：</p>
+<ul>
+<li>不再以两节点组成的边为研究对象，而是基于一个单纯复形作为研究对象</li>
+<li>链路预测不再只考虑一个时间点的链路信息，链路预测应当要遵循网络自身的变化规律，要考虑前面时间段网络的动态变化</li>
+</ul>
+<p>基于高阶网络和时序网络的链路预测方式有很多，在此处考虑的预测开团是否会存在单纯闭包事件：开团指当前时间段未形成团的节点集合，团即指一个单纯形，闭包事件也就是节点之间建立了连接，形成了单纯形</p>
+<h3 id="五：虚假网络生成"><a href="#五：虚假网络生成" class="headerlink" title="五：虚假网络生成"></a>五：虚假网络生成</h3><p>三个要点：</p>
+<ul>
+<li>成本低</li>
+<li>符合时序网络变化（用链路预测进行检验）</li>
+<li>改变大（用高阶网络的重要节点识别）</li>
+</ul>
+<p>思路：首先获取到会对网络改变性大的单纯形，然后找到最有概率出现的但实际不存在的单纯形，替代网络中最没有概率出现的单纯形</p>
 
     </div>
 
@@ -357,9 +291,6 @@
       <div class="popular-posts-title"><a href="\post\5443fa2d.html" rel="bookmark">复杂网络学习</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\5ad7933.html" rel="bookmark">高阶网络学习</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
     </li>
     <li class="popular-posts-item">
@@ -367,6 +298,9 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\95d38cdb.html" rel="bookmark">深度学习week1_3</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\bb71978.html" rel="bookmark">深度学习week1_4</a></div>
     </li>
   </ul>
 
@@ -399,13 +333,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/7cd4452b.html" rel="prev" title="深度学习week5_1">
-      <i class="fa fa-chevron-left"></i> 深度学习week5_1
+    <a href="/post/7561e93a.html" rel="prev" title="leetcode100题_3">
+      <i class="fa fa-chevron-left"></i> leetcode100题_3
     </a></div>
-      <div class="post-nav-item">
-    <a href="/post/92da2407.html" rel="next" title="深度学习week5_3">
-      深度学习week5_3 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -464,7 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87%E8%A1%A8%E5%BE%81"><span class="nav-number">1.</span> <span class="nav-text">词汇表征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%8D%E5%B5%8C%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">使用词嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E5%B5%8C%E5%85%A5%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">词嵌入的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">4.</span> <span class="nav-text">嵌入矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%AF%8D%E5%B5%8C%E5%85%A5"><span class="nav-number">5.</span> <span class="nav-text">学习词嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Word2Vec"><span class="nav-number">6.</span> <span class="nav-text">Word2Vec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9F%E9%87%87%E6%A0%B7"><span class="nav-number">7.</span> <span class="nav-text">负采样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GloVe%E8%AF%8D%E5%90%91%E9%87%8F"><span class="nav-number">8.</span> <span class="nav-text">GloVe词向量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%85%E7%BB%AA%E5%88%86%E7%B1%BB"><span class="nav-number">9.</span> <span class="nav-text">情绪分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E5%B5%8C%E5%85%A5%E9%99%A4%E5%81%8F"><span class="nav-number">10.</span> <span class="nav-text">词嵌入除偏</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">高阶网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%EF%BC%9A%E9%AB%98%E9%98%B6%E7%BD%91%E7%BB%9C%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%BD%91%E7%BB%9C%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text">一：高阶网络和传统网络区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%EF%BC%9A%E9%AB%98%E9%98%B6%E7%BD%91%E7%BB%9C%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">二：高阶网络重要概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B6%85%E5%9B%BE"><span class="nav-number">1.2.1.</span> <span class="nav-text">超图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E7%BA%AF%E5%A4%8D%E5%BD%A2"><span class="nav-number">1.2.2.</span> <span class="nav-text">单纯复形</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%EF%BC%9A%E6%97%B6%E5%BA%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.3.</span> <span class="nav-text">三：时序网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%EF%BC%9A%E9%93%BE%E8%B7%AF%E9%A2%84%E6%B5%8B"><span class="nav-number">1.4.</span> <span class="nav-text">四：链路预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%EF%BC%9A%E8%99%9A%E5%81%87%E7%BD%91%E7%BB%9C%E7%94%9F%E6%88%90"><span class="nav-number">1.5.</span> <span class="nav-text">五：虚假网络生成</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
