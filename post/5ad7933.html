@@ -30,7 +30,7 @@
 <meta property="og:description" content="高阶网络一：高阶网络和传统网络区别看了那么多文献，大概总结于一点，高阶网络是多维的，传统网络是一维的，怎么解释呢，就是高阶网络不再停留于单纯两个节点之间的关系，而是多个节点的关系。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-24T08:48:55.000Z">
-<meta property="article:modified_time" content="2023-08-28T03:23:08.815Z">
+<meta property="article:modified_time" content="2023-09-02T11:39:47.222Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-28 11:23:08" itemprop="dateModified" datetime="2023-08-28T11:23:08+08:00">2023-08-28</time>
+                <time title="Modified: 2023-09-02 19:39:47" itemprop="dateModified" datetime="2023-09-02T19:39:47+08:00">2023-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,6 +278,43 @@
 <li>改变大（用高阶网络的重要节点识别）</li>
 </ul>
 <p>思路：首先获取到会对网络改变性大的单纯形，然后找到最有概率出现的但实际不存在的单纯形，替代网络中最没有概率出现的单纯形</p>
+<p>使用算法：GCN-GAN	NETWORKGAN</p>
+<p>先通过识别重要节点的算法识别出网络中的重要节点和序列，然后对包含该重要节点的序列的局部网络进行链路预测，这样预测出来的边应该是更具影响力且对网络影响比较大的，如果要增边的话就对原网络通过增加一个孤立节点然后预测最有可能连接的其他边，然后用其他链路预测的方式以及根据老师之前提到的进行评估我生成的边或者点是否是符合网络变化的，以及更多节点或者边重要性的算法来评估我生成的边或者点是否是重要节点或者边</p>
+<p>pathpy.visualisation.html @singledispatch def plot(network: Any,<br>         **params: dict) -&gt; None<br>在 jupyter 笔记本中绘制路径对象的交互式可视化。此泛型函数支持 pathpy 的实例。网络，可怜。时间网络，可悲。高阶网络，可悲。多序模型和路径。路径。请参阅参数说明中不同可视化项的说明。<br>形参:</p>
+<p>network – 要可视化的对象。根据传递对象的类型，将生成以下可视化效果： 网络：具有力导向布局的网络的交互式可视化。高阶网络：一阶网络的交互式可视化，力基于高阶网络计算。通过设置 plot_higher_order_nodes&#x3D;True，可以绘制具有未投影的高阶节点的网络。多阶模型：一阶网络的交互式可视化，基于多阶模型计算力。时间网络：时间网络的交互式和动态可视化。路径：冲积图，显示通过给定焦点节点的马尔可夫或非马尔可夫轨迹。</p>
+<p>params – 带有可视化参数的字典。这些参数将传递到可由用户扩展的可视化模板。默认 pathpy 模板支持以下参数，具体取决于要可视化的对象类型（请参阅括号）。</p>
+<ul>
+<li>width： int （all） 包含 jupyter 可视化效果的 div 元素的宽度。默认值为 400。</li>
+<li>height： int （all） 包含 jupyter 可视化效果的 div 元素的高度。默认值为 400。</li>
+<li>模板：字符串（全部）自定义可视化模板文件的路径。如果省略此参数，将使用适合相应对象的默认 pathpy 可视化模板。</li>
+<li>d3js_path：指向 d3js 库的字符串（所有）URL。默认情况下，d3js 将从 <a target="_blank" rel="noopener" href="https://d3js.org/d3.v4.min.js">https://d3js.org/d3.v4.min.js</a> 加载。对于脱机操作，可以改为指定指向 d3js 本地副本的 URL。对于自定义模板，可以使用特定的 d3js 版本。</li>
+<li>node_size：int，dict（Network，HigherOrderNetwork，TemporalNetwork，MultiOrderModel）指定所有节点半径的int值，或将自定义节点大小分配给独立节点的字典。默认值为 5.0。</li>
+<li>edge_width：int、float、dict（Network、HigherOrderNetwork、TemporalNetwork、MultiOrderModel） 指定所有边的半径的 int 值，或将自定义边宽分配给插入边的字典。默认值为 0.5。</li>
+<li>node_color：string， dict （Network， HigherOrderNetwork， TemporalNetwork， MultiOrderModel） 指定所有节点的 HTML 颜色的字符串值，或将自定义节点颜色分配给独立节点的字典。可以使用HTML命名的颜色（“红色”，“蓝色”，“黄色”）或HEX-RGB值。默认值为“#99ccff”。（浅蓝色） </li>
+<li>node_text：字符串、字典（Network、HigherOrderNetwork、MultiOrderModel）将鼠标悬停在节点上时显示的文本，例如包含节点属性、全名等。默认为节点名称。</li>
+<li>edge_color：string， dict （Network， HigherOrderNetwork， TemporalNetwork， MultiOrderModel） 指定所有边缘的 HTML 颜色的字符串值，或将自定义边缘颜色分配给插入边缘的字典。可以使用HTML命名的颜色（“红色”，“蓝色”，“黄色”）或HEX-RGB值。默认值为“#cccccc”（浅灰色）。</li>
+<li>edge_opacity：float（Network、HigherOrderNetwork、TemporalNetwork、MultiOrderModel） 0.0 到 1.0 范围内所有边的不透明度。默认值为 1.0。</li>
+<li>edge_arrows：bool （Network， HigherOrderNetwork， MultiOrderNetwork） 是否为有向网络绘制边缘箭头。默认值为 True。</li>
+<li>label_color：字符串（Network、HigherOrderNetwork、TemporalNetwork、MultiOrderModel） 节点标签的 HTML 颜色。可以使用HTML命名的颜色（“红色”，“蓝色”，“黄色”）或HEX-RGB值。默认值为“#cccccc”（浅灰色）。</li>
+<li>label_opacity：float （Network， HigherOrderNetwork， TemporalNetwork， MultiOrderModel） 标签的不透明度。默认值为 1.0。</li>
+<li>label_size：str（Network， HigherOrderNetwork， TemporalNetwork， MultiOrderNetwork） CSS 字符串，指定用于标签的字体大小。默认值为“8px”。</li>
+<li>label_offset：列表（网络、高阶网络、时态网络、多阶网络）标签与节点中心的偏移量 [x，y]。对于 [0，0] 标签将显示在节点的中心。第一个和第二个分量的正值将标签分别向右和向上移动。默认值为 [0， -10]，在节点上方显示标签，以适应比节点宽的标签。</li>
+<li>force_charge：浮点，int （） 要在力导向布局中使用的节点的电荷强度。默认值为 -20 </li>
+<li>force_repel：float，int（全部）节点之间排斥力的强度。较大的负值将增加节点之间的距离。默认值为 -200。</li>
+<li>force_alpha：浮点数（全部）要传递给基础力导向布局算法的 alpha 目标（收敛阈值）。默认值为 0.0。</li>
+<li>plot_higher_order_nodes：高阶网络 如果设置为 True，则将绘制具有高阶节点的原始高阶网络。如果为 False，则将绘制具有高阶力导向布局的一阶投影。默认值为 True。</li>
+<li>ms_per_frame：int（时间网络）在时间网络的可视化中每帧应显示多少毫秒。1000&#x2F;ms_per_frame 指定可视化的帧速率。默认值 20 产生 50 fps 的帧速率。</li>
+<li>ts_per_frame：int（时间网络）在可视化的每一帧中应显示时态网络中的时间戳数。对于值为 1 时，每个时间戳显示在单独的帧中。对于较高的值，多个时间戳将聚合到单个帧中。对于零值，仿真速度将调整为事件间时间分布，以便平均每秒显示五次交互。默认值为 1。</li>
+<li>look_behind：int （时间网络） look_ahead 和 look_behind 参数定义当前时间戳周围的时间范围，在该范围内，将考虑将带时间戳的边用于力导向布局。大于 1 的值会导致布局平滑更改。默认值为 10。</li>
+<li>look_ahead：int（时间网络） look_ahead 和 look_behind 参数定义当前时间戳周围的时间范围，在该范围内，将考虑将带时间戳的边用于力导向布局。大于 1 的值会导致布局平滑更改。默认值为 10。</li>
+<li>max_time：int（临时网络）要可视化的最大时间戳。可用于限制超长时态网络的可视化。如果为“无”，将显示整个序列。默认值为“无”。</li>
+<li>active_edge_width：浮点数（时态网络）一个浮点值，它指定当前活动边的宽度。默认值为 4.0。</li>
+<li>inactive_edge_width：浮点数（时态网络）一个浮点值，它指定当前活动边的宽度。默认值为 0.5。</li>
+<li>active_edge_color：字符串（临时网络）一个字符串值，它指定当前活动边缘的 HTML 颜色。可以使用HTML命名的颜色（“红色”，“蓝色”，“黄色”）或HEX-RGB值。默认值为“#ff0000”（红色）。</li>
+<li>inactive_edge_color：字符串（临时网络）一个字符串值，它指定非活动边缘的 HTML 颜色。可以使用HTML命名的颜色（“红色”，“蓝色”，“黄色”）或HEX-RGB值。默认值为“#cccccc”（浅灰色）。</li>
+<li>active_node_color：字符串（临时网络）一个字符串值，它指定活动节点的 HTML 颜色。可以使用HTML命名的颜色（“红色”，“蓝色”，“黄色”）或HEX-RGB值。默认值为“#ff0000”（红色）。</li>
+<li>inactive_node_color：字符串（临时网络）一个字符串值，它指定非活动节点的 HTML 颜色。可以使用HTML命名的颜色（“红色”，“蓝色”，“黄色”）或HEX-RGB值。默认值为“#cccccc”（浅灰色）。</li>
+</ul>
 
     </div>
 
@@ -287,9 +324,6 @@
       
   <div class="popular-posts-header">Related Posts</div>
   <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\5443fa2d.html" rel="bookmark">复杂网络学习</a></div>
-    </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\7bddedf7.html" rel="bookmark">深度学习week1_1</a></div>
     </li>
@@ -301,6 +335,9 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\bb71978.html" rel="bookmark">深度学习week1_4</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\1a7d5752.html" rel="bookmark">week2_1</a></div>
     </li>
   </ul>
 
@@ -336,7 +373,10 @@
     <a href="/post/7561e93a.html" rel="prev" title="leetcode100题_3">
       <i class="fa fa-chevron-left"></i> leetcode100题_3
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/post/3a2a3e16.html" rel="next" title="2023-8-29今日练习">
+      2023-8-29今日练习 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -411,7 +451,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
