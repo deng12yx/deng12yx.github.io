@@ -178,7 +178,7 @@ body {
   background: var(--body-bg-color);
   color: var(--text-color);
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 1em;
+  font-size: 14px;
   line-height: 2;
 }
 @media (max-width: 991px) {
@@ -1309,7 +1309,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #de8e96;
+  background: #4b030d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1714,7 +1714,7 @@ pre .javascript .function {
 .reading-progress-bar {
   background: #37c6c0;
   display: block;
-  height: 3px;
+  height: 2px;
   left: 0;
   position: fixed;
   width: 0;
@@ -1772,8 +1772,8 @@ pre .javascript .function {
 }
 @media (max-width: 767px) {
   .posts-collapse {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 12px;
+    margin-right: 12px;
   }
 }
 .posts-collapse .collection-title {
@@ -2668,39 +2668,58 @@ embed {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* 网页背景图片 */
 body {
   background: url("/img/background.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-attachment: fixed; /* 不重复 */
+  background-size: cover; /* 填充 */
   background-position: 50% 50%;
 }
+/* 文章透明度设置 */
 .post-block {
-  opacity: 0.9;
+  background-color: rgba(255,240,245,0.8); /* 深蓝色，透明度 60% */
+  opacity: 0.8;
+}
+code {
+  margin: 0px 4px;
+  font-size: 90%;
 }
 .sidebar {
-  background-color: transparent;
-  opacity: 0.9;
+  opacity: 0.8;
 }
+.sidebar-inner {
+  background: rgba(255,240,245,0.9); /* 深蓝色，透明度 60% */
+}
+/* 菜单栏的透明度设置 */
 .header-inner {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,240,245,0.9); /* 深蓝色，透明度 90% */
 }
+/* 搜索框（local-search）的透明度设置 */
 .popup {
   opacity: 0.9;
 }
-.main-inner > .sub-menu,
-.main-inner > .post-block,
-.main-inner > .tabs-comment,
-.main-inner > .comments,
-.main-inner > .pagination {
-  background: rgba(245,245,245,0.42);
-}
+/* 修改主体字体颜色 */
 body {
-  color: #000;
+  color: #000; /* 纯黑 */
 }
+/* 标题颜色 */
 .posts-expand .post-title-link {
-  color: #000;
+  color: #000; /* 首页文章标题颜色，纯黑 */
 }
+/* 标题下的日期颜色 */
 .posts-expand .post-meta-container {
-  color: #800;
+  color: #800; /* 红色 */
+}
+/* 按钮样式 */
+.btn {
+  color: #fff; /* 字体颜色 */
+  background: #000; /* 背景颜色 */
+  border: 2px solid #49b1f5; /* 边框颜色，2px是边框宽度 */
+}
+/* 修改按钮未点击时样式 */
+.btn:hover {
+  border-color: #fff; /* 边框颜色 */
+  color: #000; /* 字体颜色 */
+  background: #fff; /* 背景颜色 */
 }
