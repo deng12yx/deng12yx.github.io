@@ -11643,8 +11643,8 @@ figure.highlight.foldable div.level-left {
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
   .is-2-column .container {
-    max-width: 960px;
-    width: 960px;
+    max-width: 1216px;
+    width: 1216px;
   }
 }
 @media screen and (min-width: 1472px) {
@@ -11676,4 +11676,35 @@ figure.highlight.foldable div.level-left {
   .section {
     padding: 1.5rem 1rem;
   }
+}
+.copyright.article-title {
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.copyright.article-title.type-1 {
+  color: #74cf59;
+  background-color: #eaf9e3;
+}
+.copyright.article-title.type-2 {
+  color: #ca0c16;
+  background-color: #f9ecec;
+}
+.copyright.article-block {
+  padding: 0.4em 0.8em;
+  margin-bottom: 1em;
+  border-radius: 0.3rem;
+  border-left: 5px solid #ca0c16;
+}
+.copyright.article-block P {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+.copyright.article-block.type-1 {
+  border-left: 5px solid #74cf59;
+  background-color: #eaf9e3;
+}
+.copyright.article-block.type-2 {
+  border-left: 5px solid #ca0c16;
+  background-color: #f9ecec;
 }
