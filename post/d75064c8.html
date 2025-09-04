@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="theme-color" content="#123456"><meta name="generator" content="Hexo 4.2.0"><title>基础知识学习 - BeautyFlower</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Icaurs - Hexo Theme"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Icaurs - Hexo Theme"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="查漏补缺~"><meta property="og:type" content="blog"><meta property="og:title" content="基础知识学习"><meta property="og:url" content="http://example.com/post/d75064c8.html"><meta property="og:site_name" content="BeautyFlower"><meta property="og:description" content="查漏补缺~"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/article/18.png"><meta property="article:published_time" content="2024-10-09T11:54:53.000Z"><meta property="article:modified_time" content="2024-12-25T05:59:03.004Z"><meta property="article:author" content="yyyyyyxnp"><meta property="article:tag" content="Python"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/article/18.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/post/d75064c8.html"},"headline":"基础知识学习","image":["http://example.com/img/article/18.png"],"datePublished":"2024-10-09T11:54:53.000Z","dateModified":"2024-12-25T05:59:03.004Z","author":{"@type":"Person","name":"yyyyyyxnp"},"publisher":{"@type":"Organization","name":"BeautyFlower","logo":{"@type":"ImageObject","url":{"text":"BeautyFlower"}}},"description":"查漏补缺~"}</script><link rel="canonical" href="http://example.com/post/d75064c8.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="BeautyFlower" type="application/atom+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BeautyFlower</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/img/article/18.png" alt="基础知识学习"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item copyright article-title type-2">原创</span><span class="level-item">Posted&nbsp;<time dateTime="2024-10-09T11:54:53.000Z" title="2024/10/9 19:54:53">2024-10-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-12-25T05:59:03.004Z" title="2024/12/25 13:59:03">2024-12-25</time></span><span class="level-item"><a class="link-muted" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span><span class="level-item">11 minutes read (About 1578 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile"> 基础知识学习</h1><div class="copyright article-block type-2"><p>版权申明：本文为原创文章，转载请注明原文出处</p><p>原文链接：<a href="http://example.com/post/d75064c8.html" target="_blank">http://example.com/post/d75064c8.html</a></p></div><h1 class="title is-3 is-size-4-mobile">基础知识学习</h1><div class="content"><p>查漏补缺~</p>
+<span id="more"></span>
+<h3 id="cnn">CNN</h3>
+<p>两大<strong>特点</strong>：(<span class="math inline">\(i\)</span>)
+大数据量<span class="math inline">\({-}\text{降维}\rightarrow\)</span>小数据量（image）
+(<span class="math inline">\(ii\)</span>) 有效保留图片特征</p>
+<p><strong>inspiration</strong>：模仿人类大脑，构造多层神经网络，较低层识别初级的图像特征，若干底层特征组成更上一层特征，最终通过多个层级的组合，在顶层做出分类</p>
+<p><strong>三部分</strong>：(<span class="math inline">\(i\)</span>)
+卷积(提取图像的局部特征) (<span class="math inline">\(ii\)</span>)
+池化(降维，防止过拟合) (<span class="math inline">\(iii\)</span>)
+全连接层(输出)</p>
+<ul>
+<li><p>使用多个filter(卷积核)得到各区域的特征值，每个卷积核代表一种图像模式，用于提取图片一种局部特征</p>
+<p><img src="/post/d75064c8/f144f-2019-06-19-juanji.gif" alt="卷积层运算过程" style="zoom:33%;"></p></li>
+<li><p>池化层即下采样，降低维度，因为卷积核较小，卷积之后图像仍然很大</p>
+<p><img src="/post/d75064c8/3fd53-2019-06-19-chihua.gif" alt="池化层过程" style="zoom:33%;"></p></li>
+<li><p>全连接层</p></li>
+</ul>
+<h5 id="归一化batch-normalization">归一化(Batch Normalization)</h5>
+<blockquote>
+<p>SGD(Stochastic Gradient Descent) :
+随机梯度下降，即以一个样本的损失函数代替样本总的损失函数平均值对权值进行迭代</p>
+</blockquote>
+<p>research target :
+即使可以用SGD等方法提高效率，但是学习率，参数初始化dropout比例仍需自己设置和不断调整</p>
+<blockquote>
+<p>正则化(Regularization)：损失函数后面添加一个额外项，防止<strong>过拟合</strong></p>
+<ul>
+<li>L1(Lasso)：<span class="math inline">\(J+\alpha||w||_1\)</span> 中
+<span class="math inline">\(\alpha||w||_1\)</span>
+为L1正则项，指权值向量<span class="math inline">\(w\)</span>中各个元素的<strong>绝对值之和</strong>，可以产生稀疏权值矩阵(大部分元素为0)，可以用于特征选择</li>
+<li>L2(Ridge)：<span class="math inline">\(J+\alpha||w||^2_2\)</span> 中
+<span class="math inline">\(\alpha||w||^2_2\)</span>
+为L2正则项，指权值向量<span class="math inline">\(w\)</span>中各个元素的<strong>平方和</strong>，权重值会小，但是不会为0，防止模型过拟合</li>
+<li>dropout: 训练过程中以规定概率将部分权重置为0</li>
+</ul>
+</blockquote>
+<p>issuse：训练前的归一化可以避免每次迭代遇到新样本都要学习新的分布，但前面层训练参数的更新将导致后面层输入数据分布的变化，因此BN是为了<strong>解决在训练过程中，中间层数据分布发生改变的情况</strong></p>
+<blockquote>
+<p>白化预处理方法：(<span class="math inline">\(i\)</span>)
+零中心化数据：每个特征减去均值 (<span class="math inline">\(ii\)</span>)
+数据去相关：将数据变换为一个新的坐标系，使得不同特征间的协方差为0，即特征之间互不相关
+(<span class="math inline">\(iii\)</span>)
+重新缩放数据：每个特征的值除以其标准差，将每个特征的方差归一化为1</p>
+</blockquote>
+<h6 id="变换重构"><strong>变换重构</strong></h6>
+<p>训练阶段</p>
+<ul>
+<li>归一化：<span class="math inline">\(\widehat{x}_i\leftarrow\frac{x_i-\mu_{\mathcal{B}}}{\sqrt{\sigma_{\mathcal{B}}^2+\epsilon}}\)</span></li>
+<li>重构：<span class="math inline">\(y^{(k)}=\gamma^{(k)}\widehat{x}^{(k)}+\beta^{(k)}\)</span></li>
+</ul>
+<blockquote>
+<p>直接进行归一化<span class="math inline">\(\widehat{x}_i\leftarrow\frac{x_i-\mu_{\mathcal{B}}}{\sqrt{\sigma_{\mathcal{B}}^2+\epsilon}}\)</span>会破坏已经学习到的特征分布（将关键特征“推平”），故引入<strong>可学习的参数</strong><span class="math inline">\(\gamma\)</span>和<span class="math inline">\(\beta\)</span>来恢复调整归一化后的输入，<span class="math inline">\(y^{(k)}=\gamma^{(k)}\widehat{x}^{(k)}+\beta^{(k)}\)</span>中<span class="math inline">\(\gamma^{(k)}\)</span>负责缩放(调整标准差)，<span class="math inline">\(\beta^{(k)}\)</span>负责平移(调整均值)</p>
+</blockquote>
+<p>测试阶段</p>
+<ul>
+<li>均值：<span class="math inline">\(\operatorname{E}[x]\leftarrow\operatorname{E}_{\mathcal{B}}[\mu_{\mathcal{B}}]\)</span></li>
+<li>方差：<span class="math inline">\(\mathrm{Var}[x]\leftarrow\frac
+m{m-1}\operatorname{E}_{\mathcal{B}}[\sigma_{\mathcal{B}}^2]\)</span></li>
+<li>前向传播：<span class="math inline">\(y=\gamma \cdot \frac{x -
+\operatorname{E}[x]}{\sqrt{\mathrm{Var}[x]+\epsilon}}+\beta\)</span></li>
+</ul>
+<blockquote>
+<p>训练阶段归一化的均值来源mini-batch，测试阶段没有minibatch，单个样本难以反映整体分布，因此使用训练阶段每个mini-batch计算得到的均值求均值，用无偏估计修正方差均值</p>
+</blockquote>
+<h6 id="在cnn中的应用">在CNN中的应用</h6>
+<p>将一整张特征图当作一个神经元，如果min-batch
+sizes为m，那么网络某一层输入数据可以表示为四维矩阵(m,f,p,q)，m为min-batch
+sizes，f为特征图个数，p、q分别为特征图的size。把每个特征图看成是一个特征处理（一个神经元），因此mini-batch
+size就是m*p*q，分别训练可学习参数：γ、β。相当于求取所有样本所对应的一个特征图的所有神经元的平均值、方差，然后对这个特征图神经元做归一化。</p>
+<h3 id="transformer">Transformer</h3>
+<h5 id="self-attention">self-attention</h5>
+<p>eg: input(a1, b1, c1, d1) <span class="math inline">\(\rightarrow\)</span> output(b1, b2, b3,
+b4)，b1的产生如下(b1-b4可同时生成)</p>
+<ul>
+<li><p>step1: 确定和a1相关的其他向量</p>
+<p>通过计算a1和其他向量之间的 attention score <span class="math inline">\(\alpha\)</span> (关联程度)
+避免整个sequence都起作用，eg：<span class="math inline">\(\alpha_{1,2}=\boldsymbol{q}^{\mathbf{1}}(\boldsymbol{q}^{\mathbf{1}}=W^{q}
+\boldsymbol{a}^{\mathbf{1}}, \text{query}) \cdot
+\boldsymbol{k}^{\mathbf{2}}(\boldsymbol{k}^{\mathbf{2}}=W^{k}
+\boldsymbol{a}^{\mathbf{2}},
+\text(key))\)</span>，接着进行softmax：<span class="math inline">\(\alpha_{1,i}^{\prime}=e x
+p\bigl(\alpha_{1,i}\bigr)\big/\sum_{j}e x
+p\bigl(\alpha_{1,j}\big)\)</span></p></li>
+<li><p>step2: 用计算出的<span class="math inline">\(\alpha\)</span>
+当作权重，计算<span class="math inline">\(b^{1}=\sum_{i}
+(\alpha_{1,i}^{\prime} \cdot v^{i})\)</span>，其中 $v ^ { i } = W ^ { v
+} a ^ { i } $</p></li>
+</ul>
+<blockquote>
+<p>待学习参数只有 <span class="math inline">\(W^{q},
+W^{k},W^{v}\)</span></p>
+</blockquote>
+<h6 id="multi-head-self-attention">multi-head self-attention</h6>
+<p>multi-head指相关性的选择多样性，即得到q,k后再乘矩阵得到 <span class="math inline">\(q_{i, 1}, q_{i,2} ...\)</span>,<span class="math inline">\(k_{i, 1}, k_{i,2} ...\)</span>，最后得到<span class="math inline">\(b_{i,
+1},b_{i,2}...\)</span>,再通过一个矩阵得到<span class="math inline">\(b_{i}\)</span></p>
+<h6 id="positional-encoding">positional encoding</h6>
+<p>前面提到的attention机制并没有考虑位置信息，positional
+encodeing为每一个位置设置一个vector <span class="math inline">\(e_{i}\)</span>, i为位置，输入变为<span class="math inline">\(a_{i} + e_{i}\)</span></p>
+<h6 id="扩展">扩展</h6>
+<ul>
+<li>Truncated self-attention(for speech)：缩小attention计算范围</li>
+<li>vs cnn: cnn is a simplified
+self-attention，cnn考虑的特征是相邻的，由卷积核决定，self-attention考虑的特征是全局的，self-attention易于over-fitting，需要更多的训练资料</li>
+<li>vs rnn:
+可替代rnn，rnn以当前状态和前一时间步隐藏状态为输入，rnn无法平行化所有输出，即使使用双向，需要保存最初始的输入才能对最后的输入起作用，self-sequence只要attention
+score符合，就直接考虑</li>
+<li>GNN(for graph): attention matrix可以只计算相连的node对</li>
+</ul>
+<p>seq2seq Input is a sequence, output is a sequence(the output length
+is depended by model)</p>
+<p>应用：语音识别文字/翻译/同声传译/聊天机器人 (都可以看做QA)</p>
+<p>input sequence <span class="math inline">\(\rightarrow\)</span>
+encoder <span class="math inline">\(\rightarrow\)</span> decoder <span class="math inline">\(\rightarrow\)</span> output sequence</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>基础知识学习</p><p><a href="http://example.com/post/d75064c8.html">http://example.com/post/d75064c8.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>yyyyyyxnp</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-10-09</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-12-25</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Python/">Python</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/b64de532.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">ai_tools</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/9c1a1a1.html"><span class="level-item">luogu_1</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Yyyyyyxnp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yyyyyyxnp</p><p class="is-size-6 is-block">Student Yang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Sichuan University</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">48</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/deng12yx" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#cnn"><span class="level-left"><span class="level-item">1</span><span class="level-item">CNN</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#归一化batch-normalization"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">归一化(Batch Normalization)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#变换重构"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">变换重构</span></span></a></li><li><a class="level is-mobile" href="#在cnn中的应用"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">在CNN中的应用</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#transformer"><span class="level-left"><span class="level-item">2</span><span class="level-item">Transformer</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#self-attention"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">self-attention</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#multi-head-self-attention"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">multi-head self-attention</span></span></a></li><li><a class="level is-mobile" href="#positional-encoding"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">positional encoding</span></span></a></li><li><a class="level is-mobile" href="#扩展"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">扩展</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-09-01T13:27:46.000Z">2025-09-01</time></p><p class="title"><a href="/post/faa1c95e.html">ctfshow初学</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/b64de532.html"><img src="/img/article/23.png" alt="ai_tools"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-12-25T05:34:16.000Z">2024-12-25</time></p><p class="title"><a href="/post/b64de532.html">ai_tools</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/d75064c8.html"><img src="/img/article/18.png" alt="基础知识学习"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-10-09T11:54:53.000Z">2024-10-09</time></p><p class="title"><a href="/post/d75064c8.html">基础知识学习</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/9c1a1a1.html"><img src="/img/article/17.png" alt="luogu_1"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-10-08T10:50:27.000Z">2024-10-08</time></p><p class="title"><a href="/post/9c1a1a1.html">luogu_1</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/post/7684f23b.html"><img src="/img/article/15.png" alt="T2I"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-09-23T06:17:27.000Z">2024-09-23</time></p><p class="title"><a href="/post/7684f23b.html">T2I</a></p><p class="categories"><a href="/categories/%E5%AE%89%E5%85%A8/">安全</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BeautyFlower</a><p class="is-size-7"><span>&copy; 2025 yyyyyyxnp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/deng12yx"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'folded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
