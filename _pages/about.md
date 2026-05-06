@@ -27,7 +27,7 @@ Hi, there! I am a first-year Ph.D. student in [System Software and Security Lab]
 
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">I 2026</div><img src='images/ICML-2026.png' alt="sym" width="80%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/ICML-2026.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Unified Safe In-context Image Generation in Multimodal Diffusion Transformers]()
@@ -40,6 +40,8 @@ Hi, there! I am a first-year Ph.D. student in [System Software and Security Lab]
 </div>
 </div>
 
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/cvpr-2026.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 [SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers](paper/SafeRoPE-2026.pdf)
@@ -48,7 +50,7 @@ Hi, there! I am a first-year Ph.D. student in [System Software and Security Lab]
 
 ***2026 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)***
 
-<span class="paper-btn">[Paper]()</span>
+<span class="paper-btn">[Paper](paper/SafeRoPE-2026.pdf)</span><span class="paper-btn">[Code](https://github.com/deng12yx/SafeRoPE)</span>
 </div>
 </div>
 
@@ -62,6 +64,7 @@ Hi, there! I am a first-year Ph.D. student in [System Software and Security Lab]
 
 <span class="paper-btn">[Paper](paper/IOT-2025.pdf)</span><span class="paper-btn">[Code](https://github.com/deng12yx/OptiPathNet)</span><span class="paper-btn bibtex-toggle" onclick="this.closest('.paper-box').querySelector('.bibtex-box').toggleAttribute('open')">BibTeX</span>
 </div>
+
 <details class="bibtex-box">
 <summary style="display:none"></summary>
 <pre>@ARTICLE{11133585,
