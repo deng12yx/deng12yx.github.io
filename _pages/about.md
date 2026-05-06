@@ -26,8 +26,7 @@ Hi, there! I am a first-year Ph.D. student in [System Software and Security Lab]
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/cvpr-2026.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
-
-[SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers]()
+[SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers](paper/SafeRoPE-2026.pdf)
 
 **Xiang Yang**, Feifei Li, Mi Zhang, Geng Hong, Xiaoyu You, Min Yang
 
@@ -39,7 +38,6 @@ Hi, there! I am a first-year Ph.D. student in [System Software and Security Lab]
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IoT</div><img src='images/iot-fig2.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
-
 [Toward Dynamic Topology Obfuscation for IoT Networks With Evolutionary Defense](paper/IOT-2025.pdf)
 
 **Xiang Yang**, Zhentian Zhong, Yue Chen, Xiaohui Li
