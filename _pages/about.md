@@ -21,8 +21,24 @@ Hi, there! I am a first-year Ph.D. student in [System Software and Security Lab]
 
 # 🔥 News
 - *2026.02*: &nbsp;🎉🎉 Our paper on *SafeRoPE, a head-level rotation method for suppressing unsafe subspaces in large language models*, is accepted to CVPR 2026. See you in Denver!
+- *2026.05*:  🎉🎉 Our paper on *UVR, a unified visual safety regulator for mitigating unsafe visual generation at inference time*, is accepted to ICML 2026. See you in Seoul!
 
 # 📝 Publications 
+
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">I 2026</div><img src='images/ICML-2026.png' alt="sym" width="80%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Unified Safe In-context Image Generation in Multimodal Diffusion Transformers]()
+
+**Xiang Yang**, Feifei Li, Mi Zhang, Geng Hong, Xiaoyu You, Mi Wen, Min Yang
+
+***2026 International Conference on Machine Learning (ICML)***
+
+<span class="paper-btn">[Paper]()</span>
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/cvpr-2026.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
